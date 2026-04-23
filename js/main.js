@@ -10,7 +10,7 @@ function renderNav() {
   const nav = document.createElement('nav');
   nav.id = 'navbar';
   nav.innerHTML = `<div class="ni">
-<a class="nl" href="${base}index.html"><img src="${base}images/logo.png" alt="Dr Yousra El Khadri" style="height:40px"></a>
+<a class="nl" href="${base}index.html" style="display:flex;align-items:center;padding:4px 0"><img src="${base}images/logo.png" alt="Dr Yousra El Khadri" style="height:70px;width:auto;display:block"></a>
 <div class="nm" id="navLinks">
 <a href="${base}index.html">Accueil</a>
 <div class="dd"><a class="dd-trigger">Nos Services</a><div class="ddm">

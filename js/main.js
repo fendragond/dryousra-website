@@ -1,37 +1,79 @@
 // ===== SHARED COMPONENTS =====
 
-// Determine base path (for subpages in /soins/ and /besoins/)
-const depth = window.location.pathname.split('/').filter(Boolean).length;
-const isSubpage = window.location.pathname.includes('/soins/') || window.location.pathname.includes('/besoins/');
-const base = isSubpage ? '../' : '';
+// Determine base path based on URL depth
+const path = window.location.pathname;
+const isSubpage = path.includes('/soins/') || path.includes('/besoins/');
+const isDeepSubpage = (path.match(/\//g) || []).length >= 3 && (path.includes('/soins/') || path.includes('/besoins/'));
+// soins/laser/laser-medical.html → ../../  (depth 2 from root)
+// besoins/rajeunir.html → ../  (depth 1 from root)
+const segments = path.split('/').filter(Boolean);
+let base = '';
+if (segments.length === 0 || (segments.length === 1 && segments[0].endsWith('.html'))) {
+  base = '';
+} else {
+  // Count how many directories deep we are
+  // Remove the file at end if it exists
+  const dirCount = segments[segments.length - 1].endsWith('.html')
+    ? segments.length - 1
+    : segments.length;
+  base = '../'.repeat(dirCount);
+}
 
 // ===== NAV =====
 function renderNav() {
   const nav = document.createElement('nav');
   nav.id = 'navbar';
   nav.innerHTML = `<div class="ni">
-<a class="nl" href="${base}index.html" style="display:flex;align-items:center;padding:4px 0"><img src="${base}images/logo.png" alt="Dr Yousra El Khadri" style="height:54px;width:auto;display:block"></a>
+<a class="nl" href="${base}index.html"><img src="${base}images/logo.png" alt="Dr Yousra El Khadri"></a>
 <div class="nm" id="navLinks">
 <a href="${base}index.html">Accueil</a>
-<div class="dd"><a class="dd-trigger">Nos Services</a><div class="ddm">
-<a href="${base}soins/botox.html">Botox</a>
-<a href="${base}soins/filler.html">Filler / Acide Hyalu.</a>
-<a href="${base}soins/laser.html">Laser Médical</a>
-<a href="${base}soins/exosomes.html">Exosomes</a>
-<a href="${base}soins/skinbooster.html">Skin Booster</a>
-<a href="${base}soins/hydrafacial.html">Hydrafacial</a>
-<a href="${base}soins/detatouage.html">Détatouage Laser</a>
-</div></div>
-<div class="dd"><a class="dd-trigger">Vos Besoins</a><div class="ddm">
-<a href="${base}besoins/rajeunir.html">Rajeunir le visage</a>
-<a href="${base}besoins/levres.html">Repulper les lèvres</a>
-<a href="${base}besoins/rides.html">Traiter les rides</a>
-<a href="${base}besoins/taches.html">Effacer les taches</a>
-<a href="${base}besoins/texture.html">Améliorer la texture</a>
-<a href="${base}besoins/tatouage.html">Enlever un tatouage</a>
-<a href="${base}besoins/mariage.html">Préparation mariage</a>
-</div></div>
-<a href="${base}index.html#about-sec">À Propos</a>
+<div class="dd">
+  <a class="dd-trigger">Nos Services</a>
+  <div class="ddm mega">
+    <div class="mega-col">
+      <h5>Injections</h5>
+      <a href="${base}soins/injections/botox.html">Botox</a>
+      <a href="${base}soins/injections/filler.html">Filler / Acide hyaluronique</a>
+      <a href="${base}soins/injections/skinbooster.html">Skin Booster</a>
+      <a href="${base}soins/injections/dissoudre-filler.html">Dissolution de filler</a>
+    </div>
+    <div class="mega-col">
+      <h5>Stimulation collagène</h5>
+      <a href="${base}soins/stimulation-collagene/sculptura.html">Sculptura</a>
+      <a href="${base}soins/stimulation-collagene/radiesse.html">Radiesse</a>
+      <a href="${base}soins/stimulation-collagene/harmonica.html">Harmonica</a>
+    </div>
+    <div class="mega-col">
+      <h5>Soins du visage</h5>
+      <a href="${base}soins/soins-visage/hydrafacial.html">Hydrafacial</a>
+      <a href="${base}soins/soins-visage/microneedling.html">Microneedling</a>
+      <a href="${base}soins/soins-visage/peeling.html">Peeling</a>
+      <a href="${base}soins/soins-visage/exosomes.html">Exosomes</a>
+      <a href="${base}soins/soins-visage/baby-lips.html">Baby Lips</a>
+    </div>
+    <div class="mega-col">
+      <h5>Corps & Laser</h5>
+      <a href="${base}soins/soins-corps/lipolyse.html">Lipolyse</a>
+      <a href="${base}soins/soins-corps/peeling-corps.html">Peeling corps</a>
+      <a href="${base}soins/laser/laser-medical.html">Laser médical</a>
+      <a href="${base}soins/laser/detatouage.html">Détatouage laser</a>
+    </div>
+  </div>
+</div>
+<div class="dd">
+  <a class="dd-trigger">Vos Besoins</a>
+  <div class="ddm simple">
+    <a href="${base}besoins/rajeunir.html">Rajeunir le visage</a>
+    <a href="${base}besoins/levres.html">Repulper les lèvres</a>
+    <a href="${base}besoins/rides.html">Traiter les rides</a>
+    <a href="${base}besoins/taches.html">Effacer les taches</a>
+    <a href="${base}besoins/texture.html">Améliorer la texture</a>
+    <a href="${base}besoins/tatouage.html">Enlever un tatouage</a>
+    <a href="${base}besoins/mariage.html">Préparation mariage</a>
+  </div>
+</div>
+<a href="${base}partenaires.html">Partenaires</a>
+<a href="${base}a-propos.html">À Propos</a>
 <a href="${base}index.html#contact-sec" class="nav-cta">Rendez-vous</a>
 </div>
 <button class="mt" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -39,7 +81,7 @@ function renderNav() {
   document.body.prepend(nav);
 }
 
-// ===== FOOTER BAR (fixed) =====
+// ===== FOOTER BAR =====
 function renderFooterBar() {
   const bar = document.createElement('div');
   bar.className = 'fbar';
@@ -56,7 +98,6 @@ function renderStaticFooter() {
   const footer = document.createElement('footer');
   footer.className = 'sfooter';
   footer.innerHTML = `<div class="sfin"><p>&copy; 2026 Dr Yousra El Khadri · Médecine Esthétique à Casablanca</p></div>`;
-  // Insert before footer bar
   const fbar = document.querySelector('.fbar');
   if (fbar) document.body.insertBefore(footer, fbar);
   else document.body.appendChild(footer);
@@ -79,11 +120,9 @@ function initShared() {
   renderStaticFooter();
   renderWhatsApp();
 
-  // Nav scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
 
-  // Mobile menu
   const menuToggle = document.getElementById('menuToggle');
   const navLinksEl = document.getElementById('navLinks');
   menuToggle.addEventListener('click', (e) => {
@@ -92,7 +131,6 @@ function initShared() {
     navLinksEl.classList.toggle('open');
   });
 
-  // Close menu on link click
   navLinksEl.querySelectorAll('a:not(.dd-trigger)').forEach(a => {
     a.addEventListener('click', () => {
       menuToggle.classList.remove('open');
@@ -101,7 +139,6 @@ function initShared() {
     });
   });
 
-  // Close menu on outside click
   document.addEventListener('click', (e) => {
     if (!navLinksEl.contains(e.target) && !menuToggle.contains(e.target)) {
       menuToggle.classList.remove('open');
@@ -109,7 +146,7 @@ function initShared() {
     }
   });
 
-  // Mobile dropdown toggle - collapse others
+  // Mobile dropdown - only one open at a time
   document.querySelectorAll('.dd>.dd-trigger').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
       if (window.innerWidth <= 900) {

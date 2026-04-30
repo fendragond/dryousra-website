@@ -161,19 +161,19 @@ nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
 /* ============================================
    MOSAÏQUE CABINET — page À propos
    ============================================ */
-.cabinet-mosaic-wrap{max-width:1200px;margin:64px auto 0;padding:0 24px}
+.cabinet-mosaic-wrap{max-width:1200px;margin:64px auto 32px;padding:0 24px;clear:both}
 .cabinet-mosaic-head{text-align:center;margin-bottom:32px}
 .cabinet-mosaic-title{font-family:var(--font-d);font-size:clamp(22px,2.6vw,30px);font-weight:500;color:var(--charcoal);line-height:1.2;margin:0 0 6px;letter-spacing:.2px}
 .cabinet-mosaic-sub{font-family:var(--font-b);font-size:14px;color:var(--text-light);font-style:italic;margin:0}
 
-.cabinet-mosaic{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;height:480px}
-.cm-item{padding:0;margin:0;border:0;background:none;cursor:zoom-in;border-radius:6px;overflow:hidden;position:relative;display:block;width:100%;height:100%;font:inherit}
+.cabinet-mosaic{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;height:480px;max-height:480px}
+.cm-item{padding:0;margin:0;border:0;background:none;cursor:zoom-in;border-radius:6px;overflow:hidden;position:relative;display:block;width:100%;height:100%;font:inherit;min-height:0}
 .cm-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
 .cm-item:hover img{transform:scale(1.03)}
 .cm-item:hover{box-shadow:0 14px 36px rgba(123,94,167,.18)}
 .cm-item:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
-.cm-main{height:100%}
-.cm-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:100%}
+.cm-main{height:100%;min-height:0}
+.cm-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:100%;min-height:0}
 
 /* Lightbox */
 .cm-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;animation:cmLbFade .25s ease-out}
@@ -215,18 +215,64 @@ nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
 .partner-card li strong{color:var(--charcoal);display:block;margin-bottom:2px}
 .partner-card li span{font-size:12px;color:var(--text-light)}
 
-/* GALLERY (Avant/Après) */
-.gallery-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
-.gallery-item{border-radius:14px;background:var(--white);border:1px solid rgba(0,0,0,.04);overflow:hidden;transition:all .3s}
-.gallery-item:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(123,94,167,.1)}
-.gallery-imgs{display:grid;grid-template-columns:1fr 1fr;height:280px;position:relative}
-.gallery-imgs>div{display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:14px;color:var(--text-light);font-style:italic}
-.gallery-imgs>div:first-child{background:var(--cream);border-right:1px solid rgba(0,0,0,.04)}
-.gallery-imgs>div:last-child{background:var(--rose-pale)}
-.gallery-imgs::after{content:attr(data-label);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--white);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--rose);box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.gallery-info{padding:18px 20px}
-.gallery-info h4{font-family:var(--font-d);font-size:16px;color:var(--charcoal);margin-bottom:4px}
-.gallery-info p{font-size:12px;color:var(--text-mid);line-height:1.5}
+/* ============================================
+   SLIDER AVANT / APRÈS — page avant-apres.html
+   ============================================ */
+.ba-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.ba-card{display:flex;flex-direction:column;align-items:stretch}
+.ba-slider{position:relative;width:100%;height:480px;border-radius:8px;overflow:hidden;background:var(--cream);cursor:ew-resize;user-select:none;-webkit-user-select:none;touch-action:pan-y;outline:none}
+.ba-slider:focus-visible{box-shadow:0 0 0 3px var(--rose-light)}
+.ba-slider img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none;user-drag:none}
+.ba-img-after{z-index:1}
+.ba-clip{position:absolute;top:0;left:0;width:100%;height:100%;clip-path:inset(0 50% 0 0);z-index:2;will-change:clip-path}
+.ba-clip img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+
+/* Slider line + handle */
+.ba-line{position:absolute;top:0;bottom:0;left:50%;width:1.5px;background:rgba(255,255,255,.95);box-shadow:0 0 12px rgba(0,0,0,.35);transform:translateX(-50%);z-index:3;pointer-events:none;will-change:left}
+.ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.04);display:flex;align-items:center;justify-content:center;color:var(--charcoal);cursor:grab;pointer-events:auto;transition:transform .15s ease}
+.ba-slider.ba-grabbing{cursor:grabbing}
+.ba-slider.ba-grabbing .ba-handle{cursor:grabbing;transform:translate(-50%,-50%) scale(1.05)}
+
+/* Pulse animation when idle (stops on first interaction per slider) */
+.ba-slider.ba-pulse .ba-handle{animation:baPulse 2s ease-in-out infinite}
+@keyframes baPulse{
+  0%,100%{transform:translate(-50%,-50%) scale(1)}
+  50%{transform:translate(-50%,-50%) scale(1.08)}
+}
+
+/* Labels overlay */
+.ba-label{position:absolute;top:12px;font-family:var(--font-b);font-size:11px;letter-spacing:.12em;font-weight:600;padding:4px 8px;border-radius:3px;z-index:4;pointer-events:none}
+.ba-label-before{left:12px;background:rgba(0,0,0,.55);color:#fff}
+.ba-label-after{right:12px;background:rgba(255,255,255,.9);color:var(--charcoal)}
+
+/* Hint text — only on first card */
+.ba-hint{margin-top:12px;text-align:center;font-family:var(--font-b);font-size:13px;font-style:italic;color:var(--text-light);transition:opacity .4s ease;line-height:1.4}
+.ba-hint.ba-hint-hidden{opacity:0;pointer-events:none}
+.ba-arrow{display:inline-block;margin:0 4px;font-style:normal;animation:baArrowPulse 1.6s ease-in-out infinite}
+.ba-arrow-l{animation-delay:0s}
+.ba-arrow-r{animation-delay:.2s}
+@keyframes baArrowPulse{
+  0%,100%{opacity:.4}
+  50%{opacity:1}
+}
+
+.ba-disclaimer{text-align:center;font-family:var(--font-b);font-size:12px;font-style:italic;color:var(--text-light);margin-top:32px;max-width:680px;margin-left:auto;margin-right:auto;padding:0 24px}
+
+/* Tablet */
+@media(max-width:1023px){
+  .ba-grid{gap:16px}
+  .ba-slider{height:380px}
+}
+
+/* Mobile */
+@media(max-width:767px){
+  .ba-grid{grid-template-columns:1fr;gap:16px}
+  .ba-slider{height:360px;cursor:default}
+  .ba-handle{width:44px;height:44px}
+  .ba-handle svg{width:16px;height:16px}
+}
+
+/* PARTENAIRES */
 
 /* DETAIL PAGES */
 .dp{max-width:880px;margin:0 auto}
@@ -350,7 +396,6 @@ nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
   .parcours-block{grid-template-columns:1fr;gap:8px}
   .partners-grid{grid-template-columns:1fr}
   .zones{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){
   .sec,.ig-section{padding:56px 16px}
@@ -360,6 +405,5 @@ nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
   .sg{grid-template-columns:1fr}
   .ng{grid-template-columns:1fr}
   .vr{flex-direction:column}
-  .gallery-grid{grid-template-columns:1fr}
   .contact{padding:56px 16px}
 }

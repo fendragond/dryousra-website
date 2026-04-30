@@ -12,6 +12,44 @@ if (segments.length === 0 || (segments.length === 1 && segments[0].endsWith('.ht
   base = '../'.repeat(dirCount);
 }
 
+// ===== FAVICON =====
+// Injected dynamically so a single change in main.js updates favicons site-wide
+function injectFavicon() {
+  // Remove any existing favicon links to avoid conflicts
+  document.querySelectorAll('link[rel*="icon"]').forEach(el => el.remove());
+
+  const head = document.head;
+
+  // Primary: SVG favicon with auto dark/light mode adaptation via internal CSS
+  const svg = document.createElement('link');
+  svg.rel = 'icon';
+  svg.type = 'image/svg+xml';
+  svg.href = base + 'images/favicon.svg';
+  head.appendChild(svg);
+
+  // Fallback PNG for older browsers
+  const png32 = document.createElement('link');
+  png32.rel = 'icon';
+  png32.type = 'image/png';
+  png32.setAttribute('sizes', '32x32');
+  png32.href = base + 'images/favicon-32.png';
+  head.appendChild(png32);
+
+  const png16 = document.createElement('link');
+  png16.rel = 'icon';
+  png16.type = 'image/png';
+  png16.setAttribute('sizes', '16x16');
+  png16.href = base + 'images/favicon-16.png';
+  head.appendChild(png16);
+
+  // Apple touch icon
+  const apple = document.createElement('link');
+  apple.rel = 'apple-touch-icon';
+  apple.setAttribute('sizes', '180x180');
+  apple.href = base + 'images/apple-touch-icon.png';
+  head.appendChild(apple);
+}
+
 // ===== NAV =====
 function renderNav() {
   const nav = document.createElement('nav');
@@ -160,6 +198,9 @@ function initShared() {
     q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
   });
 }
+
+// Inject favicon ASAP (before DOM is fully ready) to avoid showing default favicon briefly
+injectFavicon();
 
 // Initialize as early as possible to avoid FOUC
 if (document.readyState === 'loading') {

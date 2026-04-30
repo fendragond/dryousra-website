@@ -1,18 +1,11 @@
 // ===== SHARED COMPONENTS =====
 
-// Determine base path based on URL depth
 const path = window.location.pathname;
-const isSubpage = path.includes('/soins/') || path.includes('/besoins/');
-const isDeepSubpage = (path.match(/\//g) || []).length >= 3 && (path.includes('/soins/') || path.includes('/besoins/'));
-// soins/laser/laser-medical.html → ../../  (depth 2 from root)
-// besoins/rajeunir.html → ../  (depth 1 from root)
 const segments = path.split('/').filter(Boolean);
 let base = '';
 if (segments.length === 0 || (segments.length === 1 && segments[0].endsWith('.html'))) {
   base = '';
 } else {
-  // Count how many directories deep we are
-  // Remove the file at end if it exists
   const dirCount = segments[segments.length - 1].endsWith('.html')
     ? segments.length - 1
     : segments.length;
@@ -68,10 +61,12 @@ function renderNav() {
     <a href="${base}besoins/rides.html">Traiter les rides</a>
     <a href="${base}besoins/taches.html">Effacer les taches</a>
     <a href="${base}besoins/texture.html">Améliorer la texture</a>
+    <a href="${base}besoins/affiner.html">Affiner visage / corps</a>
     <a href="${base}besoins/tatouage.html">Enlever un tatouage</a>
     <a href="${base}besoins/mariage.html">Préparation mariage</a>
   </div>
 </div>
+<a href="${base}avant-apres.html">Avant / Après</a>
 <a href="${base}partenaires.html">Partenaires</a>
 <a href="${base}a-propos.html">À Propos</a>
 <a href="${base}index.html#contact-sec" class="nav-cta">Rendez-vous</a>
@@ -93,7 +88,6 @@ function renderFooterBar() {
   document.body.appendChild(bar);
 }
 
-// ===== STATIC FOOTER =====
 function renderStaticFooter() {
   const footer = document.createElement('footer');
   footer.className = 'sfooter';
@@ -103,7 +97,6 @@ function renderStaticFooter() {
   else document.body.appendChild(footer);
 }
 
-// ===== WHATSAPP FLOAT =====
 function renderWhatsApp() {
   const wa = document.createElement('a');
   wa.href = 'https://wa.me/212660148108';
@@ -113,7 +106,6 @@ function renderWhatsApp() {
   document.body.appendChild(wa);
 }
 
-// ===== INIT =====
 function initShared() {
   renderNav();
   renderFooterBar();
@@ -146,11 +138,11 @@ function initShared() {
     }
   });
 
-  // Mobile dropdown - only one open at a time
   document.querySelectorAll('.dd>.dd-trigger').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
       if (window.innerWidth <= 900) {
         e.preventDefault();
+        e.stopPropagation();
         const parent = trigger.parentElement;
         const wasOpen = parent.classList.contains('mob-open');
         document.querySelectorAll('.dd').forEach(d => d.classList.remove('mob-open'));
@@ -159,16 +151,19 @@ function initShared() {
     });
   });
 
-  // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(x => { if (x.isIntersecting) x.target.classList.add('v'); });
   }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.rv').forEach(el => obs.observe(el));
 
-  // FAQ accordion
   document.querySelectorAll('.fq').forEach(q => {
     q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
   });
 }
 
-document.addEventListener('DOMContentLoaded', initShared);
+// Initialize as early as possible to avoid FOUC
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initShared);
+} else {
+  initShared();
+}

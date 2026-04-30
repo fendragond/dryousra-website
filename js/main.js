@@ -197,6 +197,76 @@ function initShared() {
   document.querySelectorAll('.fq').forEach(q => {
     q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
   });
+
+  initCabinetLightbox();
+}
+
+// ===== CABINET MOSAIC LIGHTBOX =====
+function initCabinetLightbox() {
+  const lb = document.getElementById('cmLightbox');
+  if (!lb) return; // Only on a-propos.html
+
+  const items = Array.from(document.querySelectorAll('.cm-item'));
+  if (items.length === 0) return;
+
+  const imgEl = lb.querySelector('.cm-lb-img');
+  const captionEl = lb.querySelector('.cm-lb-caption');
+  const btnClose = lb.querySelector('.cm-lb-close');
+  const btnPrev = lb.querySelector('.cm-lb-prev');
+  const btnNext = lb.querySelector('.cm-lb-next');
+
+  // Build a list from the items in DOM order (signature first, then 4 vignettes)
+  const photos = items.map(item => {
+    const img = item.querySelector('img');
+    return { src: img.src, alt: img.alt };
+  });
+
+  let currentIdx = 0;
+  let lastFocused = null;
+
+  function show(idx) {
+    currentIdx = (idx + photos.length) % photos.length;
+    imgEl.src = photos[currentIdx].src;
+    imgEl.alt = photos[currentIdx].alt;
+    captionEl.textContent = photos[currentIdx].alt;
+  }
+
+  function open(idx) {
+    lastFocused = document.activeElement;
+    show(idx);
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    btnClose.focus();
+  }
+
+  function close() {
+    lb.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  // Open on item click
+  items.forEach((item, idx) => {
+    item.addEventListener('click', () => open(idx));
+  });
+
+  // Lightbox controls
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', () => show(currentIdx - 1));
+  btnNext.addEventListener('click', () => show(currentIdx + 1));
+
+  // Click on dark backdrop closes (but not on image or controls)
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb) close();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(currentIdx - 1);
+    else if (e.key === 'ArrowRight') show(currentIdx + 1);
+  });
 }
 
 // Inject favicon ASAP (before DOM is fully ready) to avoid showing default favicon briefly

@@ -158,6 +158,48 @@ nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
 .cab-feat h5{font-family:var(--font-d);font-size:16px;color:var(--charcoal);margin-bottom:6px}
 .cab-feat p{font-size:13px;color:var(--text-mid);line-height:1.5}
 
+/* ============================================
+   MOSAÏQUE CABINET — page À propos
+   ============================================ */
+.cabinet-mosaic-wrap{max-width:1200px;margin:64px auto 0;padding:0 24px}
+.cabinet-mosaic-head{text-align:center;margin-bottom:32px}
+.cabinet-mosaic-title{font-family:var(--font-d);font-size:clamp(22px,2.6vw,30px);font-weight:500;color:var(--charcoal);line-height:1.2;margin:0 0 6px;letter-spacing:.2px}
+.cabinet-mosaic-sub{font-family:var(--font-b);font-size:14px;color:var(--text-light);font-style:italic;margin:0}
+
+.cabinet-mosaic{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;height:480px}
+.cm-item{padding:0;margin:0;border:0;background:none;cursor:zoom-in;border-radius:6px;overflow:hidden;position:relative;display:block;width:100%;height:100%;font:inherit}
+.cm-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.cm-item:hover img{transform:scale(1.03)}
+.cm-item:hover{box-shadow:0 14px 36px rgba(123,94,167,.18)}
+.cm-item:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.cm-main{height:100%}
+.cm-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:100%}
+
+/* Lightbox */
+.cm-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;animation:cmLbFade .25s ease-out}
+.cm-lightbox[hidden]{display:none}
+@keyframes cmLbFade{from{opacity:0}to{opacity:1}}
+.cm-lb-stage{max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative}
+.cm-lb-img{max-width:90vw;max-height:84vh;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.cm-lb-caption{color:rgba(255,255,255,.85);font-family:var(--font-b);font-size:13px;text-align:center;margin:0;max-width:80vw;line-height:1.5}
+.cm-lb-close,.cm-lb-prev,.cm-lb-next{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;z-index:1;font-family:Arial,sans-serif}
+.cm-lb-close:hover,.cm-lb-prev:hover,.cm-lb-next:hover{background:rgba(255,255,255,.22);transform:scale(1.05)}
+.cm-lb-close:focus-visible,.cm-lb-prev:focus-visible,.cm-lb-next:focus-visible{outline:2px solid var(--rose-light);outline-offset:2px}
+.cm-lb-close{top:24px;right:24px;width:46px;height:46px;font-size:28px;font-weight:300;line-height:1}
+.cm-lb-prev,.cm-lb-next{top:50%;transform:translateY(-50%);width:54px;height:54px;font-size:22px}
+.cm-lb-prev{left:24px}
+.cm-lb-next{right:24px}
+.cm-lb-prev:hover,.cm-lb-next:hover{transform:translateY(-50%) scale(1.05)}
+
+/* Mobile */
+@media(max-width:767px){
+  .cabinet-mosaic{grid-template-columns:1fr;grid-template-rows:280px auto;gap:8px;height:auto}
+  .cm-grid{grid-template-rows:180px 180px;gap:8px}
+  .cm-lb-close{top:14px;right:14px;width:42px;height:42px}
+  .cm-lb-prev{left:8px;width:46px;height:46px}
+  .cm-lb-next{right:8px;width:46px;height:46px}
+}
+
 /* PARTENAIRES */
 .partners-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
 .partner-card{background:var(--white);border-radius:18px;padding:36px 32px;border:1px solid rgba(0,0,0,.04);transition:all .3s}

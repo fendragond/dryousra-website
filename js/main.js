@@ -199,6 +199,204 @@ function initShared() {
   });
 
   initCabinetLightbox();
+  initBeforeAfterSliders();
+}
+
+// ===== BEFORE/AFTER SLIDERS =====
+function initBeforeAfterSliders() {
+  const sliders = document.querySelectorAll('.ba-slider');
+  if (sliders.length === 0) return; // Only on avant-apres.html
+
+  const hint = document.getElementById('baHint');
+  let globalInteracted = false; // For hint visibility (any slider)
+
+  function hideHintIfVisible() {
+    if (!globalInteracted && hint) {
+      globalInteracted = true;
+      hint.classList.add('ba-hint-hidden');
+    }
+  }
+
+  sliders.forEach(slider => {
+    const clip = slider.querySelector('.ba-clip');
+    const line = slider.querySelector('.ba-line');
+    let pos = 50; // Percentage 0-100
+    let interacted = false; // Per-slider flag for pulse + scroll-anim
+    let pulseTimer = null;
+    let scrollAnimRaf = null;
+
+    function setPos(p, instant = false) {
+      pos = Math.max(0, Math.min(100, p));
+      const inverted = 100 - pos;
+      if (instant) {
+        clip.style.transition = 'none';
+        line.style.transition = 'none';
+      } else {
+        clip.style.transition = 'clip-path .3s cubic-bezier(.22,1,.36,1)';
+        line.style.transition = 'left .3s cubic-bezier(.22,1,.36,1)';
+      }
+      clip.style.clipPath = `inset(0 ${inverted}% 0 0)`;
+      line.style.left = pos + '%';
+      slider.dataset.pos = pos.toFixed(1);
+    }
+
+    function startPulseTimer() {
+      if (interacted) return;
+      pulseTimer = setTimeout(() => {
+        if (!interacted) slider.classList.add('ba-pulse');
+      }, 2000);
+    }
+
+    function markInteracted() {
+      if (interacted) return;
+      interacted = true;
+      slider.classList.remove('ba-pulse');
+      clearTimeout(pulseTimer);
+      // Cancel any running scroll animation
+      if (scrollAnimRaf) {
+        cancelAnimationFrame(scrollAnimRaf);
+        scrollAnimRaf = null;
+      }
+      hideHintIfVisible();
+    }
+
+    // Compute position from clientX
+    function getPosFromX(clientX) {
+      const rect = slider.getBoundingClientRect();
+      const x = clientX - rect.left;
+      return (x / rect.width) * 100;
+    }
+
+    let dragging = false;
+
+    // Mouse events
+    slider.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      markInteracted();
+      dragging = true;
+      slider.classList.add('ba-grabbing');
+      setPos(getPosFromX(e.clientX), true);
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!dragging) return;
+      setPos(getPosFromX(e.clientX), true);
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (dragging) {
+        dragging = false;
+        slider.classList.remove('ba-grabbing');
+      }
+    });
+
+    // Touch events
+    slider.addEventListener('touchstart', (e) => {
+      markInteracted();
+      dragging = true;
+      slider.classList.add('ba-grabbing');
+      setPos(getPosFromX(e.touches[0].clientX), true);
+    }, { passive: true });
+
+    slider.addEventListener('touchmove', (e) => {
+      if (!dragging) return;
+      e.preventDefault(); // Prevent page scroll while dragging slider
+      setPos(getPosFromX(e.touches[0].clientX), true);
+    }, { passive: false });
+
+    slider.addEventListener('touchend', () => {
+      dragging = false;
+      slider.classList.remove('ba-grabbing');
+    });
+
+    // Keyboard navigation when focused
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        markInteracted();
+        setPos(pos - 5);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        markInteracted();
+        setPos(pos + 5);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        markInteracted();
+        setPos(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        markInteracted();
+        setPos(100);
+      }
+    });
+
+    // Initialize position
+    setPos(50, true);
+    startPulseTimer();
+  });
+
+  // Intersection observer for scroll-triggered preview animation
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const slider = entry.target;
+      // Only animate if not yet interacted
+      if (slider.dataset.scrollAnimated === '1') return;
+      slider.dataset.scrollAnimated = '1';
+      // Don't start if user has interacted
+      if (slider.classList.contains('ba-grabbing')) return;
+      animateSliderPreview(slider);
+    });
+  }, { threshold: 0.4 });
+
+  sliders.forEach(s => obs.observe(s));
+}
+
+function animateSliderPreview(slider) {
+  const clip = slider.querySelector('.ba-clip');
+  const line = slider.querySelector('.ba-line');
+  if (!clip || !line) return;
+
+  const duration = 1800;
+  const start = performance.now();
+  // Keyframes: 50 -> 65 -> 35 -> 50
+  const keyframes = [
+    { t: 0, v: 50 },
+    { t: 0.33, v: 65 },
+    { t: 0.66, v: 35 },
+    { t: 1, v: 50 }
+  ];
+  // Cubic ease-in-out
+  function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+
+  function getValue(progress) {
+    for (let i = 0; i < keyframes.length - 1; i++) {
+      if (progress >= keyframes[i].t && progress <= keyframes[i + 1].t) {
+        const local = (progress - keyframes[i].t) / (keyframes[i + 1].t - keyframes[i].t);
+        const eased = ease(local);
+        return keyframes[i].v + (keyframes[i + 1].v - keyframes[i].v) * eased;
+      }
+    }
+    return 50;
+  }
+
+  function step(now) {
+    // Stop if user started interacting
+    if (slider.classList.contains('ba-grabbing')) return;
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const v = getValue(progress);
+    clip.style.transition = 'none';
+    line.style.transition = 'none';
+    clip.style.clipPath = `inset(0 ${100 - v}% 0 0)`;
+    line.style.left = v + '%';
+    slider.dataset.pos = v.toFixed(1);
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
 }
 
 // ===== CABINET MOSAIC LIGHTBOX =====

@@ -8,11 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32-white.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16-white.png" media="(prefers-color-scheme: dark)">
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -119,6 +114,34 @@
 <p>Au Quartier des Hôpitaux, accessible facilement et bénéficiant d'un environnement médical reconnu à Casablanca.</p>
 </div>
 </div>
+
+<!-- MOSAÏQUE PHOTOS CABINET -->
+<div class="cabinet-mosaic-wrap">
+<div class="cabinet-mosaic-head rv">
+<h3 class="cabinet-mosaic-title">Le cabinet en images</h3>
+<p class="cabinet-mosaic-sub">Un espace pensé pour votre confort et votre sérénité</p>
+</div>
+<div class="cabinet-mosaic" role="list">
+<button type="button" class="cm-item cm-main rv" data-cm-index="0" role="listitem" aria-label="Agrandir : Espace d'accueil avec logo Dr Yousra El Khadri">
+<img src="images/cabinet/cabinet-1.jpg" alt="Espace d'accueil du cabinet de médecine esthétique Dr Yousra El Khadri à Casablanca, ambiance cosy avec mur en bois noyer et logo signature">
+</button>
+<div class="cm-grid">
+<button type="button" class="cm-item rv" data-cm-index="1" role="listitem" aria-label="Agrandir : Bureau de consultation médicale">
+<img loading="lazy" src="images/cabinet/cabinet-2.jpg" alt="Bureau de consultation du Dr Yousra El Khadri, médecin esthétique à Casablanca, espace lumineux et professionnel">
+</button>
+<button type="button" class="cm-item rv" data-cm-index="2" role="listitem" aria-label="Agrandir : Réception du cabinet">
+<img loading="lazy" src="images/cabinet/cabinet-3.jpg" alt="Réception du cabinet médical Dr Yousra El Khadri Casablanca, médecine esthétique, lasers et nutrition clinique">
+</button>
+<button type="button" class="cm-item rv" data-cm-index="3" role="listitem" aria-label="Agrandir : Salle de soins laser médical">
+<img loading="lazy" src="images/cabinet/cabinet-4.jpg" alt="Salle de soins laser médical équipée Zimmer au cabinet Dr Yousra El Khadri, traitement laser à Casablanca">
+</button>
+<button type="button" class="cm-item rv" data-cm-index="4" role="listitem" aria-label="Agrandir : Salle de soins esthétiques">
+<img loading="lazy" src="images/cabinet/cabinet-5.jpg" alt="Salle de soins esthétiques avec fauteuil de traitement, cabinet Dr Yousra El Khadri Casablanca, soins du visage et injections">
+</button>
+</div>
+</div>
+</div>
+
 </section>
 
 <!-- CONGRÈS & FORMATIONS -->
@@ -225,6 +248,17 @@
 <div class="cm rv"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.3154851887853!2d-7.6127764!3d33.5711571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d34753d6659f%3A0x2c53af2395d6efe1!2sDR%20YOUSRA%20EL%20KHADRI!5e0!3m2!1sfr!2sma!4v1777509782693!5m2!1sfr!2sma" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 </div>
 </section>
+
+<!-- LIGHTBOX MOSAÏQUE CABINET -->
+<div class="cm-lightbox" id="cmLightbox" role="dialog" aria-modal="true" aria-label="Galerie photos du cabinet" hidden>
+<button type="button" class="cm-lb-close" aria-label="Fermer la galerie">&times;</button>
+<button type="button" class="cm-lb-prev" aria-label="Photo précédente">&#10094;</button>
+<button type="button" class="cm-lb-next" aria-label="Photo suivante">&#10095;</button>
+<div class="cm-lb-stage">
+<img class="cm-lb-img" alt="">
+<p class="cm-lb-caption" aria-live="polite"></p>
+</div>
+</div>
 
 <script src="js/main.js"></script>
 </body>

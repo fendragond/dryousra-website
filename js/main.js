@@ -107,7 +107,8 @@ function renderNav() {
 <a href="${base}avant-apres.html">Avant / Après</a>
 <a href="${base}partenaires.html">Partenaires</a>
 <a href="${base}a-propos.html">À Propos</a>
-<a href="${base}index.html#contact-sec" class="nav-cta">Rendez-vous</a>
+<a href="${base}blog.html">Blog</a>
+<a href="#prendre-rdv" class="nav-cta">Rendez-vous</a>
 </div>
 <button class="mt" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </div>`;
@@ -129,10 +130,72 @@ function renderFooterBar() {
 function renderStaticFooter() {
   const footer = document.createElement('footer');
   footer.className = 'sfooter';
-  footer.innerHTML = `<div class="sfin"><p>&copy; 2026 Dr Yousra El Khadri · Médecine Esthétique à Casablanca</p></div>`;
+  footer.innerHTML = `
+<div class="sfin">
+  <div class="sf-grid">
+    <div class="sf-col sf-col--id">
+      <div class="sf-brand">Dr Yousra El Khadri</div>
+      <p class="sf-tagline">Médecine esthétique d'excellence à Casablanca</p>
+      <p class="sf-sub">Médecine Esthétique&nbsp;•&nbsp;Anti-Âge&nbsp;•&nbsp;Lasers Médicaux</p>
+    </div>
+    <div class="sf-col">
+      <h4 class="sf-title">Navigation</h4>
+      <ul class="sf-links">
+        <li><a href="${base}index.html">Accueil</a></li>
+        <li><a href="${base}soins/injections/botox.html">Soins</a></li>
+        <li><a href="${base}besoins/rajeunir.html">Besoins</a></li>
+        <li><a href="${base}blog.html">Blog</a></li>
+        <li><a href="${base}a-propos.html">À Propos</a></li>
+        <li><a href="${base}partenaires.html">Partenaires</a></li>
+        <li><a href="${base}avant-apres.html">Avant / Après</a></li>
+        <li><a href="#prendre-rdv">Contact</a></li>
+      </ul>
+    </div>
+    <div class="sf-col">
+      <h4 class="sf-title">Nos Soins</h4>
+      <ul class="sf-links">
+        <li><a href="${base}soins/injections/botox.html">Injections</a></li>
+        <li><a href="${base}soins/stimulation-collagene/sculptura.html">Stimulation collagène</a></li>
+        <li><a href="${base}soins/soins-visage/hydrafacial.html">Soins du visage</a></li>
+        <li><a href="${base}soins/soins-corps/lipolyse.html">Soins du corps</a></li>
+        <li><a href="${base}soins/laser/laser-medical.html">Laser &amp; Détatouage</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="sf-bottom">
+    <p>&copy; 2026 Dr Yousra El Khadri · Tous droits réservés</p>
+    <div class="sf-legal">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+    </div>
+  </div>
+</div>`;
   const fbar = document.querySelector('.fbar');
   if (fbar) document.body.insertBefore(footer, fbar);
   else document.body.appendChild(footer);
+}
+
+function renderRdvSection() {
+  const section = document.createElement('section');
+  section.className = 'contact';
+  section.id = 'prendre-rdv';
+  section.innerHTML = `
+<div class="sh rv"><div class="sl">Contact</div><h2 class="st">Prenez <em>rendez-vous</em></h2><p class="ss">Le cabinet vous accueille au Quartier des Hôpitaux à Casablanca.</p></div>
+<div class="cg">
+<div class="rv">
+<div class="ci"><div class="cic">📍</div><div><h4>Adresse</h4><p>117 Angle Boulevard 2 Mars, Rue de Rome<br>Résidence EL HAYAT, 3ème étage<br>Casablanca</p></div></div>
+<div class="ci"><div class="cic">📱</div><div><h4>Mobile</h4><p><a href="tel:+212660148108">+212 6 60 14 81 08</a></p></div></div>
+<div class="ci"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div><div><h4>Fixe</h4><p><a href="tel:+212520927892">+212 5 20 92 78 92</a></p></div></div>
+<div class="ci"><div class="cic">💬</div><div><h4>WhatsApp</h4><p><a href="https://wa.me/212660148108">Écrire sur WhatsApp</a></p></div></div>
+<div class="ci"><div class="cic">🕐</div><div><h4>Horaires</h4><p>Lundi à Vendredi : 9h à 19h</p></div></div>
+<div class="ci"><div class="cic">📸</div><div><h4>Réseaux</h4><p><a href="https://www.instagram.com/dr.yousra.elkhadri/" target="_blank">Instagram</a> · <a href="https://www.tiktok.com/@dryousraelkhadri" target="_blank">TikTok</a></p></div></div>
+<div class="ci"><div class="cic">✉️</div><div><h4>Email</h4><p><a href="mailto:yousra.elkhadri@gmail.com">yousra.elkhadri@gmail.com</a></p></div></div>
+</div>
+<div class="cm rv"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.3154851887853!2d-7.6127764!3d33.5711571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d34753d6659f%3A0x2c53af2395d6efe1!2sDR%20YOUSRA%20EL%20KHADRI!5e0!3m2!1sfr!2sma!4v1777509782693!5m2!1sfr!2sma" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+</div>`;
+  const fbar = document.querySelector('.fbar');
+  if (fbar) document.body.insertBefore(section, fbar);
+  else document.body.appendChild(section);
 }
 
 function renderWhatsApp() {
@@ -147,6 +210,7 @@ function renderWhatsApp() {
 function initShared() {
   renderNav();
   renderFooterBar();
+  renderRdvSection();
   renderStaticFooter();
   renderWhatsApp();
 

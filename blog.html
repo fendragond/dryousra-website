@@ -71,31 +71,84 @@
 <section class="sec sec-w blog-grid-sec">
 <div class="blog-grid">
 
-<!-- État vide — à remplacer par les cartes d'articles au fil des publications -->
-<div class="blog-empty rv">
-<div class="blog-empty-icon">
-<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="10" y="6" width="44" height="52" rx="4"/>
-  <path d="M18 18h28M18 26h28M18 34h20"/>
-  <circle cx="48" cy="46" r="9" fill="var(--rose-pale)" stroke="var(--rose)" stroke-width="1.5"/>
-  <path d="M44.5 46h7M48 42.5v7" stroke="var(--rose)" stroke-width="1.5"/>
-</svg>
-</div>
-<h3>Les premiers articles arrivent très bientôt</h3>
-<p>Restez connectés. Dr Yousra El Khadri partage prochainement ses conseils, protocoles et expertises en médecine esthétique à Casablanca.</p>
-<a href="index.html#contact-sec" class="btn bp">Prendre rendez-vous</a>
-</div>
+<!-- Article #2 — Botox front Casablanca -->
+<a href="blog/botox-front-casablanca.html" class="blog-card rv" data-cat="injections" data-category="injections">
+  <div class="blog-card-img">
+    <img
+      src="blog/images/cabinet-bureau-dr-yousra-elkhadri-casablanca.jpeg"
+      alt="Article botox front à Casablanca - cabinet Dr Yousra El Khadri"
+      width="720"
+      height="1280"
+      loading="lazy"
+    >
+  </div>
+  <div class="blog-card-body">
+    <span class="blog-badge injections">Injections</span>
+    <h3>Botox du front à Casablanca : zones traitées, prix et durée des effets</h3>
+    <p>Rides horizontales, ride du lion, botox préventif : tout ce que vous devez savoir sur le botox du front à Casablanca avant votre consultation.</p>
+    <div class="blog-card-meta">
+      <span>5 mai 2026 · 6 min de lecture</span>
+      <span class="blog-card-read">Lire la suite →</span>
+    </div>
+  </div>
+</a>
 
 </div>
 </section>
 
 <script>
-document.querySelectorAll('.bf-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.bf-btn').forEach(function(b) { b.classList.remove('active'); });
-    btn.classList.add('active');
+(function () {
+  var btns = document.querySelectorAll('.bf-btn');
+  var grid = document.querySelector('.blog-grid');
+
+  function getCards() {
+    return Array.from(grid.querySelectorAll('.blog-card'));
+  }
+
+  function getOrCreateEmptyMsg() {
+    var el = grid.querySelector('.blog-filter-empty');
+    if (!el) {
+      el = document.createElement('p');
+      el.className = 'blog-filter-empty';
+      el.textContent = 'Aucun article dans cette catégorie pour le moment.';
+    }
+    return el;
+  }
+
+  function filterCards(cat) {
+    var cards = getCards();
+    var visible = 0;
+
+    cards.forEach(function (card) {
+      var match = cat === 'tous' || card.dataset.category === cat;
+      card.style.opacity = '0';
+      card.style.transition = 'opacity .25s';
+      if (match) {
+        card.style.display = '';
+        visible++;
+        setTimeout(function () { card.style.opacity = '1'; }, 20);
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    var empty = grid.querySelector('.blog-filter-empty');
+    if (visible === 0) {
+      var msg = getOrCreateEmptyMsg();
+      if (!grid.contains(msg)) grid.appendChild(msg);
+    } else if (empty) {
+      empty.remove();
+    }
+  }
+
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      filterCards(btn.dataset.cat);
+    });
   });
-});
+})();
 </script>
 <script src="js/main.js"></script>
 </body>

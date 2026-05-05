@@ -30,12 +30,20 @@
     "addressCountry": "MA"
   },
   "medicalSpecialty": ["Aesthetic Medicine", "Anti-Aging Medicine", "Laser Medicine"],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "09:00",
-    "closes": "19:00"
-  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
   "sameAs": [
     "https://www.instagram.com/dr.yousra.elkhadri/",
     "https://www.tiktok.com/@dryousraelkhadri"
@@ -154,9 +162,30 @@
 <h2 class="st">Conseils & <em>Actualités</em></h2>
 <p class="ss">Dr Yousra El Khadri partage son expertise en médecine esthétique : protocoles, conseils et actualités du cabinet.</p>
 </div>
-<div class="blog-preview-empty rv">
-<p>Les premiers articles du blog arrivent très bientôt. Découvrez nos conseils et expertises en médecine esthétique à Casablanca.</p>
-<a href="blog.html" class="btn bo">Voir tous les articles</a>
+<div class="blog-preview-single rv">
+  <a href="blog/botox-front-casablanca.html" class="blog-card">
+    <div class="blog-card-img">
+      <img
+        src="blog/images/cabinet-bureau-dr-yousra-elkhadri-casablanca.jpeg"
+        alt="Article botox front à Casablanca - cabinet Dr Yousra El Khadri"
+        width="720"
+        height="1280"
+        loading="lazy"
+      >
+    </div>
+    <div class="blog-card-body">
+      <span class="blog-badge injections">Injections</span>
+      <h3>Botox du front à Casablanca : zones, prix et durée</h3>
+      <p>Rides horizontales, ride du lion, botox préventif : tout ce que vous devez savoir avant votre consultation.</p>
+      <div class="blog-card-meta">
+        <span>5 mai 2026 · 6 min</span>
+        <span class="blog-card-read">Lire →</span>
+      </div>
+    </div>
+  </a>
+  <div class="blog-preview-single-footer">
+    <a href="blog.html" class="btn bo">Voir tous les articles</a>
+  </div>
 </div>
 </section>
 

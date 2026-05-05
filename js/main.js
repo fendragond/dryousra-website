@@ -187,7 +187,7 @@ function renderRdvSection() {
 <div class="ci"><div class="cic">📱</div><div><h4>Mobile</h4><p><a href="tel:+212660148108">+212 6 60 14 81 08</a></p></div></div>
 <div class="ci"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div><div><h4>Fixe</h4><p><a href="tel:+212520927892">+212 5 20 92 78 92</a></p></div></div>
 <div class="ci"><div class="cic">💬</div><div><h4>WhatsApp</h4><p><a href="https://wa.me/212660148108">Écrire sur WhatsApp</a></p></div></div>
-<div class="ci"><div class="cic">🕐</div><div><h4>Horaires</h4><p>Lundi à Vendredi : 9h à 19h</p></div></div>
+<div class="ci"><div class="cic">🕐</div><div><h4>Horaires</h4><p>Lundi à Vendredi : 9h à 19h<br>Samedi : 9h à 14h</p></div></div>
 <div class="ci"><div class="cic">📸</div><div><h4>Réseaux</h4><p><a href="https://www.instagram.com/dr.yousra.elkhadri/" target="_blank">Instagram</a> · <a href="https://www.tiktok.com/@dryousraelkhadri" target="_blank">TikTok</a></p></div></div>
 <div class="ci"><div class="cic">✉️</div><div><h4>Email</h4><p><a href="mailto:yousra.elkhadri@gmail.com">yousra.elkhadri@gmail.com</a></p></div></div>
 </div>

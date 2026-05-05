@@ -1,2 +1,9 @@
 # Documentation interne — ne pas publier
 _docs/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example

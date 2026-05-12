@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Test-Path *)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $path = 'C:\\\\Users\\\\fahdd\\\\Documents\\\\Freelance\\\\dryousra-website\\\\blog\\\\images\\\\botox-front-injection-cabinet-casablanca.png'; $img = [System.Drawing.Image]::FromFile\\($path\\); \"Width: $\\($img.Width\\), Height: $\\($img.Height\\)\"; $img.Dispose\\(\\))",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
+    ]
+  }
+}

@@ -20,6 +20,19 @@
 
   var ARTICLES = [
     {
+      url: 'blog/tear-trough-casablanca.html',
+      title: 'Tear Trough Casablanca : effacer les cernes creux sans chirurgie',
+      excerpt: 'Cernes creux, sillon lacrymal, regard fatigué : comment le tear trough par acide hyaluronique restaure le volume sans chirurgie.',
+      image: 'blog/images/tear-trough-casablanca-injection-1.png',
+      imageAlt: 'Tear trough Casablanca — injection acide hyaluronique',
+      imageWidth: 768,
+      imageHeight: 1344,
+      date: '2026-05-18',
+      readingMinutes: 6,
+      category: 'injections',
+      categoryLabel: 'Injections'
+    },
+    {
       url: 'blog/botox-masseter-casablanca.html',
       title: "Botox masséter : affiner l'ovale du visage à Casablanca",
       excerpt: "Mâchoire carrée, ovale du visage, bruxisme : comment fonctionne le botox dans le masséter et à quoi s'attendre au cabinet.",

@@ -20,6 +20,19 @@
 
   var ARTICLES = [
     {
+      url: 'blog/filler-pommettes-casablanca.html',
+      title: 'Filler des pommettes à Casablanca : restaurer le volume et redessiner l\'ovale',
+      excerpt: 'Pommettes creuses, ovale relâché, visage fatigué : comment le filler par acide hyaluronique restaure le volume sans chirurgie.',
+      image: 'blog/images/filler-pommettes-injection-generique-casablanca.jpg',
+      imageAlt: 'Filler pommettes — injection acide hyaluronique, photo générique',
+      imageWidth: 768,
+      imageHeight: 576,
+      date: '2026-05-20',
+      readingMinutes: 6,
+      category: 'injections',
+      categoryLabel: 'Injections'
+    },
+    {
       url: 'blog/tear-trough-casablanca.html',
       title: 'Tear Trough Casablanca : effacer les cernes creux sans chirurgie',
       excerpt: 'Cernes creux, sillon lacrymal, regard fatigué : comment le tear trough par acide hyaluronique restaure le volume sans chirurgie.',

@@ -1,0 +1,102 @@
+<nav id="navbar">
+  <div class="ni">
+    <a class="nl" href="/index.html"><img src="/images/logo.png" alt="Dr Yousra El Khadri" /></a>
+    <div class="nm" id="navLinks">
+      <a href="/index.html">Accueil</a>
+      <div class="dd">
+        <a class="dd-trigger">Nos Services</a>
+        <div class="ddm mega">
+          <div class="mega-col">
+            <h5>Injections</h5>
+            <a href="/soins/injections/botox.html">Botox</a>
+            <a href="/soins/injections/filler.html">Filler / Acide hyaluronique</a>
+            <a href="/soins/injections/skinbooster.html">Skin Booster</a>
+            <a href="/soins/injections/dissoudre-filler.html">Dissolution de filler</a>
+          </div>
+          <div class="mega-col">
+            <h5>Stimulation collagène</h5>
+            <a href="/soins/stimulation-collagene/sculptura.html">Sculptura</a>
+            <a href="/soins/stimulation-collagene/radiesse.html">Radiesse</a>
+            <a href="/soins/stimulation-collagene/harmonica.html">Harmonica</a>
+          </div>
+          <div class="mega-col">
+            <h5>Soins du visage</h5>
+            <a href="/soins/soins-visage/hydrafacial.html">Hydrafacial</a>
+            <a href="/soins/soins-visage/microneedling.html">Microneedling</a>
+            <a href="/soins/soins-visage/peeling.html">Peeling</a>
+            <a href="/soins/soins-visage/exosomes.html">Exosomes</a>
+            <a href="/soins/soins-visage/baby-lips.html">Baby Lips</a>
+          </div>
+          <div class="mega-col">
+            <h5>Corps &amp; Laser</h5>
+            <a href="/soins/soins-corps/lipolyse.html">Lipolyse</a>
+            <a href="/soins/soins-corps/peeling-corps.html">Peeling corps</a>
+            <a href="/soins/laser/laser-medical.html">Laser médical</a>
+            <a href="/soins/laser/detatouage.html">Détatouage laser</a>
+          </div>
+        </div>
+      </div>
+      <div class="dd">
+        <a class="dd-trigger">Vos Besoins</a>
+        <div class="ddm simple">
+          <a href="/besoins/rajeunir.html">Rajeunir le visage</a>
+          <a href="/besoins/levres.html">Repulper les lèvres</a>
+          <a href="/besoins/rides.html">Traiter les rides</a>
+          <a href="/besoins/taches.html">Effacer les taches</a>
+          <a href="/besoins/texture.html">Améliorer la texture</a>
+          <a href="/besoins/affiner.html">Affiner visage / corps</a>
+          <a href="/besoins/tatouage.html">Enlever un tatouage</a>
+          <a href="/besoins/mariage.html">Préparation mariage</a>
+        </div>
+      </div>
+      <a href="/avant-apres.html">Avant / Après</a>
+      <a href="/partenaires.html">Partenaires</a>
+      <a href="/a-propos.html">À Propos</a>
+      <a href="/blog.html">Blog</a>
+      <a href="#prendre-rdv" class="nav-cta">Rendez-vous</a>
+    </div>
+    <button class="mt" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinksEl = document.getElementById('navLinks');
+
+  window.addEventListener('scroll', () => navbar?.classList.toggle('scrolled', window.scrollY > 50));
+
+  menuToggle?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    menuToggle.classList.toggle('open');
+    navLinksEl?.classList.toggle('open');
+  });
+
+  navLinksEl?.querySelectorAll('a:not(.dd-trigger)').forEach((link) => {
+    link.addEventListener('click', () => {
+      menuToggle?.classList.remove('open');
+      navLinksEl.classList.remove('open');
+      document.querySelectorAll('.dd').forEach((dropdown) => dropdown.classList.remove('mob-open'));
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!navLinksEl?.contains(event.target) && !menuToggle?.contains(event.target)) {
+      menuToggle?.classList.remove('open');
+      navLinksEl?.classList.remove('open');
+    }
+  });
+
+  document.querySelectorAll('.dd > .dd-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      if (window.innerWidth <= 900) {
+        event.preventDefault();
+        event.stopPropagation();
+        const parent = trigger.parentElement;
+        const wasOpen = parent?.classList.contains('mob-open');
+        document.querySelectorAll('.dd').forEach((dropdown) => dropdown.classList.remove('mob-open'));
+        if (!wasOpen) parent?.classList.add('mob-open');
+      }
+    });
+  });
+</script>

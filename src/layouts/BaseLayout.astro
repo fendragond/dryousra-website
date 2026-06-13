@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import '../../css/style.css';
+import SEOHead from '../components/SEOHead.astro';
+import Navbar from '../components/Navbar.astro';
+import RdvSection from '../components/RdvSection.astro';
+import Footer from '../components/Footer.astro';
+import FooterBar from '../components/FooterBar.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  ogType?: string;
+  jsonLd?: any;
+  noRdvSection?: boolean;
+}
+
+const { title, description, canonical, ogImage, ogType, jsonLd, noRdvSection = false } = Astro.props;
+const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <SEOHead {title} {description} {canonical} {ogImage} {ogType} />
+    {jsonLdItems.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
+  </head>
+  <body class="font-body text-text bg-white">
+    <Navbar />
+    <slot />
+    {!noRdvSection && <RdvSection />}
+    <Footer />
+    <FooterBar />
+    <WhatsAppButton />
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('v');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.rv').forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>

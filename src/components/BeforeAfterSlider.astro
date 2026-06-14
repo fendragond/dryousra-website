@@ -4,6 +4,10 @@ interface Props {
   beforeAlt: string;
   afterSrc: string;
   afterAlt: string;
+  beforeWidth?: number;
+  beforeHeight?: number;
+  afterWidth?: number;
+  afterHeight?: number;
   ariaLabel?: string;
   loading?: 'eager' | 'lazy';
   showHint?: boolean;
@@ -14,6 +18,10 @@ const {
   beforeAlt,
   afterSrc,
   afterAlt,
+  beforeWidth = 600,
+  beforeHeight = 400,
+  afterWidth = 600,
+  afterHeight = 400,
   ariaLabel = 'Comparaison avant et après',
   loading = 'lazy',
   showHint = false,
@@ -22,9 +30,9 @@ const {
 
 <div class="ba-card rv">
   <div class="ba-slider" tabindex="0" aria-label={ariaLabel} data-pos="50">
-    <img class="ba-img-after" loading={loading} src={afterSrc} alt={afterAlt} />
+    <img class="ba-img-after" loading={loading} decoding="async" src={afterSrc} alt={afterAlt} width={afterWidth} height={afterHeight} />
     <div class="ba-clip">
-      <img class="ba-img-before" loading={loading} src={beforeSrc} alt={beforeAlt} />
+      <img class="ba-img-before" loading={loading} decoding="async" src={beforeSrc} alt={beforeAlt} width={beforeWidth} height={beforeHeight} role={beforeAlt ? undefined : 'presentation'} />
     </div>
     <div class="ba-line">
       <div class="ba-handle" aria-hidden="true">

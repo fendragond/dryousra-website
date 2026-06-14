@@ -267,6 +267,7 @@ Cette approche préventive est particulièrement pertinente pour les peaux à fo
          alt="Dr Yousra El Khadri réalisant une injection de botox du front au cabinet à Casablanca"
          title="Procédure de botox du front au cabinet"
          loading="lazy"
+         decoding="async"
          width="768" height="1344">
     <figcaption>Injection de botox du front réalisée au cabinet de Dr Yousra El Khadri, dans le respect des standards de la médecine esthétique.</figcaption>
   </figure>

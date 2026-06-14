@@ -5,13 +5,30 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
 const title = 'Avant / Après | Résultats des soins | Dr Yousra El Khadri';
 const description = 'Galerie Avant / Après interactive des soins de médecine esthétique réalisés par Dr Yousra El Khadri à Casablanca. Botox, filler, skin booster, laser, hydrafacial.';
 
+const pairDimensions = [
+  { before: [900, 511], after: [900, 414] },
+  { before: [900, 512], after: [900, 508] },
+  { before: [879, 900], after: [853, 900] },
+  { before: [900, 510], after: [900, 516] },
+  { before: [900, 508], after: [900, 512] },
+  { before: [900, 506], after: [900, 506] },
+  { before: [900, 506], after: [900, 504] },
+  { before: [900, 511], after: [900, 506] },
+  { before: [900, 507], after: [900, 504] },
+];
+
 const pairs = Array.from({ length: 9 }, (_, index) => {
   const pairNumber = String(index + 1).padStart(2, '0');
+  const dimensions = pairDimensions[index];
   return {
     beforeSrc: `/images/avant-apres/paire-${pairNumber}-avant.jpg`,
     beforeAlt: '',
+    beforeWidth: dimensions.before[0],
+    beforeHeight: dimensions.before[1],
     afterSrc: `/images/avant-apres/paire-${pairNumber}-apres.jpg`,
     afterAlt: `Résultat avant et après - paire ${index + 1}`,
+    afterWidth: dimensions.after[0],
+    afterHeight: dimensions.after[1],
     ariaLabel: `Comparaison avant et après - paire ${index + 1}`,
     loading: index < 2 ? 'eager' : 'lazy',
     showHint: index === 0,
@@ -32,8 +49,12 @@ const pairs = Array.from({ length: 9 }, (_, index) => {
         <BeforeAfterSlider
           beforeSrc={pair.beforeSrc}
           beforeAlt={pair.beforeAlt}
+          beforeWidth={pair.beforeWidth}
+          beforeHeight={pair.beforeHeight}
           afterSrc={pair.afterSrc}
           afterAlt={pair.afterAlt}
+          afterWidth={pair.afterWidth}
+          afterHeight={pair.afterHeight}
           ariaLabel={pair.ariaLabel}
           loading={pair.loading}
           showHint={pair.showHint}

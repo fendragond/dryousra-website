@@ -283,6 +283,7 @@ Les images de cet article ont une vocation pédagogique. La photo principale ill
       alt="Filler pommettes Casablanca — injection au cabinet de Dr Yousra El Khadri, Quartier des Hôpitaux"
       title="Filler pommettes au cabinet de Dr Yousra El Khadri"
       loading="lazy"
+      decoding="async"
       width="768"
       height="1344"
     >

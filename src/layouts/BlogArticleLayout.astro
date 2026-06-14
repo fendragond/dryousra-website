@@ -73,6 +73,8 @@ const formattedDate = `${Number(day)} ${months[Number(month) - 1]} ${year}`;
 const schema = typeof jsonLd === 'string' ? JSON.parse(jsonLd) : jsonLd;
 const phoneHref = site.phone.mobile.replace(/\s/g, '');
 const canonicalPath = canonical.startsWith(site.url) ? canonical.slice(site.url.length) || '/' : canonical;
+const articleHeroWidth = heroImageWidth ?? 880;
+const articleHeroHeight = heroImageHeight ?? 580;
 ---
 
 <BaseLayout title={seoTitle} description={description} canonical={canonicalPath} ogImage={ogImage} ogType="article" jsonLd={schema}>
@@ -97,10 +99,11 @@ const canonicalPath = canonical.startsWith(site.url) ? canonical.slice(site.url.
         src={heroImage}
         alt={heroFigureAlt || heroImageAlt}
         title={heroImageTitle}
-        width={heroImageWidth}
-        height={heroImageHeight}
-        loading={date === '2026-05-05' || date === '2026-05-06' ? 'lazy' : 'eager'}
-        fetchpriority={date === '2026-05-12' || date === '2026-05-20' ? 'high' : undefined}
+        width={articleHeroWidth}
+        height={articleHeroHeight}
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
       />
       <figcaption>{heroImageCaption}</figcaption>
     </figure>

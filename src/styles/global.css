@@ -1,35 +1,6 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
-
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-body {
-  animation: fadeIn 0.3s ease-out forwards;
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, #b86a85, #7b5ea7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.rv {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.rv.v {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Migrated legacy site styles. */
 :root{
@@ -173,7 +144,7 @@ nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
 .vp svg{width:24px;height:24px;color:var(--rose)}
 .ig-section{padding:60px 24px;background:var(--cream)}
 .ig-section .sh{margin-bottom:32px}
-.ig-embed{max-width:1200px;margin:0 auto}
+.ig-embed{max-width:1200px;min-height:360px;margin:0 auto}
 
 /* PARCOURS */
 .parcours{max-width:900px;margin:0 auto}
@@ -504,11 +475,6 @@ nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
 /* Footer tablette : 2 colonnes */
 @media(max-width:899px){.sf-grid{grid-template-columns:1fr 1fr;gap:32px 28px}.sf-col--id{grid-column:1/-1}}
 
-/* Blog preview on homepage */
-.blog-preview-empty{max-width:620px;margin:0 auto;text-align:center;padding:48px 32px;border-radius:18px;background:var(--white);border:1px solid rgba(0,0,0,.04)}
-.blog-preview-empty p{font-size:15px;color:var(--text-mid);line-height:1.75;margin-bottom:28px;font-style:italic}
-.blog-preview-cta{text-align:center;margin-top:36px}
-
 /* Blog responsive */
 @media(max-width:900px){
   .blog-grid{grid-template-columns:repeat(2,1fr);gap:18px}
@@ -565,10 +531,6 @@ nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
 .article-cta-links a:hover{background:var(--rose);color:var(--white)!important}
 .article-cta-links a svg{flex-shrink:0}
 .article-cta-hours{font-size:13px!important;color:var(--text-light)!important;margin-top:8px!important;font-style:italic}
-
-/* Preview blog sur homepage - une carte centree */
-.blog-preview-single{max-width:480px;margin:0 auto}
-.blog-preview-single-footer{text-align:center;margin-top:24px}
 
 /* Preview blog sur homepage - deux cartes cote a cote */
 .blog-preview-two{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:24px}

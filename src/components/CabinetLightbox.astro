@@ -2,6 +2,8 @@
 interface CabinetImage {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
   caption?: string;
 }
 
@@ -22,7 +24,7 @@ const [mainImage, ...gridImages] = images;
       role="listitem"
       aria-label={`Agrandir : ${mainImage.caption ?? mainImage.alt}`}
     >
-      <img src={mainImage.src} alt={mainImage.alt} />
+      <img src={mainImage.src} alt={mainImage.alt} width={mainImage.width ?? 600} height={mainImage.height ?? 400} loading="lazy" decoding="async" />
     </button>
   )}
   <div class="cm-grid">
@@ -34,7 +36,7 @@ const [mainImage, ...gridImages] = images;
         role="listitem"
         aria-label={`Agrandir : ${image.caption ?? image.alt}`}
       >
-        <img loading="lazy" src={image.src} alt={image.alt} />
+        <img src={image.src} alt={image.alt} width={image.width ?? 300} height={image.height ?? 200} loading="lazy" decoding="async" />
       </button>
     ))}
   </div>
@@ -45,7 +47,7 @@ const [mainImage, ...gridImages] = images;
   <button type="button" class="cm-lb-prev" aria-label="Photo précédente">&#10094;</button>
   <button type="button" class="cm-lb-next" aria-label="Photo suivante">&#10095;</button>
   <div class="cm-lb-stage">
-    <img class="cm-lb-img" alt="" />
+    <img class="cm-lb-img" alt="" width="1280" height="720" loading="lazy" decoding="async" />
     <p class="cm-lb-caption" aria-live="polite"></p>
   </div>
 </div>

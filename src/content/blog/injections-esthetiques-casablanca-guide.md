@@ -417,6 +417,7 @@ Pour les profils qui ont perdu une densité cutanée significative, ou qui souha
       width="768"
       height="1344"
       loading="lazy"
+      decoding="async"
     >
     <figcaption>Une injection réalisée avec précision au cabinet de Dr Yousra El Khadri, dans le Quartier des Hôpitaux à Casablanca.</figcaption>
   </figure>
@@ -449,6 +450,7 @@ Ces choix ne sont pas arbitraires : ils reflètent un engagement envers la prév
       width="768"
       height="1344"
       loading="lazy"
+      decoding="async"
     >
     <figcaption>La précision du geste, signature d'une médecine esthétique médicalement encadrée au cabinet de Dr Yousra El Khadri.</figcaption>
   </figure>

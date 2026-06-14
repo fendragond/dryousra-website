@@ -271,6 +271,7 @@ Le tear trough se traite au millimètre près. Les images ci-dessous montrent la
       alt="Tear trough Casablanca — injection acide hyaluronique par Yousra El Khadri"
       title="Injection tear trough par Dr Yousra El Khadri"
       loading="lazy"
+      decoding="async"
       width="768"
       height="1344"
     >
@@ -283,6 +284,7 @@ Le tear trough se traite au millimètre près. Les images ci-dessous montrent la
       alt="Tear trough Casablanca — traitement cernes creux au Quartier des Hôpitaux"
       title="Traitement tear trough au cabinet de Casablanca"
       loading="lazy"
+      decoding="async"
       width="768"
       height="1344"
     >

@@ -265,6 +265,7 @@ Ces deux intentions peuvent coexister : une patiente peut à la fois rechercher 
       alt="Injection botox masséter pour traitement du bruxisme – Dr Yousra El Khadri, Casablanca"
       title="Traitement du bruxisme par botox masséter"
       loading="lazy"
+      decoding="async"
       width="768"
       height="1344"
     >

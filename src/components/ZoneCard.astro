@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+const { title, description, icon } = Astro.props;
+---
+
+<div class="zone">
+  <strong>{icon ? `${icon} ${title}` : title}</strong>
+  <p>{description}</p>
+</div>

@@ -1,0 +1,68 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import ZoneCard from '../../../components/ZoneCard.astro';
+
+const title = '<em>Peeling</em> à Casablanca';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Éviction sociale ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Aucune pour un peeling superficiel.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Quel peeling choisir ?', answer: 'La consultation détermine le peeling adapté.' },
+  { question: 'Éviction sociale ?', answer: 'Aucune pour un peeling superficiel, 3 à 7 jours pour un peeling moyen.' },
+  { question: 'En été ?', answer: 'Les peelings superficiels oui, avec protection solaire SPF50.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Effacer les taches', url: '/besoins/taches' },
+      { text: 'Améliorer la texture', url: '/besoins/texture' },
+    ],
+  },
+  {
+    label: 'Autres soins du visage',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Hydrafacial', url: '/soins/soins-visage/hydrafacial' },
+      { text: 'Microneedling', url: '/soins/soins-visage/microneedling' },
+      { text: 'Exosomes', url: '/soins/soins-visage/exosomes' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Peeling à Casablanca | Visage, Cou, Aisselles | Dr El Khadri"
+  description="Peeling à Casablanca par Dr Yousra El Khadri. Visage, cou, aisselles, parties intimes, mains. Renouvellement cellulaire."
+  canonical="/soins/soins-visage/peeling"
+  {jsonLd}
+  label="Soin du visage"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Le peeling médical exfolie les couches superficielles de la peau pour stimuler le renouvellement cellulaire. Plusieurs profondeurs et plusieurs zones du corps peuvent être traitées.</p>
+  <h3>Zones traitées</h3>
+  <div class="zones">
+    <ZoneCard title="Visage" description="Éclat, atténuation des taches, ridules." />
+    <ZoneCard title="Cou" description="Raffermissement et uniformisation du teint." />
+    <ZoneCard title="Aisselles" description="Éclaircissement de l'hyperpigmentation." />
+    <ZoneCard title="Parties intimes" description="Éclaircissement intime médical." />
+    <ZoneCard title="Mains" description="Atténuation des taches solaires." />
+  </div>
+  <h3>Indications</h3>
+  <ul><li>Teint terne et hétérogène</li><li>Taches pigmentaires</li><li>Cicatrices d'acné superficielles</li><li>Pores dilatés</li></ul>
+  <h3>Déroulement</h3>
+  <p>Application du produit pendant quelques minutes, puis neutralisation. Séance de 20 à 30 minutes.</p>
+</DetailPageLayout>

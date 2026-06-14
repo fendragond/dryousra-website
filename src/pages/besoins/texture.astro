@@ -1,0 +1,54 @@
+---
+import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
+
+const title = 'Améliorer la <em>texture de peau</em>';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quel soin choisir ?',
+      acceptedAnswer: { '@type': 'Answer', text: "Hydrafacial pour l'immédiat, microneedling pour les cicatrices." },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Quel soin choisir ?', answer: "Hydrafacial pour l'immédiat, microneedling pour les cicatrices, skin booster pour le durable." },
+];
+
+const crossLinks = {
+  label: 'Soins recommandés',
+  links: [
+    { text: 'Hydrafacial', url: '/soins/soins-visage/hydrafacial' },
+    { text: 'Microneedling', url: '/soins/soins-visage/microneedling' },
+    { text: 'Skin Booster', url: '/soins/injections/skinbooster' },
+    { text: 'Exosomes', url: '/soins/soins-visage/exosomes' },
+    { text: 'Peeling', url: '/soins/soins-visage/peeling' },
+  ],
+};
+---
+
+<DetailPageLayout
+  seoTitle="Améliorer la texture de peau à Casablanca | Dr El Khadri"
+  description="Améliorer la texture de peau à Casablanca. Hydrafacial, microneedling, skin booster, exosomes, peeling."
+  canonical="/besoins/texture"
+  {jsonLd}
+  label="Votre besoin"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Pores dilatés, teint terne, peau déshydratée, cicatrices d'acné : plusieurs soins ciblés permettent de retrouver une peau lisse, lumineuse et repulpée.</p>
+  <h3>Solutions selon votre besoin</h3>
+  <ul>
+    <li><strong>Hydrafacial</strong> : éclat immédiat.</li>
+    <li><strong>Skin Booster</strong> : hydratation profonde.</li>
+    <li><strong>Microneedling</strong> : cicatrices d'acné, pores.</li>
+    <li><strong>Exosomes</strong> : régénération cellulaire avancée.</li>
+    <li><strong>Peeling</strong> : renouvellement cellulaire.</li>
+    <li><strong>Laser</strong> : pores et rénovation.</li>
+  </ul>
+</DetailPageLayout>

@@ -1,0 +1,67 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import ProductBox from '../../../components/ProductBox.astro';
+
+const title = '<em>Radiesse</em> à Casablanca';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Combien de temps durent les résultats ?',
+      acceptedAnswer: { '@type': 'Answer', text: '12 à 18 mois en moyenne.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Quelle différence avec un filler classique ?', answer: 'Radiesse contient des microsphères de calcium qui restent dans la peau plus longtemps et stimulent la production de collagène.' },
+  { question: 'Combien de temps durent les résultats ?', answer: '12 à 18 mois en moyenne.' },
+  { question: 'Pour quelle zone ?', answer: 'Particulièrement efficace pour la jawline, le cou, les pommettes et les mains.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+      { text: 'Traiter les rides', url: '/besoins/rides' },
+      { text: 'Affiner le visage', url: '/besoins/affiner' },
+    ],
+  },
+  {
+    label: 'Autres traitements de stimulation',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Sculptura', url: '/soins/stimulation-collagene/sculptura' },
+      { text: 'Harmonica', url: '/soins/stimulation-collagene/harmonica' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Radiesse à Casablanca | Hydroxyapatite de calcium | Dr El Khadri"
+  description="Radiesse à Casablanca par Dr Yousra El Khadri. Stimulation collagène et comblement avec hydroxyapatite de calcium du laboratoire Merz."
+  canonical="/soins/stimulation-collagene/radiesse"
+  {jsonLd}
+  label="Stimulation collagène"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Radiesse est un produit injectable double-action : il comble immédiatement les volumes et stimule la production de collagène pour des résultats durables. À base d'hydroxyapatite de calcium, Radiesse offre un effet liftant naturel particulièrement adapté au visage et au cou.</p>
+  <h3>Pourquoi Radiesse ?</h3>
+  <p>Contrairement à l'acide hyaluronique, Radiesse offre un effet structurant immédiat tout en stimulant le collagène sur le long terme. C'est le traitement de choix pour la jawline, le rajeunissement du cou, et la restauration des volumes.</p>
+  <h3>Indications</h3>
+  <ul>
+    <li>Définition de la jawline et de l'ovale</li>
+    <li>Comblement des sillons naso-géniens profonds</li>
+    <li>Restauration des pommettes et des tempes</li>
+    <li>Traitement du cou</li>
+    <li>Rajeunissement des mains</li>
+  </ul>
+  <ProductBox title="Produits utilisés" description="Radiesse est fabriqué par <strong>Merz Aesthetics</strong>, laboratoire allemand pionnier en médecine esthétique." />
+</DetailPageLayout>

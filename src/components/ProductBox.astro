@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  partnerUrl?: string;
+}
+
+const { title, description, partnerUrl = '/partenaires' } = Astro.props;
+---
+
+<div class="produits">
+  <h4>{title}</h4>
+  <p><Fragment set:html={description} /> <a href={partnerUrl}>Voir nos partenaires</a></p>
+</div>

@@ -1,0 +1,62 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import ZoneCard from '../../../components/ZoneCard.astro';
+
+const title = '<em>Lipolyse</em> à Casablanca';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Combien de séances ?',
+      acceptedAnswer: { '@type': 'Answer', text: '3 à 5 séances en moyenne.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Combien de séances ?', answer: '3 à 5 séances en moyenne.' },
+  { question: "C'est définitif ?", answer: 'Les cellules graisseuses détruites ne reviennent pas.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Affiner visage / corps', url: '/besoins/affiner' },
+    ],
+  },
+  {
+    label: 'Autres soins du corps',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Peeling corps', url: '/soins/soins-corps/peeling-corps' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Lipolyse à Casablanca | Mésothérapie amincissante | Dr El Khadri"
+  description="Lipolyse à Casablanca par Dr Yousra El Khadri. Élimination ciblée des amas graisseux résistants par injection."
+  canonical="/soins/soins-corps/lipolyse"
+  {jsonLd}
+  label="Soin du corps"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>La lipolyse est une technique d'injection ciblée qui dissout les cellules graisseuses dans des zones précises. Alternative non chirurgicale à la liposuccion pour les amas graisseux localisés.</p>
+  <h3>Zones traitées</h3>
+  <div class="zones">
+    <ZoneCard title="Double menton" description="Affinement du visage et redéfinition de l'ovale." />
+    <ZoneCard title="Bras" description="Réduction des amas graisseux." />
+    <ZoneCard title="Ventre" description="Affinement de la silhouette." />
+    <ZoneCard title="Cuisses" description="Lissage et redéfinition." />
+    <ZoneCard title="Genoux" description="Affinement des coussinets graisseux." />
+  </div>
+  <h3>Le traitement</h3>
+  <p>Injection d'un produit lipolytique. 3 à 5 séances espacées de 4 à 6 semaines selon la zone.</p>
+</DetailPageLayout>

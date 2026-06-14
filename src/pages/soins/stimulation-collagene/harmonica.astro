@@ -1,0 +1,61 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+
+const title = '<em>Harmonica</em> à Casablanca';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Combien de séances ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Généralement 2 séances espacées de 30 jours.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Combien de séances ?', answer: 'Généralement 2 séances espacées de 30 jours.' },
+  { question: 'Combien de temps pour voir les résultats ?', answer: 'Amélioration progressive sur 6 à 8 semaines, optimal à 3 mois.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+      { text: 'Améliorer la texture', url: '/besoins/texture' },
+    ],
+  },
+  {
+    label: 'Autres traitements de stimulation',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Sculptura', url: '/soins/stimulation-collagene/sculptura' },
+      { text: 'Radiesse', url: '/soins/stimulation-collagene/radiesse' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Harmonica à Casablanca | Stimulation collagène | Dr El Khadri"
+  description="Harmonica à Casablanca par Dr Yousra El Khadri. Stimulation du collagène, raffermissement et bio-remodelage de la peau."
+  canonical="/soins/stimulation-collagene/harmonica"
+  {jsonLd}
+  label="Stimulation collagène"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Harmonica est un traitement de stimulation collagène utilisé pour raffermir et bio-remodeler la peau. Il est indiqué pour les patients souhaitant un effet liftant naturel sans excès de volume.</p>
+  <h3>Indications</h3>
+  <ul>
+    <li>Relâchement cutané léger à modéré</li>
+    <li>Perte de fermeté du visage et du cou</li>
+    <li>Demandeurs d'un effet bonne mine durable</li>
+  </ul>
+  <h3>Protocole</h3>
+  <p>Habituellement 2 séances espacées de 30 jours. Résultat visible sur 6 à 8 semaines avec amélioration progressive de la qualité de peau.</p>
+</DetailPageLayout>

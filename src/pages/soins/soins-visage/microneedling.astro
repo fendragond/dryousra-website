@@ -1,0 +1,65 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+
+const title = '<em>Microneedling</em> à Casablanca';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: "C'est douloureux ?",
+      acceptedAnswer: { '@type': 'Answer', text: 'Avec la crème anesthésiante, le traitement est confortable.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: "C'est douloureux ?", answer: 'Avec la crème anesthésiante, le traitement est confortable.' },
+  { question: "Combien de séances pour les cicatrices d'acné ?", answer: '4 à 6 séances espacées de 4 à 6 semaines.' },
+  { question: 'Éviction sociale ?', answer: 'Aucune. Légères rougeurs 24-48h.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Améliorer la texture', url: '/besoins/texture' },
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+    ],
+  },
+  {
+    label: 'Autres soins du visage',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Hydrafacial', url: '/soins/soins-visage/hydrafacial' },
+      { text: 'Peeling', url: '/soins/soins-visage/peeling' },
+      { text: 'Exosomes', url: '/soins/soins-visage/exosomes' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Microneedling à Casablanca | Mésothérapie | Dr Yousra El Khadri"
+  description="Microneedling à Casablanca par Dr Yousra El Khadri. Stimulation du collagène, traitement des cicatrices d'acné, pores dilatés et ridules."
+  canonical="/soins/soins-visage/microneedling"
+  {jsonLd}
+  label="Soin du visage"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Le microneedling utilise des micro-aiguilles pour créer des micro-canaux dans la peau, déclenchant un processus de cicatrisation qui stimule la production de collagène.</p>
+  <h3>Indications principales</h3>
+  <ul>
+    <li>Cicatrices d'acné atrophiques</li>
+    <li>Pores dilatés</li>
+    <li>Ridules et rides superficielles</li>
+    <li>Vergetures</li>
+    <li>Tonus et fermeté de la peau</li>
+  </ul>
+  <h3>Déroulement</h3>
+  <p>Crème anesthésiante 30 minutes avant. Passage des micro-aiguilles 20 à 30 minutes. Un sérum actif peut être infusé.</p>
+</DetailPageLayout>

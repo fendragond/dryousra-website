@@ -1,0 +1,86 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import CrossLinks from '../components/CrossLinks.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import GalleryCTA from '../components/GalleryCTA.astro';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface CrossLinkGroup {
+  label: string;
+  links: { text: string; url: string }[];
+  variant?: 'mauve' | 'rose';
+}
+
+interface Props {
+  seoTitle: string;
+  description: string;
+  canonical: string;
+  jsonLd?: any;
+  label: string;
+  title: string;
+  faqItems?: FAQItem[];
+  crossLinks?: CrossLinkGroup | CrossLinkGroup[];
+  showGalleryCTA?: boolean;
+  ctaText?: string;
+}
+
+const {
+  seoTitle,
+  description,
+  canonical,
+  jsonLd,
+  label,
+  title,
+  faqItems,
+  crossLinks,
+  showGalleryCTA = false,
+  ctaText,
+} = Astro.props;
+
+const crossLinkGroups = Array.isArray(crossLinks) ? crossLinks : crossLinks ? [crossLinks] : [];
+---
+
+<BaseLayout title={seoTitle} {description} {canonical} {jsonLd}>
+  <section class="sec sec-w" style="padding-top:120px">
+    <div class="dp">
+      <p class="sl">{label}</p>
+      <h1 class="detail-title" set:html={title} />
+
+      <slot />
+
+      {showGalleryCTA && <GalleryCTA />}
+      {faqItems && faqItems.length > 0 && (
+        <>
+          <h3>Questions fréquentes</h3>
+          <FAQAccordion items={faqItems} />
+        </>
+      )}
+      {crossLinkGroups.map((group) => <CrossLinks label={group.label} links={group.links} variant={group.variant} />)}
+      <FinalCTA text={ctaText} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .detail-title {
+    font-family: var(--font-d);
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+
+  .detail-title :global(em) {
+    font-style: italic;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>

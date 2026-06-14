@@ -1,0 +1,23 @@
+---
+interface LinkItem {
+  text: string;
+  url: string;
+}
+
+interface Props {
+  label: string;
+  links: LinkItem[];
+  variant?: 'mauve' | 'rose';
+}
+
+const { label, links, variant = 'mauve' } = Astro.props;
+const style =
+  variant === 'rose'
+    ? 'margin-top:10px;background:var(--rose-pale);border-color:rgba(184,106,133,.08)'
+    : undefined;
+---
+
+<div class="xlinks" style={style}>
+  <p>{label}</p>
+  {links.map((link) => <a href={link.url}>{link.text}</a>)}
+</div>

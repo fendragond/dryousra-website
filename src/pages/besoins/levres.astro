@@ -1,0 +1,48 @@
+---
+import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
+
+const title = 'Repulper les <em>lèvres</em>';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Combien de temps ça dure ?',
+      acceptedAnswer: { '@type': 'Answer', text: '8 à 12 mois pour le filler classique.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Quelle quantité prévoir ?', answer: 'Généralement 0,5 à 1 ml pour un premier traitement.' },
+  { question: 'Combien de temps ça dure ?', answer: '8 à 12 mois pour le filler, 6 à 9 mois pour le Baby Lips.' },
+];
+
+const crossLinks = {
+  label: 'Soins recommandés',
+  links: [
+    { text: 'Filler / Acide hyaluronique', url: '/soins/injections/filler' },
+    { text: 'Baby Lips', url: '/soins/soins-visage/baby-lips' },
+  ],
+};
+---
+
+<DetailPageLayout
+  seoTitle="Repulper les lèvres à Casablanca | Filler & Baby Lips"
+  description="Repulper les lèvres à Casablanca par Dr Yousra El Khadri. Filler acide hyaluronique ou Baby Lips."
+  canonical="/besoins/levres"
+  {jsonLd}
+  label="Votre besoin"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Des lèvres plus pulpeuses, mieux définies ou plus symétriques grâce à des injections d'acide hyaluronique sur mesure.</p>
+  <h3>Filler classique vs Baby Lips</h3>
+  <ul>
+    <li><strong>Filler lèvres</strong> : volume marqué et contour défini.</li>
+    <li><strong>Baby Lips</strong> : hydratation profonde et léger repulpage très naturel.</li>
+  </ul>
+</DetailPageLayout>

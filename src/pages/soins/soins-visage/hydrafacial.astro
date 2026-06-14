@@ -1,0 +1,64 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+
+const title = '<em>Hydrafacial</em> à Casablanca';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Est-ce douloureux ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Non, entièrement indolore.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Combien de temps dure une séance ?', answer: '30 à 45 minutes.' },
+  { question: 'Est-ce douloureux ?', answer: 'Non, entièrement indolore.' },
+  { question: 'Quelle fréquence ?', answer: 'Une fois par mois pour un entretien optimal.' },
+  { question: 'Maquillage après ?', answer: 'Oui, immédiatement.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Améliorer la texture', url: '/besoins/texture' },
+      { text: 'Préparation mariage', url: '/besoins/mariage' },
+    ],
+  },
+  {
+    label: 'Autres soins du visage',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Microneedling', url: '/soins/soins-visage/microneedling' },
+      { text: 'Peeling', url: '/soins/soins-visage/peeling' },
+      { text: 'Exosomes', url: '/soins/soins-visage/exosomes' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Hydrafacial à Casablanca | Soin éclat | Dr Yousra El Khadri"
+  description="Hydrafacial à Casablanca par Dr Yousra El Khadri. Soin complet en 3 étapes : nettoyage, extraction, hydratation. Éclat immédiat."
+  canonical="/soins/soins-visage/hydrafacial"
+  {jsonLd}
+  label="Soin du visage"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Hydrafacial est un soin médical complet du visage en 3 étapes : nettoyage en profondeur, extraction douce des impuretés, et infusion de sérums hydratants et antioxydants.</p>
+  <h3>Le protocole en 3 étapes</h3>
+  <ul>
+    <li><strong>Étape 1 — Nettoyage et exfoliation</strong> : élimination des cellules mortes et des impuretés.</li>
+    <li><strong>Étape 2 — Extraction douce</strong> : aspiration sans pincement.</li>
+    <li><strong>Étape 3 — Hydratation et infusion</strong> : sérums personnalisés.</li>
+  </ul>
+  <h3>Pour quels résultats ?</h3>
+  <p>Peau lumineuse, hydratée, pores resserrés, teint unifié dès la sortie du cabinet.</p>
+</DetailPageLayout>

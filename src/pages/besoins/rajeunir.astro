@@ -1,0 +1,55 @@
+---
+import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
+
+const title = 'Rajeunir le <em>visage</em> à Casablanca';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'À quel âge commencer ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Dès 25-30 ans pour la prévention.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'À quel âge commencer ?', answer: 'Dès 25-30 ans pour la prévention.' },
+  { question: 'Résultats naturels ?', answer: 'Oui, embellissement subtil sans transformation visible.' },
+];
+
+const crossLinks = {
+  label: 'Soins recommandés',
+  links: [
+    { text: 'Botox', url: '/soins/injections/botox' },
+    { text: 'Filler', url: '/soins/injections/filler' },
+    { text: 'Skin Booster', url: '/soins/injections/skinbooster' },
+    { text: 'Sculptura', url: '/soins/stimulation-collagene/sculptura' },
+    { text: 'Exosomes', url: '/soins/soins-visage/exosomes' },
+  ],
+};
+---
+
+<DetailPageLayout
+  seoTitle="Rajeunir le visage à Casablanca | Dr El Khadri"
+  description="Rajeunir le visage à Casablanca. Botox, filler, exosomes, Sculptura, skin booster. Approche médicale globale."
+  canonical="/besoins/rajeunir"
+  {jsonLd}
+  label="Votre besoin"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Avec le temps, la peau perd en fermeté, en éclat et en volume. Plusieurs solutions médicales non chirurgicales sont combinées selon vos besoins pour un rajeunissement global et naturel.</p>
+  <h3>Approche personnalisée</h3>
+  <ul>
+    <li><strong>Botox</strong> pour détendre les rides d'expression.</li>
+    <li><strong>Filler</strong> pour restaurer les volumes perdus.</li>
+    <li><strong>Sculptura ou Radiesse</strong> pour stimuler le collagène.</li>
+    <li><strong>Skin Booster</strong> pour redonner éclat et hydratation.</li>
+    <li><strong>Exosomes</strong> pour la régénération cellulaire profonde.</li>
+    <li><strong>Hydrafacial</strong> en entretien régulier.</li>
+  </ul>
+</DetailPageLayout>

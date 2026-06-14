@@ -1,0 +1,44 @@
+---
+import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
+
+const title = 'Enlever un <em>tatouage</em>';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Tous les tatouages peuvent-ils être effacés ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'La plupart oui.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Tous les tatouages peuvent-ils être effacés ?', answer: "La plupart oui. Le noir s'efface facilement." },
+];
+
+const crossLinks = {
+  label: 'Soins recommandés',
+  links: [
+    { text: 'Détatouage Laser', url: '/soins/laser/detatouage' },
+    { text: 'Laser médical', url: '/soins/laser/laser-medical' },
+  ],
+};
+---
+
+<DetailPageLayout
+  seoTitle="Enlever un tatouage à Casablanca | Détatouage Laser"
+  description="Enlever un tatouage à Casablanca par Dr Yousra El Khadri. Détatouage laser progressif, sécurisé, toutes couleurs."
+  canonical="/besoins/tatouage"
+  {jsonLd}
+  label="Votre besoin"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Le détatouage laser permet d'effacer progressivement un tatouage indésirable, qu'il soit récent ou ancien, petit ou grand, en couleur ou en noir.</p>
+  <h3>Comment ça fonctionne</h3>
+  <p>Le laser fractionne les pigments d'encre. 4 à 8 séances espacées de 6 à 8 semaines.</p>
+</DetailPageLayout>

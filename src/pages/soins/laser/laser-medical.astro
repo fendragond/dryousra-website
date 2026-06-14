@@ -1,0 +1,64 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+
+const title = 'Laser <em>Médical</em> à Casablanca';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Combien de séances ?',
+      acceptedAnswer: { '@type': 'Answer', text: '3 à 5 séances espacées de 3 à 4 semaines.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Douloureux ?', answer: 'Sensation de chaleur. Crème anesthésiante disponible.' },
+  { question: 'Combien de séances ?', answer: '3 à 5 séances espacées de 3 à 4 semaines.' },
+  { question: 'Précautions solaires ?', answer: 'Éviter le soleil 4 semaines avant et après.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Effacer les taches', url: '/besoins/taches' },
+      { text: 'Améliorer la texture', url: '/besoins/texture' },
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+    ],
+  },
+  {
+    label: 'Autres traitements laser',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Détatouage laser', url: '/soins/laser/detatouage' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Laser Médical à Casablanca | Rajeunissement | Dr Yousra El Khadri"
+  description="Laser médical à Casablanca par Dr Yousra El Khadri. Taches, rajeunissement, cicatrices, pores. Technologies de dernière génération."
+  canonical="/soins/laser/laser-medical"
+  {jsonLd}
+  label="Laser"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Le laser médical traite une grande variété d'indications dermatologiques : taches pigmentaires, rajeunissement cutané, cicatrices, pores dilatés.</p>
+  <h3>Indications</h3>
+  <ul>
+    <li><strong>Rajeunissement cutané</strong> : stimulation du collagène.</li>
+    <li><strong>Taches pigmentaires</strong> : solaires, lentigos, mélasma.</li>
+    <li><strong>Cicatrices</strong> : acné, vergetures, cicatrices chirurgicales.</li>
+    <li><strong>Pores dilatés</strong> : resserrement et amélioration de la texture.</li>
+    <li><strong>Couperose et rougeurs</strong>.</li>
+  </ul>
+  <h3>Protocole</h3>
+  <p>3 à 5 séances espacées de 3 à 4 semaines. Protection solaire stricte indispensable.</p>
+</DetailPageLayout>

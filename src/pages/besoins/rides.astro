@@ -1,0 +1,51 @@
+---
+import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
+
+const title = 'Traiter les <em>rides</em>';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Botox ou filler ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Botox pour les rides dynamiques, filler pour les rides statiques.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Botox ou filler ?', answer: 'Botox pour les rides dynamiques, filler pour les statiques. Souvent complémentaires.' },
+];
+
+const crossLinks = {
+  label: 'Soins recommandés',
+  links: [
+    { text: 'Botox', url: '/soins/injections/botox' },
+    { text: 'Filler', url: '/soins/injections/filler' },
+    { text: 'Skin Booster', url: '/soins/injections/skinbooster' },
+    { text: 'Sculptura', url: '/soins/stimulation-collagene/sculptura' },
+  ],
+};
+---
+
+<DetailPageLayout
+  seoTitle="Traiter les rides à Casablanca | Dr El Khadri"
+  description="Traiter les rides à Casablanca. Botox pour rides d'expression, filler pour rides statiques."
+  canonical="/besoins/rides"
+  {jsonLd}
+  label="Votre besoin"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Rides du front, pattes d'oie, ride du lion, sillons : chaque ride a une cause différente et nécessite un traitement spécifique.</p>
+  <h3>Solutions selon le type de ride</h3>
+  <ul>
+    <li><strong>Rides d'expression</strong> : Botox pour détendre les muscles.</li>
+    <li><strong>Rides statiques</strong> : Filler pour combler.</li>
+    <li><strong>Ridules superficielles</strong> : Skin Booster ou Microneedling.</li>
+    <li><strong>Relâchement profond</strong> : Sculptura ou Radiesse.</li>
+  </ul>
+</DetailPageLayout>

@@ -1,0 +1,55 @@
+---
+import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
+
+const title = 'Affiner le <em>visage et le corps</em>';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Le Botox masséter modifie-t-il la mastication ?',
+      acceptedAnswer: { '@type': 'Answer', text: "Non, l'effet ne touche pas la fonction." },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Le Botox masséter modifie-t-il la mastication ?', answer: "Non, l'effet ne touche pas la fonction. Vous mâchez normalement." },
+  { question: "Combien de temps avant de voir l'affinement de l'ovale ?", answer: "L'effet est visible à 4-6 semaines après le Botox masséter." },
+  { question: 'La lipolyse est-elle définitive ?', answer: 'Oui, les cellules graisseuses détruites ne reviennent pas.' },
+];
+
+const crossLinks = {
+  label: 'Soins recommandés',
+  links: [
+    { text: 'Botox masséter', url: '/soins/injections/botox' },
+    { text: 'Lipolyse', url: '/soins/soins-corps/lipolyse' },
+    { text: 'Filler jawline', url: '/soins/injections/filler' },
+  ],
+};
+---
+
+<DetailPageLayout
+  seoTitle="Affiner le visage et le corps à Casablanca | Dr El Khadri"
+  description="Affiner le visage ou le corps à Casablanca. Botox masséter pour l'ovale, lipolyse pour double menton, ventre, cuisses."
+  canonical="/besoins/affiner"
+  {jsonLd}
+  label="Votre besoin"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Que ce soit pour redéfinir l'ovale du visage, réduire un double menton ou affiner certaines zones du corps, plusieurs solutions médicales non chirurgicales sont disponibles au cabinet de Dr Yousra El Khadri à Casablanca.</p>
+  <h3>Solutions visage</h3>
+  <ul>
+    <li><strong>Botox masséter</strong> : affine l'ovale du visage en réduisant le muscle masséter trop développé.</li>
+    <li><strong>Lipolyse double menton</strong> : élimine la graisse sous-mentonnière pour un profil affiné.</li>
+    <li><strong>Filler pré-jawline</strong> : redéfinit la ligne mandibulaire.</li>
+  </ul>
+  <h3>Solutions corps</h3>
+  <ul>
+    <li><strong>Lipolyse</strong> pour les amas graisseux localisés (bras, ventre, cuisses, genoux).</li>
+  </ul>
+</DetailPageLayout>

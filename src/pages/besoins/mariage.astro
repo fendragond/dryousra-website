@@ -1,0 +1,52 @@
+---
+import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
+
+const title = 'Préparation <em>mariage</em>';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quand commencer ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Idéalement 6 mois avant le mariage.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Quand commencer ?', answer: 'Idéalement 6 mois avant. 3 mois minimum.' },
+];
+
+const crossLinks = {
+  label: 'Soins recommandés',
+  links: [
+    { text: 'Skin Booster', url: '/soins/injections/skinbooster' },
+    { text: 'Botox', url: '/soins/injections/botox' },
+    { text: 'Filler', url: '/soins/injections/filler' },
+    { text: 'Hydrafacial', url: '/soins/soins-visage/hydrafacial' },
+    { text: 'Peeling', url: '/soins/soins-visage/peeling' },
+  ],
+};
+---
+
+<DetailPageLayout
+  seoTitle="Préparation Mariage à Casablanca | Dr El Khadri"
+  description="Préparation mariage à Casablanca. Protocole personnalisé sur 6 mois : skin booster, botox, filler, hydrafacial."
+  canonical="/besoins/mariage"
+  {jsonLd}
+  label="Votre besoin"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Un protocole personnalisé pour être radieuse le jour J. Le planning beauté mariage s'établit idéalement 6 mois avant l'événement.</p>
+  <h3>Protocole recommandé</h3>
+  <ul>
+    <li><strong>6 mois avant</strong> : Skin Booster (3 séances), peeling si nécessaire.</li>
+    <li><strong>3 mois avant</strong> : Botox léger si souhaité.</li>
+    <li><strong>1 mois avant</strong> : Filler lèvres ou cernes si désiré.</li>
+    <li><strong>1 semaine avant</strong> : Hydrafacial pour un coup d'éclat.</li>
+  </ul>
+</DetailPageLayout>

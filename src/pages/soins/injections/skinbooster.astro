@@ -1,0 +1,80 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import ProductBox from '../../../components/ProductBox.astro';
+import ZoneCard from '../../../components/ZoneCard.astro';
+
+const title = 'Skin Booster à <em>Casablanca</em>';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Différence avec le filler ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Le filler ajoute du volume, le skin booster hydrate en profondeur.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Différence entre Skin Booster et Filler ?', answer: 'Le filler ajoute du volume. Le skin booster hydrate en profondeur sans modifier les volumes.' },
+  { question: 'Combien de séances ?', answer: 'Protocole standard de 3 séances espacées de 3 à 4 semaines, puis entretien tous les 6 mois.' },
+  { question: 'Peut-on faire en été ?', answer: "Oui, en évitant l'exposition solaire 48h après." },
+  { question: 'Quelles zones ?', answer: "Visage, cou, décolleté, dos des mains, contour de l'œil." },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Améliorer la texture', url: '/besoins/texture' },
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+      { text: 'Préparation mariage', url: '/besoins/mariage' },
+    ],
+  },
+  {
+    label: 'Autres soins injectables',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Botox', url: '/soins/injections/botox' },
+      { text: 'Filler', url: '/soins/injections/filler' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Skin Booster à Casablanca | Restylane, Profhilo | Dr El Khadri"
+  description="Skin Booster à Casablanca par Dr Yousra El Khadri. Restylane, Profhilo, Lola, RRS Eyes. Hydratation profonde, éclat retrouvé."
+  canonical="/soins/injections/skinbooster"
+  {jsonLd}
+  label="Injection"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Le Skin Booster est un traitement injectable qui hydrate la peau en profondeur, lui redonne éclat et souplesse. Au cabinet de Dr Yousra El Khadri à Casablanca, plusieurs gammes premium sont disponibles selon vos besoins.</p>
+  <h3>Zones traitées</h3>
+  <div class="zones">
+    <ZoneCard title="Visage" description="Éclat, hydratation, atténuation des ridules." />
+    <ZoneCard title="Cou" description="Raffermissement et hydratation d'une zone fragile." />
+    <ZoneCard title="Décolleté" description="Éclat retrouvé sur une zone exposée au soleil." />
+    <ZoneCard title="Dos des mains" description="Hydratation profonde et atténuation des taches." />
+    <ZoneCard title="Contour de l'œil" description="Hydratation ciblée avec RRS Eyes." />
+  </div>
+  <h3>Les gammes proposées</h3>
+  <p>Dr El Khadri sélectionne le skin booster adapté à votre peau parmi un large panel :</p>
+  <ul>
+    <li><strong>Restylane (Galderma)</strong> : référence mondiale, hydratation longue durée.</li>
+    <li><strong>Profhilo</strong> : bio-remodelage de la peau.</li>
+    <li><strong>Profhilo Structura</strong> : pour peaux matures.</li>
+    <li><strong>Lola</strong> : éclat pour peaux jeunes et ternes.</li>
+    <li><strong>Ambre Saffron / PDRN Rose / Inbiotec</strong> : actifs spécifiques.</li>
+    <li><strong>RRS Eyes (Norokpharma)</strong> : spécifique au contour de l'œil.</li>
+    <li><strong>Salmon DNA</strong> : régénération avec ADN de saumon.</li>
+  </ul>
+  <h3>Déroulement</h3>
+  <p>Le protocole standard comprend 3 séances espacées de 3 à 4 semaines. Chaque séance dure 20 à 30 minutes sous crème anesthésiante.</p>
+  <ProductBox title="Produits utilisés" description="Plusieurs gammes premium : <strong>Restylane (Galderma)</strong>, <strong>RRS HA et RRS Eyes (Norokpharma)</strong>, Profhilo, Lola, Ambre." />
+</DetailPageLayout>

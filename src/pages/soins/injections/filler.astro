@@ -1,0 +1,82 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import ProductBox from '../../../components/ProductBox.astro';
+import ZoneCard from '../../../components/ZoneCard.astro';
+
+const title = 'Filler à <em>Casablanca</em> — Acide Hyaluronique';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Est-ce douloureux ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Non, la crème anesthésiante rend le traitement très confortable.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Le résultat est-il réversible ?',
+      acceptedAnswer: { '@type': 'Answer', text: "Oui, l'acide hyaluronique peut être dissous immédiatement si nécessaire." },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Est-ce douloureux ?', answer: 'La crème anesthésiante rend le traitement très confortable.' },
+  { question: 'Le résultat est-il réversible ?', answer: "Oui, l'acide hyaluronique peut être dissous immédiatement avec une enzyme spécifique." },
+  { question: 'Combien de temps durent les résultats ?', answer: 'Entre 8 et 18 mois selon la zone.' },
+  { question: 'Y a-t-il des effets secondaires ?', answer: 'Légers gonflements ou ecchymoses possibles, qui disparaissent en 24 à 72h.' },
+  { question: 'Puis-je reprendre mes activités ?', answer: 'Oui, immédiatement.' },
+  { question: 'Quel est le prix du filler à Casablanca ?', answer: 'Le tarif dépend de la zone et de la quantité. Devis personnalisé en consultation.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Repulper les lèvres', url: '/besoins/levres' },
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+      { text: 'Traiter les rides', url: '/besoins/rides' },
+    ],
+  },
+  {
+    label: 'Autres soins injectables',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Botox', url: '/soins/injections/botox' },
+      { text: 'Skin Booster', url: '/soins/injections/skinbooster' },
+      { text: 'Dissolution de filler', url: '/soins/injections/dissoudre-filler' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Filler à Casablanca | Acide Hyaluronique | Dr Yousra El Khadri"
+  description="Injections de filler à Casablanca par Dr Yousra El Khadri. Lèvres, nez, pommettes, jawline, menton, tempes, joues. Résultats naturels avec Restylane."
+  canonical="/soins/injections/filler"
+  {jsonLd}
+  label="Injection"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Les injections de filler à base d'acide hyaluronique permettent de restaurer les volumes du visage, de redessiner ses contours et de combler les rides. Au cabinet de Dr Yousra El Khadri à Casablanca, plusieurs zones du visage peuvent être traitées avec des produits de référence comme Restylane.</p>
+  <h3>Zones traitées</h3>
+  <div class="zones">
+    <ZoneCard title="Lèvres" description="Repulpage, redéfinition du contour, correction des asymétries." />
+    <ZoneCard title="Nez (rhinoplastie médicale)" description="Correction de la bosse, redressement de la pointe sans chirurgie." />
+    <ZoneCard title="Pommettes" description="Restauration du volume pour un effet liftant naturel." />
+    <ZoneCard title="Cernes (Texas)" description="Comblement des creux sous les yeux." />
+    <ZoneCard title="Pre-jawline" description="Définition de la ligne mandibulaire pour un visage sculpté." />
+    <ZoneCard title="Menton" description="Projection et harmonisation pour un profil équilibré." />
+    <ZoneCard title="Tempes" description="Restauration du volume perdu pour rajeunir le haut du visage." />
+    <ZoneCard title="Joues" description="Comblement des creux et rehaussement." />
+  </div>
+  <h3>Déroulement de la séance</h3>
+  <p>Une crème anesthésiante est appliquée 20 minutes avant la séance. Dr El Khadri procède aux injections à l'aide d'aiguilles fines ou de canules atraumatiques selon la zone. Le résultat est visible immédiatement.</p>
+  <h3>Durée des résultats</h3>
+  <p>Selon la zone et le produit utilisé, les résultats durent entre 8 et 18 mois. L'acide hyaluronique est progressivement résorbé par l'organisme.</p>
+  <ProductBox title="Produits utilisés" description="Au cabinet, nous utilisons les fillers <strong>Restylane</strong> du laboratoire <strong>Galderma</strong>, référence mondiale en acide hyaluronique injectable." />
+</DetailPageLayout>

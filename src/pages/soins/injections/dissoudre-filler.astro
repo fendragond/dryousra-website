@@ -1,0 +1,63 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+
+const title = 'Dissolution de <em>Filler</em>';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Combien de temps pour voir la dissolution ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Visible dans les 24 à 48h.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Combien de temps pour voir la dissolution ?', answer: 'Visible dans les 24 à 48h. Résultat final à 7-10 jours.' },
+  { question: "C'est douloureux ?", answer: 'Léger picotement avec crème anesthésiante.' },
+  { question: 'Puis-je refaire un filler après ?', answer: 'Oui, généralement après 2 à 3 semaines.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Repulper les lèvres', url: '/besoins/levres' },
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+    ],
+  },
+  {
+    label: 'Autres soins injectables',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Filler / Acide hyaluronique', url: '/soins/injections/filler' },
+      { text: 'Botox', url: '/soins/injections/botox' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Dissolution de Filler à Casablanca | Hyaluronidase | Dr El Khadri"
+  description="Dissolution de filler à Casablanca par Dr Yousra El Khadri. Correction d'injections d'acide hyaluronique avec hyaluronidase."
+  canonical="/soins/injections/dissoudre-filler"
+  {jsonLd}
+  label="Injection"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Si un filler ne vous convient plus, est mal positionné ou présente une migration, Dr Yousra El Khadri peut le dissoudre rapidement à l'aide d'une enzyme spécifique : la hyaluronidase. C'est l'un des grands avantages de l'acide hyaluronique : sa réversibilité totale.</p>
+  <h3>Quand dissoudre un filler ?</h3>
+  <ul>
+    <li>Résultat insatisfaisant ou trop visible</li>
+    <li>Migration du produit hors de la zone d'injection</li>
+    <li>Asymétrie ou irrégularité</li>
+    <li>Avant un nouveau traitement</li>
+  </ul>
+  <h3>Déroulement</h3>
+  <p>La hyaluronidase est injectée précisément sur la zone à traiter. La dissolution est progressive et visible en 24 à 48h.</p>
+</DetailPageLayout>

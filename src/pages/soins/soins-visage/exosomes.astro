@@ -1,0 +1,61 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import ProductBox from '../../../components/ProductBox.astro';
+
+const title = '<em>Exosomes</em> à Casablanca';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Les exosomes sont-ils sûrs ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui, technologie validée en médecine régénérative.' },
+    },
+  ],
+};
+
+const faqItems = [
+  { question: 'Les exosomes sont-ils sûrs ?', answer: 'Oui, technologie validée en médecine régénérative.' },
+  { question: 'Combien de séances pour le visage ?', answer: '2 à 4 séances espacées de 4 à 6 semaines.' },
+  { question: 'Combien pour les cheveux ?', answer: '4 séances espacées de 2 à 4 semaines, puis entretien tous les 6 mois.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+      { text: 'Améliorer la texture', url: '/besoins/texture' },
+    ],
+  },
+  {
+    label: 'Autres soins du visage',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Hydrafacial', url: '/soins/soins-visage/hydrafacial' },
+      { text: 'Microneedling', url: '/soins/soins-visage/microneedling' },
+      { text: 'Baby Lips', url: '/soins/soins-visage/baby-lips' },
+    ],
+  },
+];
+---
+
+<DetailPageLayout
+  seoTitle="Exosomes à Casablanca | Régénération cellulaire | Dr El Khadri"
+  description="Exosomes à Casablanca par Dr Yousra El Khadri. Visage et cuir chevelu (XL Hair). Régénération cellulaire de nouvelle génération."
+  canonical="/soins/soins-visage/exosomes"
+  {jsonLd}
+  label="Soin du visage"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+>
+  <p>Les exosomes sont des vésicules cellulaires qui transportent des facteurs de croissance. Au cabinet de Dr Yousra El Khadri à Casablanca, ils sont utilisés pour le visage et pour la repousse capillaire avec XL Hair.</p>
+  <h3>Exosomes visage</h3>
+  <p>Pour le visage, les exosomes stimulent la production de collagène et d'élastine, accélèrent la réparation cellulaire.</p>
+  <h3>Exosomes cheveux (XL Hair)</h3>
+  <p>Pour le cuir chevelu, les exosomes ralentissent la chute des cheveux et stimulent la repousse. 4 séances espacées de 2 à 4 semaines.</p>
+  <ProductBox title="Produits utilisés" description="Le cabinet utilise <strong>XL Hair (Norokpharma)</strong> pour les exosomes capillaires." />
+</DetailPageLayout>

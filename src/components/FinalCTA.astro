@@ -1,0 +1,14 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  text?: string;
+}
+
+const { text = 'Prête à franchir le pas ?' } = Astro.props;
+---
+
+<div class="dcta">
+  <p>{text}</p>
+  <a href={site.whatsapp.url} class="btn bp">Prendre rendez-vous</a>
+</div>

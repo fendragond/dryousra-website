@@ -1,0 +1,115 @@
+---
+interface CabinetImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+interface Props {
+  images: CabinetImage[];
+}
+
+const { images } = Astro.props;
+const [mainImage, ...gridImages] = images;
+---
+
+<div class="cabinet-mosaic" role="list" data-cabinet-lightbox>
+  {mainImage && (
+    <button
+      type="button"
+      class="cm-item cm-main rv"
+      data-cm-index="0"
+      role="listitem"
+      aria-label={`Agrandir : ${mainImage.caption ?? mainImage.alt}`}
+    >
+      <img src={mainImage.src} alt={mainImage.alt} />
+    </button>
+  )}
+  <div class="cm-grid">
+    {gridImages.map((image, index) => (
+      <button
+        type="button"
+        class="cm-item rv"
+        data-cm-index={String(index + 1)}
+        role="listitem"
+        aria-label={`Agrandir : ${image.caption ?? image.alt}`}
+      >
+        <img loading="lazy" src={image.src} alt={image.alt} />
+      </button>
+    ))}
+  </div>
+</div>
+
+<div class="cm-lightbox" id="cmLightbox" role="dialog" aria-modal="true" aria-label="Galerie photos du cabinet" hidden>
+  <button type="button" class="cm-lb-close" aria-label="Fermer la galerie">&times;</button>
+  <button type="button" class="cm-lb-prev" aria-label="Photo précédente">&#10094;</button>
+  <button type="button" class="cm-lb-next" aria-label="Photo suivante">&#10095;</button>
+  <div class="cm-lb-stage">
+    <img class="cm-lb-img" alt="" />
+    <p class="cm-lb-caption" aria-live="polite"></p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-cabinet-lightbox]').forEach((mosaic) => {
+    const lb = document.getElementById('cmLightbox');
+    if (!lb) return;
+
+    const items = Array.from(mosaic.querySelectorAll('.cm-item'));
+    if (items.length === 0) return;
+
+    const imgEl = lb.querySelector('.cm-lb-img');
+    const captionEl = lb.querySelector('.cm-lb-caption');
+    const btnClose = lb.querySelector('.cm-lb-close');
+    const btnPrev = lb.querySelector('.cm-lb-prev');
+    const btnNext = lb.querySelector('.cm-lb-next');
+
+    const photos = items.map((item) => {
+      const img = item.querySelector('img');
+      return { src: img?.src ?? '', alt: img?.alt ?? '' };
+    });
+
+    let currentIdx = 0;
+    let lastFocused = null;
+
+    function show(idx) {
+      currentIdx = (idx + photos.length) % photos.length;
+      imgEl.src = photos[currentIdx].src;
+      imgEl.alt = photos[currentIdx].alt;
+      captionEl.textContent = photos[currentIdx].alt;
+    }
+
+    function open(idx) {
+      lastFocused = document.activeElement;
+      show(idx);
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+      btnClose.focus();
+    }
+
+    function close() {
+      lb.hidden = true;
+      document.body.style.overflow = '';
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    items.forEach((item, idx) => {
+      item.addEventListener('click', () => open(idx));
+    });
+
+    btnClose.addEventListener('click', close);
+    btnPrev.addEventListener('click', () => show(currentIdx - 1));
+    btnNext.addEventListener('click', () => show(currentIdx + 1));
+
+    lb.addEventListener('click', (event) => {
+      if (event.target === lb) close();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (lb.hidden) return;
+      if (event.key === 'Escape') close();
+      else if (event.key === 'ArrowLeft') show(currentIdx - 1);
+      else if (event.key === 'ArrowRight') show(currentIdx + 1);
+    });
+  });
+</script>

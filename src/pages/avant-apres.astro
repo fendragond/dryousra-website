@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
+
+const title = 'Avant / Après | Résultats des soins | Dr Yousra El Khadri';
+const description = 'Galerie Avant / Après interactive des soins de médecine esthétique réalisés par Dr Yousra El Khadri à Casablanca. Botox, filler, skin booster, laser, hydrafacial.';
+
+const pairs = Array.from({ length: 9 }, (_, index) => {
+  const pairNumber = String(index + 1).padStart(2, '0');
+  return {
+    beforeSrc: `/images/avant-apres/paire-${pairNumber}-avant.jpg`,
+    beforeAlt: '',
+    afterSrc: `/images/avant-apres/paire-${pairNumber}-apres.jpg`,
+    afterAlt: `Résultat avant et après - paire ${index + 1}`,
+    ariaLabel: `Comparaison avant et après - paire ${index + 1}`,
+    loading: index < 2 ? 'eager' : 'lazy',
+    showHint: index === 0,
+  };
+});
+---
+
+<BaseLayout {title} {description} canonical="/avant-apres">
+  <section class="sec sec-w" style="padding-top:130px">
+    <div class="sh rv">
+      <div class="sl">Galerie</div>
+      <h2 class="st">Résultats <em>avant / après</em></h2>
+      <p class="ss"><em>Faites glisser pour découvrir le résultat</em></p>
+    </div>
+
+    <div class="ba-grid" id="baGrid">
+      {pairs.map((pair) => (
+        <BeforeAfterSlider
+          beforeSrc={pair.beforeSrc}
+          beforeAlt={pair.beforeAlt}
+          afterSrc={pair.afterSrc}
+          afterAlt={pair.afterAlt}
+          ariaLabel={pair.ariaLabel}
+          loading={pair.loading}
+          showHint={pair.showHint}
+        />
+      ))}
+    </div>
+
+    <p class="ba-disclaimer">Photos publiées avec l'accord des patientes. Les résultats peuvent varier selon chaque personne.</p>
+
+    <div class="dcta" style="max-width:880px;margin:60px auto 0">
+      <p>Vous aussi, vivez votre transformation</p>
+      <a href="https://wa.me/212660148108" class="btn bp">Prendre rendez-vous</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Nos Partenaires | Galderma, Merz, Norokpharma | Dr Yousra El Khadri';
+const description = 'Le cabinet de Dr Yousra El Khadri à Casablanca travaille exclusivement avec les laboratoires de référence : Galderma (Restylane, Sculptura), Merz Aesthetics (Radiesse), Norokpharma (RRS, XL Hair).';
+---
+
+<BaseLayout {title} {description} canonical="/partenaires">
+  <section class="sec sec-w" style="padding-top:130px">
+    <div class="sh rv">
+      <div class="sl">Partenaires</div>
+      <h2 class="st">Laboratoires de <em>référence</em></h2>
+      <p class="ss">Le cabinet de Dr Yousra El Khadri travaille exclusivement avec des laboratoires de référence en médecine esthétique, gage de sécurité et de résultats.</p>
+    </div>
+
+    <div class="partner-photo rv">
+      <img
+        src="/images/laboratoires-partenaires-medecine-esthetique-casablanca.jpeg"
+        alt="Laboratoires partenaires Galderma, Merz et Sculptra utilisés au cabinet de médecine esthétique Dr Yousra El Khadri à Casablanca"
+        title="Produits des laboratoires partenaires"
+        loading="lazy"
+        width="720"
+        height="1280"
+      />
+    </div>
+
+    <div class="partners-grid">
+      <div class="partner-card rv">
+        <div class="partner-logo"><img src="/images/labos/galderma.png" alt="Galderma" /></div>
+        <div class="tagline">Référence mondiale · Suisse</div>
+        <h3>Galderma</h3>
+        <p>Galderma est un leader mondial de la dermatologie et de la médecine esthétique, créateur de la gamme Restylane et de Sculptura. Plus de 40 ans d'expertise scientifique au service de la peau.</p>
+        <ul>
+          <li><strong>Restylane (Filler)</strong><span>Acide hyaluronique pour lèvres, pommettes, sillons, jawline</span></li>
+          <li><strong>Restylane (Skin Booster)</strong><span>Hydratation profonde et bio-revitalisation</span></li>
+          <li><strong>Sculptura</strong><span>Stimulation du collagène par acide poly-L-lactique</span></li>
+        </ul>
+      </div>
+
+      <div class="partner-card rv">
+        <div class="partner-logo"><img src="/images/labos/merz.png" alt="Merz Aesthetics" /></div>
+        <div class="tagline">Pionnier allemand · Depuis 1908</div>
+        <h3>Merz Aesthetics</h3>
+        <p>Merz Aesthetics est un laboratoire allemand pionnier en médecine esthétique, fabricant de Radiesse, le seul filler à base d'hydroxyapatite de calcium qui stimule durablement la production de collagène.</p>
+        <ul>
+          <li><strong>Radiesse</strong><span>Comblement et stimulation du collagène simultanés</span></li>
+        </ul>
+      </div>
+
+      <div class="partner-card rv">
+        <div class="partner-logo"><img src="/images/labos/norokpharma.png" alt="Norokpharma" /></div>
+        <div class="tagline">Innovation régénérative</div>
+        <h3>Norokpharma</h3>
+        <p>Norokpharma propose des solutions innovantes en mésothérapie médicale et en régénération cellulaire avec des formulations brevetées pour la peau et le cuir chevelu.</p>
+        <ul>
+          <li><strong>RRS HA</strong><span>Bio-revitalisation profonde de la peau</span></li>
+          <li><strong>RRS Eyes</strong><span>Soin spécifique du contour de l'œil</span></li>
+          <li><strong>XL Hair</strong><span>Exosomes capillaires pour la repousse et la densification</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dcta" style="max-width:880px;margin:60px auto 0">
+      <p>Découvrez nos soins avec ces produits</p>
+      <a href="/#services" class="btn bp">Voir tous les soins</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,228 @@
+---
+interface Props {
+  beforeSrc: string;
+  beforeAlt: string;
+  afterSrc: string;
+  afterAlt: string;
+  ariaLabel?: string;
+  loading?: 'eager' | 'lazy';
+  showHint?: boolean;
+}
+
+const {
+  beforeSrc,
+  beforeAlt,
+  afterSrc,
+  afterAlt,
+  ariaLabel = 'Comparaison avant et après',
+  loading = 'lazy',
+  showHint = false,
+} = Astro.props;
+---
+
+<div class="ba-card rv">
+  <div class="ba-slider" tabindex="0" aria-label={ariaLabel} data-pos="50">
+    <img class="ba-img-after" loading={loading} src={afterSrc} alt={afterAlt} />
+    <div class="ba-clip">
+      <img class="ba-img-before" loading={loading} src={beforeSrc} alt={beforeAlt} />
+    </div>
+    <div class="ba-line">
+      <div class="ba-handle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M9 6l-4 6 4 6M15 6l4 6-4 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+    </div>
+    <span class="ba-label ba-label-before">AVANT</span>
+    <span class="ba-label ba-label-after">APRÈS</span>
+  </div>
+  {showHint && <p class="ba-hint" id="baHint"><span class="ba-arrow ba-arrow-l">←</span> Glissez pour comparer <span class="ba-arrow ba-arrow-r">→</span></p>}
+</div>
+
+<script>
+  function animateSliderPreview(slider) {
+    const clip = slider.querySelector('.ba-clip');
+    const line = slider.querySelector('.ba-line');
+    if (!clip || !line) return;
+
+    const duration = 1800;
+    const start = performance.now();
+    const keyframes = [
+      { t: 0, v: 50 },
+      { t: 0.33, v: 65 },
+      { t: 0.66, v: 35 },
+      { t: 1, v: 50 }
+    ];
+
+    function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+
+    function getValue(progress) {
+      for (let i = 0; i < keyframes.length - 1; i++) {
+        if (progress >= keyframes[i].t && progress <= keyframes[i + 1].t) {
+          const local = (progress - keyframes[i].t) / (keyframes[i + 1].t - keyframes[i].t);
+          const eased = ease(local);
+          return keyframes[i].v + (keyframes[i + 1].v - keyframes[i].v) * eased;
+        }
+      }
+      return 50;
+    }
+
+    function step(now) {
+      if (slider.classList.contains('ba-grabbing')) return;
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const v = getValue(progress);
+      clip.style.transition = 'none';
+      line.style.transition = 'none';
+      clip.style.clipPath = `inset(0 ${100 - v}% 0 0)`;
+      line.style.left = v + '%';
+      slider.dataset.pos = v.toFixed(1);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function initBeforeAfterSliders() {
+    const sliders = document.querySelectorAll('.ba-slider:not([data-ba-initialized])');
+    if (sliders.length === 0) return;
+
+    const hint = document.getElementById('baHint');
+    let globalInteracted = false;
+
+    function hideHintIfVisible() {
+      if (!globalInteracted && hint) {
+        globalInteracted = true;
+        hint.classList.add('ba-hint-hidden');
+      }
+    }
+
+    sliders.forEach((slider) => {
+      slider.dataset.baInitialized = '1';
+      const clip = slider.querySelector('.ba-clip');
+      const line = slider.querySelector('.ba-line');
+      let pos = 50;
+      let interacted = false;
+      let pulseTimer = null;
+      let scrollAnimRaf = null;
+
+      function setPos(p, instant = false) {
+        pos = Math.max(0, Math.min(100, p));
+        const inverted = 100 - pos;
+        if (instant) {
+          clip.style.transition = 'none';
+          line.style.transition = 'none';
+        } else {
+          clip.style.transition = 'clip-path .3s cubic-bezier(.22,1,.36,1)';
+          line.style.transition = 'left .3s cubic-bezier(.22,1,.36,1)';
+        }
+        clip.style.clipPath = `inset(0 ${inverted}% 0 0)`;
+        line.style.left = pos + '%';
+        slider.dataset.pos = pos.toFixed(1);
+      }
+
+      function startPulseTimer() {
+        if (interacted) return;
+        pulseTimer = setTimeout(() => {
+          if (!interacted) slider.classList.add('ba-pulse');
+        }, 2000);
+      }
+
+      function markInteracted() {
+        if (interacted) return;
+        interacted = true;
+        slider.classList.remove('ba-pulse');
+        clearTimeout(pulseTimer);
+        if (scrollAnimRaf) {
+          cancelAnimationFrame(scrollAnimRaf);
+          scrollAnimRaf = null;
+        }
+        hideHintIfVisible();
+      }
+
+      function getPosFromX(clientX) {
+        const rect = slider.getBoundingClientRect();
+        const x = clientX - rect.left;
+        return (x / rect.width) * 100;
+      }
+
+      let dragging = false;
+
+      slider.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        markInteracted();
+        dragging = true;
+        slider.classList.add('ba-grabbing');
+        setPos(getPosFromX(event.clientX), true);
+      });
+
+      document.addEventListener('mousemove', (event) => {
+        if (!dragging) return;
+        setPos(getPosFromX(event.clientX), true);
+      });
+
+      document.addEventListener('mouseup', () => {
+        if (dragging) {
+          dragging = false;
+          slider.classList.remove('ba-grabbing');
+        }
+      });
+
+      slider.addEventListener('touchstart', (event) => {
+        markInteracted();
+        dragging = true;
+        slider.classList.add('ba-grabbing');
+        setPos(getPosFromX(event.touches[0].clientX), true);
+      }, { passive: true });
+
+      slider.addEventListener('touchmove', (event) => {
+        if (!dragging) return;
+        event.preventDefault();
+        setPos(getPosFromX(event.touches[0].clientX), true);
+      }, { passive: false });
+
+      slider.addEventListener('touchend', () => {
+        dragging = false;
+        slider.classList.remove('ba-grabbing');
+      });
+
+      slider.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          markInteracted();
+          setPos(pos - 5);
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          markInteracted();
+          setPos(pos + 5);
+        } else if (event.key === 'Home') {
+          event.preventDefault();
+          markInteracted();
+          setPos(0);
+        } else if (event.key === 'End') {
+          event.preventDefault();
+          markInteracted();
+          setPos(100);
+        }
+      });
+
+      setPos(50, true);
+      startPulseTimer();
+    });
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const slider = entry.target;
+        if (slider.dataset.scrollAnimated === '1') return;
+        slider.dataset.scrollAnimated = '1';
+        if (slider.classList.contains('ba-grabbing')) return;
+        animateSliderPreview(slider);
+      });
+    }, { threshold: 0.4 });
+
+    sliders.forEach((slider) => obs.observe(slider));
+  }
+
+  initBeforeAfterSliders();
+</script>

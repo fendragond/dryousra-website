@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogCard from '../components/BlogCard.astro';
+import BlogFilters from '../components/BlogFilters.astro';
+
+const title = 'Blog Médecine Esthétique Casablanca | Dr Yousra El Khadri';
+const description = 'Conseils, expertise et actualités en médecine esthétique par Dr Yousra El Khadri à Casablanca. Botox, filler, anti-âge, laser : tout ce que vous devez savoir.';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+
+const categories = [
+  { value: 'injections', label: 'Injections' },
+  { value: 'anti-age', label: 'Anti-âge & Rajeunissement' },
+  { value: 'laser', label: 'Laser & Corrections' },
+];
+
+const postSlug = (id: string) => id.replace(/\.md$/, '');
+
+const blogJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Blog Dr Yousra El Khadri — Médecine Esthétique',
+  description: 'Conseils, expertise et actualités en médecine esthétique à Casablanca par Dr Yousra El Khadri.',
+  url: 'https://dryousra.ma/blog',
+  inLanguage: 'fr',
+  author: {
+    '@type': 'Physician',
+    name: 'Dr Yousra El Khadri',
+    url: 'https://dryousra.ma',
+    telephone: '+212660148108',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '117 Angle Boulevard 2 Mars, Rue de Rome, Résidence EL HAYAT, 3ème étage',
+      addressLocality: 'Casablanca',
+      addressCountry: 'MA',
+    },
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Dr Yousra El Khadri - Médecine Esthétique',
+    url: 'https://dryousra.ma',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://dryousra.ma/images/logo.png',
+    },
+  },
+};
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="/blog"
+  ogImage="/images/dr-yousra-elkhadri.jpg"
+  jsonLd={blogJsonLd}
+>
+  <section class="blog-hero">
+    <div class="blog-hero-inner rv">
+      <div class="sl">Blog &amp; Conseils</div>
+      <h1 class="st">Conseils &amp; <em>Expertise</em></h1>
+      <p class="ss">Conseils, expertise et actualités en médecine esthétique par Dr Yousra El Khadri</p>
+    </div>
+  </section>
+
+  <BlogFilters categories={categories} />
+
+  <section class="sec sec-w blog-grid-sec">
+    <div class="blog-grid">
+      {posts.map((post) => (
+        <BlogCard
+          url={`blog/${postSlug(post.id)}`}
+          title={post.data.cardTitle}
+          excerpt={post.data.excerpt}
+          image={post.data.heroImage.replace(/^\//, '')}
+          imageAlt={post.data.heroImageAlt}
+          imageWidth={post.data.imageWidth}
+          imageHeight={post.data.imageHeight}
+          date={post.data.date}
+          readingMinutes={post.data.readingMinutes}
+          category={post.data.category}
+          categoryLabel={post.data.categoryLabel}
+          isPilier={post.data.isPilier}
+          pilierLabel={post.data.pilierLabel}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

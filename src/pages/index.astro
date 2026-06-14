@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogCard from '../components/BlogCard.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import { getCollection } from 'astro:content';
 
 const title = 'Médecin Esthétique Casablanca | Dr Yousra El Khadri';
 const description = 'Dr Yousra El Khadri, médecin esthétique à Casablanca. Botox, filler, skin booster, laser, hydrafacial. Restylane, Sculptura, Radiesse. Résultats naturels.';
@@ -79,34 +80,10 @@ const faqJsonLd = {
   })),
 };
 
-const latestArticles = [
-  {
-    url: 'blog/filler-pommettes-casablanca.html',
-    title: "Filler des pommettes à Casablanca : restaurer le volume et redessiner l'ovale",
-    excerpt: 'Pommettes creuses, ovale relâché, visage fatigué : comment le filler par acide hyaluronique restaure le volume sans chirurgie.',
-    image: 'blog/images/filler-pommettes-injection-generique-casablanca.jpg',
-    imageAlt: 'Filler pommettes — injection acide hyaluronique, photo générique',
-    imageWidth: 768,
-    imageHeight: 576,
-    date: '2026-05-20',
-    readingMinutes: 6,
-    category: 'injections',
-    categoryLabel: 'Injections',
-  },
-  {
-    url: 'blog/tear-trough-casablanca.html',
-    title: 'Tear Trough Casablanca : effacer les cernes creux sans chirurgie',
-    excerpt: 'Cernes creux, sillon lacrymal, regard fatigué : comment le tear trough par acide hyaluronique restaure le volume sans chirurgie.',
-    image: 'blog/images/tear-trough-casablanca-injection-1.png',
-    imageAlt: 'Tear trough Casablanca — injection acide hyaluronique',
-    imageWidth: 768,
-    imageHeight: 1344,
-    date: '2026-05-18',
-    readingMinutes: 6,
-    category: 'injections',
-    categoryLabel: 'Injections',
-  },
-];
+const latestArticles = (await getCollection('blog'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 2);
+const postSlug = (id: string) => id.replace(/\.md$/, '');
 ---
 
 <BaseLayout {title} {description} canonical="/" jsonLd={[localBusinessJsonLd, faqJsonLd]}>
@@ -249,9 +226,25 @@ const latestArticles = [
       <p class="ss">Dr Yousra El Khadri partage son expertise en médecine esthétique : protocoles, conseils et actualités du cabinet.</p>
     </div>
     <div class="blog-preview-two rv">
-      {latestArticles.map((article) => <BlogCard {...article} />)}
+      {latestArticles.map((article) => (
+        <BlogCard
+          url={`blog/${postSlug(article.id)}`}
+          title={article.data.cardTitle}
+          excerpt={article.data.excerpt}
+          image={article.data.heroImage.replace(/^\//, '')}
+          imageAlt={article.data.heroImageAlt}
+          imageWidth={article.data.imageWidth}
+          imageHeight={article.data.imageHeight}
+          date={article.data.date}
+          readingMinutes={article.data.readingMinutes}
+          category={article.data.category}
+          categoryLabel={article.data.categoryLabel}
+          isPilier={article.data.isPilier}
+          pilierLabel={article.data.pilierLabel}
+        />
+      ))}
       <div class="blog-preview-two-footer">
-        <a href="/blog.html" class="btn bo">Voir tous les articles</a>
+        <a href="/blog" class="btn bo">Voir tous les articles</a>
       </div>
     </div>
   </section>

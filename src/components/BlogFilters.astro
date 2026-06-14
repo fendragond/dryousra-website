@@ -1,0 +1,75 @@
+---
+interface Category {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  categories: Category[];
+}
+
+const { categories } = Astro.props;
+---
+
+<div class="blog-filters-wrap">
+  <div class="blog-filters">
+    <button class="bf-btn active" data-cat="tous">Tous</button>
+    {categories.map((category) => <button class="bf-btn" data-cat={category.value}>{category.label}</button>)}
+  </div>
+</div>
+
+<script>
+  (function () {
+    var btns = document.querySelectorAll('.bf-btn');
+    var grid = document.querySelector('.blog-grid');
+    if (!grid) return;
+
+    function getCards() {
+      return Array.from(grid.querySelectorAll('.blog-card'));
+    }
+
+    function getOrCreateEmptyMsg() {
+      var el = grid.querySelector('.blog-filter-empty');
+      if (!el) {
+        el = document.createElement('p');
+        el.className = 'blog-filter-empty';
+        el.textContent = 'Aucun article dans cette catégorie pour le moment.';
+      }
+      return el;
+    }
+
+    function filterCards(cat) {
+      var cards = getCards();
+      var visible = 0;
+
+      cards.forEach(function (card) {
+        var match = cat === 'tous' || card.dataset.category === cat;
+        card.style.opacity = '0';
+        card.style.transition = 'opacity .25s';
+        if (match) {
+          card.style.display = '';
+          visible++;
+          setTimeout(function () { card.style.opacity = '1'; }, 20);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      var empty = grid.querySelector('.blog-filter-empty');
+      if (visible === 0) {
+        var msg = getOrCreateEmptyMsg();
+        if (!grid.contains(msg)) grid.appendChild(msg);
+      } else if (empty) {
+        empty.remove();
+      }
+    }
+
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        filterCards(btn.dataset.cat);
+      });
+    });
+  })();
+</script>

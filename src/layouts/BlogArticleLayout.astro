@@ -79,7 +79,7 @@ const articleHeroHeight = heroImageHeight ?? 580;
 
 <BaseLayout title={seoTitle} description={description} canonical={canonicalPath} ogImage={ogImage} ogType="article" jsonLd={schema}>
   <section class="blog-article-hero">
-    <div class="blog-article-hero-inner rv">
+    <div class="blog-article-hero-inner">
       <span class="blog-article-meta-badge">{categoryLabel}</span>
       {isPilier && <span class={`blog-badge blog-badge-pilier ${category}`}>{pilierLabel}</span>}
       <h1>{title}</h1>

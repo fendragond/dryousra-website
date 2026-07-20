@@ -28,10 +28,6 @@
 html{scroll-behavior:smooth;background:var(--cream)}
 body{font-family:var(--font-b);color:var(--text);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:76px;min-height:100vh}
 
-/* PAGE LOADING - prevent FOUC (JS users only; visible by default for crawlers) */
-html.js body{opacity:0;animation:fadeIn .3s ease-in forwards}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(253,251,249,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.04);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}

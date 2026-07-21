@@ -5,14 +5,14 @@ seoTitle: "Injections esthétiques à Casablanca : guide complet 2026 | Dr Yousr
 description: "Guide complet 2026 des injections esthétiques à Casablanca par Dr Yousra El Khadri : Botox, fillers, stimulateurs de collagène. Toutes les options expliquées."
 excerpt: "Botox, fillers, stimulateurs de collagène, skin boosters : panorama complet de toutes les solutions d'injection disponibles à Casablanca."
 canonical: "https://dryousra.ma/blog/injections-esthetiques-casablanca-guide"
-ogImage: "https://dryousra.ma/blog/images/salon-attente-cabinet-dr-yousra-elkhadri-casablanca.png"
+ogImage: "https://dryousra.ma/blog/images/salon-attente-cabinet-dr-yousra-elkhadri-casablanca.webp"
 date: "2026-05-06"
 readingMinutes: 12
 category: "injections"
 categoryLabel: "Injections"
 isPilier: true
 pilierLabel: "Guide complet"
-heroImage: "/blog/images/salon-attente-cabinet-dr-yousra-elkhadri-casablanca.png"
+heroImage: "/blog/images/salon-attente-cabinet-dr-yousra-elkhadri-casablanca.webp"
 heroImageAlt: "Guide complet des injections esthétiques à Casablanca - cabinet Dr Yousra El Khadri"
 heroFigureAlt: "Salon d'attente du cabinet de Dr Yousra El Khadri, médecin esthétique à Casablanca, Quartier des Hôpitaux"
 heroImageTitle: "Cabinet de Dr Yousra El Khadri à Casablanca"
@@ -115,7 +115,7 @@ jsonLd:
         },
         "image": {
           "@type": "ImageObject",
-          "url": "https://dryousra.ma/blog/images/salon-attente-cabinet-dr-yousra-elkhadri-casablanca.png",
+          "url": "https://dryousra.ma/blog/images/salon-attente-cabinet-dr-yousra-elkhadri-casablanca.webp",
           "width": 768,
           "height": 1344,
           "description": "Salon d'attente du cabinet de Dr Yousra El Khadri, médecin esthétique à Casablanca, Quartier des Hôpitaux"
@@ -411,7 +411,7 @@ Pour les profils qui ont perdu une densité cutanée significative, ou qui souha
 
 <figure class="blog-article-image">
     <img
-      src="/blog/images/consultation-injection-cabinet-yousra-elkhadri-casablanca.png"
+      src="/blog/images/consultation-injection-cabinet-yousra-elkhadri-casablanca.webp"
       alt="Dr Yousra El Khadri réalisant une injection esthétique au visage au cabinet à Casablanca"
       title="Consultation injection au cabinet de Dr Yousra El Khadri"
       width="768"
@@ -444,7 +444,7 @@ Ces choix ne sont pas arbitraires : ils reflètent un engagement envers la prév
 
 <figure class="blog-article-image">
     <img
-      src="/blog/images/injection-medecine-esthetique-dr-yousra-casablanca.png"
+      src="/blog/images/injection-medecine-esthetique-dr-yousra-casablanca.webp"
       alt="Dr Yousra El Khadri concentrée pendant une séance d'injection esthétique à son cabinet de Casablanca"
       title="Expertise médicale au cabinet de Dr Yousra El Khadri"
       width="768"

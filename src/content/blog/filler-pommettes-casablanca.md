@@ -279,7 +279,7 @@ Les images de cet article ont une vocation pédagogique. La photo principale ill
 
 <figure class="blog-article-image">
     <img
-      src="/blog/images/filler-pommettes-injection-cabinet-casablanca.png"
+      src="/blog/images/filler-pommettes-injection-cabinet-casablanca.webp"
       alt="Filler pommettes Casablanca — injection au cabinet de Dr Yousra El Khadri, Quartier des Hôpitaux"
       title="Filler pommettes au cabinet de Dr Yousra El Khadri"
       loading="lazy"

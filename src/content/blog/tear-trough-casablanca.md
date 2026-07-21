@@ -5,13 +5,13 @@ seoTitle: "Tear Trough Casablanca : traitement des cernes creux | Dr Yousra El K
 description: "Le tear trough par acide hyaluronique efface les cernes creux sans chirurgie ni cicatrice. Technique précise réalisée au Quartier des Hôpitaux, Casablanca."
 excerpt: "Cernes creux, sillon lacrymal, regard fatigué : comment le tear trough par acide hyaluronique restaure le volume sans chirurgie."
 canonical: "https://dryousra.ma/blog/tear-trough-casablanca"
-ogImage: "https://dryousra.ma/blog/images/tear-trough-casablanca-injection-1.png"
+ogImage: "https://dryousra.ma/blog/images/tear-trough-casablanca-injection-1.webp"
 date: "2026-05-18"
 readingMinutes: 6
 category: "injections"
 categoryLabel: "Injections"
 isPilier: false
-heroImage: "/blog/images/tear-trough-casablanca-injection-1.png"
+heroImage: "/blog/images/tear-trough-casablanca-injection-1.webp"
 heroImageAlt: "Tear trough Casablanca — injection acide hyaluronique"
 imageWidth: 768
 imageHeight: 1344
@@ -89,7 +89,7 @@ jsonLd:
         },
         "image": {
           "@type": "ImageObject",
-          "url": "https://dryousra.ma/blog/images/tear-trough-casablanca-injection-1.png",
+          "url": "https://dryousra.ma/blog/images/tear-trough-casablanca-injection-1.webp",
           "width": 768,
           "height": 1344,
           "description": "Tear trough Casablanca — injection acide hyaluronique par Yousra El Khadri"
@@ -267,7 +267,7 @@ Le tear trough se traite au millimètre près. Les images ci-dessous montrent la
 
 <figure class="blog-article-image">
     <img
-      src="/blog/images/tear-trough-casablanca-injection-1.png"
+      src="/blog/images/tear-trough-casablanca-injection-1.webp"
       alt="Tear trough Casablanca — injection acide hyaluronique par Yousra El Khadri"
       title="Injection tear trough par Dr Yousra El Khadri"
       loading="lazy"
@@ -280,7 +280,7 @@ Le tear trough se traite au millimètre près. Les images ci-dessous montrent la
 
 <figure class="blog-article-image">
     <img
-      src="/blog/images/tear-trough-casablanca-injection-2.png"
+      src="/blog/images/tear-trough-casablanca-injection-2.webp"
       alt="Tear trough Casablanca — traitement cernes creux au Quartier des Hôpitaux"
       title="Traitement tear trough au cabinet de Casablanca"
       loading="lazy"

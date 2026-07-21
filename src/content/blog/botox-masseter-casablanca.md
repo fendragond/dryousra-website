@@ -5,13 +5,13 @@ seoTitle: "Botox masséter Casablanca : affiner l'ovale & bruxisme | Dr Yousra E
 description: "Botox masséter à Casablanca : affiner la mâchoire, adoucir une mâchoire carrée, soulager le bruxisme. Indications, déroulement, durée et prix sur devis. Dr Yousra El Khadri."
 excerpt: "Mâchoire carrée, ovale du visage, bruxisme : comment fonctionne le botox dans le masséter et à quoi s'attendre au cabinet."
 canonical: "https://dryousra.ma/blog/botox-masseter-casablanca"
-ogImage: "https://dryousra.ma/blog/images/injection-botox-masseter-casablanca-dr-yousra-el-khadri.png"
+ogImage: "https://dryousra.ma/blog/images/injection-botox-masseter-casablanca-dr-yousra-el-khadri.webp"
 date: "2026-05-12"
 readingMinutes: 8
 category: "injections"
 categoryLabel: "Injections"
 isPilier: false
-heroImage: "/blog/images/injection-botox-masseter-casablanca-dr-yousra-el-khadri.png"
+heroImage: "/blog/images/injection-botox-masseter-casablanca-dr-yousra-el-khadri.webp"
 heroImageAlt: "Dr Yousra El Khadri réalisant une injection de botox au masséter à Casablanca"
 heroFigureAlt: "Dr Yousra El Khadri réalisant une injection de botox au masséter à Casablanca"
 heroImageTitle: "Injection botox masséter – Dr Yousra El Khadri, Casablanca"
@@ -86,7 +86,7 @@ jsonLd:
         },
         "image": {
           "@type": "ImageObject",
-          "url": "https://dryousra.ma/blog/images/injection-botox-masseter-casablanca-dr-yousra-el-khadri.png",
+          "url": "https://dryousra.ma/blog/images/injection-botox-masseter-casablanca-dr-yousra-el-khadri.webp",
           "width": 768,
           "height": 1344,
           "description": "Dr Yousra El Khadri réalisant une injection de botox au masséter à Casablanca"
@@ -261,7 +261,7 @@ Ces deux intentions peuvent coexister : une patiente peut à la fois rechercher 
 
 <figure class="blog-article-image">
     <img
-      src="/blog/images/traitement-bruxisme-botox-casablanca-dr-yousra-el-khadri.png"
+      src="/blog/images/traitement-bruxisme-botox-casablanca-dr-yousra-el-khadri.webp"
       alt="Injection botox masséter pour traitement du bruxisme – Dr Yousra El Khadri, Casablanca"
       title="Traitement du bruxisme par botox masséter"
       loading="lazy"

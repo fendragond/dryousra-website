@@ -263,7 +263,7 @@ Cette approche préventive est particulièrement pertinente pour les peaux à fo
 ## Comment se déroule la séance au cabinet de Dr Yousra El Khadri ?
 
 <figure class="blog-article-image">
-    <img src="/blog/images/botox-front-injection-cabinet-casablanca.png"
+    <img src="/blog/images/botox-front-injection-cabinet-casablanca.webp"
          alt="Dr Yousra El Khadri réalisant une injection de botox du front au cabinet à Casablanca"
          title="Procédure de botox du front au cabinet"
          loading="lazy"

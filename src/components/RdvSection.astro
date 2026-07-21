@@ -13,13 +13,13 @@ const fixedHref = site.phone.fixed.replace(/\s/g, '');
   </div>
   <div class="cg">
     <div class="rv">
-      <div class="ci"><div class="cic">📍</div><div><h4>Adresse</h4><p>{site.address.street}<br />{site.address.building}<br />{site.address.city}</p></div></div>
-      <div class="ci"><div class="cic">📱</div><div><h4>Mobile</h4><p><a href={`tel:${mobileHref}`}>{site.phone.mobile}</a></p></div></div>
-      <div class="ci"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg></div><div><h4>Fixe</h4><p><a href={`tel:${fixedHref}`}>{site.phone.fixed}</a></p></div></div>
-      <div class="ci"><div class="cic">💬</div><div><h4>WhatsApp</h4><p><a href={site.whatsapp.url}>Écrire sur WhatsApp</a></p></div></div>
-      <div class="ci"><div class="cic">🕐</div><div><h4>Horaires</h4><p set:html={site.hours} /></div></div>
-      <div class="ci"><div class="cic">📸</div><div><h4>Réseaux</h4><p><a href={site.social.instagram.url} target="_blank">Instagram</a> · <a href={site.social.tiktok.url} target="_blank">TikTok</a></p></div></div>
-      <div class="ci"><div class="cic">✉️</div><div><h4>Email</h4><p><a href={`mailto:${site.email}`}>{site.email}</a></p></div></div>
+      <div class="ci"><div class="cic">📍</div><div><h3>Adresse</h3><p>{site.address.street}<br />{site.address.building}<br />{site.address.city}</p></div></div>
+      <div class="ci"><div class="cic">📱</div><div><h3>Mobile</h3><p><a href={`tel:${mobileHref}`}>{site.phone.mobile}</a></p></div></div>
+      <div class="ci"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg></div><div><h3>Fixe</h3><p><a href={`tel:${fixedHref}`}>{site.phone.fixed}</a></p></div></div>
+      <div class="ci"><div class="cic">💬</div><div><h3>WhatsApp</h3><p><a href={site.whatsapp.url}>Écrire sur WhatsApp</a></p></div></div>
+      <div class="ci"><div class="cic">🕐</div><div><h3>Horaires</h3><p set:html={site.hours} /></div></div>
+      <div class="ci"><div class="cic">📸</div><div><h3>Réseaux</h3><p><a href={site.social.instagram.url} target="_blank">Instagram</a> · <a href={site.social.tiktok.url} target="_blank">TikTok</a></p></div></div>
+      <div class="ci"><div class="cic">✉️</div><div><h3>Email</h3><p><a href={`mailto:${site.email}`}>{site.email}</a></p></div></div>
     </div>
     <div class="cm rv"><iframe src={site.mapsEmbed} title="Cabinet Dr Yousra El Khadri — Casablanca" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
   </div>

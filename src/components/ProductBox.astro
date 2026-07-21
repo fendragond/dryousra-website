@@ -9,6 +9,6 @@ const { title, description, partnerUrl = '/partenaires' } = Astro.props;
 ---
 
 <div class="produits">
-  <h4>{title}</h4>
+  <h3>{title}</h3>
   <p><Fragment set:html={description} /> <a href={partnerUrl}>Voir nos partenaires</a></p>
 </div>

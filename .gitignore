@@ -14,3 +14,4 @@ psi-results.csv
 psi-audits-summary.json
 scripts/psi-audit.mjs
 scripts/a11y-details.mjs
+scripts/crawlable-check.mjs

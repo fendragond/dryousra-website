@@ -4,7 +4,7 @@
     <div class="nm" id="navLinks">
       <a href="/">Accueil</a>
       <div class="dd">
-        <a class="dd-trigger">Nos Services</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">Nos Services</button>
         <div class="ddm mega">
           <div class="mega-col">
             <h5>Injections</h5>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="dd">
-        <a class="dd-trigger">Vos Besoins</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">Vos Besoins</button>
         <div class="ddm simple">
           <a href="/besoins/rajeunir">Rajeunir le visage</a>
           <a href="/besoins/levres">Repulper les lèvres</a>
@@ -72,11 +72,16 @@
     navLinksEl?.classList.toggle('open');
   });
 
+  const closeAllDropdowns = () => {
+    document.querySelectorAll('.dd').forEach((dropdown) => dropdown.classList.remove('mob-open'));
+    document.querySelectorAll('.dd > .dd-trigger').forEach((t) => t.setAttribute('aria-expanded', 'false'));
+  };
+
   navLinksEl?.querySelectorAll('a:not(.dd-trigger)').forEach((link) => {
     link.addEventListener('click', () => {
       menuToggle?.classList.remove('open');
       navLinksEl.classList.remove('open');
-      document.querySelectorAll('.dd').forEach((dropdown) => dropdown.classList.remove('mob-open'));
+      closeAllDropdowns();
     });
   });
 
@@ -94,8 +99,11 @@
         event.stopPropagation();
         const parent = trigger.parentElement;
         const wasOpen = parent?.classList.contains('mob-open');
-        document.querySelectorAll('.dd').forEach((dropdown) => dropdown.classList.remove('mob-open'));
-        if (!wasOpen) parent?.classList.add('mob-open');
+        closeAllDropdowns();
+        if (!wasOpen) {
+          parent?.classList.add('mob-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
       }
     });
   });

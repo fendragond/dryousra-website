@@ -36,12 +36,12 @@ nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
 .nl{display:flex;align-items:center;text-decoration:none;padding:4px 0}
 .nl img{height:54px;width:auto;display:block}
 .nm{display:flex;gap:4px;align-items:center}
-.nm>a,.dd>a{font-size:13px;font-weight:600;color:var(--text-mid);text-decoration:none;padding:8px 12px;border-radius:6px;transition:all .3s;cursor:pointer;white-space:nowrap}
-.nm>a:hover,.dd>a:hover{color:var(--rose);background:var(--rose-pale)}
+.nm>a,.dd>.dd-trigger{font-size:13px;font-weight:600;color:var(--text-mid);text-decoration:none;padding:8px 12px;border-radius:6px;transition:all .3s;cursor:pointer;white-space:nowrap}
+.nm>a:hover,.dd>.dd-trigger:hover{color:var(--rose);background:var(--rose-pale)}
 
 /* DESKTOP MEGA MENU - FIXED ALIGNMENT */
 .dd{position:relative}
-.dd>.dd-trigger{display:inline-flex;align-items:center;gap:2px}
+.dd>.dd-trigger{display:inline-flex;align-items:center;gap:2px;background:none;border:0;font-family:inherit;line-height:inherit}
 .dd>.dd-trigger::after{content:'▾';font-size:10px;margin-left:2px}
 .ddm{display:none;position:absolute;top:100%;background:var(--white);border-radius:14px;box-shadow:0 16px 48px rgba(0,0,0,.12);padding:24px;z-index:100;border:1px solid rgba(0,0,0,.04)}
 .dd:hover .ddm{display:block}

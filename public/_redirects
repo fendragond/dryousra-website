@@ -1,0 +1,61 @@
+# Legacy URL redirects — see backlog REDIR-01 / REDIR-02 / REDIR-03
+# Audited 24 July 2026 against git (pre-Astro commit 38f5814),
+# live curl responses, and Google Search Console exports.
+# DO NOT redirect /googleff5f4377d62ec1af.html — GSC site verification file.
+
+# --- Group A: legacy flat /soins/*.html (real 404s, pages that existed) ---
+/soins/botox.html        /soins/injections/botox            301
+/soins/filler.html       /soins/injections/filler           301
+/soins/skinbooster.html  /soins/injections/skinbooster      301
+/soins/exosomes.html     /soins/soins-visage/exosomes       301
+/soins/hydrafacial.html  /soins/soins-visage/hydrafacial    301
+/soins/detatouage.html   /soins/laser/detatouage            301
+/soins/laser.html        /soins/laser/laser-medical         301
+
+# --- Group A-bis: malformed URLs crawled from broken relative links ---
+/blog/besoins/levres.html  /besoins/levres            301
+/soins/soins/botox.html    /soins/injections/botox    301
+
+# --- Group B: .html -> clean URL, currently 307, force 301 ---
+/index.html       /              301
+/blog/index.html  /blog          301
+/a-propos.html    /a-propos      301
+/avant-apres.html /avant-apres   301
+/partenaires.html /partenaires   301
+/blog.html        /blog          301
+
+/besoins/affiner.html   /besoins/affiner    301
+/besoins/levres.html    /besoins/levres     301
+/besoins/mariage.html   /besoins/mariage    301
+/besoins/rajeunir.html  /besoins/rajeunir   301
+/besoins/rides.html     /besoins/rides      301
+/besoins/taches.html    /besoins/taches     301
+/besoins/tatouage.html  /besoins/tatouage   301
+/besoins/texture.html   /besoins/texture    301
+
+/blog/botox-front-casablanca.html                   /blog/botox-front-casablanca                   301
+/blog/botox-masseter-casablanca.html                /blog/botox-masseter-casablanca                301
+/blog/filler-pommettes-casablanca.html              /blog/filler-pommettes-casablanca              301
+/blog/injections-esthetiques-casablanca-guide.html  /blog/injections-esthetiques-casablanca-guide  301
+/blog/tear-trough-casablanca.html                   /blog/tear-trough-casablanca                   301
+
+/soins/injections/botox.html             /soins/injections/botox             301
+/soins/injections/dissoudre-filler.html  /soins/injections/dissoudre-filler  301
+/soins/injections/filler.html            /soins/injections/filler            301
+/soins/injections/skinbooster.html       /soins/injections/skinbooster       301
+
+/soins/stimulation-collagene/harmonica.html  /soins/stimulation-collagene/harmonica  301
+/soins/stimulation-collagene/radiesse.html   /soins/stimulation-collagene/radiesse   301
+/soins/stimulation-collagene/sculptura.html  /soins/stimulation-collagene/sculptura  301
+
+/soins/soins-visage/baby-lips.html     /soins/soins-visage/baby-lips     301
+/soins/soins-visage/exosomes.html      /soins/soins-visage/exosomes      301
+/soins/soins-visage/hydrafacial.html   /soins/soins-visage/hydrafacial   301
+/soins/soins-visage/microneedling.html /soins/soins-visage/microneedling 301
+/soins/soins-visage/peeling.html       /soins/soins-visage/peeling       301
+
+/soins/soins-corps/lipolyse.html      /soins/soins-corps/lipolyse      301
+/soins/soins-corps/peeling-corps.html /soins/soins-corps/peeling-corps 301
+
+/soins/laser/detatouage.html    /soins/laser/detatouage    301
+/soins/laser/laser-medical.html /soins/laser/laser-medical 301

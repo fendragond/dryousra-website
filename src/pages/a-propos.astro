@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AvisSection from '../components/AvisSection.astro';
 import CabinetLightbox from '../components/CabinetLightbox.astro';
 
-const title = 'À Propos | Dr Yousra El Khadri, Médecin Esthétique à Casablanca';
-const description = "Dr Yousra El Khadri, médecin esthétique à Casablanca. Diplômée de la Faculté de Médecine de Casablanca, DU en Médecine Esthétique de l'UM6SS. Formations internationales.";
+const title = 'Dr Yousra El Khadri — Médecin esthétique à Casablanca | Avis';
+const description = "Parcours, diplômes et formations du Dr Yousra El Khadri, médecin esthétique au Quartier des Hôpitaux à Casablanca. Consultez les avis de ses patientes.";
 
 const physicianJsonLd = {
   '@context': 'https://schema.org',
@@ -232,6 +233,8 @@ const cabinetImages = [
       </div>
     </div>
   </section>
+
+  <AvisSection />
 
   <section class="contact" id="contact-sec" style="padding-bottom:50px">
     <div class="sh rv">

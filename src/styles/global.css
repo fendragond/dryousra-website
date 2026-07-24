@@ -1,6 +1,14 @@
-﻿@tailwind base;
-@tailwind components;
-@tailwind utilities;
+﻿@import "tailwindcss";
+
+@theme {
+  --color-rose: #b86a85;
+  --color-mauve: #7b5ea7;
+  --color-champagne: #faf8f5;
+  --color-charcoal: #2a2030;
+  --color-cream: #fdfbf9;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Nunito Sans', -apple-system, sans-serif;
+}
 
 /* Migrated legacy site styles. */
 :root{
@@ -293,6 +301,8 @@ html.js .hv{opacity:0;animation:fu .8s 1s forwards}
 .dp h4{font-family:var(--font-d);font-size:17px;font-weight:600;color:var(--charcoal);margin:24px 0 8px}
 .dp p{font-size:15px;line-height:1.8;color:var(--text-mid);margin-bottom:10px}
 .dp strong{color:var(--charcoal)}
+.dp ul,.blog-article ul{list-style:disc}
+.dp ol,.blog-article ol{list-style:decimal}
 .dp ul{margin:8px 0 16px 0;padding-left:20px}
 .dp ul li{font-size:15px;line-height:1.8;color:var(--text-mid);margin-bottom:4px}
 .dp ul li strong{color:var(--charcoal)}

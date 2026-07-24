@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
 
 const title = 'Améliorer la <em>texture de peau</em>';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Quel soin choisir ?',
-      acceptedAnswer: { '@type': 'Answer', text: "Hydrafacial pour l'immédiat, microneedling pour les cicatrices." },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Quel soin choisir ?', answer: "Hydrafacial pour l'immédiat, microneedling pour les cicatrices, skin booster pour le durable." },
@@ -34,7 +23,6 @@ const crossLinks = {
   seoTitle="Améliorer la texture de peau à Casablanca | Dr El Khadri"
   description="Améliorer la texture de peau à Casablanca. Hydrafacial, microneedling, skin booster, exosomes, peeling."
   canonical="/besoins/texture"
-  {jsonLd}
   label="Votre besoin"
   {title}
   {faqItems}

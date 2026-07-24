@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 
 const title = '<em>Baby Lips</em> à Casablanca';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Différent du filler classique ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Le Baby Lips hydrate, le filler classique apporte du volume.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Différent du filler classique ?', answer: "Le Baby Lips utilise un acide hyaluronique fluide qui hydrate sans modifier le volume marqué." },
@@ -41,7 +30,6 @@ const crossLinks = [
   seoTitle="Baby Lips à Casablanca | Soin lèvres pulpeuses | Dr El Khadri"
   description="Baby Lips à Casablanca par Dr Yousra El Khadri. Soin doux et naturel pour des lèvres hydratées et repulpées sans excès de volume."
   canonical="/soins/soins-visage/baby-lips"
-  {jsonLd}
   label="Soin du visage"
   {title}
   {faqItems}

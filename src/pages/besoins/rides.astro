@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
 
 const title = 'Traiter les <em>rides</em>';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Botox ou filler ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Botox pour les rides dynamiques, filler pour les rides statiques.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Botox ou filler ?', answer: 'Botox pour les rides dynamiques, filler pour les statiques. Souvent complémentaires.' },
@@ -33,7 +22,6 @@ const crossLinks = {
   seoTitle="Traiter les rides à Casablanca | Dr El Khadri"
   description="Traiter les rides à Casablanca. Botox pour rides d'expression, filler pour rides statiques."
   canonical="/besoins/rides"
-  {jsonLd}
   label="Votre besoin"
   {title}
   {faqItems}

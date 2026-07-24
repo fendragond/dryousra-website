@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
 
 const title = 'Enlever un <em>tatouage</em>';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Tous les tatouages peuvent-ils être effacés ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'La plupart oui.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Tous les tatouages peuvent-ils être effacés ?', answer: "La plupart oui. Le noir s'efface facilement." },
@@ -31,7 +20,6 @@ const crossLinks = {
   seoTitle="Enlever un tatouage à Casablanca | Détatouage Laser"
   description="Enlever un tatouage à Casablanca par Dr Yousra El Khadri. Détatouage laser progressif, sécurisé, toutes couleurs."
   canonical="/besoins/tatouage"
-  {jsonLd}
   label="Votre besoin"
   {title}
   {faqItems}

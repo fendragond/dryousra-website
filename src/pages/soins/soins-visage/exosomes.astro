@@ -3,17 +3,6 @@ import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 import ProductBox from '../../../components/ProductBox.astro';
 
 const title = '<em>Exosomes</em> à Casablanca';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Les exosomes sont-ils sûrs ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Oui, technologie validée en médecine régénérative.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Les exosomes sont-ils sûrs ?', answer: 'Oui, technologie validée en médecine régénérative.' },
@@ -45,7 +34,6 @@ const crossLinks = [
   seoTitle="Exosomes à Casablanca | Régénération cellulaire | Dr El Khadri"
   description="Exosomes à Casablanca par Dr Yousra El Khadri. Visage et cuir chevelu (XL Hair). Régénération cellulaire de nouvelle génération."
   canonical="/soins/soins-visage/exosomes"
-  {jsonLd}
   label="Soin du visage"
   {title}
   {faqItems}

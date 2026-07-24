@@ -3,17 +3,6 @@ import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 import ProductBox from '../../../components/ProductBox.astro';
 
 const title = '<em>Radiesse</em> à Casablanca';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Combien de temps durent les résultats ?',
-      acceptedAnswer: { '@type': 'Answer', text: '12 à 18 mois en moyenne.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Quelle différence avec un filler classique ?', answer: 'Radiesse contient des microsphères de calcium qui restent dans la peau plus longtemps et stimulent la production de collagène.' },
@@ -45,7 +34,6 @@ const crossLinks = [
   seoTitle="Radiesse à Casablanca | Hydroxyapatite de calcium | Dr El Khadri"
   description="Radiesse à Casablanca par Dr Yousra El Khadri. Stimulation collagène et comblement avec hydroxyapatite de calcium du laboratoire Merz."
   canonical="/soins/stimulation-collagene/radiesse"
-  {jsonLd}
   label="Stimulation collagène"
   {title}
   {faqItems}

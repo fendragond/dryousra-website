@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
 
 const title = 'Préparation <em>mariage</em>';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Quand commencer ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Idéalement 6 mois avant le mariage.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Quand commencer ?', answer: 'Idéalement 6 mois avant. 3 mois minimum.' },
@@ -34,7 +23,6 @@ const crossLinks = {
   seoTitle="Préparation Mariage à Casablanca | Dr El Khadri"
   description="Préparation mariage à Casablanca. Protocole personnalisé sur 6 mois : skin booster, botox, filler, hydrafacial."
   canonical="/besoins/mariage"
-  {jsonLd}
   label="Votre besoin"
   {title}
   {faqItems}

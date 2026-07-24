@@ -4,22 +4,6 @@ import ProductBox from '../../../components/ProductBox.astro';
 import ZoneCard from '../../../components/ZoneCard.astro';
 
 const title = 'Botox à <em>Casablanca</em> — Toutes zones';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Le Botox fait-il mal ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Non, les aiguilles utilisées sont ultra-fines.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Combien de temps durent les effets ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Entre 4 et 6 mois en moyenne.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Le Botox fait-il mal ?', answer: "Non, les aiguilles utilisées sont ultra-fines. Aucune anesthésie n'est nécessaire." },
@@ -55,7 +39,6 @@ const crossLinks = [
   seoTitle="Botox à Casablanca | Toutes zones | Dr Yousra El Khadri"
   description="Injections de Botox à Casablanca par Dr Yousra El Khadri. Visage, yeux, lion, masséter, sourire gingival, nez, menton. Résultats naturels."
   canonical="/soins/injections/botox"
-  {jsonLd}
   label="Injection"
   {title}
   {faqItems}

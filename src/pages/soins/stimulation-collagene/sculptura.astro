@@ -3,17 +3,6 @@ import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 import ProductBox from '../../../components/ProductBox.astro';
 
 const title = '<em>Sculptura</em> à Casablanca';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'En combien de temps voit-on le résultat ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Premiers effets à 6-8 semaines, optimal à 3-6 mois.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'En combien de temps voit-on le résultat ?', answer: 'Premiers effets à 6-8 semaines, optimal à 3-6 mois.' },
@@ -45,7 +34,6 @@ const crossLinks = [
   seoTitle="Sculptura à Casablanca | Stimulation collagène | Dr El Khadri"
   description="Sculptura à Casablanca par Dr Yousra El Khadri. Stimulation naturelle du collagène avec acide poly-L-lactique de Galderma."
   canonical="/soins/stimulation-collagene/sculptura"
-  {jsonLd}
   label="Stimulation collagène"
   {title}
   {faqItems}

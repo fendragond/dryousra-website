@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 
 const title = '<em>Microneedling</em> à Casablanca';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: "C'est douloureux ?",
-      acceptedAnswer: { '@type': 'Answer', text: 'Avec la crème anesthésiante, le traitement est confortable.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: "C'est douloureux ?", answer: 'Avec la crème anesthésiante, le traitement est confortable.' },
@@ -44,7 +33,6 @@ const crossLinks = [
   seoTitle="Microneedling à Casablanca | Mésothérapie | Dr Yousra El Khadri"
   description="Microneedling à Casablanca par Dr Yousra El Khadri. Stimulation du collagène, traitement des cicatrices d'acné, pores dilatés et ridules."
   canonical="/soins/soins-visage/microneedling"
-  {jsonLd}
   label="Soin du visage"
   {title}
   {faqItems}

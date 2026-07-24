@@ -3,17 +3,6 @@ import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 import ZoneCard from '../../../components/ZoneCard.astro';
 
 const title = '<em>Lipolyse</em> à Casablanca';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Combien de séances ?',
-      acceptedAnswer: { '@type': 'Answer', text: '3 à 5 séances en moyenne.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Combien de séances ?', answer: '3 à 5 séances en moyenne.' },
@@ -41,7 +30,6 @@ const crossLinks = [
   seoTitle="Lipolyse à Casablanca | Mésothérapie amincissante | Dr El Khadri"
   description="Lipolyse à Casablanca par Dr Yousra El Khadri. Élimination ciblée des amas graisseux résistants par injection."
   canonical="/soins/soins-corps/lipolyse"
-  {jsonLd}
   label="Soin du corps"
   {title}
   {faqItems}

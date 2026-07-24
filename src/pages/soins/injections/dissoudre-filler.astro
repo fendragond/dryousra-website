@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 
 const title = 'Dissolution de <em>Filler</em>';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Combien de temps pour voir la dissolution ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Visible dans les 24 à 48h.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Combien de temps pour voir la dissolution ?', answer: 'Visible dans les 24 à 48h. Résultat final à 7-10 jours.' },
@@ -43,7 +32,6 @@ const crossLinks = [
   seoTitle="Dissolution de Filler à Casablanca | Hyaluronidase | Dr El Khadri"
   description="Dissolution de filler à Casablanca par Dr Yousra El Khadri. Correction d'injections d'acide hyaluronique avec hyaluronidase."
   canonical="/soins/injections/dissoudre-filler"
-  {jsonLd}
   label="Injection"
   {title}
   {faqItems}

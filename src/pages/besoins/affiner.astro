@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
 
 const title = 'Affiner le <em>visage et le corps</em>';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Le Botox masséter modifie-t-il la mastication ?',
-      acceptedAnswer: { '@type': 'Answer', text: "Non, l'effet ne touche pas la fonction." },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Le Botox masséter modifie-t-il la mastication ?', answer: "Non, l'effet ne touche pas la fonction. Vous mâchez normalement." },
@@ -34,7 +23,6 @@ const crossLinks = {
   seoTitle="Affiner le visage et le corps à Casablanca | Dr El Khadri"
   description="Affiner le visage ou le corps à Casablanca. Botox masséter pour l'ovale, lipolyse pour double menton, ventre, cuisses."
   canonical="/besoins/affiner"
-  {jsonLd}
   label="Votre besoin"
   {title}
   {faqItems}

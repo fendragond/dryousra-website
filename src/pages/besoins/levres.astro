@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
 
 const title = 'Repulper les <em>lèvres</em>';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Combien de temps ça dure ?',
-      acceptedAnswer: { '@type': 'Answer', text: '8 à 12 mois pour le filler classique.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Quelle quantité prévoir ?', answer: 'Généralement 0,5 à 1 ml pour un premier traitement.' },
@@ -32,7 +21,6 @@ const crossLinks = {
   seoTitle="Repulper les lèvres à Casablanca | Filler & Baby Lips"
   description="Repulper les lèvres à Casablanca par Dr Yousra El Khadri. Filler acide hyaluronique ou Baby Lips."
   canonical="/besoins/levres"
-  {jsonLd}
   label="Votre besoin"
   {title}
   {faqItems}

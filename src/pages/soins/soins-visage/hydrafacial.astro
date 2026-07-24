@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 
 const title = '<em>Hydrafacial</em> à Casablanca';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Est-ce douloureux ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Non, entièrement indolore.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Combien de temps dure une séance ?', answer: '30 à 45 minutes.' },
@@ -45,7 +34,6 @@ const crossLinks = [
   seoTitle="Hydrafacial à Casablanca | Soin éclat | Dr Yousra El Khadri"
   description="Hydrafacial à Casablanca par Dr Yousra El Khadri. Soin complet en 3 étapes : nettoyage, extraction, hydratation. Éclat immédiat."
   canonical="/soins/soins-visage/hydrafacial"
-  {jsonLd}
   label="Soin du visage"
   {title}
   {faqItems}

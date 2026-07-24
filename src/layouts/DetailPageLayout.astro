@@ -43,9 +43,31 @@ const {
 } = Astro.props;
 
 const crossLinkGroups = Array.isArray(crossLinks) ? crossLinks : crossLinks ? [crossLinks] : [];
+
+const incomingJsonLd = (Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []).filter(
+  (item) => item?.['@type'] !== 'FAQPage',
+);
+
+const faqPageSchema =
+  faqItems && faqItems.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
+const mergedJsonLd = faqPageSchema ? [...incomingJsonLd, faqPageSchema] : incomingJsonLd;
 ---
 
-<BaseLayout title={seoTitle} {description} {canonical} {jsonLd}>
+<BaseLayout title={seoTitle} {description} {canonical} jsonLd={mergedJsonLd}>
   <section class="sec sec-w" style="padding-top:120px">
     <div class="dp">
       <p class="sl">{label}</p>

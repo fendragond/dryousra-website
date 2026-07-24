@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 
 const title = '<em>Détatouage Laser</em> à Casablanca';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Tous les tatouages peuvent-ils être effacés ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'La plupart oui.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Douloureux ?', answer: 'Picotements chauds atténués par crème anesthésiante.' },
@@ -41,7 +30,6 @@ const crossLinks = [
   seoTitle="Détatouage Laser à Casablanca | Toutes couleurs | Dr El Khadri"
   description="Détatouage laser à Casablanca par Dr Yousra El Khadri. Effacement progressif et sécurisé des tatouages, toutes couleurs."
   canonical="/soins/laser/detatouage"
-  {jsonLd}
   label="Laser"
   {title}
   {faqItems}

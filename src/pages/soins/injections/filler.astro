@@ -4,22 +4,6 @@ import ProductBox from '../../../components/ProductBox.astro';
 import ZoneCard from '../../../components/ZoneCard.astro';
 
 const title = 'Filler à <em>Casablanca</em> — Acide Hyaluronique';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Est-ce douloureux ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Non, la crème anesthésiante rend le traitement très confortable.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Le résultat est-il réversible ?',
-      acceptedAnswer: { '@type': 'Answer', text: "Oui, l'acide hyaluronique peut être dissous immédiatement si nécessaire." },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Est-ce douloureux ?', answer: 'La crème anesthésiante rend le traitement très confortable.' },
@@ -55,7 +39,6 @@ const crossLinks = [
   seoTitle="Filler à Casablanca | Acide Hyaluronique | Dr Yousra El Khadri"
   description="Injections de filler à Casablanca par Dr Yousra El Khadri. Lèvres, nez, pommettes, jawline, menton, tempes, joues. Résultats naturels avec Restylane."
   canonical="/soins/injections/filler"
-  {jsonLd}
   label="Injection"
   {title}
   {faqItems}

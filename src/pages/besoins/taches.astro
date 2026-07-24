@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
 
 const title = 'Effacer les <em>taches</em>';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Le laser laisse-t-il des marques ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Non avec les technologies actuelles.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'Le laser laisse-t-il des marques ?', answer: 'Non avec les technologies actuelles. Rougeurs temporaires seulement.' },
@@ -32,7 +21,6 @@ const crossLinks = {
   seoTitle="Effacer les taches à Casablanca | Dr El Khadri"
   description="Effacer les taches pigmentaires à Casablanca. Laser, peeling, hydrafacial. Solaires, mélasma, taches de vieillesse."
   canonical="/besoins/taches"
-  {jsonLd}
   label="Votre besoin"
   {title}
   {faqItems}

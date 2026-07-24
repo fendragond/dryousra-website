@@ -2,17 +2,6 @@
 import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
 
 const title = 'Rajeunir le <em>visage</em> à Casablanca';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'À quel âge commencer ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Dès 25-30 ans pour la prévention.' },
-    },
-  ],
-};
 
 const faqItems = [
   { question: 'À quel âge commencer ?', answer: 'Dès 25-30 ans pour la prévention.' },
@@ -35,7 +24,6 @@ const crossLinks = {
   seoTitle="Rajeunir le visage à Casablanca | Dr El Khadri"
   description="Rajeunir le visage à Casablanca. Botox, filler, exosomes, Sculptura, skin booster. Approche médicale globale."
   canonical="/besoins/rajeunir"
-  {jsonLd}
   label="Votre besoin"
   {title}
   {faqItems}

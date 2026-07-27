@@ -30,6 +30,20 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Skin Booster (bio-revitalisation)',
+  alternateName: ['skin booster', 'bio-revitalisation', 'hydratation profonde de la peau'],
+  description: "Injections intradermiques d'acide hyaluronique non réticulé pour améliorer l'hydratation, la qualité et l'éclat de la peau sans modifier les volumes, à Casablanca.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage, cou',
+  followup: 'Résultats visibles dès la première séance, optimaux après 3 séances espacées de 4 semaines.',
+  preparation: 'Consultation médicale préalable. Crème anesthésiante topique possible.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+  usedToTreat: { '@type': 'MedicalCondition', name: 'Peau terne, déshydratée et manquant de fermeté superficielle' },
+};
 ---
 
 <DetailPageLayout
@@ -41,6 +55,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Le Skin Booster est un traitement injectable qui hydrate la peau en profondeur, lui redonne éclat et souplesse. Au cabinet de Dr Yousra El Khadri à Casablanca, plusieurs gammes premium sont disponibles selon vos besoins.</p>
   <h2>Zones traitées</h2>

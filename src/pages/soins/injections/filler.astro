@@ -33,6 +33,20 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: "Injections de fillers à l'acide hyaluronique",
+  alternateName: ['filler acide hyaluronique', 'comblement rides', 'restauration volumes visage'],
+  description: "Injection d'acide hyaluronique pour restaurer les volumes du visage, combler les rides profondes et redessiner les contours à Casablanca. Réversible par dissolution enzymatique.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage',
+  followup: 'Résultats immédiats à visibles en 24 à 48h, durée 6 à 18 mois selon zones et produits.',
+  preparation: 'Éviter anticoagulants 48h avant. Crème anesthésiante possible sur zones sensibles.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+  usedToTreat: { '@type': 'MedicalCondition', name: 'Perte de volume et rides profondes du visage' },
+};
 ---
 
 <DetailPageLayout
@@ -44,6 +58,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Les injections de filler à base d'acide hyaluronique permettent de restaurer les volumes du visage, de redessiner ses contours et de combler les rides. Au cabinet de Dr Yousra El Khadri à Casablanca, plusieurs zones du visage peuvent être traitées avec des produits de référence comme Restylane.</p>
   <h2>Zones traitées</h2>

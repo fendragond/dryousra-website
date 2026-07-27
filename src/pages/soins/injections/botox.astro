@@ -33,6 +33,20 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Injections de toxine botulique (Botox)',
+  alternateName: ['Botox esthétique', 'toxine botulique visage', 'botox rides'],
+  description: "Injection de toxine botulique de type A pour traiter les rides d'expression du visage (front, ride du lion, pattes d'oie) au cabinet de Dr Yousra El Khadri à Casablanca.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage',
+  followup: 'Résultats visibles entre J+2 et J+5, optimaux à J+10-14, durée 4 à 6 mois.',
+  preparation: 'Éviter anticoagulants et alcool 48h avant. Aucune anesthésie nécessaire.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+  usedToTreat: { '@type': 'MedicalCondition', name: "Rides d'expression du visage" },
+};
 ---
 
 <DetailPageLayout
@@ -44,6 +58,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Le Botox (toxine botulique) est un traitement médical non chirurgical qui détend les muscles responsables des rides d'expression. Au cabinet de Dr Yousra El Khadri à Casablanca, le Botox est utilisé sur plusieurs zones du visage selon vos besoins. La séance dure 15 à 20 minutes, les premiers effets apparaissent en 2 à 3 jours et le résultat optimal se voit à J+10. Durée moyenne : 4 à 6 mois.</p>
   <h2>Zones traitées</h2>

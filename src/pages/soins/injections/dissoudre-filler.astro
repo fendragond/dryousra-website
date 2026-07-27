@@ -26,6 +26,20 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Dissolution de filler (hyaluronidase)',
+  alternateName: ['dissolution filler', 'hyaluronidase', 'correction acide hyaluronique'],
+  description: "Injection de hyaluronidase pour dissoudre un filler à l'acide hyaluronique mal placé, en excès ou indésirable, et corriger le résultat à Casablanca.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage',
+  followup: 'Résorption visible en 24 à 48h. Une nouvelle injection peut être envisagée après quelques jours si nécessaire.',
+  preparation: 'Consultation médicale préalable avec test de sensibilité si indiqué.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+  usedToTreat: { '@type': 'MedicalCondition', name: "Filler à l'acide hyaluronique en excès ou mal positionné" },
+};
 ---
 
 <DetailPageLayout
@@ -37,6 +51,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Si un filler ne vous convient plus, est mal positionné ou présente une migration, Dr Yousra El Khadri peut le dissoudre rapidement à l'aide d'une enzyme spécifique : la hyaluronidase. C'est l'un des grands avantages de l'acide hyaluronique : sa réversibilité totale.</p>
   <h2>Quand dissoudre un filler ?</h2>

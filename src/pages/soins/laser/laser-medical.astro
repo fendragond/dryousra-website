@@ -26,6 +26,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Laser médical esthétique',
+  alternateName: ['laser médical', 'traitement laser du visage', 'laser esthétique'],
+  description: "Traitements laser médicaux pour cibler diverses indications cutanées (rougeurs, taches, texture, éclat) à Casablanca, adaptés au type de peau lors d'une consultation médicale.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage, corps',
+  followup: "Résultats progressifs selon l'indication. Protocole de plusieurs séances espacées de quelques semaines.",
+  preparation: "Éviter l'exposition solaire avant la séance. Consultation médicale préalable pour adapter les paramètres au phototype.",
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -37,6 +50,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Le laser médical traite une grande variété d'indications dermatologiques : taches pigmentaires, rajeunissement cutané, cicatrices, pores dilatés.</p>
   <h2>Indications</h2>

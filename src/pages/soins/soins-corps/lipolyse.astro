@@ -24,6 +24,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Lipolyse (réduction des amas graisseux)',
+  alternateName: ['lipolyse', 'réduction des amas graisseux localisés', 'traitement des graisses localisées'],
+  description: 'Traitement médical visant à réduire des amas graisseux localisés résistants au régime et à l\'exercice à Casablanca, selon une évaluation médicale préalable.',
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: "Corps, zones d'amas graisseux localisés",
+  followup: 'Résultats progressifs sur plusieurs semaines. Protocole adapté à la zone et au volume traité.',
+  preparation: 'Consultation médicale préalable avec évaluation de la zone. Hydratation recommandée.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -35,6 +48,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>La lipolyse est une technique d'injection ciblée qui dissout les cellules graisseuses dans des zones précises. Alternative non chirurgicale à la liposuccion pour les amas graisseux localisés.</p>
   <h2>Zones traitées</h2>

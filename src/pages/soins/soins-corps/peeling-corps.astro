@@ -24,6 +24,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Peeling du corps',
+  alternateName: ['peeling corps', 'exfoliation médicale du corps', 'peeling chimique corporel'],
+  description: "Application d'une solution exfoliante sur le corps pour améliorer la texture, l'éclat et l'uniformité de la peau à Casablanca, adaptée à la zone traitée.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Corps (dos, bras, jambes, zones ciblées)',
+  followup: 'Desquamation légère les jours suivants, amélioration visible après renouvellement cutané. Protocole adapté au type de peau.',
+  preparation: "Éviter l'exposition solaire les jours précédents. Consultation préalable pour adapter la profondeur.",
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -35,6 +48,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Le peeling corps cible des zones spécifiques sujettes à l'hyperpigmentation : aisselles, parties intimes, mains, cou. Traitement médical d'éclaircissement et d'uniformisation.</p>
   <h2>Zones traitées</h2>

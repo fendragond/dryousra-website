@@ -24,6 +24,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Détatouage laser',
+  alternateName: ['détatouage laser', 'retrait de tatouage', 'effacement de tatouage'],
+  description: "Traitement laser qui fragmente progressivement les pigments d'encre pour effacer un tatouage indésirable, toutes couleurs, à Casablanca.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Zone tatouée du corps',
+  followup: "Effacement progressif sur 4 à 8 séances espacées de 6 à 8 semaines, selon l'encre et la profondeur.",
+  preparation: "Éviter l'exposition solaire sur la zone avant la séance. Consultation médicale préalable.",
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -35,6 +48,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Le laser fractionne les pigments d'encre en micro-particules éliminées naturellement par l'organisme. 4 à 8 séances en moyenne, espacées de 6 à 8 semaines.</p>
   <h2>Déroulement</h2>

@@ -28,6 +28,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Soin aux exosomes',
+  alternateName: ['exosomes', 'régénération cellulaire', 'soin régénérant du visage'],
+  description: "Application ou micro-injection d'exosomes pour favoriser la régénération cellulaire, améliorer la qualité et l'éclat de la peau à Casablanca, souvent en complément d'autres soins.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage, cuir chevelu',
+  followup: 'Résultats progressifs sur plusieurs semaines. Souvent associé au microneedling pour optimiser la pénétration.',
+  preparation: 'Consultation médicale préalable. Peau nettoyée avant application.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -39,6 +52,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Les exosomes sont des vésicules cellulaires qui transportent des facteurs de croissance. Au cabinet de Dr Yousra El Khadri à Casablanca, ils sont utilisés pour le visage et pour la repousse capillaire avec XL Hair.</p>
   <h2>Exosomes visage</h2>

@@ -24,6 +24,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Soin Baby Lips (hydratation des lèvres)',
+  alternateName: ['baby lips', 'skin booster lèvres', 'hydratation des lèvres'],
+  description: "Micro-injections d'acide hyaluronique très fluide pour hydrater et lisser les lèvres sans en modifier le volume, pour un aspect frais et naturel à Casablanca.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Lèvres, contour des lèvres',
+  followup: 'Résultat naturel visible en quelques jours, durée variable selon la peau. Entretien possible selon les besoins.',
+  preparation: 'Crème anesthésiante topique possible. Consultation préalable.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -35,6 +48,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Le Baby Lips combine hydratation profonde et léger repulpage pour un effet lèvres de bébé : douces, hydratées, lumineuses, sans excès de volume.</p>
   <h2>Indications</h2>

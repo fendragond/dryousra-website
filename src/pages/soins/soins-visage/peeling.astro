@@ -28,6 +28,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Peeling du visage',
+  alternateName: ['peeling visage', 'peeling chimique', 'exfoliation médicale'],
+  description: "Application d'une solution exfoliante qui renouvelle la couche superficielle de la peau pour améliorer l'éclat, les taches et la texture du visage à Casablanca.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage',
+  followup: 'Desquamation légère les jours suivants, éclat visible après renouvellement cutané. Protocole adapté au type de peau.',
+  preparation: "Éviter l'exposition solaire et les actifs exfoliants les jours précédents. Consultation préalable pour adapter la profondeur du peeling.",
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -39,6 +52,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Le peeling médical exfolie les couches superficielles de la peau pour stimuler le renouvellement cellulaire. Plusieurs profondeurs et plusieurs zones du corps peuvent être traitées.</p>
   <h2>Zones traitées</h2>

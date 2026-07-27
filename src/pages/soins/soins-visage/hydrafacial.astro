@@ -28,6 +28,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Soin HydraFacial',
+  alternateName: ['HydraFacial', 'soin hydratant du visage', 'nettoyage profond de la peau'],
+  description: 'Soin du visage en plusieurs étapes qui nettoie, exfolie, extrait les impuretés et hydrate la peau en profondeur à Casablanca, sans éviction sociale.',
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage, cou, décolleté',
+  followup: 'Résultat visible dès la première séance. Entretien recommandé toutes les 4 semaines.',
+  preparation: 'Aucune préparation particulière. Éviter les gommages agressifs 48h avant.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -39,6 +52,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Hydrafacial est un soin médical complet du visage en 3 étapes : nettoyage en profondeur, extraction douce des impuretés, et infusion de sérums hydratants et antioxydants.</p>
   <h2>Le protocole en 3 étapes</h2>

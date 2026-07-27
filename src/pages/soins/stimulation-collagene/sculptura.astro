@@ -28,6 +28,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Injections de Sculptra (acide poly-L-lactique)',
+  alternateName: ['Sculptra', 'acide poly-lactique', 'stimulateur de collagène'],
+  description: "Injection d'acide poly-L-lactique qui stimule la production naturelle de collagène pour restaurer progressivement les volumes et la fermeté du visage à Casablanca. Résultat progressif sur plusieurs mois.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage, tempes, joues, ovale du visage',
+  followup: "Résultats progressifs sur 3 à 6 mois, durée jusqu'à 24 mois. Protocole de 2 à 3 séances espacées de 4 à 6 semaines.",
+  preparation: 'Consultation médicale préalable. Éviter anticoagulants 48h avant.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -39,6 +52,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Sculptura est un produit injectable à base d'acide poly-L-lactique qui stimule la production naturelle de collagène par votre peau. Contrairement aux fillers classiques, Sculptura ne comble pas immédiatement : il agit en profondeur pour reconstruire la structure de la peau pendant plusieurs mois.</p>
   <h2>Comment ça fonctionne ?</h2>

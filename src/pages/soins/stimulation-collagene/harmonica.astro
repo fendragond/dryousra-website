@@ -25,6 +25,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Injections de HArmonyCa (hybride hydroxyapatite et acide hyaluronique)',
+  alternateName: ['HArmonyCa', 'stimulateur hybride', 'acide hyaluronique et hydroxyapatite'],
+  description: "Injection d'un produit hybride associant acide hyaluronique et hydroxyapatite de calcium pour un effet de soutien immédiat et une stimulation du collagène sur la durée, pour raffermir et redéfinir l'ovale du visage à Casablanca.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage, ovale du visage, bas du visage',
+  followup: 'Effet de soutien immédiat, stimulation progressive du collagène, durée pouvant atteindre 24 mois.',
+  preparation: 'Consultation médicale préalable. Éviter anticoagulants 48h avant.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -36,6 +49,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Harmonica est un traitement de stimulation collagène utilisé pour raffermir et bio-remodeler la peau. Il est indiqué pour les patients souhaitant un effet liftant naturel sans excès de volume.</p>
   <h2>Indications</h2>

@@ -28,6 +28,19 @@ const crossLinks = [
     ],
   },
 ];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: "Injections de Radiesse (hydroxyapatite de calcium)",
+  alternateName: ['Radiesse', 'hydroxyapatite de calcium', 'stimulateur de collagène'],
+  description: "Injection d'hydroxyapatite de calcium qui restaure les volumes immédiatement et stimule la production de collagène sur la durée, pour redensifier le visage, le cou et les mains à Casablanca.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage, cou, mains',
+  followup: 'Effet volumateur immédiat, stimulation du collagène sur 3 à 6 mois, durée 12 à 18 mois.',
+  preparation: 'Consultation médicale préalable. Éviter anticoagulants 48h avant. Crème anesthésiante possible.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
 ---
 
 <DetailPageLayout
@@ -39,6 +52,7 @@ const crossLinks = [
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  jsonLd={medicalProcedure}
 >
   <p>Radiesse est un produit injectable double-action : il comble immédiatement les volumes et stimule la production de collagène pour des résultats durables. À base d'hydroxyapatite de calcium, Radiesse offre un effet liftant naturel particulièrement adapté au visage et au cou.</p>
   <h2>Pourquoi Radiesse ?</h2>

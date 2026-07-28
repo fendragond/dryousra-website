@@ -1,0 +1,138 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import ZoneCard from '../../../components/ZoneCard.astro';
+
+const title = 'Épilation Laser <em>Définitive</em> à Casablanca';
+
+const faqItems = [
+  {
+    question: 'Quel est le prix d\'une épilation laser à Casablanca ?',
+    answer: 'Le tarif dépend des zones traitées, de la surface et du nombre de séances prévu. Aucun chiffre n\'est communiqué à distance : un devis personnalisé vous est remis lors de la consultation médicale, après évaluation de votre phototype et de vos attentes.',
+  },
+  {
+    question: 'L\'épilation laser est-elle douloureuse ?',
+    answer: 'La sensation ressemble à de petits picotements chauds, souvent comparés à un élastique qui claque sur la peau. Elle reste brève. Une crème anesthésiante peut être proposée sur les zones plus sensibles pour améliorer votre confort pendant la séance.',
+  },
+  {
+    question: 'Combien de séances sont nécessaires ?',
+    answer: 'Un protocole complet compte généralement six à huit séances, espacées de quatre à six semaines. Ce rythme suit le cycle de pousse du poil : le laser n\'agit que sur les follicules en phase de croissance active. Des séances d\'entretien peuvent suivre selon votre profil.',
+  },
+  {
+    question: 'L\'épilation laser convient-elle aux peaux mates et foncées ?',
+    answer: 'Oui. La longueur d\'onde Nd:YAG 1064 nm de la plateforme Cynosure Elite+ permet d\'adapter le traitement aux phototypes IV à VI. Les paramètres sont réglés lors de la consultation pour respecter votre peau tout en ciblant le pigment du poil.',
+  },
+  {
+    question: 'Puis-je reprendre mes activités après la séance ?',
+    answer: 'Dans la plupart des cas, oui, dès le jour même. Une rougeur ou une sensation de chaleur légère peuvent apparaître et s\'estompent en quelques heures. Il est recommandé d\'éviter le soleil, le hammam et le sport intensif dans les jours qui suivent.',
+  },
+  {
+    question: 'Peut-on combiner l\'épilation laser avec d\'autres soins ?',
+    answer: 'Oui, sous réserve d\'un espacement adapté. L\'épilation laser peut s\'inscrire dans un parcours plus large, notamment avec des soins visant la texture de peau. L\'ordre et les délais sont définis en consultation pour préserver la sécurité de chaque geste.',
+  },
+  {
+    question: 'Quelles sont les contre-indications de l\'épilation laser ?',
+    answer: 'Une grossesse, un allaitement, une infection cutanée active sur la zone, certains médicaments photosensibilisants ou une exposition solaire récente peuvent contre-indiquer la séance. Ces points sont systématiquement vérifiés avant tout traitement.',
+  },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Améliorer la texture de peau', url: '/besoins/texture' },
+    ],
+  },
+  {
+    label: 'Autres traitements laser',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Laser médical', url: '/soins/laser/laser-medical' },
+      { text: 'Détatouage laser', url: '/soins/laser/detatouage' },
+    ],
+  },
+];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Épilation laser définitive',
+  alternateName: ['épilation laser', 'épilation définitive', 'épilation laser Casablanca'],
+  description: "Épilation laser définitive à Casablanca sur plateforme Cynosure Elite+ (Alexandrite 755 nm et Nd:YAG 1064 nm), adaptée à tous les phototypes, pour réduire durablement la pilosité.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Aisselles, maillot, jambes, visage, dos, bras',
+  followup: "Réduction progressive de la pilosité sur 6 à 8 séances espacées de 4 à 6 semaines, puis séances d'entretien.",
+  preparation: "Éviter l'exposition solaire avant la séance. Ne pas épiler à la cire ou à la pince. Consultation médicale préalable pour adapter les paramètres au phototype.",
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
+---
+
+<DetailPageLayout
+  seoTitle="Épilation Laser à Casablanca | Cynosure Elite+ | Dr Yousra El Khadri"
+  description="Épilation laser définitive à Casablanca par Dr Yousra El Khadri. Plateforme Cynosure Elite+, adaptée à tous les phototypes. Aisselles, maillot, jambes, visage."
+  canonical="/soins/laser/epilation-laser"
+  label="Laser"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+  jsonLd={medicalProcedure}
+>
+  <p>L'épilation laser permet de réduire durablement la pilosité en ciblant le follicule pileux par la lumière. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, ce soin est réalisé sur la plateforme Cynosure Elite+, une station bi-longueur d'onde conçue pour adapter le traitement à chaque phototype. Que vous souhaitiez traiter les aisselles, le maillot, les jambes ou le visage, la consultation médicale précède toujours le protocole : elle permet d'évaluer la couleur de peau, la densité et la nature du poil, puis de définir un plan de séances réaliste. À Casablanca, la demande d'épilation laser définitive concerne aussi bien les peaux claires que les peaux mates, et l'approche du cabinet privilégie des paramètres réglés au cas par cas plutôt qu'un protocole standardisé.</p>
+
+  <figure class="media-reel">
+    <video
+      src="/videos/epilation-laser-elite-plus-casablanca.mp4"
+      poster="/images/epilation-laser-elite-plus-station-casablanca.webp"
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      aria-label="Épilation laser définitive à Casablanca, plateforme Cynosure Elite+"
+      width="360"
+      height="640"
+    ></video>
+  </figure>
+
+  <h2>Qu'est-ce que l'épilation laser définitive ?</h2>
+  <p>L'épilation laser définitive repose sur le principe de la photothermolyse sélective. Un faisceau lumineux monochromatique traverse la peau et est absorbé par la mélanine contenue dans le poil. Cette énergie se transforme en chaleur et endommage le follicule pileux sans détruire les tissus environnants, à condition que les paramètres (longueur d'onde, fluence, durée d'impulsion) soient correctement choisis. Le laser n'agit que sur les poils en phase de croissance active, dite phase anagène. Or, à un moment donné, seule une fraction des poils se trouve dans cette phase. C'est pourquoi plusieurs séances sont nécessaires pour couvrir l'ensemble du cycle pileux. Le terme « définitive » désigne une réduction durable et importante de la pilosité, et non une disparition absolue dès la première séance. Contrairement au rasage, qui coupe le poil en surface, ou à la cire, qui l'arrache temporairement, le laser agit à la racine sur le follicule. Le traitement convient aux personnes gênées par une pilosité dense, une irritation liée au rasage ou à la cire, des poils incarnés récurrents, ou simplement souhaitant alléger l'entretien quotidien. Hommes et femmes peuvent en bénéficier, sur des zones du visage comme du corps. Une consultation préalable à Casablanca permet de confirmer l'indication, d'exclure les contre-indications et d'expliquer le calendrier attendu, afin que vous sachiez à quoi vous attendre avant de commencer.</p>
+
+  <h2>Zones traitées</h2>
+  <p>La plupart des zones du corps et du visage peuvent être traitées, seules ou combinées selon vos priorités. Voici les indications les plus fréquentes au cabinet :</p>
+  <div class="zones">
+    <ZoneCard title="Aisselles" description="Zone compacte, souvent demandée en premier pour un entretien quotidien simplifié." />
+    <ZoneCard title="Maillot" description="Traitement possible sur différentes surfaces, avec des paramètres adaptés à la sensibilité de la peau." />
+    <ZoneCard title="Jambes" description="Cuisses, demi-jambes ou jambes entières : le protocole suit le cycle de pousse sur une surface plus étendue." />
+    <ZoneCard title="Visage (lèvre, menton)" description="Indiqué pour une pilosité fine ou dense du visage, avec une attention particulière au phototype." />
+    <ZoneCard title="Dos et torse" description="Zones fréquemment demandées chez l'homme, traitables par séances progressives." />
+    <ZoneCard title="Bras" description="Avant-bras ou bras complets, pour une pilosité homogène et un entretien allégé." />
+  </div>
+
+  <h2>La plateforme Cynosure Elite+</h2>
+  <p>Le cabinet dispose de la plateforme Cynosure Elite+, une station laser qui combine deux longueurs d'onde complémentaires : l'Alexandrite 755 nm et le Nd:YAG 1064 nm. L'Alexandrite est particulièrement adaptée aux peaux claires à mates claires et aux poils fins ou moyens, grâce à une forte absorption par la mélanine. Le Nd:YAG, plus pénétrant et moins absorbé par la mélanine épidermique, élargit le champ des phototypes pouvant être traités en sécurité. Cette dualité permet de choisir, pour chaque patiente ou patient, la longueur d'onde et les réglages les plus pertinents. La station Elite+ visible au cabinet illustre cette approche technologique : un appareil médical conçu pour l'épilation laser et d'autres indications cutanées, utilisé dans un cadre de consultation médicale. À Casablanca, disposer de ces deux longueurs d'onde sur une même plateforme évite de limiter l'offre à un seul profil de peau. Les paramètres restent toujours individualisés : fluence, durée d'impulsion et système de refroidissement sont ajustés en fonction de la zone, de la densité pileuse et de la réaction cutanée observée. Le refroidissement cutané pendant le passage du laser contribue au confort et à la protection de l'épiderme. Cette maîtrise technique s'inscrit dans une prise en charge médicale : chaque réglage découle de l'examen clinique, pas d'un protocole figé identique pour toutes les peaux.</p>
+
+  <h2>Épilation laser et peaux mates : l'atout du Nd:YAG</h2>
+  <p>À Casablanca, une part importante des demandes d'épilation laser concerne des peaux mates à foncées, correspondant aux phototypes IV à VI. Sur ces peaux, la mélanine épidermique est plus présente : une longueur d'onde trop absorbée en surface augmente le risque d'échauffement cutané et de pigmentations parasites. Le Nd:YAG 1064 nm pénètre plus profondément et interagit davantage avec le pigment du poil qu'avec celui de l'épiderme, ce qui en fait une option adaptée à ces phototypes lorsque les paramètres sont correctement réglés. Cette capacité ne dispense pas d'une évaluation médicale : la couleur du poil, l'état de la peau, l'historique solaire et d'éventuels traitements antérieurs influencent le protocole. L'objectif est une épilation laser progressive, réalisée dans des conditions de sécurité adaptées à votre peau, et non un résultat forcé en peu de séances.</p>
+
+  <h2>Déroulement d'une séance au cabinet de Dr Yousra El Khadri</h2>
+  <p>Chaque parcours commence par une consultation au Quartier des Hôpitaux. Dr Yousra El Khadri examine la zone, précise le phototype, explique le mécanisme du laser et le nombre de séances envisagé. Avant le rendez-vous d'épilation, il est demandé de ne pas s'épiler à la cire ni à la pince (le rasage reste autorisé), et d'éviter l'exposition solaire. Le poil doit être présent dans le follicule pour que la lumière soit absorbée : d'où l'importance de ne pas l'arracher dans les semaines qui précèdent. Le jour de la séance, la peau est nettoyée, un gel conducteur peut être appliqué, et le passage du laser se fait zone par zone. La sensation est un picotement chaud bref ; un système de refroidissement limite l'inconfort. Sur les zones plus sensibles, une crème anesthésiante peut être proposée. La durée dépend de la surface : quelques minutes pour les aisselles, davantage pour les jambes ou le dos. Un protocole typique compte six à huit séances, espacées de quatre à six semaines, afin de suivre le cycle pileux. Entre les séances, un suivi permet d'ajuster les paramètres si nécessaire. À Casablanca, ce cadre médical structure l'ensemble du traitement, de la première évaluation jusqu'aux éventuelles séances d'entretien, avec des consignes claires à appliquer chez vous entre deux rendez-vous.</p>
+
+  <h2>Résultats et entretien</h2>
+  <p>La réduction de la pilosité est progressive. Dès les premières séances, les poils repoussent plus fins et plus clairsemés ; la densification diminue au fil du protocole. Le résultat final dépend de la zone, de la couleur du poil, des hormones et du respect du calendrier. Une réduction durable est l'objectif habituel, avec parfois des séances d'entretien espacées pour maintenir le bénéfice, notamment sur les zones influencées par les variations hormonales (visage, maillot). Les poils blonds, blancs ou très fins absorbent moins bien l'énergie lumineuse : dans ces cas, l'indication est discutée en consultation. Aucun résultat absolu n'est promis à l'avance : le suivi permet d'évaluer l'évolution et d'adapter la suite du protocole à votre réponse individuelle, séance après séance.</p>
+
+  <h2>Précautions et contre-indications</h2>
+  <p>L'exposition solaire doit être évitée avant et après chaque séance, car une peau bronzée modifie l'absorption de la lumière et augmente le risque d'effets secondaires. Une protection solaire adaptée est recommandée sur les zones exposées. Après la séance, une rougeur passagère ou une sensation de chaleur sont possibles ; elles s'atténuent en général en quelques heures. La consultation médicale sert à adapter les paramètres au phototype et à écarter les situations contre-indiquées : grossesse, allaitement, infection cutanée locale, certains traitements photosensibilisants, ou antécédents particuliers. Ces précautions font partie intégrante d'une épilation laser menée dans un cadre médical à Casablanca, pour que chaque séance se déroule dans les meilleures conditions de sécurité possibles.</p>
+</DetailPageLayout>
+
+<style>
+  .media-reel {
+    margin: 28px 0;
+    max-width: 360px;
+  }
+  .media-reel video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    background: #111;
+  }
+</style>

@@ -5,10 +5,11 @@ import ProductBox from '../../../components/ProductBox.astro';
 const title = '<em>Sculptura</em> à Casablanca';
 
 const faqItems = [
-  { question: 'En combien de temps voit-on le résultat ?', answer: 'Premiers effets à 6-8 semaines, optimal à 3-6 mois.' },
-  { question: 'Combien de temps durent les effets ?', answer: '2 à 3 ans en moyenne.' },
-  { question: "C'est différent du filler ?", answer: "Oui. Le filler comble immédiatement avec de l'acide hyaluronique. Sculptura stimule progressivement votre propre collagène." },
-  { question: 'Combien de séances ?', answer: '2 à 3 séances espacées de 4 à 6 semaines.' },
+  { question: 'En combien de temps voit-on le résultat ?', answer: 'Les premiers effets apparaissent vers six à huit semaines, et le résultat atteint son optimum entre trois et six mois. Cette progression lente correspond au temps nécessaire à votre peau pour fabriquer du nouveau collagène.' },
+  { question: 'Combien de temps durent les effets ?', answer: 'Le bénéfice se maintient généralement sur deux à trois ans, ce qui fait de Sculptura une solution adaptée à un entretien annuel plutôt qu\'à des rendez-vous fréquents.' },
+  { question: 'Est-ce différent d\'un filler ?', answer: 'Oui. Un filler comble immédiatement avec de l\'acide hyaluronique. Sculptura ne comble pas : il stimule progressivement la production de votre propre collagène, pour un résultat plus lent à venir mais plus durable.' },
+  { question: 'Combien de séances sont nécessaires ?', answer: 'Le protocole comprend généralement deux à trois séances espacées de quatre à six semaines. Un entretien annuel suffit ensuite le plus souvent à préserver le résultat.' },
+  { question: 'Puis-je reprendre mes activités après la séance ?', answer: 'Oui, la reprise se fait le jour même dans la plupart des cas. Un massage de la zone est simplement recommandé pendant les cinq jours qui suivent la séance.' },
 ];
 
 const crossLinks = [
@@ -54,17 +55,41 @@ const medicalProcedure = {
   showGalleryCTA
   jsonLd={medicalProcedure}
 >
-  <p>Sculptura est un produit injectable à base d'acide poly-L-lactique qui stimule la production naturelle de collagène par votre peau. Contrairement aux fillers classiques, Sculptura ne comble pas immédiatement : il agit en profondeur pour reconstruire la structure de la peau pendant plusieurs mois.</p>
-  <h2>Comment ça fonctionne ?</h2>
-  <p>Sculptura est injecté dans le derme profond. L'acide poly-L-lactique stimule les fibroblastes qui synthétisent un nouveau collagène natif. Ce collagène est votre propre tissu, ce qui rend les résultats extrêmement naturels et durables.</p>
-  <h2>Indications</h2>
+  <p>Sculptura est un traitement injectable de stimulation du collagène à base d'acide poly-L-lactique. Au cabinet de Dr Yousra El Khadri, à Casablanca, il s'adresse aux personnes qui souhaitent restaurer la fermeté et les volumes de leur visage de façon progressive et durable, sans recourir à un comblement immédiat. Contrairement à un filler classique, Sculptura ne remplit pas la peau : il relance un processus biologique naturel, celui de la production de votre propre collagène. Cette approche en fait l'un des traitements de stimulation du collagène les plus recherchés à Casablanca par les personnes en quête d'un résultat naturel et de longue durée.</p>
+
+  <h2>Pourquoi la peau perd en collagène avec l'âge</h2>
+  <p>Le collagène est la protéine qui donne à la peau sa fermeté, son rebond et sa densité. À partir de la trentaine, sa production naturelle ralentit d'environ un pour cent par an. Ce déclin progressif explique l'apparition du relâchement, la perte de galbe des joues, l'affinement de la peau et cette impression de visage qui se creuse. Les traitements de comblement classiques masquent ces signes en ajoutant du volume, mais n'agissent pas sur la cause. La stimulation du collagène adopte une logique différente : elle vise à relancer le mécanisme de fabrication du collagène lui-même, pour redensifier la peau de l'intérieur plutôt que de la remplir.</p>
+
+  <h2>Un traitement pensé pour la durée</h2>
+  <p>La particularité de Sculptura tient dans la longévité de ses résultats. Là où la toxine botulique agit sur quatre à six mois et un filler à l'acide hyaluronique sur six à dix-huit mois, la stimulation du collagène obtenue avec Sculptura se maintient généralement sur deux à trois ans. Cette durée en fait une solution particulièrement adaptée aux personnes qui ne peuvent pas se déplacer fréquemment au cabinet, notamment les patientes résidant à l'étranger qui reviennent à Casablanca une fois par an. Un protocole initial suivi d'un entretien annuel suffit souvent à préserver le bénéfice dans le temps, ce qui distingue nettement Sculptura des traitements nécessitant des retouches rapprochées.</p>
+
+  <h2>Comment fonctionne la stimulation du collagène</h2>
+  <p>Sculptura est injecté dans le derme profond. L'acide poly-L-lactique qu'il contient agit comme un signal adressé aux fibroblastes, les cellules chargées de fabriquer le collagène. Progressivement, ces cellules synthétisent un nouveau collagène natif, c'est-à-dire produit par votre propre organisme. Ce mécanisme explique pourquoi les résultats apparaissent lentement et paraissent naturels : ce n'est pas un produit de remplissage que l'on voit, mais votre peau qui se redensifie de l'intérieur. Le produit injecté, lui, est résorbé par l'organisme au fil des semaines, ne laissant derrière lui que le collagène nouvellement formé.</p>
+
+  <h2>À qui s'adresse Sculptura à Casablanca ?</h2>
+  <p>Le traitement s'adresse aux personnes confrontées à une perte de fermeté et de densité de la peau liée à l'âge. Il est particulièrement indiqué dans les situations suivantes :</p>
   <ul>
-    <li>Relâchement cutané du visage</li>
-    <li>Perte de volume liée à l'âge</li>
-    <li>Effet creux temporal et jugal</li>
-    <li>Qualité de peau dégradée</li>
+    <li>Relâchement cutané léger à modéré du visage</li>
+    <li>Perte de volume progressive liée à la fonte des tissus</li>
+    <li>Effet creux au niveau des tempes et des joues</li>
+    <li>Qualité de peau qui se dégrade, teint terne, peau qui manque de tonus</li>
   </ul>
-  <h2>Déroulement</h2>
-  <p>Le protocole comprend généralement 2 à 3 séances espacées de 4 à 6 semaines. Un massage de la zone est recommandé pendant 5 jours après la séance.</p>
-  <ProductBox title="Produits utilisés" description="Sculptura est fabriqué par <strong>Galderma</strong>, laboratoire de référence en médecine esthétique." />
+  <p>Lors de la consultation au Quartier des Hôpitaux, Dr El Khadri évalue votre profil et détermine si Sculptura correspond à votre indication, seul ou en association avec d'autres soins. Ce traitement convient aux personnes qui privilégient un résultat discret et graduel plutôt qu'un changement immédiat et visible.</p>
+
+  <h2>Déroulement d'une séance</h2>
+  <p>Une séance commence par un temps d'échange et d'analyse du visage. Le produit est ensuite reconstitué puis injecté dans les zones ciblées à l'aide d'une aiguille fine ou d'une canule. La séance dure en moyenne trente à quarante-cinq minutes. Le protocole complet comprend généralement deux à trois séances espacées de quatre à six semaines, le temps de laisser le collagène se construire entre chaque rendez-vous. Un massage de la zone traitée est recommandé pendant les cinq jours qui suivent chaque séance, afin de répartir le produit de manière homogène.</p>
+
+  <h2>Résultats : un calendrier progressif</h2>
+  <p>La patience fait partie du traitement. Les premiers effets deviennent visibles au bout de six à huit semaines, et le résultat s'affine progressivement pour atteindre son optimum vers trois à six mois. Cette montée en puissance lente est le signe que le collagène se reconstruit. Le bénéfice se maintient ensuite sur deux à trois ans, avec une amélioration de la fermeté, du galbe et de la qualité globale de la peau. Ce calendrier progressif demande d'anticiper : pour un événement précis, il est conseillé de débuter le protocole plusieurs mois à l'avance.</p>
+
+  <h2>Suites et précautions</h2>
+  <p>Les suites d'une séance de Sculptura sont généralement légères. De petits points d'injection, un léger gonflement ou des ecchymoses discrètes peuvent apparaître et se résorbent en quelques jours. La reprise des activités habituelles se fait le jour même dans la plupart des cas. Comme pour tout acte médical, certaines situations peuvent contre-indiquer le traitement, notamment une infection cutanée active sur la zone, une grossesse ou un allaitement, ou certains antécédents auto-immuns. Ces éléments sont systématiquement passés en revue lors de la consultation préalable, garantissant une prise en charge médicale rigoureuse.</p>
+
+  <h2>Sculptura en association avec d'autres soins</h2>
+  <p>La stimulation du collagène s'intègre souvent dans une approche globale du rajeunissement. Sculptura peut être associé à d'autres traitements pour répondre à des besoins complémentaires : la <a href="/soins/injections/filler">restauration ciblée des volumes par filler</a> pour redessiner une zone précise, la toxine botulique pour détendre les rides d'expression, ou encore les soins de qualité de peau pour l'éclat. Au sein de la même famille, <a href="/soins/stimulation-collagene/radiesse">Radiesse</a> et <a href="/soins/stimulation-collagene/harmonica">Harmonica</a> offrent des profils d'action légèrement différents, que Dr El Khadri peut privilégier selon votre indication. L'ensemble de ces options s'inscrit dans une démarche de <a href="/besoins/rajeunir">rajeunissement du visage</a> pensée sur mesure.</p>
+
+  <h2>Une prise en charge médicale à Casablanca</h2>
+  <p>La qualité d'un traitement de stimulation du collagène dépend étroitement de la maîtrise du geste et de la justesse de l'indication. Au cabinet du Quartier des Hôpitaux à Casablanca, chaque protocole Sculptura est défini sur mesure, après analyse du visage et discussion de vos attentes. L'objectif n'est jamais de transformer, mais de restaurer avec naturel ce que le temps a estompé. Cette rigueur médicale, associée à un produit issu d'un laboratoire de référence, fait de Sculptura à Casablanca une option de choix pour un rajeunissement durable.</p>
+
+  <ProductBox title="Produits utilisés" description="Sculptura est fabriqué par <strong>Galderma</strong>, laboratoire de référence en médecine esthétique, reconnu pour l'ancienneté et la solidité de ses données cliniques." />
 </DetailPageLayout>

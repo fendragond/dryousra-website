@@ -4,8 +4,34 @@ import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 const title = '<em>Baby Lips</em> à Casablanca';
 
 const faqItems = [
-  { question: 'Différent du filler classique ?', answer: "Le Baby Lips utilise un acide hyaluronique fluide qui hydrate sans modifier le volume marqué." },
-  { question: 'Combien de temps ça dure ?', answer: 'Environ 6 à 9 mois.' },
+  {
+    question: 'Quel est le prix du Baby Lips à Casablanca ?',
+    answer: 'Le tarif dépend de la quantité de produit et de votre indication. Aucun chiffre n\'est communiqué à distance : un devis personnalisé vous est remis lors de la consultation médicale au cabinet.',
+  },
+  {
+    question: 'Le Baby Lips est-il douloureux ?',
+    answer: 'Une crème anesthésiante est généralement appliquée avant les micro-injections. La sensation reste brève et bien tolérée pour la plupart des patientes. Le confort est adapté à la sensibilité des lèvres.',
+  },
+  {
+    question: 'Combien de temps durent les résultats du Baby Lips ?',
+    answer: 'En moyenne environ 6 à 9 mois. La durée varie selon votre métabolisme, l\'hydratation de base de vos lèvres et les soins d\'entretien. Un suivi permet d\'envisager une nouvelle séance si besoin.',
+  },
+  {
+    question: 'Quelle est la différence entre Baby Lips et filler lèvres ?',
+    answer: 'Le Baby Lips utilise un acide hyaluronique très fluide pour hydrater et lisser sans ajouter un volume marqué. Le filler lèvres classique vise davantage le repulpage, le contour ou la correction d\'asymétrie. Le choix dépend de votre besoin, précisé en consultation.',
+  },
+  {
+    question: 'Puis-je reprendre mes activités après un Baby Lips ?',
+    answer: 'Oui, dans la plupart des cas dès le jour même. Un léger gonflement ou une sensibilité passagère sont possibles. Il est recommandé d\'éviter le hammam, le sport intensif et le maquillage des lèvres dans les heures qui suivent, selon les consignes données.',
+  },
+  {
+    question: 'Peut-on combiner le Baby Lips avec d\'autres soins ?',
+    answer: 'Oui, sous réserve d\'un espacement adapté. Le Baby Lips peut s\'inscrire dans un parcours plus large (soins de peau, éventuellement filler sur d\'autres zones). L\'ordre des gestes est défini en consultation pour préserver la sécurité et la cohérence du résultat.',
+  },
+  {
+    question: 'Quelles sont les contre-indications du Baby Lips ?',
+    answer: 'Une grossesse, un allaitement, une infection ou une lésion active des lèvres, certaines maladies auto-immunes ou un antécédent d\'allergie aux composants peuvent contre-indiquer le soin. Ces points sont systématiquement vérifiés avant tout traitement.',
+  },
 ];
 
 const crossLinks = [
@@ -19,6 +45,7 @@ const crossLinks = [
     label: 'Autres soins du visage',
     variant: 'rose' as const,
     links: [
+      { text: 'Filler / Acide hyaluronique', url: '/soins/injections/filler' },
       { text: 'Hydrafacial', url: '/soins/soins-visage/hydrafacial' },
       { text: 'Exosomes', url: '/soins/soins-visage/exosomes' },
     ],
@@ -50,9 +77,29 @@ const medicalProcedure = {
   showGalleryCTA
   jsonLd={medicalProcedure}
 >
-  <p>Le Baby Lips combine hydratation profonde et léger repulpage pour un effet lèvres de bébé : douces, hydratées, lumineuses, sans excès de volume.</p>
-  <h2>Indications</h2>
-  <ul><li>Lèvres déshydratées</li><li>Légère perte de volume</li><li>Recherche d'un effet naturel</li></ul>
-  <h2>Déroulement</h2>
-  <p>Séance de 15 à 20 minutes sous crème anesthésiante. Aucune éviction sociale.</p>
+  <p>Le Baby Lips est un soin d'hydratation des lèvres par micro-injections d'acide hyaluronique très fluide. L'objectif n'est pas d'ajouter un volume marqué, mais de redonner souplesse, douceur et un aspect frais, parfois décrit comme un effet « lèvres de bébé ». Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, ce protocole s'adresse aux personnes dont les lèvres sont déshydratées, fines en surface ou qui souhaitent un résultat discret. À Casablanca, la demande de naturalité sur les lèvres a fortement augmenté : le Baby Lips répond à cette attente en priorisant l'hydratation plutôt que le volume.</p>
+
+  <h2>Qu'est-ce que le Baby Lips exactement ?</h2>
+  <p>Le Baby Lips repose sur un acide hyaluronique de faible réticulation, proche des skin boosters utilisés pour la qualité de peau. Injecté en micro-dépôts dans les lèvres ou leur contour, il attire et retient l'eau dans les tissus. Les lèvres gagnent en hydratation, en souplesse et parfois en léger relief, sans le projet d'une augmentation volumineuse. Ce n'est donc ni un rouge à lèvres permanent, ni un filler de structure. Le soin dure en général 15 à 20 minutes. Un léger gonflement peut suivre la séance, puis s'estomper en quelques jours. Le résultat recherché est un aspect naturel : lèvres plus confortables au toucher, moins ridées en surface, sans changer radicalement votre morphologie. Comprendre cette distinction évite les malentendus : si vous souhaitez un volume net ou un contour très redessiné, une autre indication sera discutée.</p>
+
+  <h2>Baby Lips ou filler classique : comment choisir ?</h2>
+  <p>Le choix dépend de votre besoin principal. Si vos lèvres manquent surtout d'hydratation, de souplesse ou de luminosité, et que vous ne souhaitez pas un changement de volume visible, le Baby Lips est souvent l'option la plus cohérente. Si vous recherchez un repulpage plus marqué, une redéfinition du contour, une correction d'asymétrie ou une projection plus nette, le <a href="/soins/injections/filler">filler à l'acide hyaluronique</a> sera en général plus adapté. Les deux approches utilisent de l'acide hyaluronique, mais avec des textures et des objectifs différents. Il arrive aussi que le parcours commence par un Baby Lips, puis évolue vers un filler léger si le besoin de volume se précise. À l'inverse, certaines personnes ayant déjà un filler souhaitent ensuite un entretien plus hydratant. Au cabinet de Casablanca, Dr El Khadri clarifie ces options en consultation, sans orienter vers un geste plus lourd que nécessaire. Pour une vue d'ensemble des besoins liés aux lèvres, la page <a href="/besoins/levres">repulper les lèvres</a> présente aussi cette orientation.</p>
+
+  <h2>Pour qui le Baby Lips est-il indiqué ?</h2>
+  <p>Ce soin convient particulièrement aux lèvres déshydratées, gercées de façon récurrente, ou marquées de fines ridules verticales. Il s'adresse aussi aux personnes qui veulent un effet naturel, sans volume excessif, ou qui découvrent les injections et préfèrent commencer par un geste discret. Une légère perte de volume liée à l'âge peut également justifier un Baby Lips lorsque l'attente reste celle d'un rafraîchissement, pas d'une transformation. Hommes et femmes peuvent en bénéficier. En revanche, si votre priorité est clairement une augmentation de volume, mieux vaut orienter d'emblée vers un filler adapté. La consultation au Quartier des Hôpitaux permet de trancher : examen des lèvres, discussion de vos photos de référence (si vous en apportez) et explication des limites de chaque technique. Aucun résultat absolu n'est promis : le protocole est ajusté à votre anatomie et à votre peau.</p>
+
+  <h2>Déroulement au cabinet de Dr Yousra El Khadri</h2>
+  <p>Chaque parcours commence par une consultation au Quartier des Hôpitaux à Casablanca. Dr Yousra El Khadri examine vos lèvres, vérifie les contre-indications et précise si le Baby Lips correspond à votre demande. Une crème anesthésiante est souvent appliquée pour améliorer le confort. Les micro-injections suivent un schéma adapté à votre morphologie. La séance est courte ; vous pouvez reprendre la plupart de vos activités le jour même. Des consignes post-acte vous sont remises : éviter de masser excessivement, limiter le hammam et le sport intensif dans les premières heures, et protéger vos lèvres du soleil. À Casablanca, ce cadre médical structure l'expérience du début à la fin : vous savez pourquoi le geste est proposé, ce qu'il peut apporter, et ce qu'il ne remplacera pas (baumes quotidiens, hydratation générale, correction d'un volume important).</p>
+
+  <h2>Résultats et entretien du Baby Lips</h2>
+  <p>L'hydratation et le confort des lèvres s'apprécient souvent dès les jours suivants, une fois l'éventuel œdème passé. Le résultat reste discret : vos proches peuvent remarquer un aspect plus frais sans identifier immédiatement un soin injectable. La durée moyenne se situe autour de 6 à 9 mois, avec des variations individuelles. Un entretien peut être envisagé lorsque l'effet diminue, après une nouvelle évaluation. Entre deux séances, les soins locaux (baume, protection solaire des lèvres) restent utiles. Si, au fil du temps, vous souhaitez un volume plus affirmé, la transition vers un filler pourra être discutée sans précipitation. L'objectif du Baby Lips à Casablanca reste la subtilité : hydrater, lisser, rafraîchir, dans le respect de votre expression naturelle.</p>
+
+  <h2>Précautions et contre-indications</h2>
+  <p>Le Baby Lips est contre-indiqué pendant la grossesse et l'allaitement, en cas d'infection ou de lésion active des lèvres, et dans certaines situations médicales précisées en consultation. Un antécédent d'allergie aux composants ou une maladie auto-immune active peuvent aussi modifier l'indication. Après la séance, un gonflement passager, une rougeur ou de petites ecchymoses sont possibles. Toute réaction inhabituelle doit être signalée au cabinet. Ces précautions font partie d'une prise en charge médicale sérieuse : même un soin d'hydratation reste un geste injectable. Au Quartier des Hôpitaux à Casablanca, l'information préalable et le suivi post-acte accompagnent chaque protocole, afin que vous abordiez le Baby Lips avec des attentes réalistes et un cadre de sécurité clair.</p>
+
+  <h2>Baby Lips et qualité de peau autour de la bouche</h2>
+  <p>Les lèvres ne vivent pas isolées du reste du visage. Une peau du contour de la bouche déshydratée, des ridules péribuccales ou un maquillage qui marque les plis peuvent renforcer le sentiment que les lèvres « manquent » de fraîcheur. Dans certains parcours, le Baby Lips s'associe à des soins de texture (skin booster, hydrafacial, peeling doux) espacés dans le temps. L'ordre des gestes est toujours défini médicalement : on ne cumule pas les actes le même jour sans justification. À Casablanca, cette vision d'ensemble évite de traiter uniquement la lèvre rouge si le besoin réel concerne aussi le pourtour. La consultation permet d'établir un plan simple, priorisé, avec un devis pour chaque étape. Vous savez ainsi ce qui relève du Baby Lips, ce qui relève d'un éventuel filler, et ce qui relève de l'entretien cutané quotidien.</p>
+
+  <h2>Ce que le Baby Lips ne remplace pas</h2>
+  <p>Le Baby Lips n'efface pas une asymétrie importante, n'apporte pas une projection nette et ne constitue pas une alternative à une chirurgie des lèvres lorsqu'une indication chirurgicale existe. Il ne dispense pas non plus des gestes du quotidien : hydratation, protection solaire des lèvres, éviction des irritants. Son rôle est ciblé : améliorer l'hydratation et l'aspect de surface dans un cadre injectable léger. Clarifier ces limites dès le départ évite la déception. Si, après discussion, votre besoin s'oriente vers le volume, le cabinet vous oriente vers le filler plutôt que de forcer l'indication Baby Lips. Cette honnêteté fait partie de la relation de soin au Quartier des Hôpitaux : mieux vaut le bon geste, au bon moment, que le geste le plus demandé du moment.</p>
 </DetailPageLayout>

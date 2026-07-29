@@ -6,12 +6,38 @@ import ZoneCard from '../../../components/ZoneCard.astro';
 const title = 'Filler à <em>Casablanca</em> — Acide Hyaluronique';
 
 const faqItems = [
-  { question: 'Est-ce douloureux ?', answer: 'La crème anesthésiante rend le traitement très confortable.' },
-  { question: 'Le résultat est-il réversible ?', answer: "Oui, l'acide hyaluronique peut être dissous immédiatement avec une enzyme spécifique." },
-  { question: 'Combien de temps durent les résultats ?', answer: 'Entre 8 et 18 mois selon la zone.' },
-  { question: 'Y a-t-il des effets secondaires ?', answer: 'Légers gonflements ou ecchymoses possibles, qui disparaissent en 24 à 72h.' },
-  { question: 'Puis-je reprendre mes activités ?', answer: 'Oui, immédiatement.' },
-  { question: 'Quel est le prix du filler à Casablanca ?', answer: 'Le tarif dépend de la zone et de la quantité. Devis personnalisé en consultation.' },
+  {
+    question: 'Quel est le prix du filler à Casablanca ?',
+    answer: 'Le tarif dépend de la zone, de la quantité d\'acide hyaluronique et du produit choisi. Aucun chiffre n\'est communiqué à distance : un devis personnalisé vous est remis lors de la consultation médicale.',
+  },
+  {
+    question: 'Est-ce douloureux ?',
+    answer: 'Une crème anesthésiante est souvent appliquée avant la séance. Les produits peuvent aussi contenir un anesthésiant. La sensation reste en général bien tolérée ; le confort est adapté selon la zone traitée.',
+  },
+  {
+    question: 'Le résultat du filler est-il réversible ?',
+    answer: 'Oui. L\'acide hyaluronique peut être dissous par une enzyme spécifique (hyaluronidase) lorsque cela est médicalement indiqué. Cette réversibilité constitue un atout de sécurité important par rapport à d\'autres types d\'implants.',
+  },
+  {
+    question: 'Combien de temps durent les résultats selon la zone ?',
+    answer: 'En moyenne entre 8 et 18 mois. Les lèvres et les zones très mobiles tendent à se résorber plus vite ; les zones de structure (pommettes, menton, jawline) tiennent souvent plus longtemps. Le produit et votre métabolisme influencent aussi la durée.',
+  },
+  {
+    question: 'Aiguille ou canule : quelle différence ?',
+    answer: 'L\'aiguille permet des injections précises et ponctuelles. La canule, plus souple et à bout arrondi, limite les traumatismes vasculaires sur certaines zones. Le choix dépend de l\'indication, de l\'anatomie et de la technique retenue en consultation.',
+  },
+  {
+    question: 'Y a-t-il des effets secondaires après un filler ?',
+    answer: 'Un œdème, une sensibilité ou de légères ecchymoses sont possibles et s\'estompent en général en 24 à 72 heures, parfois un peu plus selon la zone. Toute réaction inhabituelle doit être signalée rapidement au cabinet.',
+  },
+  {
+    question: 'Puis-je reprendre mes activités après la séance ?',
+    answer: 'Oui, dans la plupart des cas dès le jour même. Il est recommandé d\'éviter le sport intensif, le hammam, le sauna et le massage de la zone pendant les premiers jours, selon les consignes données.',
+  },
+  {
+    question: 'Le filler peut-il s\'inscrire dans une harmonisation du visage ?',
+    answer: 'Oui. Au-delà d\'une zone isolée, l\'acide hyaluronique peut contribuer à rééquilibrer les proportions (pommettes, menton, tempes, ovale) dans une approche globale définie en consultation, sans viser une transformation radicale.',
+  },
 ];
 
 const crossLinks = [
@@ -59,8 +85,10 @@ const medicalProcedure = {
   showGalleryCTA
   jsonLd={medicalProcedure}
 >
-  <p>Les injections de filler à base d'acide hyaluronique permettent de restaurer les volumes du visage, de redessiner ses contours et de combler les rides. Au cabinet de Dr Yousra El Khadri à Casablanca, plusieurs zones du visage peuvent être traitées avec des produits de référence comme Restylane.</p>
-  <h2>Zones traitées</h2>
+  <p>Les injections de filler à base d'acide hyaluronique permettent de restaurer les volumes du visage, de redessiner ses contours et de combler certaines rides. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, plusieurs zones peuvent être traitées avec des produits de référence comme Restylane (laboratoire Galderma). Chaque protocole commence par une consultation médicale : anatomie, attentes, antécédents et choix du produit sont discutés avant tout geste. À Casablanca, le filler s'inscrit dans une médecine esthétique mesurée, orientée vers l'harmonie plutôt que vers l'excès de volume.</p>
+
+  <h2>Zones traitées par filler à l'acide hyaluronique</h2>
+  <p>L'acide hyaluronique s'adapte à de nombreuses indications du visage. Voici les zones les plus fréquemment concernées au cabinet :</p>
   <div class="zones">
     <ZoneCard title="Lèvres" description="Repulpage, redéfinition du contour, correction des asymétries." />
     <ZoneCard title="Nez (rhinoplastie médicale)" description="Correction de la bosse, redressement de la pointe sans chirurgie." />
@@ -71,9 +99,30 @@ const medicalProcedure = {
     <ZoneCard title="Tempes" description="Restauration du volume perdu pour rajeunir le haut du visage." />
     <ZoneCard title="Joues" description="Comblement des creux et rehaussement." />
   </div>
+
+  <h2>Aiguille ou canule : quelle technique pour le filler ?</h2>
+  <p>Deux outils principaux sont utilisés selon la zone et l'objectif. L'aiguille permet des dépôts précis, utiles pour le contour, les petites corrections ou certaines zones superficielles. La canule, plus longue et à bout arrondi, glisse sous la peau avec moins de traumatisme vasculaire : elle est souvent privilégiée pour les volumes (pommettes, tempes, joues) ou les zones à risque anatomique. Cette approche dite atraumatique peut réduire les ecchymoses et améliorer le confort, sans pour autant supprimer tout risque. Le choix n'est jamais dogmatique : Dr El Khadri sélectionne l'instrument en fonction de votre anatomie, du plan de traitement et de la sécurité vasculaire. À Casablanca, cette discussion technique fait partie de la consultation, afin que vous compreniez pourquoi une zone se traite à l'aiguille et une autre à la canule.</p>
+
+  <h2>Filler et harmonisation du visage</h2>
+  <p>Traiter une seule zone isolée peut parfois suffire. Dans d'autres cas, le résultat le plus cohérent passe par une lecture d'ensemble : pommettes, menton, tempes, ovale et proportions du profil. L'harmonisation du visage consiste à restaurer ou soutenir les volumes là où le vieillissement ou la morphologie créent un déséquilibre, sans charger une zone au détriment des autres. L'acide hyaluronique devient alors un outil de structure et d'équilibre, pas seulement de « remplissage ». Cette approche full-face se construit progressivement, souvent en plusieurs temps, pour laisser le visage s'adapter et pour valider chaque étape avec vous. Au Quartier des Hôpitaux, le plan est individualisé : certaines personnes n'ont besoin que d'un geste ciblé, d'autres bénéficient d'un protocole plus global associé éventuellement au Botox ou à des soins de qualité de peau. L'objectif reste un visage qui vous ressemble, avec des transitions douces et des volumes proportionnés.</p>
+
+  <h2>Réversibilité : la dissolution enzymatique du filler</h2>
+  <p>L'un des atouts de l'acide hyaluronique est sa réversibilité. En cas d'irrégularité, d'excès, de migration ou de complication, une enzyme spécifique (hyaluronidase) peut dissoudre le produit. Cette possibilité n'existe pas avec tous les implants injectables. Elle renforce la sécurité du filler lorsqu'il est pratiqué dans un cadre médical, avec un suivi accessible. La dissolution n'est pas un geste anodin : elle est indiquée après évaluation, et le résultat n'est pas toujours immédiat ni total selon le produit et le délai. Au cabinet de Dr Yousra El Khadri à Casablanca, la dissolution de filler peut aussi concerner des injections réalisées ailleurs, lorsque la correction s'avère nécessaire. Cette option rassure de nombreuses personnes qui hésitent encore à franchir le pas : savoir qu'un ajustement médical est possible fait partie d'une information honnête avant le traitement.</p>
+
+  <h2>Suites et œdème après une injection de filler</h2>
+  <p>Un gonflement (œdème) est fréquent dans les heures ou les jours qui suivent, surtout sur les zones très vascularisées ou mobiles. Des ecchymoses légères, une sensibilité au toucher ou une sensation de tension peuvent également apparaître. Ces suites s'atténuent en général en 24 à 72 heures, parfois davantage selon la zone et la quantité injectée. Le résultat immédiat n'est donc pas toujours le résultat définitif : il faut laisser l'œdème se résorber pour juger du volume réel. Il est recommandé d'éviter le sport intensif, le hammam, le sauna et le massage de la zone pendant les premiers jours, et de suivre les consignes post-acte remises au cabinet. En cas de douleur inhabituelle, de blancheur cutanée ou de trouble visuel, une alerte médicale immédiate s'impose. À Casablanca, le suivi post-injection fait partie intégrante de la prise en charge au Quartier des Hôpitaux.</p>
+
+  <h2>Combien de temps durent les résultats selon la zone ?</h2>
+  <p>La durée du filler varie selon la mobilité de la zone, le type d'acide hyaluronique (plus ou moins réticulé), la quantité injectée et votre métabolisme. Les zones très mobiles tendent à se résorber plus rapidement. Les zones de structure (pommettes, menton, ligne mandibulaire, tempes) tiennent souvent plus longtemps, fréquemment entre 12 et 18 mois selon les cas. Une fourchette globale de 8 à 18 mois reste un repère utile, sans garantie individuelle. L'organisme résorbe progressivement le produit ; l'effet s'estompe donc de façon graduelle. Un entretien peut être envisagé lorsque le bénéfice diminue, après une nouvelle évaluation. Le devis en consultation tient compte de ces paramètres : zone, produit et objectif, plutôt que d'un forfait standardisé.</p>
+
   <h2>Déroulement de la séance</h2>
-  <p>Une crème anesthésiante est appliquée 20 minutes avant la séance. Dr El Khadri procède aux injections à l'aide d'aiguilles fines ou de canules atraumatiques selon la zone. Le résultat est visible immédiatement.</p>
-  <h2>Durée des résultats</h2>
-  <p>Selon la zone et le produit utilisé, les résultats durent entre 8 et 18 mois. L'acide hyaluronique est progressivement résorbé par l'organisme.</p>
+  <p>Une crème anesthésiante peut être appliquée une vingtaine de minutes avant le geste sur les zones sensibles. Dr El Khadri procède ensuite aux injections à l'aiguille ou à la canule selon le plan défini. Le résultat de volume est visible immédiatement, sous réserve de l'œdème mentionné plus haut. La durée de la séance dépend du nombre de zones. Vous repartez avec des consignes claires et la possibilité de recontacter le cabinet si besoin. Cette organisation médicale, du premier examen jusqu'au suivi, structure l'expérience du filler à Casablanca dans un cadre de confiance et de transparence.</p>
+
+  <h2>Restylane et Galderma : des produits de référence</h2>
+  <p>Le cabinet utilise les fillers Restylane du laboratoire Galderma. Ces gammes d'acide hyaluronique injectable sont conçues pour différentes indications : volumes, contours, zones fines. Le choix du produit dépend de la zone, de la profondeur d'injection et du résultat recherché (soutien, projection, souplesse). Cette diversité permet d'adapter le geste plutôt que d'appliquer un seul gel à toutes les situations. L'information sur le produit utilisé vous est donnée en consultation. À Casablanca, travailler avec des références connues et documentées fait partie de la transparence attendue en médecine esthétique : vous savez ce qui est injecté, pourquoi, et comment le suivi s'organise ensuite.</p>
+
+  <h2>Indications, précautions et contre-indications</h2>
+  <p>Le filler convient lorsque la restauration de volume, le comblement d'un creux ou la redéfinition d'un contour répondent à une attente réaliste. Il est contre-indiqué pendant la grossesse et l'allaitement, en cas d'infection cutanée active sur la zone, et dans certaines situations médicales précisées en consultation. Il est recommandé d'éviter les anticoagulants dans les 48 heures qui précèdent, lorsque cela est compatible avec votre traitement habituel, afin de limiter les ecchymoses. Après l'injection, respectez les consignes post-acte et contactez le cabinet en cas de doute. Ces précautions ne visent pas à inquiéter, mais à rappeler que le filler est un acte médical. Au Quartier des Hôpitaux à Casablanca, chaque protocole commence par cette vérification, puis se poursuit par un devis personnalisé et un plan clair, sans engagement sur un résultat absolu.</p>
+
   <ProductBox title="Produits utilisés" description="Au cabinet, nous utilisons les fillers <strong>Restylane</strong> du laboratoire <strong>Galderma</strong>, référence mondiale en acide hyaluronique injectable." />
 </DetailPageLayout>

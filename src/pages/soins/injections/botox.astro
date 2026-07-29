@@ -6,13 +6,42 @@ import ZoneCard from '../../../components/ZoneCard.astro';
 const title = 'Botox à <em>Casablanca</em> — Toutes zones';
 
 const faqItems = [
-  { question: 'Le Botox fait-il mal ?', answer: "Non, les aiguilles utilisées sont ultra-fines. Aucune anesthésie n'est nécessaire." },
-  { question: 'Mon visage sera-t-il figé ?', answer: "Non. Dr El Khadri privilégie un dosage adapté pour préserver l'expressivité naturelle." },
-  { question: 'À partir de quel âge ?', answer: 'Dès 25-30 ans, à titre préventif.' },
-  { question: 'Combien de temps durent les effets ?', answer: 'Entre 4 et 6 mois en moyenne.' },
-  { question: "Puis-je combiner avec d'autres soins ?", answer: 'Oui, le Botox se combine avec les fillers, le skin booster, le laser et le peeling.' },
-  { question: 'Y a-t-il des effets secondaires ?', answer: 'Très rares avec un médecin expérimenté.' },
-  { question: 'Quel est le prix du Botox à Casablanca ?', answer: 'Le tarif dépend du nombre de zones traitées. Devis personnalisé en consultation.' },
+  {
+    question: 'Quel est le prix du Botox à Casablanca ?',
+    answer: 'Le tarif dépend du nombre de zones traitées, de la dose nécessaire et de votre anatomie musculaire. Aucun chiffre n\'est communiqué à distance : un devis personnalisé vous est remis lors de la consultation médicale au cabinet.',
+  },
+  {
+    question: 'Le Botox fait-il mal ?',
+    answer: 'Les aiguilles utilisées sont très fines. La sensation se limite à de légers picotements brefs. Aucune anesthésie n\'est généralement nécessaire ; la séance reste courte et bien tolérée pour la plupart des patientes et patients.',
+  },
+  {
+    question: 'Mon visage sera-t-il figé après le Botox ?',
+    answer: 'Non, ce n\'est pas l\'objectif. Dr El Khadri adapte le dosage zone par zone pour détendre les muscles responsables des rides tout en préservant une expressivité naturelle. Le résultat recherché est un visage reposé, pas figé.',
+  },
+  {
+    question: 'Qu\'est-ce que le Botox préventif ?',
+    answer: 'Le Botox préventif consiste à traiter les muscles d\'expression dès l\'apparition des premières ridules, souvent entre 25 et 30 ans, afin de limiter l\'installation de rides plus marquées. L\'indication et la dose restent individuelles et sont définies en consultation.',
+  },
+  {
+    question: 'À partir de quel âge peut-on faire du Botox ?',
+    answer: 'Dès 25-30 ans environ, à titre préventif ou correctif, selon l\'activité musculaire et vos attentes. L\'âge chronologique n\'est qu\'un repère : c\'est l\'examen clinique qui confirme ou non l\'indication.',
+  },
+  {
+    question: 'Combien de temps durent les effets du Botox ?',
+    answer: 'En moyenne entre 4 et 6 mois. Les premiers effets apparaissent souvent entre J+2 et J+5, le résultat optimal autour de J+10 à J+14. La durée varie selon la zone, la dose et votre métabolisme.',
+  },
+  {
+    question: 'Le Botox masséter traite-t-il le bruxisme ?',
+    answer: 'Oui, l\'injection dans les muscles masséters peut contribuer à réduire la force de serrage liée au bruxisme, tout en affinant parfois l\'ovale du visage. L\'indication est posée après évaluation médicale, car tous les profils ne sont pas concernés de la même façon.',
+  },
+  {
+    question: 'Puis-je combiner le Botox avec d\'autres soins ?',
+    answer: 'Oui. Le Botox se combine souvent avec les fillers, le skin booster, le laser ou le peeling, selon un ordre et un espacement définis en consultation. L\'objectif est une prise en charge cohérente, pas une accumulation de gestes.',
+  },
+  {
+    question: 'Y a-t-il des effets secondaires ou des contre-indications ?',
+    answer: 'Des rougeurs ou un léger gonflement local peuvent apparaître et s\'estompent rapidement. Le Botox est contre-indiqué pendant la grossesse, l\'allaitement et en cas de certaines maladies neuromusculaires. Ces points sont vérifiés avant tout traitement.',
+  },
 ];
 
 const crossLinks = [
@@ -59,8 +88,13 @@ const medicalProcedure = {
   showGalleryCTA
   jsonLd={medicalProcedure}
 >
-  <p>Le Botox (toxine botulique) est un traitement médical non chirurgical qui détend les muscles responsables des rides d'expression. Au cabinet de Dr Yousra El Khadri à Casablanca, le Botox est utilisé sur plusieurs zones du visage selon vos besoins. La séance dure 15 à 20 minutes, les premiers effets apparaissent en 2 à 3 jours et le résultat optimal se voit à J+10. Durée moyenne : 4 à 6 mois.</p>
+  <p>Le Botox (toxine botulique de type A) est un traitement médical non chirurgical qui détend les muscles responsables des rides d'expression. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, ce soin s'adresse aux personnes qui souhaitent atténuer un front ridé, une ride du lion, des pattes d'oie, ou encore un serrage excessif lié au bruxisme. La séance dure en général 15 à 20 minutes. Les premiers effets apparaissent souvent en quelques jours, et le résultat se stabilise progressivement. À Casablanca, la demande de Botox concerne aussi bien un usage préventif qu'un usage correctif, toujours après une évaluation médicale individualisée.</p>
+
+  <h2>Comment le Botox détend-il les muscles d'expression ?</h2>
+  <p>Les rides d'expression se forment lorsque certains muscles du visage se contractent de façon répétée : front, sourcils, contour des yeux, menton. La toxine botulique agit au niveau de la jonction neuromusculaire. Elle limite temporairement la libération d'acétylcholine, le messager chimique qui commande la contraction musculaire. Le muscle se détend alors partiellement, ce qui lisse la peau en surface sans combler ni ajouter de volume. Ce mécanisme explique pourquoi le Botox cible les rides dynamiques, liées au mouvement, plutôt que les creux ou les pertes de volume, qui relèvent davantage des fillers. L'effet reste local et réversible : la transmission nerveuse se rétablit progressivement, d'où la nécessité d'entretiens espacés. Comprendre ce fonctionnement rassure souvent les patientes et patients qui craignent un résultat figé : l'objectif n'est pas d'abolir toute mimique, mais de moduler l'activité musculaire de façon mesurée.</p>
+
   <h2>Zones traitées</h2>
+  <p>Plusieurs zones du visage peuvent être concernées, seules ou associées selon votre anatomie et vos attentes. Voici les indications les plus fréquentes au cabinet :</p>
   <div class="zones">
     <ZoneCard title="Visage (rides du front)" description="Atténue les rides horizontales du front pour un regard plus reposé." />
     <ZoneCard title="Contour des yeux" description="Lisse les pattes d'oie qui apparaissent au sourire." />
@@ -70,9 +104,24 @@ const medicalProcedure = {
     <ZoneCard title="Nez" description="Relève la pointe et atténue les bunny lines." />
     <ZoneCard title="Menton" description="Lisse le menton ridé et harmonise l'ovale." />
   </div>
-  <h2>Déroulement de la séance</h2>
-  <p>La consultation commence par une analyse de votre visage en mouvement. Dr El Khadri identifie les muscles à traiter selon vos attentes. Les injections se font à l'aide d'aiguilles très fines, sans anesthésie nécessaire. Vous pouvez reprendre vos activités immédiatement.</p>
-  <h2>Indications et précautions</h2>
-  <p>Le Botox est adapté dès 25-30 ans, à titre préventif ou correctif. Il est contre-indiqué pendant la grossesse, l'allaitement, et en cas de maladies neuromusculaires.</p>
+
+  <h2>Botox préventif ou correctif : quelle différence ?</h2>
+  <p>Le Botox correctif s'adresse aux rides déjà installées, visibles au repos ou marqués dès le mouvement. Le Botox préventif, lui, intervient plus tôt, souvent dès 25-30 ans, lorsque les ridules commencent à s'imprimer. En réduisant les contractions répétées, on limite l'approfondissement progressif du sillon. Les deux approches utilisent le même produit et le même geste ; ce qui change, c'est le moment de l'indication, la dose et les zones prioritaires. À Casablanca, de nombreuses personnes consultent d'abord pour une ride du lion ou un front qui se plisse, puis découvrent qu'un protocole léger et régulier peut aussi s'inscrire dans une logique préventive. L'âge n'est jamais un critère unique : c'est l'examen du visage en mouvement, vos antécédents et vos attentes qui orientent le choix. Un devis est établi en consultation, jamais à distance, car la quantité de produit dépend de chaque anatomie.</p>
+
+  <h2>Botox et bruxisme : le rôle du masséter</h2>
+  <p>Le muscle masséter participe à la mastication. Lorsqu'il est hyperactif, notamment en cas de bruxisme (serrement ou grincement des dents), il peut élargir l'ovale du visage et générer des tensions, voire des douleurs. L'injection de Botox dans le masséter réduit temporairement la force de contraction. Sur le plan esthétique, cela peut contribuer à affiner le bas du visage ; sur le plan fonctionnel, cela peut soulager une partie de la gêne liée au serrage. Ce geste demande une évaluation précise : volume musculaire, asymétrie, antécédents dentaires ou articulaires. Au Quartier des Hôpitaux à Casablanca, Dr Yousra El Khadri analyse ces éléments avant de proposer un protocole. Le Botox masséter ne remplace pas un suivi dentaire lorsqu'il est indiqué, mais il peut s'intégrer dans une prise en charge complémentaire. Les effets se mettent en place progressivement, comme pour les zones du haut du visage, et la durée reste de l'ordre de plusieurs mois.</p>
+
+  <h2>Résultats du Botox : de J+2 à J+14, puis durée</h2>
+  <p>Contrairement à un filler, dont l'effet de volume est immédiat, le Botox agit avec un délai. Les premiers signes apparaissent souvent entre le deuxième et le cinquième jour. Le résultat optimal se lit en général autour de J+10 à J+14, lorsque la détente musculaire est stabilisée. C'est à ce moment qu'un éventuel ajustement peut être discuté si nécessaire. La durée moyenne se situe entre 4 et 6 mois, avec des variations selon la zone (le masséter, plus volumineux, peut évoluer différemment), la dose et votre métabolisme. Lorsque l'effet s'estompe, les contractions reviennent progressivement : il n'y a pas de « rebond » brutal, mais un retour graduel à l'état initial. À Casablanca, le suivi après injection permet de vérifier le confort, la symétrie et l'expressivité, et d'anticiper le prochain entretien si vous le souhaitez.</p>
+
+  <h2>Déroulement de la séance au cabinet</h2>
+  <p>La consultation commence par une analyse de votre visage au repos et en mouvement. Dr El Khadri identifie les muscles concernés, explique le protocole et répond à vos questions, souvent liées à la crainte d'un résultat trop marqué. Les injections se font avec des aiguilles très fines, sans anesthésie nécessaire dans la plupart des cas. La séance est courte ; vous pouvez reprendre vos activités immédiatement, en évitant de masser la zone et en respectant les consignes données (notamment l'exposition à la chaleur intense dans les heures qui suivent). Au cabinet du Quartier des Hôpitaux, chaque geste s'inscrit dans un cadre médical : historique, contre-indications, photographies éventuelles et plan de suivi. Cette étape préalable rassure et permet d'adapter le dosage à votre mimique réelle, pas à un schéma standard.</p>
+
+  <h2>Ce qui distingue une injection de Botox réussie</h2>
+  <p>Une injection réussie ne se mesure pas à l'absence totale de rides, mais à un visage reposé qui continue d'exprimer vos émotions. Plusieurs facteurs y contribuent : une évaluation médicale attentive, un dosage proportionné à chaque muscle, une connaissance de l'anatomie faciale et une discussion claire de vos attentes. Le naturel passe aussi par le refus de traiter « trop » ou « trop tôt » sans indication. L'objectif est une harmonie entre détente et mobilité, pas une transformation. Les produits utilisés sont issus de laboratoires médicaux certifiés, et le geste reste réservé à un cadre de médecine esthétique. À Casablanca, cette exigence de mesure guide la pratique du cabinet : chaque protocole est individuel, réévalué au fil du temps, et toujours accompagné d'informations transparentes sur les suites et les limites du traitement.</p>
+
+  <h2>Indications, précautions et contre-indications</h2>
+  <p>Le Botox convient dès que les rides d'expression ou une hyperactivité musculaire (dont le masséter) justifient un traitement, à titre préventif ou correctif. Il est contre-indiqué pendant la grossesse, l'allaitement, et en cas de certaines maladies neuromusculaires. Il est recommandé d'éviter anticoagulants et alcool dans les 48 heures qui précèdent, afin de limiter le risque d'ecchymoses. Des rougeurs passagères ou un léger gonflement local restent possibles. Toute sensation inhabituelle après la séance doit être signalée. Ces précautions font partie d'une prise en charge sérieuse : le Botox est un acte médical, pas un soin cosmétique anodin. La consultation à Casablanca sert justement à vérifier que le traitement vous correspond, et à définir un devis adapté à vos zones, sans engagement sur un résultat absolu. Si vous arrivez avec des craintes (visage figé, dose trop forte, regard « fatigué »), exprimez-les : elles font partie de la discussion clinique et permettent d'ajuster le protocole dès le départ.</p>
+
   <ProductBox title="Produits utilisés" description="Le cabinet utilise des produits de laboratoires médicaux certifiés." />
 </DetailPageLayout>

@@ -4,9 +4,34 @@ import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 const title = 'Laser <em>Médical</em> à Casablanca';
 
 const faqItems = [
-  { question: 'Douloureux ?', answer: 'Sensation de chaleur. Crème anesthésiante disponible.' },
-  { question: 'Combien de séances ?', answer: '3 à 5 séances espacées de 3 à 4 semaines.' },
-  { question: 'Précautions solaires ?', answer: 'Éviter le soleil 4 semaines avant et après.' },
+  {
+    question: 'Quel est le prix d\'une séance de laser médical à Casablanca ?',
+    answer: 'Le tarif dépend de l\'indication, de la surface traitée et du nombre de séances envisagé. Aucun chiffre n\'est communiqué à distance : un devis personnalisé vous est remis lors de la consultation médicale.',
+  },
+  {
+    question: 'Le laser médical est-il douloureux ?',
+    answer: 'La sensation ressemble souvent à une chaleur brève ou à de légers picotements. Une crème anesthésiante peut être proposée selon la zone et le type de laser, afin d\'améliorer votre confort pendant la séance.',
+  },
+  {
+    question: 'Combien de séances de laser médical faut-il prévoir ?',
+    answer: 'Un protocole compte en général 3 à 5 séances, espacées de 3 à 4 semaines, selon l\'indication et votre réponse cutanée. Le calendrier exact est défini en consultation et peut être ajusté au fil du suivi.',
+  },
+  {
+    question: 'Y a-t-il une éviction sociale après le laser médical ?',
+    answer: 'Cela dépend de l\'indication et de l\'intensité du traitement. Une rougeur ou un léger gonflement peuvent apparaître et s\'estompent souvent en quelques heures à quelques jours. Les consignes post-acte vous sont précisées avant la séance.',
+  },
+  {
+    question: 'Quels résultats peut-on attendre du laser médical ?',
+    answer: 'Les résultats sont progressifs : amélioration de l\'éclat, atténuation de certaines taches, raffermissement relatif lié à la stimulation du collagène, ou amélioration de la texture selon l\'indication. Aucun résultat absolu n\'est promis ; le suivi permet d\'évaluer l\'évolution.',
+  },
+  {
+    question: 'Quelles précautions solaires avant et après le laser médical ?',
+    answer: 'Une protection solaire stricte est indispensable. Il est demandé d\'éviter l\'exposition solaire significative environ 4 semaines avant et après chaque séance, et d\'appliquer une protection adaptée sur les zones traitées. Une peau bronzée peut contre-indiquer ou différer le geste.',
+  },
+  {
+    question: 'Quelles sont les contre-indications du laser médical ?',
+    answer: 'Grossesse, allaitement, infection cutanée active sur la zone, certains médicaments photosensibilisants, exposition solaire récente ou antécédents particuliers peuvent contre-indiquer la séance. Ces points sont vérifiés systématiquement en consultation.',
+  },
 ];
 
 const crossLinks = [
@@ -53,8 +78,10 @@ const medicalProcedure = {
   showGalleryCTA
   jsonLd={medicalProcedure}
 >
-  <p>Le laser médical traite une grande variété d'indications dermatologiques : taches pigmentaires, rajeunissement cutané, cicatrices, pores dilatés.</p>
-  <h2>Indications</h2>
+  <p>Le laser médical regroupe des traitements cutanés non chirurgicaux qui ciblent, selon l'indication, le pigment, les vaisseaux, la texture ou la stimulation du collagène. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, chaque protocole commence par une consultation médicale : phototype, antécédents, zone concernée et attentes sont évalués avant de choisir les paramètres adaptés. À Casablanca, la demande de laser médical concerne aussi bien le rajeunissement que les taches, les cicatrices ou les rougeurs. Cette page présente les principales indications du cabinet, sans remplacer un examen clinique individualisé.</p>
+
+  <h2>Indications du laser médical</h2>
+  <p>Plusieurs situations cutanées peuvent relever d'un traitement laser, seules ou associées dans le temps. Voici les indications les plus fréquemment discutées en consultation :</p>
   <ul>
     <li><strong>Rajeunissement cutané</strong> : stimulation du collagène.</li>
     <li><strong>Taches pigmentaires</strong> : solaires, lentigos, mélasma.</li>
@@ -62,6 +89,34 @@ const medicalProcedure = {
     <li><strong>Pores dilatés</strong> : resserrement et amélioration de la texture.</li>
     <li><strong>Couperose et rougeurs</strong>.</li>
   </ul>
-  <h2>Protocole</h2>
-  <p>3 à 5 séances espacées de 3 à 4 semaines. Protection solaire stricte indispensable.</p>
+
+  <h2>Rajeunissement cutané et stimulation du collagène</h2>
+  <p>Avec le temps, la production de collagène diminue et la peau peut paraître moins ferme, moins lumineuse, marquée de ridules fines. Certains lasers médicaux agissent en délivrant une énergie contrôlée qui stimule les fibroblastes et favorise un renouvellement tissulaire progressif. L'objectif n'est pas une transformation brutale, mais une amélioration de la qualité de peau sur plusieurs séances. Le rendu dépend de l'âge, du phototype, de l'état initial et du respect des consignes post-acte, notamment solaires. À Casablanca, ce volet du laser médical s'inscrit souvent dans un parcours plus large (soins de texture, injectables éventuellement), défini selon vos priorités. Aucun résultat absolu n'est promis : le suivi permet de mesurer l'évolution et d'ajuster le protocole.</p>
+
+  <h3>Taches pigmentaires : solaires, lentigos, mélasma</h3>
+  <p>Les taches solaires et les lentigos correspondent souvent à une accumulation locale de pigment liée à l'exposition UV. Le laser peut cibler ce pigment pour en favoriser l'élimination progressive. Le mélasma, en revanche, est une hyperpigmentation plus complexe, influencée par les hormones, le soleil et parfois des facteurs inflammatoires : il demande une évaluation prudente, car toutes les techniques ne lui conviennent pas de la même façon. La distinction entre ces types de taches est essentielle avant tout geste. Une protection solaire stricte reste la base, avant comme après le traitement. Au Quartier des Hôpitaux, Dr El Khadri précise l'indication, explique les limites possibles et oriente éventuellement vers d'autres approches (peeling, soins topiques) lorsque le laser n'est pas le premier choix.</p>
+
+  <h3>Cicatrices d'acné et cicatrices</h3>
+  <p>Les cicatrices d'acné (creuses, superficielles ou irrégulières), certaines vergetures et des cicatrices chirurgicales peuvent bénéficier d'un laser visant à améliorer la texture et l'apparence de la zone. Le mécanisme repose souvent sur une stimulation du renouvellement cutané et une réorganisation progressive du collagène. Le nombre de séances et l'intensité varient selon la profondeur et l'ancienneté de la cicatrice. Une amélioration est l'objectif habituel ; une disparition totale n'est pas un engagement réaliste. La consultation à Casablanca permet d'estimer ce que l'on peut raisonnablement attendre et d'écarter les situations où un autre geste serait plus pertinent.</p>
+
+  <h3>Pores dilatés et texture</h3>
+  <p>Des pores visibles, une peau irrégulière ou un grain de peau « élargi » motivent souvent une demande de laser médical. Certains protocoles contribuent à affiner la texture et à améliorer l'aspect de surface, en complément d'une routine adaptée. Les résultats restent progressifs et variables selon le type de peau (grasse, mixte, mature). Le laser ne remplace pas l'hygiène cutanée ni les soins quotidiens ; il s'inscrit comme un levier médical lorsque l'indication est confirmée. À Casablanca, cette indication est fréquemment associée à d'autres demandes (éclat, taches légères), ce qui justifie un plan clair plutôt qu'un geste isolé sans suivi.</p>
+
+  <h3>Couperose et rougeurs</h3>
+  <p>La couperose et certaines rougeurs diffuses correspondent à une visibilité anormale de petits vaisseaux ou à une réactivité vasculaire. Des lasers adaptés peuvent cibler ces structures pour en réduire progressivement l'apparence. L'indication doit être posée avec soin : inflammation active, rosacée en poussée ou phototype particulier peuvent modifier le protocole ou le différer. Après la séance, une rougeur passagère est fréquente. La protection solaire et l'éviction des facteurs irritants (chaleur intense, certains cosmétiques agressifs) font partie des consignes. Au cabinet du Quartier des Hôpitaux, chaque cas de rougeurs est évalué individuellement afin d'éviter un traitement inadapté.</p>
+
+  <h2>Comment se déroule une séance de laser médical à Casablanca</h2>
+  <p>Le parcours commence par une consultation au Quartier des Hôpitaux. Dr Yousra El Khadri examine la zone, précise votre phototype, explique le type de laser envisagé et le nombre de séances possible. Le jour du traitement, la peau est nettoyée ; une crème anesthésiante peut être appliquée selon l'indication. Les paramètres (longueur d'onde, fluence, mode) sont réglés pour votre peau et votre objectif. La sensation est en général une chaleur brève ou des picotements. La durée dépend de la surface. Après la séance, des consignes écrites vous sont remises : soins apaisants éventuels, éviction solaire, activités à limiter temporairement. À Casablanca, ce cadre médical structure l'ensemble du protocole, de la première évaluation jusqu'au suivi des séances suivantes.</p>
+
+  <h2>Combien de séances et quel protocole prévoir</h2>
+  <p>Un protocole de laser médical compte souvent 3 à 5 séances, espacées de 3 à 4 semaines. Cet espacement laisse à la peau le temps de réagir et de se renouveler entre deux passages. Certaines indications demandent davantage de séances ; d'autres, plus légères, s'arrêtent plus tôt si l'objectif est atteint. Des séances d'entretien peuvent être discutées selon l'évolution et l'exposition solaire. Le devis en consultation tient compte de l'indication et de la surface, jamais d'un forfait standardisé annoncé à distance. Le suivi permet d'ajuster l'intensité ou le rythme si la réponse cutanée le justifie.</p>
+
+  <h2>Précautions solaires avant et après le laser médical</h2>
+  <p>La lumière du soleil et le laser interagissent tous deux avec la peau et le pigment. Une exposition récente peut augmenter le risque d'effets indésirables (brûlures superficielles, pigmentations parasites). Il est donc demandé d'éviter une exposition solaire significative environ 4 semaines avant et après chaque séance, et d'appliquer une protection adaptée sur les zones traitées, même par temps nuageux. Le hammam, le solarium et les auto-bronzants sont également à écarter dans les périodes indiquées. Ces consignes sont strictes : elles conditionnent la sécurité et la qualité du résultat. À Casablanca, où l'ensoleillement est fréquent, cette discipline solaire fait partie intégrante du protocole médical.</p>
+
+  <h2>À qui s'adresse le laser médical</h2>
+  <p>Le laser médical s'adresse aux personnes gênées par des taches, une perte d'éclat, des cicatrices, une texture irrégulière ou des rougeurs, après confirmation de l'indication. Il ne convient pas pendant la grossesse ou l'allaitement, ni en cas d'infection cutanée active sur la zone. Certains médicaments photosensibilisants ou antécédents particuliers peuvent contre-indiquer ou différer le geste. Hommes et femmes, phototypes variés : l'essentiel reste l'adaptation des paramètres à votre peau. Si votre besoin concerne surtout l'épilation, voir la page <a href="/soins/laser/epilation-laser">épilation laser</a> ; pour un tatouage, le <a href="/soins/laser/detatouage">détatouage laser</a> est l'indication dédiée. La consultation au Quartier des Hôpitaux à Casablanca reste l'étape indispensable pour trancher, expliquer les limites et établir un devis clair, sans engagement sur un résultat absolu.</p>
+
+  <h2>Laser médical et parcours de soins au cabinet</h2>
+  <p>Le laser médical peut s'inscrire seul ou dans un parcours plus large : peels, soins de texture, parfois injectables à distance des séances laser. L'ordre et l'espacement des gestes sont définis médicalement pour préserver la sécurité cutanée. Cette page hub n'a pas vocation à détailler chaque technologie appareil par appareil : elle clarifie les indications, le déroulement et les précautions communes. Le détail de votre protocole (nombre de séances, zones, intensité) se construit en consultation. À Casablanca, cette approche progressive évite les attentes irréalistes et permet d'ajuster le traitement selon la réponse réelle de votre peau, séance après séance.</p>
 </DetailPageLayout>

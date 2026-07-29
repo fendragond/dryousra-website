@@ -4,9 +4,34 @@ import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 const title = '<em>Détatouage Laser</em> à Casablanca';
 
 const faqItems = [
-  { question: 'Douloureux ?', answer: 'Picotements chauds atténués par crème anesthésiante.' },
-  { question: 'Tous les tatouages ?', answer: 'La plupart. Le noir est le plus facile, les couleurs claires demandent plus de séances.' },
-  { question: 'Risque de cicatrice ?', answer: 'Très faible avec les lasers modernes.' },
+  {
+    question: 'Quel est le prix d\'un détatouage laser à Casablanca ?',
+    answer: 'Le tarif dépend de la taille du tatouage, des couleurs d\'encre, de la profondeur et du nombre de séances envisagé. Aucun chiffre n\'est communiqué à distance : un devis personnalisé vous est remis lors de la consultation médicale.',
+  },
+  {
+    question: 'Le détatouage laser est-il douloureux ?',
+    answer: 'La sensation ressemble à des picotements chauds brefs. Une crème anesthésiante est généralement appliquée avant la séance pour améliorer le confort. L\'intensité perçue varie selon la zone et votre sensibilité.',
+  },
+  {
+    question: 'Combien de séances de détatouage faut-il prévoir ?',
+    answer: 'En moyenne 4 à 8 séances, espacées de 6 à 8 semaines. Le nombre exact dépend de la couleur, de la densité d\'encre, de l\'âge du tatouage et de votre type de peau. Le calendrier est précisé et ajusté en suivi.',
+  },
+  {
+    question: 'Y a-t-il un risque de cicatrice après un détatouage laser ?',
+    answer: 'Avec les lasers modernes et des paramètres adaptés, le risque de cicatrice est très faible, sans être nul. Le respect des consignes de cicatrisation et l\'éviction solaire réduisent encore ce risque. Toute réaction inhabituelle doit être signalée au cabinet.',
+  },
+  {
+    question: 'Les tatouages colorés peuvent-ils être effacés ?',
+    answer: 'La plupart des tatouages peuvent être traités. Le noir répond en général le plus facilement. Les couleurs claires (jaune, vert, bleu clair, blanc) demandent souvent davantage de séances et une évaluation au cas par cas.',
+  },
+  {
+    question: 'Y a-t-il une éviction sociale après la séance ?',
+    answer: 'Une rougeur, un gonflement ou une croûte légère peuvent apparaître pendant quelques jours. Selon la zone et la surface, une discrétion sociale temporaire peut être préférable. Les consignes post-acte vous sont remises avant de repartir.',
+  },
+  {
+    question: 'Quelles sont les contre-indications du détatouage laser ?',
+    answer: 'Grossesse, allaitement, infection ou lésion active sur la zone, exposition solaire récente importante, ou certains antécédents médicaux peuvent contre-indiquer ou différer la séance. Ces points sont vérifiés en consultation.',
+  },
 ];
 
 const crossLinks = [
@@ -51,7 +76,29 @@ const medicalProcedure = {
   showGalleryCTA
   jsonLd={medicalProcedure}
 >
-  <p>Le laser fractionne les pigments d'encre en micro-particules éliminées naturellement par l'organisme. 4 à 8 séances en moyenne, espacées de 6 à 8 semaines.</p>
-  <h2>Déroulement</h2>
-  <p>Crème anesthésiante 30 minutes avant. Le laser cible les pigments. Séance de 15 à 30 minutes.</p>
+  <p>Le détatouage laser permet d'effacer progressivement un tatouage indésirable en fragmentant les pigments d'encre, ensuite éliminés par l'organisme. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, ce traitement s'adresse aux personnes qui souhaitent faire disparaître un tatouage amateur ou professionnel, monochrome ou coloré, après une évaluation médicale. À Casablanca, la demande de détatouage laser concerne aussi bien de petites surfaces que des motifs plus étendus. Le résultat se construit séance après séance : patience et suivi font partie intégrante du protocole.</p>
+
+  <h2>Comment le laser fragmente-t-il l'encre d'un tatouage ?</h2>
+  <p>Le principe repose sur la photothermolyse sélective. Un faisceau laser de très courte durée d'impulsion est absorbé par les particules d'encre présentes dans le derme. Cette énergie brève fait éclater les agrégats de pigment en fragments plus petits, que le système lymphatique et immunitaire peut ensuite évacuer progressivement. La peau environnante est ménagée lorsque les paramètres sont correctement choisis. Contrairement à une ablation chirurgicale, le laser n'enlève pas la peau : il agit sur le pigment. L'élimination n'est pas instantanée : elle se poursuit dans les semaines qui suivent chaque séance, d'où l'espacement nécessaire entre deux passages. Comprendre ce mécanisme aide à accepter le caractère progressif du détatouage : ce n'est pas un effacement en une seule séance, mais un travail en plusieurs temps, adapté à votre tatouage et à votre peau.</p>
+
+  <h2>Toutes les couleurs d'encre peuvent-elles être traitées ?</h2>
+  <p>La plupart des tatouages peuvent être abordés en détatouage laser, mais toutes les couleurs ne répondent pas de la même façon. Le noir absorbe généralement très bien l'énergie laser et s'estompe souvent plus facilement. Les couleurs foncées (bleu marine, vert foncé) répondent en général mieux que les teintes très claires. Le jaune, le vert clair, le bleu clair, le blanc ou certaines encres pastel demandent souvent davantage de séances et une évaluation au cas par cas. Les tatouages multicolores combinent donc plusieurs dynamiques de réponse. À Casablanca, la consultation permet d'examiner la palette réelle de votre motif, la densité d'encre et l'éventuelle présence de retouches superposées. L'objectif est de vous donner une estimation réaliste du parcours, pas une promesse d'effacement total en un nombre fixe de séances.</p>
+
+  <h2>Combien de séances de détatouage laser faut-il prévoir ?</h2>
+  <p>Un protocole compte en moyenne 4 à 8 séances, espacées de 6 à 8 semaines. Cet intervalle laisse au corps le temps d'éliminer les fragments d'encre et à la peau de cicatriser correctement. Certains tatouages anciens, superficiels et noirs évoluent plus vite ; d'autres, denses, colorés ou récemment retouchés, demandent plus de passages. Le nombre exact n'est jamais figé dès la première visite : il se précise au fil du suivi, en observant la clairance réelle. Des photographies de suivi peuvent aider à documenter l'évolution. Le devis en consultation tient compte de la surface et de la complexité, sans chiffre annoncé à distance. À Casablanca, cette transparence sur la durée du parcours fait partie de l'information médicale avant de commencer.</p>
+
+  <h2>Le déroulement au cabinet de Dr Yousra El Khadri</h2>
+  <p>Chaque parcours commence par une consultation au Quartier des Hôpitaux. Dr Yousra El Khadri examine le tatouage (taille, couleurs, profondeur apparente, âge du motif), votre type de peau et vos antécédents. Les contre-indications sont vérifiées, le protocole expliqué, et un devis remis. Le jour de la séance, une crème anesthésiante est généralement appliquée une trentaine de minutes avant le geste. Le laser cible ensuite les pigments zone par zone. La séance dure souvent 15 à 30 minutes selon la surface. Une sensation de picotements chauds est habituelle. Après le traitement, des consignes de soins locaux vous sont données. À Casablanca, ce cadre médical accompagne l'ensemble du détatouage, de la première évaluation jusqu'aux séances d'entretien éventuelles lorsque l'encre résiduelle le justifie.</p>
+
+  <h2>Suites et cicatrisation après un détatouage laser</h2>
+  <p>Après la séance, une rougeur, un gonflement et parfois de petites croûtes ou un aspect blanchâtre passager peuvent apparaître. Ces suites s'atténuent en général en quelques jours lorsque les consignes sont respectées : ne pas gratter, protéger la zone, appliquer les soins prescrits, éviter le hammam et le sport intensif pendant la période indiquée. Avec les lasers modernes et des paramètres adaptés, le risque de cicatrice est très faible, sans être nul. Une cicatrisation soigneuse et l'éviction solaire limitent les complications. Toute douleur inhabituelle, infection suspectée ou cicatrisation anormale doit être signalée rapidement au cabinet. Au Quartier des Hôpitaux, le suivi post-acte fait partie de la prise en charge : vous n'êtes pas laissé sans consignes ni sans interlocuteur après la séance.</p>
+
+  <h2>Facteurs qui influencent le résultat du détatouage</h2>
+  <p>Plusieurs éléments modifient la vitesse et le degré d'effacement. La profondeur de l'encre : un tatouage très profond ou réalisé avec une encre dense demande souvent plus de séances. La couleur et la qualité de l'encre : comme vu plus haut, le noir répond en général mieux que certaines teintes claires. Le type de peau (phototype) influence le réglage des paramètres et la prudence face au risque pigmentaire. L'âge du tatouage : les motifs anciens se fragmentent parfois plus facilement que les tatouages récents encore très saturés. Les retouches, les superpositions et la localisation (zones à peau fine ou très exposées) jouent aussi. Aucun de ces facteurs ne permet à lui seul de prédire un résultat absolu. La consultation à Casablanca sert justement à croiser ces éléments pour construire un plan réaliste.</p>
+
+  <h2>Précautions et contre-indications</h2>
+  <p>Il est demandé d'éviter une exposition solaire importante sur la zone avant et après chaque séance, et d'appliquer une protection adaptée une fois la peau cicatrisée. Grossesse, allaitement, infection ou lésion active sur le tatouage, ainsi que certains antécédents médicaux, peuvent contre-indiquer ou différer le geste. Signalez tout traitement en cours et toute allergie. Entre deux séances, respectez l'espacement recommandé : avancer trop vite n'accélère pas forcément le résultat et peut fragiliser la peau. Ces précautions font du détatouage laser un acte médical, pas un simple soin cosmétique. Au cabinet de Dr Yousra El Khadri à Casablanca, l'information préalable, le devis en consultation et le suivi structurent un parcours clair, progressif et adapté à votre tatouage.</p>
+
+  <h2>À qui s'adresse le détatouage laser</h2>
+  <p>Le détatouage laser s'adresse aux personnes qui souhaitent atténuer ou faire disparaître un tatouage qu'elles ne veulent plus porter, qu'il s'agisse d'un motif amateur, professionnel, d'une inscription ou d'un dessin coloré. Il concerne aussi les retouches partielles (éclaircir une zone avant un cover-up réalisé ailleurs) lorsque l'indication est discutée en consultation. Il ne convient pas pendant la grossesse ou l'allaitement, ni sur une peau infectée ou récemment très exposée au soleil. Si votre besoin relève plutôt de taches pigmentaires ou de texture cutanée, le <a href="/soins/laser/laser-medical">laser médical</a> sera plus adapté ; pour la pilosité, voir l'<a href="/soins/laser/epilation-laser">épilation laser</a>. Au Quartier des Hôpitaux à Casablanca, l'orientation vers le bon traitement laser fait partie de la première consultation, afin d'éviter un geste inadapté à votre demande réelle.</p>
 </DetailPageLayout>

@@ -44,9 +44,14 @@ const {
 
 const crossLinkGroups = Array.isArray(crossLinks) ? crossLinks : crossLinks ? [crossLinks] : [];
 
-const incomingJsonLd = (Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []).filter(
-  (item) => item?.['@type'] !== 'FAQPage',
-);
+const incomingJsonLd = (Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])
+  .filter((item) => item?.['@type'] !== 'FAQPage')
+  .map((item) => {
+    if (item?.['@type'] === 'MedicalProcedure' && !item.provider) {
+      return { ...item, provider: { '@id': 'https://dryousra.ma/#physician' } };
+    }
+    return item;
+  });
 
 const faqPageSchema =
   faqItems && faqItems.length > 0

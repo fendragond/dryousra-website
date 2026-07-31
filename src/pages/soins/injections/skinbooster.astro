@@ -6,27 +6,55 @@ import ZoneCard from '../../../components/ZoneCard.astro';
 const title = 'Skin Booster à <em>Casablanca</em>';
 
 const faqItems = [
-  { question: 'Différence entre Skin Booster et Filler ?', answer: 'Le filler ajoute du volume. Le skin booster hydrate en profondeur sans modifier les volumes.' },
-  { question: 'Combien de séances ?', answer: 'Protocole standard de 3 séances espacées de 3 à 4 semaines, puis entretien tous les 6 mois.' },
-  { question: 'Peut-on faire en été ?', answer: "Oui, en évitant l'exposition solaire 48h après." },
-  { question: 'Quelles zones ?', answer: "Visage, cou, décolleté, dos des mains, contour de l'œil." },
+  {
+    question: 'Quelle est la différence entre skin booster et filler ?',
+    answer: 'Le filler à l\'acide hyaluronique vise principalement à restaurer ou à ajouter du volume dans une zone précise. Le skin booster hydrate et améliore la qualité de la peau en intradermique, sans chercher à modifier les volumes du visage.',
+  },
+  {
+    question: 'Combien de séances de skin booster faut-il prévoir ?',
+    answer: 'Un protocole initial compte souvent 2 à 3 séances, espacées de 3 à 4 semaines, puis un entretien périodique (par exemple tous les 6 mois) selon votre peau et vos objectifs. Le calendrier exact est défini en consultation.',
+  },
+  {
+    question: 'Le skin booster est-il douloureux ?',
+    answer: 'Les injections se font avec des aiguilles très fines. Une crème anesthésiante peut être appliquée avant la séance pour améliorer le confort. La sensation se limite en général à de légers picotements brefs.',
+  },
+  {
+    question: 'Y a-t-il une éviction sociale après un skin booster ?',
+    answer: 'Une rougeur, de petits points d\'injection ou de légères ecchymoses peuvent apparaître et s\'estompent souvent en quelques jours. L\'éviction sociale stricte est rarement nécessaire, mais un événement important peut être anticipé selon votre confort.',
+  },
+  {
+    question: 'Peut-on faire un skin booster en été à Casablanca ?',
+    answer: 'Oui, sous réserve d\'éviter une exposition solaire significative dans les 48 heures qui suivent et d\'appliquer une protection adaptée. La consultation précise les consignes selon la saison et votre phototype.',
+  },
+  {
+    question: 'Quelles zones peut-on traiter avec un skin booster ?',
+    answer: 'Le visage, le cou, le décolleté et parfois le dos des mains ou le contour de l\'œil peuvent être concernés, selon l\'indication et le produit retenu. Le plan de zones est défini lors de l\'examen clinique.',
+  },
+  {
+    question: 'Peut-on associer le skin booster à l\'HydraFacial ou au microneedling ?',
+    answer: 'Oui. Ces soins peuvent former un parcours cohérent de qualité de peau, avec un ordre et un espacement définis médicalement. L\'HydraFacial travaille la surface ; le microneedling stimule la texture ; le skin booster hydrate en profondeur.',
+  },
+  {
+    question: 'Quel est le tarif d\'un skin booster à Casablanca ?',
+    answer: 'Le tarif dépend du produit, du volume nécessaire et des zones traitées. Aucun chiffre n\'est communiqué à distance : un devis personnalisé vous est remis lors de la consultation médicale au cabinet.',
+  },
 ];
 
 const crossLinks = [
   {
     label: 'Besoins associés',
     links: [
-      { text: 'Améliorer la texture', url: '/besoins/texture' },
       { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
-      { text: 'Préparation mariage', url: '/besoins/mariage' },
+      { text: 'Atténuer les rides', url: '/besoins/rides' },
     ],
   },
   {
-    label: 'Autres soins injectables',
+    label: 'Autres soins associés',
     variant: 'rose' as const,
     links: [
-      { text: 'Botox', url: '/soins/injections/botox' },
-      { text: 'Filler', url: '/soins/injections/filler' },
+      { text: 'HydraFacial pour l\'éclat', url: '/soins/soins-visage/hydrafacial' },
+      { text: 'Microneedling pour la texture', url: '/soins/soins-visage/microneedling' },
+      { text: 'Filler acide hyaluronique', url: '/soins/injections/filler' },
     ],
   },
 ];
@@ -56,27 +84,41 @@ const medicalProcedure = {
   showGalleryCTA
   jsonLd={medicalProcedure}
 >
-  <p>Le Skin Booster est un traitement injectable qui hydrate la peau en profondeur, lui redonne éclat et souplesse. Au cabinet de Dr Yousra El Khadri à Casablanca, plusieurs gammes premium sont disponibles selon vos besoins.</p>
-  <h2>Zones traitées</h2>
+  <p>Le skin booster est un traitement injectable d'hydratation cutanée profonde, le plus souvent à base d'acide hyaluronique fluide ou faiblement réticulé, destiné à améliorer la qualité de la peau sans chercher à modifier les volumes du visage. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, ce soin s'adresse aux personnes dont la peau est déshydratée, terne, marquée de ridules fines, ou qui souhaitent travailler l'éclat et la souplesse dans un cadre médical. À Casablanca, la demande de skin booster concerne le visage, le cou, le décolleté et parfois d'autres zones exposées. Cette page décrit le principe, le déroulement, les suites et les contre-indications, sans promesse de résultat absolu.</p>
+
+  <h2>À qui s'adresse le skin booster ?</h2>
+  <p>Le skin booster convient particulièrement lorsque la gêne porte sur la qualité de peau (sécheresse, manque de souplesse, ridules de déshydratation) plutôt que sur un creux volumétrique à combler. Il s'adresse aux peaux jeunes en manque d'éclat comme aux peaux plus matures qui souhaitent une bio-revitalisation progressive. Hommes et femmes peuvent en bénéficier. En revanche, si votre priorité est clairement un volume (pommettes, lèvres, sillons marqués), un <a href="/soins/injections/filler">filler</a> sera plus adapté. La consultation au Quartier des Hôpitaux permet de trancher : examen de la peau, discussion de vos attentes et distinction claire entre hydratation injectable et restauration de volume. À Casablanca, cette clarification évite de confondre deux gestes dont les objectifs diffèrent.</p>
+
+  <h2>Zones traitées avec un skin booster</h2>
+  <p>Plusieurs zones peuvent être concernées, seules ou associées selon l'indication clinique. Voici les demandes les plus fréquentes au cabinet :</p>
   <div class="zones">
-    <ZoneCard title="Visage" description="Éclat, hydratation, atténuation des ridules." />
-    <ZoneCard title="Cou" description="Raffermissement et hydratation d'une zone fragile." />
-    <ZoneCard title="Décolleté" description="Éclat retrouvé sur une zone exposée au soleil." />
-    <ZoneCard title="Dos des mains" description="Hydratation profonde et atténuation des taches." />
-    <ZoneCard title="Contour de l'œil" description="Hydratation ciblée avec RRS Eyes." />
+    <ZoneCard title="Visage" description="Hydratation intradermique et travail sur la qualité de surface." />
+    <ZoneCard title="Cou" description="Zone souvent déshydratée, fragile, exposée aux mouvements et au soleil." />
+    <ZoneCard title="Décolleté" description="Zone exposée aux UV, fréquemment associée au visage dans le protocole." />
+    <ZoneCard title="Dos des mains" description="Hydratation d'une zone fine et souvent négligée dans les soins du visage." />
+    <ZoneCard title="Contour de l'œil" description="Indication sélective, selon le produit et l'examen clinique." />
   </div>
-  <h2>Les gammes proposées</h2>
-  <p>Dr El Khadri sélectionne le skin booster adapté à votre peau parmi un large panel :</p>
-  <ul>
-    <li><strong>Restylane (Galderma)</strong> : référence mondiale, hydratation longue durée.</li>
-    <li><strong>Profhilo</strong> : bio-remodelage de la peau.</li>
-    <li><strong>Profhilo Structura</strong> : pour peaux matures.</li>
-    <li><strong>Lola</strong> : éclat pour peaux jeunes et ternes.</li>
-    <li><strong>Ambre Saffron / PDRN Rose / Inbiotec</strong> : actifs spécifiques.</li>
-    <li><strong>RRS Eyes (Norokpharma)</strong> : spécifique au contour de l'œil.</li>
-    <li><strong>Salmon DNA</strong> : régénération avec ADN de saumon.</li>
-  </ul>
-  <h2>Déroulement</h2>
-  <p>Le protocole standard comprend 3 séances espacées de 3 à 4 semaines. Chaque séance dure 20 à 30 minutes sous crème anesthésiante.</p>
-  <ProductBox title="Produits utilisés" description="Plusieurs gammes premium : <strong>Restylane (Galderma)</strong>, <strong>RRS HA et RRS Eyes (Norokpharma)</strong>, Profhilo, Lola, Ambre." />
+
+  <h2>Comment se déroule une séance de skin booster à Casablanca ?</h2>
+  <p>Chaque parcours commence par une consultation médicale : type de peau, antécédents, traitements déjà réalisés, zones prioritaires. Les contre-indications sont vérifiées et le protocole expliqué. Le jour de la séance, une crème anesthésiante peut être appliquée pour améliorer le confort. Les injections se font en intradermique, selon un schéma adapté à la zone (multipuncture, nappage, points ciblés). La séance dure souvent 20 à 30 minutes. Des consignes post-acte vous sont remises : éviter de masser excessivement, limiter le hammam et le sport intensif dans les premières heures, et protéger la peau du soleil. Au cabinet du Quartier des Hôpitaux, ce cadre médical accompagne l'ensemble du protocole, de la première évaluation jusqu'aux séances d'entretien.</p>
+
+  <h2>Quel produit pour un skin booster ?</h2>
+  <p>Plusieurs gammes de skin boosters existent sur le marché, avec des profils rhéologiques et des compositions variables (acide hyaluronique plus ou moins réticulé, éventuels actifs complémentaires). Le choix du produit dépend de votre peau, de la zone et de l'objectif clinique discuté en consultation. {"{{TODO: confirmer marque avec Dr Yousra - Restylane Vital / Fillmed NCTF ?}}"} Aucune marque n'est affirmée ici tant que la gamme utilisée au cabinet n'est pas confirmée. Ce que vous devez retenir : le skin booster n'est pas un filler de volume ; il s'agit d'une hydratation injectable encadrée médicalement. À Casablanca, Dr El Khadri précise le produit retenu et le plan de séances lors de la consultation, avec un devis personnalisé, jamais un tarif annoncé à distance.</p>
+
+  <h2>Skin booster, acide hyaluronique et qualité de peau : ce qu'il faut comprendre</h2>
+  <p>L'acide hyaluronique utilisé en skin booster est formulé pour rester dans le derme de façon plus diffuse que dans un filler de projection. Il attire et retient l'eau localement, ce qui participe au confort cutané et à l'aspect de surface. Ce mécanisme explique pourquoi le geste ne « remplit » pas une pommette ni ne redessine une lèvre : il travaille la qualité tissulaire. La distinction est essentielle pour vos attentes. Un skin booster ne remplace pas une routine d'hydratation topique, ni une protection solaire quotidienne ; il s'y ajoute dans un cadre médical. De même, il ne corrige pas à lui seul une ride d'expression dynamique (souvent discutée avec le Botox) ni un creux volumétrique franc. Clarifier ces limites dès la consultation évite la déception et permet de construire un parcours cohérent. Au Quartier des Hôpitaux à Casablanca, cette pédagogie fait partie de la prise en charge autant que le geste technique lui-même.</p>
+
+  <h2>Durée du protocole et entretien</h2>
+  <p>Un protocole initial compte souvent 2 à 3 séances, espacées de 3 à 4 semaines. Cet espacement permet d'observer la réponse cutanée et d'ajuster si besoin. Une séance d'entretien périodique peut ensuite être discutée, par exemple tous les six mois, selon votre type de peau, la saison et les autres soins du parcours. L'évolution se construit progressivement : hydratation, confort cutané, aspect de surface. Aucun résultat absolu n'est promis. La durée perçue varie selon le métabolisme, l'exposition solaire et la routine quotidienne. À Casablanca, où le climat et le soleil sollicitent souvent la peau, l'entretien fait partie des sujets abordés dès la première consultation, sans calendrier rigide imposé à toutes les peaux.</p>
+
+  <h2>Suites, ecchymoses et éviction sociale</h2>
+  <p>Après la séance, une rougeur localisée, de petits points d'injection ou de légères ecchymoses sont possibles. Ces suites s'atténuent en général en quelques jours lorsque les consignes sont respectées. L'éviction sociale stricte est rarement nécessaire. Il est recommandé d'éviter une exposition solaire significative dans les 48 heures, le hammam et le sport intensif dans la période indiquée, et de ne pas masser agressivement les zones traitées. Toute réaction inhabituelle (douleur importante, gonflement asymétrique prolongé, signes d'infection) doit être signalée rapidement au cabinet. Ces précautions font partie d'une prise en charge injectable sérieuse : même un soin d'hydratation reste un acte médical.</p>
+
+  <h2>Contre-indications du skin booster</h2>
+  <p>Le skin booster est contre-indiqué pendant la grossesse et l'allaitement, en cas d'infection ou d'inflammation active sur la zone, et dans certaines situations médicales précisées en consultation (allergie connue aux composants, maladie auto-immune active, troubles de la coagulation non contrôlés, etc.). Un antécédent d'herpès peut conduire à une prophylaxie ou à un report selon le cas. Ces points sont vérifiés avant tout geste. Si votre besoin relève surtout d'un nettoyage et d'une exfoliation de surface, l'<a href="/soins/soins-visage/hydrafacial">HydraFacial</a> pourra être préféré ; pour la texture et les cicatrices, voir le <a href="/soins/soins-visage/microneedling">microneedling</a>. Au Quartier des Hôpitaux à Casablanca, l'orientation vers le bon injectable ou le bon soin de surface fait partie de la première consultation.</p>
+
+  <h2>Skin booster et parcours qualité de peau</h2>
+  <p>Le skin booster peut s'inscrire seul ou dans un parcours plus large : HydraFacial en entretien de surface, microneedling pour la texture, fillers lorsque le volume est aussi une demande, parfois d'autres injectables à distance. L'ordre et l'espacement des gestes sont définis médicalement. Cette page clarifie la place du skin booster dans la bio-revitalisation ; elle ne remplace pas l'examen clinique. À Casablanca, la demande d'hydratation profonde et d'éclat motivent souvent une discussion combinée avec d'autres soins du cluster qualité de peau. Au cabinet du Quartier des Hôpitaux, chaque protocole reste individualisé, avec des attentes réalistes, encadrées et un suivi adapté à votre peau.</p>
+
+  <ProductBox title="Produits utilisés" description={'{{TODO: confirmer marque avec Dr Yousra - Restylane Vital / Fillmed NCTF ?}} Le produit exact est précisé en consultation selon votre indication.'} />
 </DetailPageLayout>

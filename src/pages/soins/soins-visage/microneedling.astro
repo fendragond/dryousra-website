@@ -4,9 +4,38 @@ import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 const title = '<em>Microneedling</em> à Casablanca';
 
 const faqItems = [
-  { question: "C'est douloureux ?", answer: 'Avec la crème anesthésiante, le traitement est confortable.' },
-  { question: "Combien de séances pour les cicatrices d'acné ?", answer: '4 à 6 séances espacées de 4 à 6 semaines.' },
-  { question: 'Éviction sociale ?', answer: 'Aucune. Légères rougeurs 24-48h.' },
+  {
+    question: 'Le microneedling est-il douloureux ?',
+    answer: 'Une crème anesthésiante est généralement appliquée avant la séance. Avec cette préparation, le traitement reste confortable pour la plupart des patientes et patients. Une sensation de picotements ou de chaleur locale peut persister brièvement après le geste.',
+  },
+  {
+    question: 'Combien de séances de microneedling faut-il prévoir ?',
+    answer: 'Un protocole compte souvent 3 à 6 séances, espacées de 4 à 6 semaines, selon l\'indication (texture, cicatrices, pores). Le calendrier exact est défini en consultation et peut être ajusté selon la réponse cutanée.',
+  },
+  {
+    question: 'Y a-t-il une éviction sociale après le microneedling ?',
+    answer: 'Une rougeur, parfois un léger gonflement, sont fréquents pendant 24 à 48 heures. L\'éviction sociale stricte est rarement nécessaire, mais un rendez-vous important le jour même peut être reporté selon votre confort et l\'intensité du protocole.',
+  },
+  {
+    question: 'Le microneedling convient-il à tous les phototypes ?',
+    answer: 'Oui, le microneedling peut être adapté à de nombreux phototypes, y compris les peaux mates, sous réserve d\'une évaluation médicale et de paramètres adaptés. La protection solaire après la séance reste indispensable pour limiter le risque pigmentaire.',
+  },
+  {
+    question: 'Peut-on associer le microneedling à l\'HydraFacial ou au skin booster ?',
+    answer: 'Oui. Ces soins peuvent s\'inscrire dans un même parcours de qualité de peau, avec un ordre et un espacement définis médicalement. L\'HydraFacial travaille surtout la surface ; le skin booster hydrate en profondeur ; le microneedling vise la stimulation et la texture.',
+  },
+  {
+    question: 'Combien de temps avant de reprendre le sport ou le maquillage ?',
+    answer: 'Le sport intensif et le hammam sont souvent déconseillés pendant 24 à 48 heures. Le maquillage peut être différé le temps que la rougeur s\'atténue, selon les consignes remises en fin de séance.',
+  },
+  {
+    question: 'Le microneedling traite-t-il les cicatrices d\'acné ?',
+    answer: 'Les cicatrices d\'acné atrophiques font partie des indications fréquemment discutées. L\'objectif est une amélioration progressive de la texture, pas une disparition totale garantie. Le nombre de séances dépend de la profondeur et de l\'étendue des cicatrices.',
+  },
+  {
+    question: 'Quel est le tarif d\'une séance de microneedling à Casablanca ?',
+    answer: 'Le tarif dépend de la zone, de l\'intensité du protocole et du nombre de séances envisagé. Aucun chiffre n\'est communiqué à distance : un devis personnalisé vous est remis lors de la consultation médicale.',
+  },
 ];
 
 const crossLinks = [
@@ -14,16 +43,16 @@ const crossLinks = [
     label: 'Besoins associés',
     links: [
       { text: 'Améliorer la texture', url: '/besoins/texture' },
-      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+      { text: 'Atténuer les rides', url: '/besoins/rides' },
     ],
   },
   {
-    label: 'Autres soins du visage',
+    label: 'Autres soins qualité de peau',
     variant: 'rose' as const,
     links: [
-      { text: 'Hydrafacial', url: '/soins/soins-visage/hydrafacial' },
-      { text: 'Peeling', url: '/soins/soins-visage/peeling' },
-      { text: 'Exosomes', url: '/soins/soins-visage/exosomes' },
+      { text: 'Soin aux exosomes', url: '/soins/soins-visage/exosomes' },
+      { text: 'HydraFacial pour l\'éclat', url: '/soins/soins-visage/hydrafacial' },
+      { text: 'Skin booster hydratation', url: '/soins/injections/skinbooster' },
     ],
   },
 ];
@@ -53,15 +82,29 @@ const medicalProcedure = {
   showGalleryCTA
   jsonLd={medicalProcedure}
 >
-  <p>Le microneedling utilise des micro-aiguilles pour créer des micro-canaux dans la peau, déclenchant un processus de cicatrisation qui stimule la production de collagène.</p>
-  <h2>Indications principales</h2>
-  <ul>
-    <li>Cicatrices d'acné atrophiques</li>
-    <li>Pores dilatés</li>
-    <li>Ridules et rides superficielles</li>
-    <li>Vergetures</li>
-    <li>Tonus et fermeté de la peau</li>
-  </ul>
-  <h2>Déroulement</h2>
-  <p>Crème anesthésiante 30 minutes avant. Passage des micro-aiguilles 20 à 30 minutes. Un sérum actif peut être infusé.</p>
+  <p>Le microneedling est une technique médicale qui crée des micro-canaux contrôlés dans la peau à l'aide de micro-aiguilles, afin de stimuler les mécanismes naturels de réparation tissulaire et la production de collagène. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, ce soin s'adresse aux personnes gênées par une texture irrégulière, des cicatrices d'acné, des pores dilatés ou des ridules superficielles. À Casablanca, la demande de microneedling s'inscrit souvent dans un parcours de qualité de peau, seul ou associé à d'autres gestes (HydraFacial, skin booster, exosomes), toujours après évaluation médicale. Cette page présente le principe, le déroulement, les suites et les contre-indications, sans engagement sur un résultat absolu.</p>
+
+  <h2>Pour qui le microneedling est-il indiqué ?</h2>
+  <p>Les indications les plus fréquemment discutées en consultation sont les cicatrices d'acné atrophiques, les pores dilatés, un grain de peau irrégulier, des ridules fines et, dans certains cas, des vergetures ou une perte de tonus superficiel. Hommes et femmes, phototypes clairs à mats : le microneedling peut être adapté sous réserve de paramètres réglés à votre peau. Il convient particulièrement lorsque l'objectif porte sur la texture plutôt que sur un volume ou une ride d'expression profonde. La consultation au Quartier des Hôpitaux permet de distinguer ce qui relève du microneedling, d'un peeling, d'un laser ou d'un injectable. À Casablanca, cette orientation évite d'engager un protocole de plusieurs séances sans indication claire ni attentes réalistes.</p>
+
+  <h2>Comment se déroule une séance de microneedling à Casablanca ?</h2>
+  <p>Le parcours commence par une consultation : examen de la zone, phototype, antécédents (herpès, cicatrisation, traitements en cours), discussion de vos priorités. Le jour de la séance, une crème anesthésiante est généralement appliquée une trentaine de minutes avant le geste afin d'améliorer le confort. La peau est ensuite nettoyée, puis les micro-aiguilles sont passées selon un schéma adapté à l'indication et à l'intensité choisie. Un sérum actif peut être appliqué ou infusé dans le même temps, lorsque le protocole le prévoit. La durée du passage se situe souvent entre 20 et 30 minutes pour le visage. Des consignes post-acte écrites vous sont remises. Au cabinet du Quartier des Hôpitaux, chaque étape reste médicale : ce n'est pas un soin cosmétique anodin, même si l'éviction sociale reste limitée.</p>
+
+  <h2>Technique du microneedling : micro-canaux et stimulation</h2>
+  <p>Le principe repose sur des micro-perforations contrôlées de l'épiderme et du derme superficiel. Ces micro-lésions déclenchent une cascade de réparation : afflux de facteurs de croissance, stimulation des fibroblastes, réorganisation progressive du collagène et de l'élastine. L'objectif clinique n'est pas une abrasion agressive, mais une stimulation mesurée, répétée sur plusieurs séances. La profondeur et la densité des passages sont adaptées à la zone (joues, front, cicatrices localisées) et à votre tolérance. Un dispositif médical dédié est utilisé dans un cadre aseptique. Aucune marque d'appareil n'est présentée ici comme un argument commercial : l'essentiel reste le réglage des paramètres, l'indication et le suivi. À Casablanca, Dr El Khadri explique ce mécanisme avant le geste afin que vous compreniez pourquoi les effets se construisent progressivement, et non en une seule séance spectaculaire.</p>
+
+  <h2>Combien de séances et quel entretien prévoir ?</h2>
+  <p>Un protocole typique compte 3 à 6 séances, espacées de 4 à 6 semaines. Cet intervalle laisse à la peau le temps de réagir et de se renouveler entre deux passages. Les cicatrices plus marquées ou étendues peuvent demander davantage de séances ; une texture plus légère peut s'arrêter plus tôt si l'évolution le justifie. Des séances d'entretien espacées peuvent être discutées ensuite, selon la saison et vos autres soins. L'évolution se lit sur plusieurs semaines : rougeur initiale, puis phase de renouvellement, puis appréciation progressive de la texture. Aucun résultat absolu n'est promis. Le devis en consultation tient compte de la zone et du nombre de séances envisagé, jamais d'un forfait annoncé à distance. À Casablanca, le suivi permet d'ajuster l'intensité ou le rythme si la réponse cutanée le justifie.</p>
+
+  <h2>Microneedling et phototypes : quelles précautions ?</h2>
+  <p>Le microneedling peut être proposé sur de nombreux phototypes, y compris les peaux mates fréquentes à Casablanca, sous réserve d'une évaluation médicale et de paramètres adaptés. Le risque pigmentaire post-inflammatoire existe pour toute procédure qui stimule la peau : d'où l'importance de la protection solaire stricte après chaque séance, et parfois avant, si votre peau a été récemment exposée. Un bronzage important, une poussée d'herpès ou une irritation en cours peuvent conduire à différer le geste. Les consignes post-acte (écrans solaires, soins apaisants, éviction des actifs irritants) ne sont pas accessoires : elles conditionnent la tolérance autant que la technique. Au Quartier des Hôpitaux, Dr El Khadri adapte la profondeur et la densité des passages à votre peau, et vous explique pourquoi un protocole trop agressif d'emblée n'est pas toujours pertinent. Patience et suivi restent les maîtres mots d'une prise en charge de texture.</p>
+
+  <h2>Suites, rougeurs et éviction sociale</h2>
+  <p>Après la séance, une rougeur comparable à un coup de soleil léger est fréquente pendant 24 à 48 heures. Un léger gonflement, une sensation de chaleur ou une desquamation fine peuvent survenir selon l'intensité. L'éviction sociale stricte est rarement exigée, mais un événement important le jour même peut être reporté par confort. Il est demandé d'éviter le sport intensif, le hammam, le sauna et l'exposition solaire significative pendant la période indiquée, et d'appliquer les soins apaisants et la protection solaire prescrits. Le maquillage est souvent différé le temps que la rougeur s'atténue. Toute réaction inhabituelle (douleur intense, signes d'infection, pigmentation anormale) doit être signalée rapidement. Ces consignes conditionnent la tolérance du protocole autant que le geste lui-même.</p>
+
+  <h2>Contre-indications du microneedling</h2>
+  <p>Le microneedling est contre-indiqué en cas d'infection cutanée active sur la zone, de lésion suspecte non explorée, de troubles de la cicatrisation non contrôlés, et pendant la grossesse ou l'allaitement lorsque l'indication n'est pas retenue. Un herpès labial en poussée, certaines maladies inflammatoires actives ou un traitement anticoagulant peuvent conduire à différer la séance. L'exposition solaire récente et un bronzage important sont également pris en compte. Ces points sont vérifiés systématiquement avant le geste. Si votre besoin porte surtout sur un nettoyage et une hydratation de surface sans stimulation profonde, l'<a href="/soins/soins-visage/hydrafacial">HydraFacial</a> peut être plus adapté ; pour une hydratation injectable, voir le <a href="/soins/injections/skinbooster">skin booster</a>. Au Quartier des Hôpitaux à Casablanca, le bon geste au bon moment reste la priorité clinique.</p>
+
+  <h2>Microneedling et parcours qualité de peau</h2>
+  <p>Le microneedling peut s'inscrire seul ou dans un parcours plus large : HydraFacial en entretien de surface, skin booster pour l'hydratation profonde, exosomes ou peeling selon l'indication, parfois laser à distance des séances. L'ordre et l'espacement sont définis médicalement pour préserver la barrière cutanée. Cette page clarifie le principe et le protocole type ; elle ne remplace pas l'examen de votre peau. À Casablanca, la demande de texture et de cicatrices d'acné motive souvent plusieurs consultations avant d'engager un protocole complet. Au cabinet du Quartier des Hôpitaux, chaque plan est individualisé, avec des attentes réalistes, encadrées et un suivi séance après séance.</p>
 </DetailPageLayout>

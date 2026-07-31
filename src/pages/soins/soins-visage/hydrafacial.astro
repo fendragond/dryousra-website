@@ -4,27 +4,55 @@ import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 const title = '<em>Hydrafacial</em> à Casablanca';
 
 const faqItems = [
-  { question: 'Combien de temps dure une séance ?', answer: '30 à 45 minutes.' },
-  { question: 'Est-ce douloureux ?', answer: 'Non, entièrement indolore.' },
-  { question: 'Quelle fréquence ?', answer: 'Une fois par mois pour un entretien optimal.' },
-  { question: 'Maquillage après ?', answer: 'Oui, immédiatement.' },
+  {
+    question: 'Combien de temps dure une séance d\'HydraFacial à Casablanca ?',
+    answer: 'Une séance dure en général 30 à 45 minutes, selon les zones traitées (visage seul, ou visage avec cou et décolleté) et le protocole choisi lors de la consultation.',
+  },
+  {
+    question: 'L\'HydraFacial est-il douloureux ?',
+    answer: 'Non. Le soin est généralement indolore. Vous pouvez ressentir une sensation de frottement doux, d\'aspiration légère ou de fraîcheur lors de l\'infusion des sérums, sans anesthésie nécessaire.',
+  },
+  {
+    question: 'Quelle fréquence prévoir pour l\'HydraFacial ?',
+    answer: 'Un rythme d\'entretien mensuel est souvent discuté pour maintenir l\'hydratation et la qualité de surface. L\'espacement exact dépend de votre type de peau, de la saison et des autres soins éventuellement associés.',
+  },
+  {
+    question: 'Peut-on se maquiller après un HydraFacial ?',
+    answer: 'Oui, dans la plupart des cas, vous pouvez appliquer un maquillage léger immédiatement après la séance. Les consignes précises vous sont rappelées au cabinet selon l\'état de votre peau ce jour-là.',
+  },
+  {
+    question: 'Y a-t-il une éviction sociale après l\'HydraFacial ?',
+    answer: 'En règle générale, non. Une légère rougeur passagère peut apparaître et s\'estompe souvent rapidement. Vous pouvez reprendre vos activités habituelles le jour même, sous réserve des consignes données en fin de séance.',
+  },
+  {
+    question: 'L\'HydraFacial convient-il à tous les phototypes ?',
+    answer: 'Le protocole peut être adapté à de nombreux phototypes, y compris les peaux mates, sous réserve d\'une évaluation médicale. La consultation permet d\'ajuster l\'intensité de l\'exfoliation et le choix des sérums à votre peau.',
+  },
+  {
+    question: 'Peut-on associer l\'HydraFacial à d\'autres soins du visage ?',
+    answer: 'Oui. L\'HydraFacial peut s\'inscrire dans un parcours avec microneedling, peeling ou exosomes, selon un ordre et un espacement définis en consultation. L\'objectif est une prise en charge cohérente de la qualité de peau, pas une accumulation de gestes.',
+  },
+  {
+    question: 'Quel est le tarif d\'un HydraFacial à Casablanca ?',
+    answer: 'Le tarif dépend du protocole et des zones traitées. Aucun chiffre n\'est communiqué à distance : un devis personnalisé vous est remis lors de la consultation médicale au cabinet.',
+  },
 ];
 
 const crossLinks = [
   {
     label: 'Besoins associés',
     links: [
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
       { text: 'Améliorer la texture', url: '/besoins/texture' },
-      { text: 'Préparation mariage', url: '/besoins/mariage' },
     ],
   },
   {
     label: 'Autres soins du visage',
     variant: 'rose' as const,
     links: [
-      { text: 'Microneedling', url: '/soins/soins-visage/microneedling' },
-      { text: 'Peeling', url: '/soins/soins-visage/peeling' },
-      { text: 'Exosomes', url: '/soins/soins-visage/exosomes' },
+      { text: 'Microneedling pour la texture', url: '/soins/soins-visage/microneedling' },
+      { text: 'Peeling médical du visage', url: '/soins/soins-visage/peeling' },
+      { text: 'Soin aux exosomes', url: '/soins/soins-visage/exosomes' },
     ],
   },
 ];
@@ -54,13 +82,29 @@ const medicalProcedure = {
   showGalleryCTA
   jsonLd={medicalProcedure}
 >
-  <p>Hydrafacial est un soin médical complet du visage en 3 étapes : nettoyage en profondeur, extraction douce des impuretés, et infusion de sérums hydratants et antioxydants.</p>
-  <h2>Le protocole en 3 étapes</h2>
-  <ul>
-    <li><strong>Étape 1 — Nettoyage et exfoliation</strong> : élimination des cellules mortes et des impuretés.</li>
-    <li><strong>Étape 2 — Extraction douce</strong> : aspiration sans pincement.</li>
-    <li><strong>Étape 3 — Hydratation et infusion</strong> : sérums personnalisés.</li>
-  </ul>
-  <h2>Pour quels résultats ?</h2>
-  <p>Peau lumineuse, hydratée, pores resserrés, teint unifié dès la sortie du cabinet.</p>
+  <p>L'HydraFacial est un soin du visage médical non chirurgical qui combine nettoyage, exfoliation, extraction douce des impuretés et infusion de sérums hydratants. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, ce protocole s'adresse aux personnes qui souhaitent travailler la qualité de surface de leur peau (teint terne, pores visibles, déshydratation, manque d'éclat) dans un cadre encadré médicalement. À Casablanca, la demande d'HydraFacial concerne aussi bien un entretien régulier qu'une préparation ponctuelle (événement, saison, changement de routine). Cette page décrit le déroulement, les indications, les suites et les limites du soin, sans remplacer une consultation individualisée.</p>
+
+  <h2>À qui s'adresse l'HydraFacial ?</h2>
+  <p>L'HydraFacial peut convenir à de nombreux profils : peaux déshydratées, mixtes ou grasses avec pores apparents, peaux ternes en manque de luminosité, ou peaux matures qui souhaitent un soin de surface sans éviction sociale prolongée. Il s'adresse aussi aux personnes qui découvrent la médecine esthétique et préfèrent commencer par un geste non injectable. Hommes et femmes, phototypes variés : l'essentiel reste l'adaptation du protocole à votre peau. La consultation au Quartier des Hôpitaux permet de vérifier qu'il n'existe pas de contre-indication (infection active, irritation importante, lésion suspecte) et de préciser si un autre soin (peeling, microneedling) serait plus pertinent selon votre priorité. À Casablanca, cette étape d'orientation évite d'appliquer un protocole standard à une indication qui mériterait une autre approche.</p>
+
+  <h2>Comment se déroule une séance d'HydraFacial à Casablanca ?</h2>
+  <p>Chaque parcours commence par un échange clinique : type de peau, antécédents, soins déjà réalisés, attentes réalistes. Le jour de la séance, le visage est nettoyé, puis le dispositif HydraFacial enchaîne les étapes du protocole. Une sensation de frottement doux et d'aspiration contrôlée est habituelle ; aucune anesthésie n'est généralement nécessaire. La durée se situe souvent entre 30 et 45 minutes selon que le visage seul, ou le visage avec le cou et le décolleté, est traité. En fin de séance, des consignes simples vous sont rappelées (protection solaire, hydratation, éventuelle limitation d'actifs irritants pendant 24 à 48 heures). Au cabinet du Quartier des Hôpitaux, ce cadre médical structure l'ensemble du soin, de la première évaluation jusqu'à l'entretien éventuel.</p>
+
+  <h2>Technologie HydraFacial : nettoyage, extraction et infusion</h2>
+  <p>Le dispositif HydraFacial repose sur une embouchure dédiée qui associe plusieurs actions en continuum. La première phase vise le nettoyage et l'exfoliation contrôlée des cellules mortes en surface. La deuxième phase permet une extraction douce des impuretés présentes dans les pores, sans pincement manuel agressif. La troisième phase correspond à l'infusion de sérums choisis selon votre peau (hydratation, antioxydants, actifs apaisants ou ciblés). Cette séquence technique explique pourquoi l'HydraFacial est souvent décrit comme un soin « complet » de surface : il ne se limite pas à un simple nettoyage cosmétique. Pour autant, il ne remplace pas un traitement médical plus profond lorsque l'indication le justifie (cicatrices marquées, pigmentations complexes, relâchement). À Casablanca, Dr El Khadri précise ce positionnement dès la consultation afin d'aligner le geste sur votre besoin réel.</p>
+
+  <h2>Durée perçue et entretien du protocole</h2>
+  <p>L'aspect de la peau après une séance d'HydraFacial est souvent décrit comme plus frais et plus hydraté dès la sortie du cabinet. Cette impression immédiate concerne surtout la surface : hydratation, propreté des pores, confort cutané. Elle ne constitue pas une promesse de transformation durable à elle seule. Pour un entretien de la qualité de peau, un rythme mensuel est fréquemment discuté, avec des ajustements selon la saison, l'exposition solaire et les autres soins du parcours. Si vous combinez l'HydraFacial avec un microneedling ou un peeling, l'espacement entre les gestes est défini médicalement pour préserver la tolérance cutanée. Aucun résultat absolu n'est annoncé : le suivi permet d'observer l'évolution et d'adapter la fréquence. À Casablanca, où l'ensoleillement et la pollution urbaine sollicitent souvent la peau, cet entretien régulier fait partie des demandes les plus courantes en consultation.</p>
+
+  <h2>HydraFacial avant un événement : ce qu'il faut anticiper</h2>
+  <p>De nombreuses personnes consultent pour un HydraFacial avant un mariage, une séance photo ou un événement professionnel. Dans ce cadre, le calendrier compte autant que le geste. Idéalement, une première séance est réalisée suffisamment tôt pour observer la tolérance de votre peau, puis une séance plus proche de la date peut être discutée si l'indication le permet. Il n'existe pas de « séance miracle » la veille : une peau irritée, une rougeur passagère ou une sensibilité accrue peuvent survenir, même si elles restent généralement brèves. La consultation permet d'évaluer le bon timing, d'écarter les actifs irritants dans les jours qui précèdent, et de décider si un autre soin du parcours (peeling, microneedling) doit être reporté. Au Quartier des Hôpitaux à Casablanca, cette anticipation fait partie de la préparation médicale : mieux vaut un protocole calme et adapté qu'un empilement de gestes juste avant l'échéance.</p>
+
+  <h2>Suites, éviction sociale et consignes après la séance</h2>
+  <p>Dans la majorité des cas, l'éviction sociale est nulle ou très courte. Une rougeur légère et passagère peut apparaître et s'atténue souvent en quelques heures. Le maquillage léger est généralement possible le jour même. Il est recommandé d'éviter les gommages agressifs, les actifs irritants (rétinoïdes forts, acides concentrés) et une exposition solaire significative dans les 24 à 48 heures qui suivent, selon les consignes remises. Le hammam et le sport intensif peuvent être limités temporairement si votre peau est réactive. Toute sensation inhabituelle (irritation prolongée, réaction cutanée) doit être signalée au cabinet. Ces suites font de l'HydraFacial un soin souvent compatible avec un emploi du temps chargé, sous réserve du respect des précautions post-acte.</p>
+
+  <h2>Contre-indications et situations à différer</h2>
+  <p>L'HydraFacial n'est pas indiqué en cas d'infection cutanée active sur la zone, de lésion suspecte non explorée, d'irritation importante ou de poussée inflammatoire aiguë. Certaines situations (grossesse, peaux très fragilisées, traitements dermatologiques en cours) peuvent conduire à différer ou à adapter le protocole. Les antécédents d'herpès labial, les peaux extrêmement sensibles et l'usage récent de certains actifs puissants sont également discutés avant la séance. La consultation sert précisément à vérifier ces points. Si votre priorité concerne des cicatrices d'acné creuses ou une texture irrégulière plus marquée, le <a href="/soins/soins-visage/microneedling">microneedling</a> ou un autre soin de texture pourra être préféré ; pour un renouvellement chimique, voir le <a href="/soins/soins-visage/peeling">peeling</a>. Au Quartier des Hôpitaux à Casablanca, l'orientation vers le bon geste fait partie intégrante de la prise en charge.</p>
+
+  <h2>HydraFacial et parcours qualité de peau au cabinet</h2>
+  <p>L'HydraFacial peut s'inscrire seul, en entretien mensuel, ou dans un parcours plus large de qualité de peau : microneedling, peeling, exosomes, parfois injectables d'hydratation à distance des séances de surface. L'ordre et l'espacement des gestes sont définis pour éviter une surcharge cutanée. Cette page n'a pas vocation à promettre un éclat « garanti » ni un résultat standardisé : elle clarifie le mécanisme, le déroulement et les précautions. Le détail de votre protocole (fréquence, zones, association éventuelle) se construit en consultation. À Casablanca, cette approche progressive vise des attentes réalistes et un suivi cohérent, séance après séance, au cabinet du Quartier des Hôpitaux.</p>
 </DetailPageLayout>

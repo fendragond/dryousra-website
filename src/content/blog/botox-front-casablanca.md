@@ -82,11 +82,7 @@ jsonLd:
         "inLanguage": "fr",
         "datePublished": "2026-05-05",
         "dateModified": "2026-05-05",
-        "author": {
-          "@type": "Physician",
-          "name": "Dr Yousra El Khadri",
-          "url": "https://dryousra.ma"
-        },
+        "author": { "@id": "https://dryousra.ma/#physician" },
         "publisher": {
           "@type": "Organization",
           "name": "Dr Yousra El Khadri - Médecine Esthétique",
@@ -186,6 +182,7 @@ jsonLd:
       },
       {
         "@type": "Physician",
+        "@id": "https://dryousra.ma/#physician",
         "name": "Dr Yousra El Khadri",
         "medicalSpecialty": [
           "Aesthetic Medicine",

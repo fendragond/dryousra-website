@@ -44,7 +44,9 @@
 /soins/injections/filler.html            /soins/injections/filler            301
 /soins/injections/skinbooster.html       /soins/injections/skinbooster       301
 
-/soins/stimulation-collagene/harmonica.html  /soins/stimulation-collagene/harmonica  301
+/soins/stimulation-collagene/harmonica.html  /soins/stimulation-collagene/harmonyca  301
+/soins/stimulation-collagene/harmonica       /soins/stimulation-collagene/harmonyca  301
+/soins/stimulation-collagene/harmonyca.html  /soins/stimulation-collagene/harmonyca  301
 /soins/stimulation-collagene/radiesse.html   /soins/stimulation-collagene/radiesse   301
 /soins/stimulation-collagene/sculptura.html  /soins/stimulation-collagene/sculptura  301
 

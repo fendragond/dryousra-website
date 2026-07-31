@@ -1,0 +1,95 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import ProductBox from '../../../components/ProductBox.astro';
+
+const title = '<em>HArmonyCa</em> à Casablanca';
+
+const faqItems = [
+  { question: 'Combien de séances sont nécessaires ?', answer: 'Le protocole comprend généralement deux séances espacées d\'une trentaine de jours, le temps d\'installer progressivement le résultat.' },
+  { question: 'Combien de temps pour voir les résultats ?', answer: 'L\'effet de soutien est perceptible dès la première séance grâce à l\'acide hyaluronique. L\'amélioration se poursuit sur six à huit semaines et atteint son optimum vers trois mois, à mesure que le collagène se construit.' },
+  { question: 'Combien de temps durent les effets ?', answer: 'Le bénéfice peut se maintenir jusqu\'à vingt-quatre mois selon les profils, ce qui fait de HArmonyCa un traitement de longue durée adapté à un entretien annuel.' },
+  { question: 'Qu\'est-ce qui distingue HArmonyCa des autres stimulateurs ?', answer: 'HArmonyCa est un produit hybride : il associe l\'acide hyaluronique, pour un soutien immédiat, et l\'hydroxyapatite de calcium, pour une stimulation durable du collagène. Il combine donc effet immédiat et résultat de fond.' },
+  { question: 'Puis-je reprendre mes activités après la séance ?', answer: 'Oui, la reprise se fait généralement le jour même. De petites ecchymoses ou un léger gonflement peuvent apparaître et se résorbent en quelques jours.' },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+      { text: 'Améliorer la texture', url: '/besoins/texture' },
+    ],
+  },
+  {
+    label: 'Autres traitements de stimulation',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Sculptura', url: '/soins/stimulation-collagene/sculptura' },
+      { text: 'Radiesse', url: '/soins/stimulation-collagene/radiesse' },
+    ],
+  },
+];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Injections de HArmonyCa (hybride hydroxyapatite et acide hyaluronique)',
+  alternateName: ['HArmonyCa', 'harmonica', 'harmonyca filler', 'stimulateur hybride', 'acide hyaluronique et hydroxyapatite'],
+  description: "Injection d'un produit hybride associant acide hyaluronique et hydroxyapatite de calcium pour un effet de soutien immédiat et une stimulation du collagène sur la durée, pour raffermir et redéfinir l'ovale du visage à Casablanca.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage, ovale du visage, bas du visage',
+  followup: 'Effet de soutien immédiat, stimulation progressive du collagène, durée pouvant atteindre 24 mois.',
+  preparation: 'Consultation médicale préalable. Éviter anticoagulants 48h avant.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
+---
+
+<DetailPageLayout
+  seoTitle="HArmonyCa à Casablanca | Stimulation collagène | Dr El Khadri"
+  description="HArmonyCa (harmonica) à Casablanca par Dr Yousra El Khadri. Stimulation du collagène, raffermissement et bio-remodelage de la peau."
+  canonical="/soins/stimulation-collagene/harmonyca"
+  label="Stimulation collagène"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+  jsonLd={medicalProcedure}
+>
+  <p>HArmonyCa, parfois orthographié harmonica par les patientes, est un traitement injectable de nouvelle génération qui associe deux mécanismes complémentaires : un effet de soutien immédiat et une stimulation durable du collagène. Ce produit hybride combine de l'acide hyaluronique, qui apporte un raffermissement visible dès l'injection, et de l'hydroxyapatite de calcium, qui relance la production naturelle de collagène sur le long terme. Au cabinet de Dr Yousra El Khadri, au Quartier des Hôpitaux à Casablanca, HArmonyCa est privilégié pour raffermir et redéfinir l'ovale du visage avec un effet liftant naturel.</p>
+
+  <h2>Un traitement hybride, deux actions complémentaires</h2>
+  <p>La particularité de HArmonyCa réside dans sa double composition. L'acide hyaluronique agit immédiatement en apportant du soutien et en repositionnant les tissus, pour un effet de raffermissement perceptible dès la séance. En parallèle, l'hydroxyapatite de calcium stimule progressivement les fibroblastes, les cellules productrices de collagène, ce qui prolonge et consolide le résultat dans le temps. Cette association permet de conjuguer le meilleur des deux mondes : la satisfaction d'un résultat visible rapidement et la durabilité d'une véritable redensification de la peau.</p>
+
+  <h2>Pourquoi le collagène compte dans le raffermissement</h2>
+  <p>Avec l'âge, la diminution du collagène entraîne un relâchement des tissus et une perte de netteté de l'ovale du visage. Les traitements qui se contentent d'ajouter du volume ne corrigent pas cette perte de fermeté structurelle. HArmonyCa adopte une approche différente en agissant sur la cause : en stimulant la fabrication de nouveau collagène, il contribue à restaurer la densité et la tenue de la peau. C'est cette action de fond qui donne au traitement son effet liftant naturel, sans surcharge de volume.</p>
+
+  <h2>À qui s'adresse HArmonyCa à Casablanca ?</h2>
+  <p>HArmonyCa s'adresse aux personnes qui souhaitent un effet raffermissant et un redessin discret de l'ovale, sans excès de volume. Ses indications principales sont :</p>
+  <ul>
+    <li>Relâchement cutané léger à modéré du visage</li>
+    <li>Perte de fermeté au niveau du bas du visage et de l'ovale</li>
+    <li>Recherche d'un effet liftant naturel et progressif</li>
+    <li>Demande d'un effet bonne mine durable</li>
+  </ul>
+  <p>Lors de la consultation au Quartier des Hôpitaux à Casablanca, Dr El Khadri évalue si HArmonyCa correspond à votre profil, en fonction de la nature du relâchement et de vos attentes. Ce traitement convient particulièrement aux personnes qui privilégient la subtilité et la durée.</p>
+
+  <h2>Comment fonctionne le produit</h2>
+  <p>HArmonyCa est injecté dans les plans profonds du visage à l'aide d'une aiguille fine ou d'une canule. La composante acide hyaluronique procure un soutien immédiat en repositionnant les tissus relâchés. La composante hydroxyapatite de calcium, elle, agit comme un signal biologique qui active la synthèse de collagène natif au fil des semaines. Progressivement, la peau se redensifie de l'intérieur autour de cette trame biocompatible. Les composants sont ensuite naturellement résorbés par l'organisme, ne laissant que le collagène nouvellement formé.</p>
+
+  <h2>Déroulement d'une séance</h2>
+  <p>La séance commence par une analyse de l'ovale et un échange sur vos attentes. Le produit est injecté en une séance d'environ trente minutes. Le protocole comprend habituellement deux séances espacées d'une trentaine de jours, afin d'installer progressivement le résultat. Une crème anesthésiante peut être appliquée sur les zones sensibles pour améliorer le confort. La reprise des activités habituelles se fait généralement le jour même.</p>
+
+  <h2>Résultats et calendrier</h2>
+  <p>L'effet de soutien lié à l'acide hyaluronique est perceptible dès la première séance. L'amélioration se poursuit ensuite de façon progressive sur six à huit semaines, à mesure que le collagène se construit, pour atteindre son optimum vers trois mois. Le bénéfice global peut se maintenir jusqu'à vingt-quatre mois selon les profils, ce qui place HArmonyCa parmi les traitements de longue durée. Cette longévité en fait une solution adaptée à un entretien espacé, compatible avec une visite annuelle au cabinet à Casablanca.</p>
+
+  <h2>Suites et précautions</h2>
+  <p>Les suites d'une séance de HArmonyCa sont généralement légères. De petits points d'injection, un léger gonflement ou des ecchymoses discrètes peuvent apparaître et se résorbent en quelques jours. Comme pour tout acte médical, certaines situations contre-indiquent le traitement, notamment une infection cutanée active sur la zone, une grossesse ou un allaitement, ou certains antécédents particuliers. Ces éléments sont examinés lors de la consultation médicale préalable, garantissant une prise en charge sûre et rigoureuse.</p>
+
+  <h2>HArmonyCa en association avec d'autres soins</h2>
+  <p>Comme les autres stimulateurs de collagène, HArmonyCa s'inscrit dans une approche globale du rajeunissement. Il peut être associé à la toxine botulique pour détendre les rides d'expression, ou à un <a href="/soins/injections/filler">filler à l'acide hyaluronique</a> pour restaurer un volume précis. Au sein de la même famille, <a href="/soins/stimulation-collagene/sculptura">Sculptura</a> agit de manière plus diffuse et progressive, tandis que <a href="/soins/stimulation-collagene/radiesse">Radiesse</a> offre un effet plus structurant sur les contours. Dr El Khadri oriente vers le produit le plus adapté à votre indication, dans une démarche de <a href="/besoins/rajeunir">rajeunissement du visage</a> et d'amélioration de la <a href="/besoins/texture">texture de la peau</a> définie sur mesure.</p>
+
+  <h2>Une prise en charge médicale à Casablanca</h2>
+  <p>La qualité d'un traitement raffermissant repose sur la précision du geste et la justesse de l'indication. Au cabinet du Quartier des Hôpitaux à Casablanca, chaque protocole HArmonyCa est défini individuellement, après analyse de l'ovale et discussion de vos attentes. L'objectif est toujours un résultat naturel, qui raffermit et redéfinit sans figer ni surcharger. Cette exigence médicale fait de HArmonyCa à Casablanca une option pertinente pour celles et ceux qui recherchent un effet liftant durable et discret.</p>
+
+  <ProductBox title="Produits utilisés" description="HArmonyCa appartient à la nouvelle génération de traitements hybrides associant acide hyaluronique et hydroxyapatite de calcium, pour un effet de soutien immédiat et une stimulation du collagène sur la durée." />
+</DetailPageLayout>

@@ -18,7 +18,7 @@ dryousra-website/
 ├── images/                 Photos, logos, favicons
 ├── soins/
 │   ├── injections/         Botox, Filler, Skin Booster, Dissolution
-│   ├── stimulation-collagene/  Sculptura, Radiesse, Harmonica
+│   ├── stimulation-collagene/  Sculptura, Radiesse, HArmonyCa
 │   ├── soins-visage/       Hydrafacial, Microneedling, Peeling, Exosomes, Baby Lips
 │   ├── soins-corps/        Lipolyse, Peeling corps
 │   └── laser/              Laser médical, Détatouage

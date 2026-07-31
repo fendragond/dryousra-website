@@ -310,7 +310,7 @@ jsonLd:
       },
       {
         "@type": "MedicalProcedure",
-        "name": "Stimulateurs de collagène (Sculptura, Radiesse, Harmonyca)",
+        "name": "Stimulateurs de collagène (Sculptura, Radiesse, HArmonyCa)",
         "alternateName": [
           "stimulation collagène",
           "Sculptura acide poly-lactique",
@@ -405,7 +405,7 @@ Pour les profils qui ont perdu une densité cutanée significative, ou qui souha
 
 <strong><a href="/soins/stimulation-collagene/radiesse">Radiesse</a></strong> (hydroxyapatite de calcium, Merz Aesthetics) offre un double effet simultané : un comblement immédiat grâce à sa consistance, et une stimulation du collagène à moyen terme. Il est très efficace sur le visage, les mains, et les zones de relâchement cutané du cou et du décolleté. Des articles dédiés à Sculptura et à Radiesse seront prochainement publiés avec les protocoles complets.
 
-<strong><a href="/soins/stimulation-collagene/harmonica">Harmonyca</a></strong> (Galderma) associe acide hyaluronique et hydroxyapatite de calcium dans un seul produit, combinant l'effet de comblement immédiat et l'effet de stimulation collagène dans une seule injection, pour une approche globale et durable.
+<strong><a href="/soins/stimulation-collagene/harmonyca">HArmonyCa</a></strong> (Galderma) associe acide hyaluronique et hydroxyapatite de calcium dans un seul produit, combinant l'effet de comblement immédiat et l'effet de stimulation collagène dans une seule injection, pour une approche globale et durable.
 
 ## Comment se déroule une consultation d'injection au cabinet de Dr Yousra El Khadri ?
 

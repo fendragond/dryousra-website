@@ -82,15 +82,14 @@ const medicalProcedure = {
   <figure class="media-reel">
     <video
       src="/videos/epilation-laser-elite-plus-casablanca.mp4"
-      poster="/images/epilation-laser-elite-plus-station-casablanca.webp"
+      autoplay
       muted
       loop
       playsinline
-      preload="metadata"
+      preload="auto"
       aria-label="Épilation laser définitive à Casablanca, plateforme Cynosure Elite+"
-      width="360"
-      height="640"
     ></video>
+    <figcaption>Plateforme Cynosure Elite+ au cabinet, Quartier des Hôpitaux à Casablanca.</figcaption>
   </figure>
 
   <h2>Qu'est-ce que l'épilation laser définitive ?</h2>
@@ -125,14 +124,22 @@ const medicalProcedure = {
 
 <style>
   .media-reel {
-    margin: 28px 0;
-    max-width: 360px;
+    margin: 28px auto;
+    max-width: 320px;
   }
   .media-reel video {
     display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
     border-radius: 12px;
-    background: #111;
+    background: #f3e9e4;
+  }
+  .media-reel figcaption {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #8a7d76;
+    text-align: center;
   }
 </style>

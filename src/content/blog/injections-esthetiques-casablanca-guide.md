@@ -229,11 +229,6 @@ jsonLd:
         "@type": "Physician",
         "@id": "https://dryousra.ma/#physician",
         "name": "Dr Yousra El Khadri",
-        "medicalSpecialty": [
-          "Aesthetic Medicine",
-          "Anti-Aging Medicine",
-          "Laser Medicine"
-        ],
         "telephone": "+212660148108",
         "email": "yousra.elkhadri@gmail.com",
         "url": "https://dryousra.ma",

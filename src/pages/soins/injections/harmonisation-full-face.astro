@@ -1,0 +1,177 @@
+---
+import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import ProductBox from '../../../components/ProductBox.astro';
+import ZoneCard from '../../../components/ZoneCard.astro';
+
+const title = 'Harmonisation du visage <em>(full face)</em>';
+
+const faqItems = [
+  {
+    question: 'Combien de séances faut-il pour une harmonisation full face ?',
+    answer: 'Cela dépend de votre visage et de vos objectifs. Une harmonisation complète se déroule souvent sur deux à trois séances espacées, pour ajuster progressivement l\'équilibre. Le nombre exact est défini lors de la consultation à Casablanca, après l\'analyse de vos proportions par Dr Yousra El Khadri.',
+  },
+  {
+    question: 'Est-ce que ça change mon visage ?',
+    answer: 'L\'objectif n\'est pas de changer votre visage, mais d\'en rééquilibrer les proportions tout en préservant votre expression. La démarche full face vise un résultat naturel : les proches remarquent souvent une impression reposée ou harmonieuse, sans identifier ce qui a été fait.',
+  },
+  {
+    question: 'Quelle différence avec un lifting chirurgical ?',
+    answer: 'Un lifting est une opération de chirurgie qui retend les tissus. L\'harmonisation full face est un acte de médecine esthétique, sans chirurgie ni anesthésie générale, fondé sur des injections qui restaurent volumes et proportions. Les deux démarches répondent à des situations différentes.',
+  },
+  {
+    question: 'À partir de quel âge peut-on envisager une harmonisation du visage ?',
+    answer: 'Il n\'y a pas d\'âge unique. Une harmonisation peut affiner les proportions d\'un visage jeune comme soutenir un visage plus mature. Ce qui compte est votre demande et l\'analyse réalisée en consultation au cabinet de Casablanca, pas un seuil d\'âge.',
+  },
+  {
+    question: 'Les résultats sont-ils naturels ?',
+    answer: 'Le naturel est au cœur de la démarche. En travaillant le visage dans son ensemble, par petites touches et sur plusieurs séances si besoin, Dr Yousra El Khadri recherche un équilibre discret plutôt qu\'une transformation visible.',
+  },
+  {
+    question: 'Combien de temps durent les résultats ?',
+    answer: 'L\'acide hyaluronique se résorbe progressivement, en général sur douze à dix-huit mois selon les zones et les produits. Un entretien annuel permet de conserver l\'équilibre obtenu, souvent avec une simple mise au point plutôt qu\'une reprise complète.',
+  },
+  {
+    question: 'Y a-t-il des contre-indications ?',
+    answer: 'Oui. La grossesse, l\'allaitement, une infection active sur la zone à traiter ou certaines maladies auto-immunes contre-indiquent le geste. Ces éléments sont vérifiés avant toute injection lors de la consultation au Quartier des Hôpitaux à Casablanca.',
+  },
+];
+
+const crossLinks = [
+  {
+    label: 'Besoins associés',
+    links: [
+      { text: 'Rajeunir le visage', url: '/besoins/rajeunir' },
+      { text: 'Traiter les rides', url: '/besoins/rides' },
+    ],
+  },
+  {
+    label: 'Autres soins injectables',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Botox', url: '/soins/injections/botox' },
+      { text: 'Filler / Acide hyaluronique', url: '/soins/injections/filler' },
+      { text: 'Stimulateurs de collagène', url: '/soins/stimulation-collagene/sculptura' },
+    ],
+  },
+];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Harmonisation du visage (full face)',
+  alternateName: ['harmonisation visage', 'full face Casablanca', 'harmonisation full face'],
+  description: "Approche globale d'harmonisation du visage par injections, pour équilibrer les proportions et les volumes à Casablanca, au cabinet de Dr Yousra El Khadri.",
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage',
+  followup: 'Effets visibles rapidement, affinés sur 2 à 3 semaines. Durée de l\'acide hyaluronique généralement 12 à 18 mois selon les zones.',
+  preparation: 'Consultation d\'analyse sans injection. Plan personnalisé (zones, priorités, nombre de séances). Contre-indications vérifiées avant tout geste.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
+---
+
+<DetailPageLayout
+  seoTitle="Harmonisation du visage (full face) à Casablanca | Dr Yousra El Khadri"
+  description="L'harmonisation full face à Casablanca équilibre les proportions du visage par une approche globale. Consultation personnalisée au cabinet de Dr Yousra El Khadri, Quartier des Hôpitaux."
+  canonical="/soins/injections/harmonisation-full-face"
+  label="Harmonisation du visage"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA
+  jsonLd={medicalProcedure}
+>
+  <p>L'harmonisation du visage, souvent appelée full face, ne consiste pas à corriger une ride isolée ou à combler un seul creux. Elle vise l'équilibre des proportions de tout le visage, lu comme un ensemble. À Casablanca, Dr Yousra El Khadri reçoit au Quartier des Hôpitaux des patientes et des patients qui ne cherchent pas à changer de visage, mais à en retrouver l'harmonie naturelle, quand un profil, un ovale ou un regard semble légèrement déséquilibré. Cette page vous explique en quoi consiste une harmonisation full face, comment se déroule la démarche, et ce que vous pouvez en attendre.</p>
+
+  <h2>Qu'est-ce que l'harmonisation du visage (full face) ?</h2>
+  <p>L'harmonisation full face est une approche globale de la médecine esthétique. Plutôt que de traiter une zone après l'autre sans vision d'ensemble, elle part d'une lecture complète du visage : les volumes, les lignes, les points de lumière et les zones d'ombre, la façon dont chaque partie dialogue avec les autres. Un menton en léger retrait peut par exemple accentuer l'impression d'un nez proéminent, sans que le nez soit en cause. Corriger le visage zone par zone passerait à côté de ce lien.</p>
+  <p>Cette démarche s'adresse aux personnes qui ressentent un déséquilibre diffus, difficile à nommer, plutôt qu'un défaut unique et précis. Elle convient aussi bien à un visage jeune dont on souhaite affiner les proportions qu'à un visage plus mature. Au cabinet de Dr Yousra El Khadri à Casablanca, l'objectif reste constant : préserver votre expression et vos traits, jamais les effacer.</p>
+
+  <h2>En quoi le full face diffère d'une injection ciblée</h2>
+  <p>Une injection ciblée répond à une demande localisée : <a href="/soins/injections/botox">atténuer la ride du lion</a>, <a href="/soins/injections/filler">redessiner les lèvres</a>, combler un cerne. C'est efficace et parfaitement légitime quand la gêne est circonscrite à un endroit. L'harmonisation full face répond à une autre logique. Elle considère que déplacer l'équilibre d'une zone modifie la perception de tout le visage. Rehausser légèrement les pommettes soutient le regard et adoucit le bas du visage ; renforcer la ligne mandibulaire redessine l'ovale et l'impression de fermeté.</p>
+  <p>La différence tient donc moins au produit qu'à la méthode. Dr Yousra El Khadri travaille à partir d'une cartographie du visage, une approche structurée point par point, semblable dans son principe aux méthodes de mapping facial reconnues en médecine esthétique. Chaque geste est pensé en fonction des autres, dans un plan d'ensemble, et non comme une intervention isolée.</p>
+
+  <figure class="media-reel">
+    <div class="media-reel-frame">
+      <video
+        src="/videos/Full_face1.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/videos/Full_face1-poster.jpg"
+        aria-label="Harmonisation du visage, consultation au cabinet de Dr Yousra El Khadri à Casablanca"
+      ></video>
+    </div>
+    <figcaption>Harmonisation du visage, cabinet de Dr Yousra El Khadri à Casablanca</figcaption>
+  </figure>
+
+  <h2>Les zones traitées lors d'une harmonisation complète</h2>
+  <p>Le visage se lit en trois étages, et une harmonisation full face peut intervenir sur chacun, selon votre morphologie et vos souhaits. Toutes les zones ne sont pas systématiquement traitées : le plan est personnalisé lors de la consultation à Casablanca.</p>
+  <div class="zones">
+    <ZoneCard title="Front et tempes" description="Soutenir le tiers supérieur, adoucir un regard creusé." />
+    <ZoneCard title="Pommettes" description="Restaurer le point haut du visage, soutenir l'ensemble des traits." />
+    <ZoneCard title="Cernes et vallée des larmes" description="Éclaircir le regard, réduire l'aspect fatigué." />
+    <ZoneCard title="Lèvres et sillons" description="Équilibrer le sourire et le tiers moyen." />
+    <ZoneCard title="Menton et ligne mandibulaire" description="Redessiner l'ovale et le profil." />
+  </div>
+
+  <h2>Comment se déroule la consultation au cabinet de Dr Yousra El Khadri ?</h2>
+  <p>Tout commence par un temps d'analyse, sans injection. Dr Yousra El Khadri observe votre visage au repos et en mouvement, étudie vos proportions et écoute ce qui vous gêne réellement. Cette lecture aboutit à un plan de traitement personnalisé, qui précise les zones à travailler, l'ordre des priorités et le nombre de séances envisagées.</p>
+  <p>Une harmonisation full face se construit rarement en une seule fois. Elle se déroule souvent sur plusieurs séances espacées, pour ajuster progressivement l'équilibre et respecter le naturel. Au Quartier des Hôpitaux, à Casablanca, cette progressivité est un choix assumé : elle laisse à chaque étape le temps de se fondre avant de passer à la suivante.</p>
+
+  <figure class="media-reel">
+    <div class="media-reel-frame">
+      <video
+        src="/videos/Full_face2.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/videos/Full_face2-poster.jpg"
+        aria-label="Harmonisation full face, zones traitées au cabinet de Dr Yousra El Khadri à Casablanca"
+      ></video>
+    </div>
+    <figcaption>Harmonisation full face, cabinet de Dr Yousra El Khadri à Casablanca</figcaption>
+  </figure>
+
+  <h2>Produits et technique</h2>
+  <p>L'harmonisation full face repose principalement sur l'acide hyaluronique, un composant naturellement présent dans la peau, utilisé sous forme de gels de densités variables. Un gel structurant soutient les zones profondes comme les pommettes ou la mâchoire ; un gel plus souple affine les zones délicates comme les lèvres ou les cernes. Le choix du produit et de sa profondeur d'injection dépend de chaque zone et de votre anatomie.</p>
+  <p>Dans certains cas, une harmonisation peut associer des <a href="/soins/stimulation-collagene/sculptura">stimulateurs de collagène</a>, quand un soutien structurel plus durable est recherché. Cette combinaison est décidée avec vous, lors de la consultation, en fonction de vos objectifs.</p>
+
+  <ProductBox title="Produits utilisés" description="Acide hyaluronique de qualité médicale, de densités adaptées à chaque zone du visage. Le protocole précis est défini lors de la consultation à Casablanca." />
+
+  <h2>Résultats, durée et entretien</h2>
+  <p>Les premiers effets d'une harmonisation sont visibles rapidement, puis s'affinent sur deux à trois semaines, le temps que les produits se fondent dans les tissus. La durée dépend des zones traitées et des produits utilisés : l'acide hyaluronique se résorbe progressivement, généralement sur douze à dix-huit mois, parfois davantage pour les zones structurantes.</p>
+  <p>Un entretien permet de conserver l'équilibre obtenu. Beaucoup de patientes de Casablanca reviennent une fois par an pour une simple mise au point, plutôt que pour refaire l'ensemble. Dr Yousra El Khadri adapte ce rythme à chaque visage.</p>
+
+  <h2>Suites et précautions</h2>
+  <p>Une harmonisation full face reste un acte médical. De légers gonflements ou de petits bleus sont possibles sur les zones injectées, et s'estompent en quelques jours. La reprise des activités habituelles est en général immédiate, avec quelques précautions simples expliquées en consultation.</p>
+  <p>Certaines situations contre-indiquent le geste, notamment la grossesse, l'allaitement, une infection active sur la zone ou certaines maladies auto-immunes. Ces points sont systématiquement vérifiés avant toute injection au cabinet de Dr Yousra El Khadri, au Quartier des Hôpitaux à Casablanca.</p>
+</DetailPageLayout>
+
+<style>
+  .media-reel {
+    margin: 28px auto;
+    max-width: 320px;
+  }
+  .media-reel-frame {
+    aspect-ratio: 9 / 16;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f3e9e4;
+  }
+  .media-reel video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .media-reel figcaption {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #8a7d76;
+    text-align: center;
+  }
+</style>

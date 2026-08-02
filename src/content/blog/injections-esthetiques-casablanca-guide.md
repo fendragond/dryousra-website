@@ -1,7 +1,7 @@
 ---
 title: "Injections esthétiques à Casablanca : guide complet 2026"
 cardTitle: "Injections esthétiques à Casablanca : guide complet 2026"
-seoTitle: "Injections esthétiques à Casablanca : guide complet 2026 | Dr Yousra El Khadri"
+seoTitle: "Injections esthétiques à Casablanca : guide complet 2026"
 description: "Guide complet 2026 des injections esthétiques à Casablanca par Dr Yousra El Khadri : Botox, fillers, stimulateurs de collagène. Toutes les options expliquées."
 excerpt: "Botox, fillers, stimulateurs de collagène, skin boosters : panorama complet de toutes les solutions d'injection disponibles à Casablanca."
 canonical: "https://dryousra.ma/blog/injections-esthetiques-casablanca-guide"

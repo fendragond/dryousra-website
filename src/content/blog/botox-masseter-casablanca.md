@@ -1,7 +1,7 @@
 ---
 title: "Botox masséter : affiner l'ovale du visage à Casablanca"
 cardTitle: "Botox masséter : affiner l'ovale du visage à Casablanca"
-seoTitle: "Botox masséter Casablanca : affiner l'ovale & bruxisme | Dr Yousra El Khadri"
+seoTitle: "Botox masséter Casablanca : affiner l'ovale et bruxisme"
 description: "Botox masséter à Casablanca : affiner la mâchoire, adoucir une mâchoire carrée, soulager le bruxisme. Indications, déroulement, durée et prix sur devis. Dr Yousra El Khadri."
 excerpt: "Mâchoire carrée, ovale du visage, bruxisme : comment fonctionne le botox dans le masséter et à quoi s'attendre au cabinet."
 canonical: "https://dryousra.ma/blog/botox-masseter-casablanca"

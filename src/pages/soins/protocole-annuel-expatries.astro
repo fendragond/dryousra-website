@@ -1,0 +1,175 @@
+---
+import DetailPageLayout from '../../layouts/DetailPageLayout.astro';
+import ComparatifPrix from '../../components/ComparatifPrix.astro';
+
+const title = "Médecine esthétique au Maroc : planifier vos soins lors d'un séjour";
+
+const faqItems = [
+  {
+    question: 'Combien coûtent les injections esthétiques au Maroc par rapport à la France ?',
+    answer: 'Le marché marocain de la médecine esthétique se situe généralement en dessous du marché européen, selon les soins. Les fourchettes de prix communiquées à titre indicatif reflètent le marché, pas les tarifs du cabinet. Le montant qui vous concerne dépend de la zone, du produit et du nombre de séances, et vous est remis sur devis lors de la consultation à Casablanca.',
+  },
+  {
+    question: 'Puis-je regrouper plusieurs soins sur une seule visite au Maroc ?',
+    answer: 'Oui, c\'est même l\'intérêt d\'un séjour planifié. Lors de la première consultation, Dr El Khadri établit un bilan et organise les soins réalisables pendant votre présence à Casablanca, en fonction de la durée de votre séjour et de votre projet.',
+  },
+  {
+    question: 'Comment se passe le suivi si je vis en Europe ?',
+    answer: 'Le suivi se poursuit à distance entre deux visites. Vous pouvez transmettre des photos et échanger par messagerie pour ajuster le protocole ou préparer votre venue suivante. Ce fonctionnement est adapté aux patientes qui ne peuvent se déplacer qu\'une fois par an.',
+  },
+  {
+    question: 'Les biostimulateurs sont-ils adaptés à un rythme de visite annuel ?',
+    answer: 'Oui. Les biostimulateurs comme le Sculptra, le Radiesse ou le HArmonyCa agissent progressivement et leurs effets se maintiennent longtemps, parfois jusqu\'à environ deux ans selon le produit. Ils conviennent donc à des visites espacées, avec un entretien lors de votre passage suivant.',
+  },
+  {
+    question: 'Quels produits sont utilisés au cabinet ?',
+    answer: 'Dr El Khadri utilise des produits de laboratoires certifiés, choisis en fonction du soin et de votre peau. Le produit adapté à votre projet vous est présenté lors de la consultation.',
+  },
+  {
+    question: 'Combien de temps prévoir sur place pour un protocole complet ?',
+    answer: 'Cela dépend des soins envisagés. Certaines injections se réalisent en une séance courte, d\'autres protocoles peuvent nécessiter quelques jours d\'intervalle. La consultation permet de caler le calendrier sur la durée de votre séjour à Casablanca.',
+  },
+  {
+    question: 'Y a-t-il des précautions avant de prendre l\'avion après des injections ?',
+    answer: 'Les suites de la plupart des injections sont légères. Quelques recommandations simples vous sont données selon le soin réalisé. Ces précautions sont précisées en consultation en fonction de votre programme de voyage.',
+  },
+];
+
+const crossLinks = [
+  {
+    label: 'Soins adaptés à un rythme annuel',
+    links: [
+      { text: 'Sculptura, biostimulation au collagène', url: '/soins/stimulation-collagene/sculptura' },
+      { text: 'Radiesse, stimulation et volumes', url: '/soins/stimulation-collagene/radiesse' },
+      { text: 'HArmonyCa, stimulateur hybride', url: '/soins/stimulation-collagene/harmonyca' },
+      { text: 'Harmonisation full face du visage', url: '/soins/injections/harmonisation-full-face' },
+    ],
+  },
+  {
+    label: 'Autres injections',
+    variant: 'rose' as const,
+    links: [
+      { text: 'Botox, rides d\'expression', url: '/soins/injections/botox' },
+      { text: 'Filler à l\'acide hyaluronique', url: '/soins/injections/filler' },
+    ],
+  },
+];
+
+const medicalProcedure = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: 'Protocole annuel de médecine esthétique pour patientes expatriées',
+  alternateName: [
+    'médecine esthétique Maroc expatriés',
+    'soins esthétiques lors d\'un séjour au Maroc',
+    'protocole annuel diaspora',
+  ],
+  description:
+    'Organisation d\'un protocole de médecine esthétique regroupé sur un séjour au Maroc, avec consultation, soins adaptés à un rythme annuel et suivi à distance, au cabinet de Dr Yousra El Khadri à Casablanca.',
+  procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
+  bodyLocation: 'Visage',
+  followup:
+    'Suivi à distance entre deux visites. Entretien lors du passage suivant selon le protocole défini en consultation.',
+  preparation:
+    'Consultation préalable pour établir le bilan et planifier les soins réalisables pendant le séjour. Contre-indications vérifiées avant tout geste.',
+  relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+};
+---
+
+<DetailPageLayout
+  seoTitle="Médecine esthétique au Maroc pour expatriés | Dr Yousra El Khadri"
+  description="Vous vivez en Europe et souhaitez regrouper vos soins esthétiques lors d'un séjour au Maroc ? Découvrez le protocole annuel de Dr Yousra El Khadri à Casablanca."
+  canonical="/soins/protocole-annuel-expatries"
+  label="Patientes expatriées & diaspora"
+  {title}
+  {faqItems}
+  {crossLinks}
+  showGalleryCTA={false}
+  ctaText="Organisez votre venue au cabinet"
+  jsonLd={medicalProcedure}
+>
+  <figure class="page-hero">
+    <img
+      src="/images/medecine-esthetique-maroc-expatries-casablanca.webp"
+      alt="Illustration d'une patiente venant d'Europe pour ses soins de médecine esthétique au Maroc, avec consultation à distance et cabinet à Casablanca"
+      loading="eager"
+      decoding="async"
+      width="1672"
+      height="941"
+    />
+  </figure>
+
+  <p>Vous vivez en France, en Belgique, en Espagne ou ailleurs en Europe, et vous revenez régulièrement au Maroc. Regrouper vos soins de médecine esthétique sur un séjour est souvent la solution la plus simple : une consultation, un protocole pensé pour votre rythme, et un suivi qui se poursuit à distance entre deux visites. Au cabinet de Dr Yousra El Khadri, à Casablanca, dans le Quartier des Hôpitaux, de nombreuses patientes expatriées organisent ainsi leurs soins une fois par an. Cette page vous explique comment planifier votre venue, quels soins se prêtent le mieux à un rythme annuel, et comment se situent les niveaux de prix du marché marocain par rapport à l'Europe.</p>
+
+  <h2>Pourquoi planifier vos soins esthétiques lors d'un séjour au Maroc</h2>
+  <p>Lorsque vous vivez à l'étranger, chaque déplacement compte. Concentrer plusieurs actes sur une même visite vous évite de multiplier les rendez-vous et vous permet de bénéficier d'un suivi cohérent. La première consultation sert à établir un bilan complet et à planifier les soins réalisables pendant votre séjour, en fonction de la durée de votre présence à Casablanca. Entre deux visites, le suivi se poursuit à distance : vous pouvez transmettre des photos et échanger par messagerie pour ajuster le protocole ou préparer la visite suivante. Cette continuité est particulièrement utile pour les soins qui s'inscrivent dans la durée.</p>
+
+  <h2>Le protocole annuel : concentrer vos soins sur une visite</h2>
+  <p>Certains soins se prêtent naturellement à un rythme annuel. C'est le cas des biostimulateurs, comme le Sculptra, le Radiesse ou le HArmonyCa, qui stimulent la production de collagène de façon progressive. Leurs résultats s'installent sur plusieurs semaines et se maintiennent longtemps, parfois jusqu'à environ deux ans selon le produit. Ce mode d'action en fait des soins compatibles avec des visites espacées : une séance ou un protocole pendant votre séjour, puis un entretien lors de votre passage suivant. Les injections d'acide hyaluronique, le skinbooster ou une harmonisation du visage peuvent aussi être intégrés au même séjour, selon votre projet. Dr El Khadri définit avec vous, en consultation, l'ordre et le calendrier des soins adaptés à votre présence à Casablanca.</p>
+
+  <figure class="page-photo">
+    <img
+      src="/images/dr-yousra-el-khadri-skinbooster-casablanca.jpg"
+      alt="Dr Yousra El Khadri à son cabinet de Casablanca présentant des Skinboosters Vital"
+      width="946"
+      height="1662"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Dr Yousra El Khadri au cabinet, Casablanca</figcaption>
+  </figure>
+
+  <h2>Comparatif des niveaux de prix : Europe et Maroc</h2>
+  <p>Beaucoup de patientes qui vivent en Europe comparent les tarifs avant de planifier leur venue. Il est utile de le dire clairement : le marché marocain de la médecine esthétique se situe, de façon générale, en dessous du marché européen. Les fourchettes ci-dessous reflètent les niveaux observés sur le marché, à titre indicatif. Elles ne constituent pas les tarifs du cabinet, qui dépendent de la zone traitée, du produit et du nombre de séances, et vous sont communiqués sur devis en consultation.</p>
+
+  <ComparatifPrix />
+
+  <p>Pour les biostimulateurs, le marché marocain se situe sensiblement en dessous des niveaux européens. Dans tous les cas, le montant exact dépend de votre projet et vous est présenté lors de la consultation, sans engagement.</p>
+
+  <h2>Comment se déroule votre venue au cabinet de Dr Yousra El Khadri</h2>
+  <p>Votre première visite commence par une consultation. Dr El Khadri réalise un bilan du visage, écoute votre projet et vérifie l'absence de contre-indication. Ensemble, vous planifiez les soins réalisables pendant votre séjour à Casablanca, dans le Quartier des Hôpitaux, en tenant compte du temps dont vous disposez sur place. Les suites de la plupart des injections sont légères et permettent de reprendre vos activités rapidement, ce qui facilite l'organisation d'un séjour court. Avant votre départ, un plan de suivi est défini pour la période où vous serez de retour en Europe.</p>
+
+  <figure class="page-photo">
+    <img
+      src="/images/sculptra-galderma-biostimulateur-casablanca.jpg"
+      alt="Flacon de Sculptra Galderma utilisé pour la biostimulation au cabinet de Dr Yousra El Khadri à Casablanca"
+      width="941"
+      height="1672"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Sculptra Galderma, biostimulateur utilisé au cabinet</figcaption>
+  </figure>
+
+  <h2>Prendre rendez-vous</h2>
+  <p>Pour organiser votre consultation à Casablanca et planifier les soins sur la durée de votre séjour, contactez le cabinet par WhatsApp ou par téléphone. Les coordonnées et les horaires figurent dans la section contact ci-dessous.</p>
+</DetailPageLayout>
+
+<style>
+  .page-hero {
+    margin: 0 0 28px;
+    max-width: 100%;
+  }
+  .page-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  .page-photo {
+    margin: 28px auto;
+    max-width: 420px;
+  }
+  .page-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  .page-photo figcaption {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #8a7d76;
+    text-align: center;
+  }
+</style>

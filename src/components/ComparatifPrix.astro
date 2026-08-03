@@ -1,0 +1,73 @@
+---
+// ComparatifPrix.astro — comparatif éditorial des niveaux de prix de marché Europe / Maroc.
+// Registre marché uniquement : ne reflète PAS les tarifs du cabinet.
+const soins = [
+  { nom: "Botox, par zone",    eu: "250 à 400", euUnite: "€",   ma: "1 500 à 4 500", maUnite: "MAD", note: "" },
+  { nom: "Acide hyaluronique", eu: "300 à 450", euUnite: "€",   ma: "1 500 à 3 500", maUnite: "MAD", note: "la seringue" },
+  { nom: "Skinbooster",        eu: "250 à 400", euUnite: "€",   ma: "1 500 à 2 500", maUnite: "MAD", note: "la séance" },
+  { nom: "Biostimulateurs",    eu: "500 à 800", euUnite: "€",   ma: "dès 4 500",     maUnite: "MAD", note: "le flacon" },
+];
+---
+
+<figure class="cpx" role="group" aria-label="Comparatif des niveaux de prix de marché entre l'Europe et le Maroc pour les injections esthétiques">
+  <p class="cpx-kicker">à titre indicatif</p>
+  <h3 class="cpx-title">Niveaux de prix observés sur le marché</h3>
+
+  <div class="cpx-grid">
+    <div class="cpx-head cpx-head-eu">Europe</div>
+    <div class="cpx-head cpx-head-ma">Maroc</div>
+
+    {soins.map((s) => (
+      <div class="cpx-row">
+        <div class="cpx-cell cpx-cell-eu">
+          <span class="cpx-soin">{s.nom}</span>
+          <span class="cpx-val">{s.eu} <span class="cpx-unite">{s.euUnite}</span></span>
+          {s.note && <span class="cpx-note">{s.note}</span>}
+        </div>
+        <div class="cpx-sep" aria-hidden="true"></div>
+        <div class="cpx-cell cpx-cell-ma">
+          <span class="cpx-soin">{s.nom}</span>
+          <span class="cpx-val">{s.ma} <span class="cpx-unite">{s.maUnite}</span></span>
+          {s.note && <span class="cpx-note">{s.note}</span>}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <figcaption class="cpx-disclaimer">
+    Fourchettes de marché indicatives 2026, issues de données publiques du secteur.
+    Ne constituent pas les tarifs du cabinet. Le montant réel dépend de la zone,
+    du produit et du nombre de séances, communiqué sur devis en consultation.
+  </figcaption>
+</figure>
+
+<style>
+  .cpx { max-width: 640px; margin: 2.5rem auto; background: var(--champagne, #faf8f5); border-radius: 12px; padding: 2.5rem 2rem; box-sizing: border-box; }
+  .cpx-kicker { font-family: var(--font-d, Georgia, serif); font-style: italic; font-size: 0.9rem; color: var(--rose, #b86a85); text-align: center; letter-spacing: 0.04em; margin: 0 0 0.4rem; }
+  .cpx-title { font-family: var(--font-d, Georgia, serif); font-weight: 400; font-size: 1.4rem; color: var(--charcoal, #2a2030); text-align: center; margin: 0 0 2.2rem; letter-spacing: 0.01em; }
+  .cpx-head { font-family: var(--font-d, Georgia, serif); font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mauve, #7b5ea7); text-align: center; padding-bottom: 1.4rem; }
+  .cpx-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 0; }
+  .cpx-row { display: contents; }
+  .cpx-cell { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.4rem 1.6rem; position: relative; }
+  .cpx-soin { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: #9a8fa5; margin-bottom: 0.35rem; }
+  .cpx-val { font-family: var(--font-d, Georgia, serif); font-size: 1.55rem; color: var(--charcoal, #2a2030); line-height: 1.2; }
+  .cpx-unite { font-size: 0.9rem; color: var(--rose, #b86a85); }
+  .cpx-note { font-size: 0.7rem; color: #9a8fa5; margin-top: 0.2rem; }
+  .cpx-sep { display: none; }
+  .cpx-grid > .cpx-row > .cpx-cell-eu { border-right: 1px solid; border-image: linear-gradient(to bottom, transparent, #d9b8c4 20%, #c4a8d4 80%, transparent) 1; }
+  .cpx-disclaimer { font-size: 0.72rem; color: #9a8fa5; text-align: center; line-height: 1.6; margin: 1.6rem 0 0; padding-top: 1.4rem; border-top: 0.5px solid #e8ded3; }
+
+  @media (max-width: 560px) {
+    .cpx { padding: 2rem 1.1rem; }
+    .cpx-head { display: none; }
+    .cpx-grid { grid-template-columns: 1fr; row-gap: 1.4rem; }
+    .cpx-row { display: grid; grid-template-columns: 1fr 1px 1fr; align-items: stretch; background: rgba(255,255,255,0.5); border-radius: 10px; padding: 1.1rem 0.5rem 0.6rem; }
+    .cpx-cell { padding: 0 0.6rem 0.6rem; }
+    .cpx-grid > .cpx-row > .cpx-cell-eu { border-right: none; border-image: none; }
+    .cpx-sep { display: block; background: linear-gradient(to bottom, transparent, #d9b8c4, #c4a8d4, transparent); }
+    .cpx-cell-eu::before { content: "Europe"; font-family: var(--font-d, Georgia, serif); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mauve, #7b5ea7); margin-bottom: 0.5rem; }
+    .cpx-cell-ma::before { content: "Maroc"; font-family: var(--font-d, Georgia, serif); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mauve, #7b5ea7); margin-bottom: 0.5rem; }
+    .cpx-cell-ma .cpx-soin { visibility: hidden; }
+    .cpx-val { font-size: 1.35rem; }
+  }
+</style>

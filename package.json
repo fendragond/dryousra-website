@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "report": "node scripts/monthly-report.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.7.0",
@@ -17,5 +18,9 @@
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.6",
     "tailwindcss": "^4.3.1"
+  },
+  "devDependencies": {
+    "googleapis": "^174.0.0",
+    "puppeteer": "^25.5.0"
   }
 }

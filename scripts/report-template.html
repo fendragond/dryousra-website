@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suivi de visibilité — Dr Yousra El Khadri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @page {
+      size: A4;
+      margin: 16mm;
+    }
+
+    :root {
+      --rose: #b86a85;
+      --mauve: #7b5ea7;
+      --charcoal: #2a2030;
+      --cream: #fdfbf9;
+      --green: #0F6E56;
+      --red: #A32D2D;
+      --muted: #6b5f72;
+      --border: #e8e0e4;
+      --footer-zone: 24mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--charcoal);
+      background: var(--cream);
+      font-size: 14.5px;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /*
+     * Fixed printable shell (~265mm). Content flows in .content with
+     * reserved bottom padding so the absolute footer never overlaps.
+     */
+    .page {
+      position: relative;
+      width: 100%;
+      height: 265mm;
+      min-height: 265mm;
+      max-height: 265mm;
+      overflow: hidden;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding-bottom: var(--footer-zone);
+      box-sizing: border-box;
+      overflow: visible;
+    }
+
+    /* —— Header —— */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--rose);
+      flex-shrink: 0;
+    }
+
+    .header-left h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: -0.01em;
+    }
+
+    .header-left .subtitle {
+      margin-top: 4px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .header-right {
+      text-align: right;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--mauve);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    /* —— Hero total —— */
+    .hero {
+      flex-shrink: 0;
+      text-align: center;
+      margin-top: 18px;
+      padding: 16px 16px 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      border-top: 4px solid var(--rose);
+    }
+
+    .hero-label {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--charcoal);
+      letter-spacing: 0.01em;
+      margin-bottom: 6px;
+    }
+
+    .hero-value {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 60px;
+      font-weight: 700;
+      color: var(--rose);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-breakdown {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .hero-delta {
+      margin-top: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* —— Synthesis —— */
+    .synthesis {
+      flex-shrink: 0;
+      margin-top: 18px;
+      font-size: 14.5px;
+      color: var(--charcoal);
+      line-height: 1.55;
+    }
+
+    .synthesis p + p {
+      margin-top: 5px;
+    }
+
+    /* —— KPI cards (secondary) —— */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+      flex-shrink: 0;
+    }
+
+    .kpi-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 10px;
+      border-top: 3px solid var(--mauve);
+    }
+
+    .kpi-card .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .kpi-card .value {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.1;
+    }
+
+    .kpi-card .delta {
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .delta.up { color: var(--green); }
+    .delta.down { color: var(--red); }
+    .delta.flat { color: var(--muted); }
+    .delta.nouveau { color: var(--mauve); }
+
+    /* —— Priority axes —— */
+    .section {
+      flex-shrink: 0;
+      margin-top: 20px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+    }
+
+    .priority-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .priority-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      border-left: 4px solid var(--mauve);
+    }
+
+    .priority-row .name {
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+
+    .priority-row .trend {
+      font-size: 13.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .trend.progression { color: var(--green); }
+    .trend.stable { color: var(--muted); }
+    .trend.recul { color: var(--red); }
+
+    /* —— Travaux —— */
+    .travaux {
+      flex: 0 0 auto;
+      margin-top: 20px;
+    }
+
+    .travaux ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .travaux li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--charcoal);
+      line-height: 1.45;
+    }
+
+    .travaux li:last-child {
+      margin-bottom: 0;
+    }
+
+    .travaux li::before {
+      content: "•";
+      flex: 0 0 auto;
+      color: var(--rose);
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.45;
+      width: 0.75em;
+      text-align: center;
+    }
+
+    .travaux .placeholder {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    /*
+     * Footer lives in the reserved --footer-zone at the bottom of .page.
+     * Content never enters this zone thanks to .content padding-bottom.
+     */
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: var(--footer-zone);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 2mm;
+      border-top: 1px solid var(--border);
+      box-sizing: border-box;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      background: var(--cream);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="content">
+      <header class="header">
+        <div class="header-left">
+          <h1>Suivi de votre visibilité en ligne</h1>
+          <p class="subtitle">Dr Yousra El Khadri · dryousra.ma</p>
+        </div>
+        <div class="header-right">{{PERIOD}}</div>
+      </header>
+
+      <section class="hero">
+        {{HERO}}
+      </section>
+
+      <section class="synthesis">
+        {{SYNTHESIS}}
+      </section>
+
+      <section class="kpi-row">
+        {{KPI_CARDS}}
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Vos trois axes prioritaires</h2>
+        <div class="priority-list">
+          {{PRIORITY_ROWS}}
+        </div>
+      </section>
+
+      <section class="travaux">
+        <h2 class="section-title">Travaux réalisés ce mois-ci</h2>
+        {{TRAVAUX}}
+      </section>
+    </div>
+
+    <footer class="footer">
+      Données Google Search Console · dryousra.ma · Document confidentiel
+    </footer>
+  </div>
+</body>
+</html>

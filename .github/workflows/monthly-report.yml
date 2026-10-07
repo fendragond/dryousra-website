@@ -1,0 +1,28 @@
+name: Monthly SEO Report
+on:
+  schedule:
+    - cron: '0 6 5 * *'
+  workflow_dispatch: {}
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npx puppeteer browsers install chrome
+      - run: node scripts/monthly-report.mjs
+        env:
+          GSC_CREDENTIALS_JSON: ${{ secrets.GSC_CREDENTIALS_JSON }}
+      - name: Push reports to reports branch
+        run: |
+          git config user.name "seo-report-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -B reports
+          git add -f _reports/
+          git commit -m "Rapport SEO automatique" || echo "Rien a committer"
+          git push -f origin reports

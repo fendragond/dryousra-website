@@ -15,6 +15,10 @@ heroImage: "/blog/images/botox-ou-filler-injection-casablanca.webp"
 heroImageAlt: "Botox ou filler, injection esthétique au cabinet de Casablanca"
 imageWidth: 965
 imageHeight: 1280
+heroImageTitle: "Injection esthétique au cabinet de Dr Yousra El Khadri à Casablanca"
+heroImageCaption: "Le choix entre botox et filler dépend de l'origine de la ride, établie lors de l'examen."
+heroImageWidth: 965
+heroImageHeight: 1280
 ctaText: "Vous hésitez entre <strong>botox et filler</strong> pour une ride ou une zone précise ? Le cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, vous accueille sur rendez-vous pour en faire le diagnostic."
 faq:
   [

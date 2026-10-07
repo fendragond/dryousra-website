@@ -16,6 +16,10 @@ heroImage: "/blog/images/soins-anti-age-consultation-casablanca.webp"
 heroImageAlt: "Soins anti-âge selon l'âge, consultation de médecine esthétique à Casablanca"
 imageWidth: 1280
 imageHeight: 1162
+heroImageTitle: "Consultation anti-âge au cabinet de Dr Yousra El Khadri à Casablanca"
+heroImageCaption: "La consultation anti-âge commence par l'examen du visage, au repos et en mouvement."
+heroImageWidth: 1280
+heroImageHeight: 1162
 ctaText: "Vous souhaitez savoir quels soins correspondent à votre visage et à votre âge ? Le cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, vous accueille sur rendez-vous pour une <strong>consultation anti-âge personnalisée</strong>."
 faq:
   [

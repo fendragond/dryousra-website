@@ -15,6 +15,10 @@ heroImage: "/blog/images/pores-dilates-soin-peau-casablanca.webp"
 heroImageAlt: "Traitement des pores dilatés, soin de la peau au cabinet de Casablanca"
 imageWidth: 1144
 imageHeight: 1280
+heroImageTitle: "Soin de la peau au cabinet de Dr Yousra El Khadri à Casablanca"
+heroImageCaption: "Le traitement des pores dilatés commence par l'analyse du type de peau et de la cause dominante."
+heroImageWidth: 1144
+heroImageHeight: 1280
 ctaText: "Vos <strong>pores dilatés</strong> vous gênent et les soins cosmétiques ne suffisent plus ? Le cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, vous accueille sur rendez-vous pour analyser votre peau et définir l'approche adaptée."
 faq:
   [

@@ -84,6 +84,14 @@ crossLinks:
       {
         "text": "Le parcours de Dr Yousra El Khadri",
         "url": "/a-propos"
+      },
+      {
+        "text": "Botox ou filler : quelle injection choisir ?",
+        "url": "/blog/botox-ou-filler-casablanca"
+      },
+      {
+        "text": "Skinbooster ou mésothérapie",
+        "url": "/blog/skinbooster-ou-mesotherapie-casablanca"
       }
     ]
   }
@@ -98,7 +106,7 @@ jsonLd:
         "description": "Guide complet 2026 des injections esthétiques à Casablanca par Dr Yousra El Khadri : Botox, fillers, stimulateurs de collagène. Toutes les options expliquées.",
         "inLanguage": "fr",
         "datePublished": "2026-05-06",
-        "dateModified": "2026-05-06",
+        "dateModified": "2026-10-07",
         "author": { "@id": "https://dryousra.ma/#physician" },
         "publisher": {
           "@type": "Organization",
@@ -387,7 +395,7 @@ Les zones les plus traitées au cabinet de Dr El Khadri sont les lèvres (repulp
 
 Pour comprendre plus précisément l'effet liftant du volume malaire, consultez aussi l'article dédié au [filler des pommettes à Casablanca](/blog/filler-pommettes-casablanca).
 
-La technique des lèvres russes, très recherchée pour son effet vertical et structuré qui allonge et définit les lèvres sans les gonfler excessivement, fait partie des demandes traitées au cabinet : voir la page dédiée aux <a href="/besoins/levres">injections des lèvres à Casablanca</a>. En cas de filler mal placé ou de résultat insatisfaisant, l'acide hyaluronique peut être dissous rapidement et efficacement grâce à la hyaluronidase ; un article dédié à la dissolution de filler sera bientôt disponible. Retrouvez également la [page dédiée aux fillers à l'acide hyaluronique](/soins/injections/filler) pour une présentation complète des zones et des protocoles.
+La technique des lèvres russes, très recherchée pour son effet vertical et structuré qui allonge et définit les lèvres sans les gonfler excessivement, fait partie des demandes traitées au cabinet : voir la page dédiée aux <a href="/besoins/levres">injections des lèvres à Casablanca</a>. En cas de filler mal placé ou de résultat insatisfaisant, l'acide hyaluronique peut être dissous par une enzyme, la hyaluronidase. La page consacrée à la [dissolution de filler](/soins/injections/dissoudre-filler) détaille cette procédure. Retrouvez également la [page dédiée aux fillers à l'acide hyaluronique](/soins/injections/filler) pour une présentation complète des zones et des protocoles.
 
 ## Les stimulateurs de collagène à Casablanca
 
@@ -395,7 +403,7 @@ Pour les profils qui ont perdu une densité cutanée significative, ou qui souha
 
 <strong><a href="/soins/stimulation-collagene/sculptura">Sculptura</a></strong> (acide poly-L-lactique, Galderma) est injecté en microparticules qui stimulent les fibroblastes sur une période de trois à six mois. Les résultats, progressifs et très naturels, peuvent durer jusqu'à deux ans. Il est particulièrement adapté aux visages ayant perdu du volume global de façon diffuse, souvent dès 40 ans.
 
-<strong><a href="/soins/stimulation-collagene/radiesse">Radiesse</a></strong> (hydroxyapatite de calcium, Merz Aesthetics) offre un double effet simultané : un comblement immédiat grâce à sa consistance, et une stimulation du collagène à moyen terme. Il est très efficace sur le visage, les mains, et les zones de relâchement cutané du cou et du décolleté. Des articles dédiés à Sculptura et à Radiesse seront prochainement publiés avec les protocoles complets.
+<strong><a href="/soins/stimulation-collagene/radiesse">Radiesse</a></strong> (hydroxyapatite de calcium, Merz Aesthetics) offre un double effet simultané : un comblement immédiat grâce à sa consistance, et une stimulation du collagène à moyen terme. Il est très efficace sur le visage, les mains, et les zones de relâchement cutané du cou et du décolleté. Les pages [Sculptura](/soins/stimulation-collagene/sculptura) et [Radiesse](/soins/stimulation-collagene/radiesse) présentent ces deux stimulateurs de collagène en détail, et notre article sur les [soins anti-âge selon l'âge](/blog/soins-anti-age-selon-age-casablanca) explique leur place dans un protocole.
 
 <strong><a href="/soins/stimulation-collagene/harmonyca">HArmonyCa</a></strong> (Galderma) associe acide hyaluronique et hydroxyapatite de calcium dans un seul produit, combinant l'effet de comblement immédiat et l'effet de stimulation collagène dans une seule injection, pour une approche globale et durable.
 

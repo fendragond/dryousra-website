@@ -3,12 +3,20 @@ interface Props {
   title: string;
   description: string;
   icon?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
 }
 
-const { title, description, icon } = Astro.props;
+const { title, description, icon, ctaHref, ctaLabel } = Astro.props;
 ---
 
 <div class="zone">
   <strong>{icon ? `${icon} ${title}` : title}</strong>
-  <p>{description}</p>
+  <p>{description}</p>{ctaHref && (
+    <a class="zone-cta" href={ctaHref}
+       data-umami-event="clic_whatsapp"
+       data-umami-event-page={Astro.url.pathname}
+       data-umami-event-zone="cartes_zones"
+       data-umami-event-detail={title}>{ctaLabel ?? 'Prendre rendez-vous pour cette zone'}</a>
+  )}
 </div>

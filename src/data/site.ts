@@ -26,6 +26,10 @@ export const site = {
       url: 'https://www.instagram.com/dr.yousra.elkhadri/',
       handle: '@dr.yousra.elkhadri',
     },
+    instagramLaser: {
+      url: 'https://www.instagram.com/youskin_by_dryousraelkhadri/',
+      handle: '@youskin_by_dryousraelkhadri',
+    },
     tiktok: {
       url: 'https://www.tiktok.com/@dryousraelkhadri',
       handle: '@dryousraelkhadri',

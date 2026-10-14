@@ -268,6 +268,7 @@ jsonLd:
         ],
         "sameAs": [
           "https://www.instagram.com/dr.yousra.elkhadri/",
+          "https://www.instagram.com/youskin_by_dryousraelkhadri/",
           "https://www.tiktok.com/@dryousraelkhadri"
         ]
       },

@@ -1,6 +1,12 @@
 ---
 import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
+import LaserInstagram from '../../../components/LaserInstagram.astro';
 import ZoneCard from '../../../components/ZoneCard.astro';
+import { site } from '../../../data/site';
+
+const wa = (text: string) => `${site.whatsapp.url}?text=${encodeURIComponent(text)}`;
+const waHero = wa("Bonjour, je souhaite prendre rendez-vous pour une consultation d'épilation laser.");
+const waConsult = wa("Bonjour, je souhaite une consultation pour une épilation laser.");
 
 const title = 'Épilation Laser <em>Définitive</em> à Casablanca';
 
@@ -63,20 +69,40 @@ const medicalProcedure = {
   followup: "Réduction progressive de la pilosité sur 6 à 8 séances espacées de 4 à 6 semaines, puis séances d'entretien.",
   preparation: "Éviter l'exposition solaire avant la séance. Ne pas épiler à la cire ou à la pince. Consultation médicale préalable pour adapter les paramètres au phototype.",
   relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+  image: 'https://dryousra.ma/images/laser/laser-dr-yousra-el-khadri-casablanca.webp',
 };
 ---
 
 <DetailPageLayout
-  seoTitle="Épilation Laser à Casablanca | Cynosure Elite+ | Dr Yousra El Khadri"
-  description="Épilation laser définitive à Casablanca par Dr Yousra El Khadri. Plateforme Cynosure Elite+, adaptée à tous les phototypes. Aisselles, maillot, jambes, visage."
+  seoTitle="Épilation Laser Définitive Casablanca | Cynosure | Dr El Khadri"
+  description="Épilation laser définitive à Casablanca par Dr Yousra El Khadri, médecin. Cynosure Elite+ adaptée aux peaux claires à foncées. Consultation au cabinet."
   canonical="/soins/laser/epilation-laser"
   label="Laser"
   {title}
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  ctaText="Prête à commencer votre protocole d'épilation laser ?"
   jsonLd={medicalProcedure}
 >
+  <div class="laser-hero" data-cta-zone="hero_epilation">
+    <div class="laser-hero-text">
+      <p class="laser-hero-lead">L'épilation laser est réalisée au cabinet par Dr Yousra El Khadri, médecin esthétique, au Quartier des Hôpitaux à Casablanca. Chaque protocole commence par une consultation médicale : évaluation de votre phototype et de votre pilosité, vérification des contre-indications, puis réglage des paramètres pour votre peau.</p>
+      <ul class="laser-hero-chips">
+        <li>Acte réalisé par un médecin</li>
+        <li>Cynosure Elite+, Alexandrite et Nd:YAG</li>
+        <li>Peaux claires à foncées</li>
+      </ul>
+      <div class="laser-hero-actions">
+        <a href={waHero} class="btn bp">Réserver ma consultation laser</a>
+        <a href={`tel:${site.phone.mobile.replace(/\s/g, '')}`} class="btn bo">Appeler le cabinet</a>
+      </div>
+    </div>
+    <figure class="laser-hero-photo">
+      <img src="/images/laser/laser-dr-yousra-el-khadri-casablanca.webp" alt="Dr Yousra El Khadri, médecin esthétique, avec la pièce à main du laser au cabinet à Casablanca" width="1080" height="1350" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+  </div>
+
   <p>L'épilation laser permet de réduire durablement la pilosité en ciblant le follicule pileux par la lumière. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, ce soin est réalisé sur la plateforme Cynosure Elite+, une station bi-longueur d'onde conçue pour adapter le traitement à chaque phototype. Que vous souhaitiez traiter les aisselles, le maillot, les jambes ou le visage, la consultation médicale précède toujours le protocole : elle permet d'évaluer la couleur de peau, la densité et la nature du poil, puis de définir un plan de séances réaliste. À Casablanca, la demande d'épilation laser définitive concerne aussi bien les peaux claires que les peaux mates, et l'approche du cabinet privilégie des paramètres réglés au cas par cas plutôt qu'un protocole standardisé.</p>
 
   <figure class="media-reel">
@@ -97,13 +123,25 @@ const medicalProcedure = {
 
   <h2>Zones traitées</h2>
   <p>La plupart des zones du corps et du visage peuvent être traitées, seules ou combinées selon vos priorités. Voici les indications les plus fréquentes au cabinet :</p>
-  <div class="zones">
-    <ZoneCard title="Aisselles" description="Zone compacte, souvent demandée en premier pour un entretien quotidien simplifié." />
-    <ZoneCard title="Maillot" description="Traitement possible sur différentes surfaces, avec des paramètres adaptés à la sensibilité de la peau." />
-    <ZoneCard title="Jambes" description="Cuisses, demi-jambes ou jambes entières : le protocole suit le cycle de pousse sur une surface plus étendue." />
-    <ZoneCard title="Visage (lèvre, menton)" description="Indiqué pour une pilosité fine ou dense du visage, avec une attention particulière au phototype." />
-    <ZoneCard title="Dos et torse" description="Zones fréquemment demandées chez l'homme, traitables par séances progressives." />
-    <ZoneCard title="Bras" description="Avant-bras ou bras complets, pour une pilosité homogène et un entretien allégé." />
+  <div class="zones" data-cta-zone="cartes_zones">
+    <ZoneCard title="Aisselles" description="Zone compacte, souvent demandée en premier pour un entretien quotidien simplifié." ctaHref={wa("Bonjour, je souhaite prendre rendez-vous pour une épilation laser (aisselles).")} />
+    <ZoneCard title="Maillot" description="Traitement possible sur différentes surfaces, avec des paramètres adaptés à la sensibilité de la peau." ctaHref={wa("Bonjour, je souhaite prendre rendez-vous pour une épilation laser (maillot).")} />
+    <ZoneCard title="Jambes" description="Cuisses, demi-jambes ou jambes entières : le protocole suit le cycle de pousse sur une surface plus étendue." ctaHref={wa("Bonjour, je souhaite prendre rendez-vous pour une épilation laser (jambes).")} />
+    <ZoneCard title="Visage (lèvre, menton)" description="Indiqué pour une pilosité fine ou dense du visage, avec une attention particulière au phototype." ctaHref={wa("Bonjour, je souhaite prendre rendez-vous pour une épilation laser (visage).")} />
+    <ZoneCard title="Dos et torse" description="Zones fréquemment demandées chez l'homme, traitables par séances progressives." ctaHref={wa("Bonjour, je souhaite prendre rendez-vous pour une épilation laser (dos et torse).")} />
+    <ZoneCard title="Bras" description="Avant-bras ou bras complets, pour une pilosité homogène et un entretien allégé." ctaHref={wa("Bonjour, je souhaite prendre rendez-vous pour une épilation laser (bras).")} />
+  </div>
+
+  <h2>Votre premier rendez-vous : la consultation laser</h2>
+  <div class="laser-consult" data-cta-zone="consultation_laser">
+    <figure class="laser-consult-photo">
+      <img src="/images/laser/dr-yousra-el-khadri-consultation-casablanca.webp" alt="Dr Yousra El Khadri en consultation avec une patiente au cabinet, Quartier des Hôpitaux à Casablanca" width="1080" height="1350" loading="lazy" decoding="async" />
+    </figure>
+    <div>
+      <p>Le premier rendez-vous n'engage pas un protocole complet. Dr Yousra El Khadri examine la zone à traiter, détermine votre phototype et la nature du poil, et vérifie l'absence de contre-indication (traitement photosensibilisant, bronzage récent, grossesse). Selon la zone et votre peau, un essai peut être réalisé sur une petite surface afin d'observer la réaction cutanée avant la première séance complète.</p>
+      <p>Vous repartez avec un plan clair : longueur d'onde retenue, nombre de séances envisagé, intervalle entre les séances et devis personnalisé. À Casablanca, cette étape permet de commencer le protocole en connaissant chaque paramètre à l'avance.</p>
+      <a href={waConsult} class="btn bp">Demander une consultation laser</a>
+    </div>
   </div>
 
   <h2>La plateforme Cynosure Elite+</h2>
@@ -127,11 +165,18 @@ const medicalProcedure = {
   <h2>Déroulement d'une séance au cabinet de Dr Yousra El Khadri</h2>
   <p>Chaque parcours commence par une consultation au Quartier des Hôpitaux. Dr Yousra El Khadri examine la zone, précise le phototype, explique le mécanisme du laser et le nombre de séances envisagé. Avant le rendez-vous d'épilation, il est demandé de ne pas s'épiler à la cire ni à la pince (le rasage reste autorisé), et d'éviter l'exposition solaire. Le poil doit être présent dans le follicule pour que la lumière soit absorbée : d'où l'importance de ne pas l'arracher dans les semaines qui précèdent. Le jour de la séance, la peau est nettoyée, un gel conducteur peut être appliqué, et le passage du laser se fait zone par zone. La sensation est un picotement chaud bref ; un système de refroidissement limite l'inconfort. Sur les zones plus sensibles, une crème anesthésiante peut être proposée. La durée dépend de la surface : quelques minutes pour les aisselles, davantage pour les jambes ou le dos. Un protocole typique compte six à huit séances, espacées de quatre à six semaines, afin de suivre le cycle pileux. Entre les séances, un suivi permet d'ajuster les paramètres si nécessaire. À Casablanca, ce cadre médical structure l'ensemble du traitement, de la première évaluation jusqu'aux éventuelles séances d'entretien, avec des consignes claires à appliquer chez vous entre deux rendez-vous.</p>
 
+  <figure class="media-seance">
+    <img src="/images/laser/seance-epilation-laser-lunettes-protection-casablanca.webp" alt="Séance d'épilation laser au cabinet de Dr Yousra El Khadri à Casablanca, lunettes de protection et zone quadrillée" width="1080" height="1350" loading="lazy" decoding="async" />
+    <figcaption>Séance d'épilation laser au cabinet, Quartier des Hôpitaux à Casablanca.</figcaption>
+  </figure>
+
   <h2>Résultats et entretien</h2>
   <p>La réduction de la pilosité est progressive. Dès les premières séances, les poils repoussent plus fins et plus clairsemés ; la densification diminue au fil du protocole. Le résultat final dépend de la zone, de la couleur du poil, des hormones et du respect du calendrier. Une réduction durable est l'objectif habituel, avec parfois des séances d'entretien espacées pour maintenir le bénéfice, notamment sur les zones influencées par les variations hormonales (visage, maillot). Les poils blonds, blancs ou très fins absorbent moins bien l'énergie lumineuse : dans ces cas, l'indication est discutée en consultation. Aucun résultat absolu n'est promis à l'avance : le suivi permet d'évaluer l'évolution et d'adapter la suite du protocole à votre réponse individuelle, séance après séance.</p>
 
   <h2>Précautions et contre-indications</h2>
   <p>L'exposition solaire doit être évitée avant et après chaque séance, car une peau bronzée modifie l'absorption de la lumière et augmente le risque d'effets secondaires. Une protection solaire adaptée est recommandée sur les zones exposées. Après la séance, une rougeur passagère ou une sensation de chaleur sont possibles ; elles s'atténuent en général en quelques heures. La consultation médicale sert à adapter les paramètres au phototype et à écarter les situations contre-indiquées : grossesse, allaitement, infection cutanée locale, certains traitements photosensibilisants, ou antécédents particuliers. Ces précautions font partie intégrante d'une épilation laser menée dans un cadre médical à Casablanca, pour que chaque séance se déroule dans les meilleures conditions de sécurité possibles.</p>
+
+  <LaserInstagram />
 </DetailPageLayout>
 
 <style>
@@ -169,5 +214,139 @@ const medicalProcedure = {
     font-size: 0.8rem;
     color: #8a7d76;
     text-align: center;
+  }
+  .laser-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+    align-items: center;
+    margin: 8px 0 36px;
+  }
+  .laser-hero-text,
+  .laser-hero-photo,
+  .laser-consult-photo,
+  .laser-consult > div {
+    min-width: 0;
+  }
+  .laser-hero-lead {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--charcoal, #2a2030);
+  }
+  .laser-hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 16px 0 18px;
+    padding: 0;
+  }
+  .laser-hero-chips li {
+    max-width: 100%;
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--rose, #b86a85);
+    border: 1px solid var(--rose, #b86a85);
+    border-radius: 999px;
+    list-style: none;
+  }
+  .laser-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .laser-hero-photo {
+    margin: 0;
+  }
+  .laser-hero-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 22px;
+    box-shadow: 0 18px 40px rgba(42, 32, 48, 0.12);
+  }
+  .laser-consult {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 28px;
+    align-items: center;
+    margin: 8px 0 4px;
+  }
+  .laser-consult-photo {
+    margin: 0;
+  }
+  .laser-consult-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 18px;
+  }
+  .laser-consult .btn {
+    margin-top: 6px;
+  }
+  .media-seance {
+    margin: 24px auto;
+    max-width: 360px;
+  }
+  .media-seance img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+  }
+  .media-seance figcaption {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #8a7d76;
+    text-align: center;
+  }
+  .zones :global(.zone-cta) {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--rose, #b86a85);
+    text-decoration: none;
+  }
+  .zones :global(.zone-cta:hover) {
+    text-decoration: underline;
+  }
+  @media (max-width: 899px) {
+    .laser-hero,
+    .laser-consult {
+      grid-template-columns: 1fr;
+    }
+    .laser-hero-photo {
+      max-width: 360px;
+      margin-inline: auto;
+    }
+    .laser-hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+    .laser-hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .laser-consult-photo {
+      max-width: 340px;
+      margin-inline: auto;
+    }
   }
 </style>

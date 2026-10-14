@@ -1,0 +1,27 @@
+---
+import { site } from '../data/site';
+---
+<aside class="laser-ig">
+  <p>Le cabinet partage ses contenus laser (séances, conseils, réponses aux questions fréquentes) sur un compte Instagram dédié : <a href={site.social.instagramLaser.url} target="_blank" rel="noopener" data-umami-event="clic_instagram_laser">{site.social.instagramLaser.handle}</a>.</p>
+</aside>
+
+<style>
+  .laser-ig {
+    background: var(--champagne, #faf8f5);
+    border-radius: 16px;
+    padding: 18px 22px;
+    margin: 32px 0 0;
+  }
+
+  .laser-ig p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--charcoal, #2a2030);
+    margin: 0;
+  }
+
+  .laser-ig a {
+    color: var(--rose, #b86a85);
+    font-weight: 600;
+  }
+</style>

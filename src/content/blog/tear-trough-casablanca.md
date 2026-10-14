@@ -12,7 +12,7 @@ category: "injections"
 categoryLabel: "Injections"
 isPilier: false
 heroImage: "/blog/images/tear-trough-casablanca-injection-1.webp"
-heroImageAlt: "Tear trough Casablanca — injection acide hyaluronique"
+heroImageAlt: "Tear trough Casablanca, injection acide hyaluronique"
 imageWidth: 768
 imageHeight: 1344
 ctaText: "Vous souhaitez savoir si le tear trough peut adoucir vos <strong>cernes creux</strong> et redonner de la lumière à votre regard ? Le cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, vous accueille sur rendez-vous pour une évaluation personnalisée."
@@ -88,7 +88,7 @@ jsonLd:
           "url": "https://dryousra.ma/blog/images/tear-trough-casablanca-injection-1.webp",
           "width": 768,
           "height": 1344,
-          "description": "Tear trough Casablanca — injection acide hyaluronique par Yousra El Khadri"
+          "description": "Tear trough Casablanca, injection acide hyaluronique par Yousra El Khadri"
         },
         "about": {
           "@type": "MedicalProcedure",
@@ -260,7 +260,7 @@ Le tear trough se traite au millimètre près. Les images ci-dessous montrent la
 <figure class="blog-article-image">
     <img
       src="/blog/images/tear-trough-casablanca-injection-1.webp"
-      alt="Tear trough Casablanca — injection acide hyaluronique par Yousra El Khadri"
+      alt="Tear trough Casablanca, injection acide hyaluronique par Yousra El Khadri"
       title="Injection tear trough par Dr Yousra El Khadri"
       loading="lazy"
       decoding="async"
@@ -273,7 +273,7 @@ Le tear trough se traite au millimètre près. Les images ci-dessous montrent la
 <figure class="blog-article-image">
     <img
       src="/blog/images/tear-trough-casablanca-injection-2.webp"
-      alt="Tear trough Casablanca — traitement cernes creux au Quartier des Hôpitaux"
+      alt="Tear trough Casablanca, traitement cernes creux au Quartier des Hôpitaux"
       title="Traitement tear trough au cabinet de Casablanca"
       loading="lazy"
       decoding="async"

@@ -240,21 +240,21 @@ jsonLd:
 
 ## Qu'est-ce que le muscle masséter ?
 
-Le masséter est l'un des muscles les plus puissants de la mastication. Il relie l'angle de la mâchoire au crâne et se contracte à chaque bouchée, chaque serrement ou grincement des dents. Chez certaines personnes — souvent sans surpoids apparent — ce muscle est naturellement volumineux, ce qui donne un angle mandibulaire large (aspect parfois décrit comme **mâchoire carrée chez la femme** ou chez l'homme). Chez d'autres, un stress prolongé ou un bruxisme nocturne entraîne une hyperactivité permanente : le muscle grossit à l'usage, comme un muscle de sport.
+Le masséter est l'un des muscles les plus puissants de la mastication. Il relie l'angle de la mâchoire au crâne et se contracte à chaque bouchée, chaque serrement ou grincement des dents. Chez certaines personnes, souvent sans surpoids apparent, ce muscle est naturellement volumineux, ce qui donne un angle mandibulaire large (aspect parfois décrit comme **mâchoire carrée chez la femme** ou chez l'homme). Chez d'autres, un stress prolongé ou un bruxisme nocturne entraîne une hyperactivité permanente : le muscle grossit à l'usage, comme un muscle de sport.
 
 ## À quoi sert le botox dans le masséter ?
 
 La toxine botulique de type A bloque temporairement la transmission nerveuse vers les fibres musculaires ciblées. Injectée dans le masséter, elle ne « fond » pas la graisse : elle diminue la force de contraction et, avec le temps, la taille du muscle lorsqu'il était hypertrophié. Deux grands motifs de consultation se distinguent à Casablanca :
 
-- **Objectif esthétique — affiner la mâchoire** : adoucir l'angle mandibulaire, allonger visuellement l'ovale du visage et harmoniser le tiers inférieur avec le milieu du visage.
-- **Objectif fonctionnel — bruxisme et tensions** : réduire le serrement excessif pour limiter l'usure dentaire, les douleurs matinales et la fatigue des articulations temporomandibulaires (ATM), en complément d'une évaluation dentaire si nécessaire.
+- **Objectif esthétique : affiner la mâchoire** : adoucir l'angle mandibulaire, allonger visuellement l'ovale du visage et harmoniser le tiers inférieur avec le milieu du visage.
+- **Objectif fonctionnel : bruxisme et tensions** : réduire le serrement excessif pour limiter l'usure dentaire, les douleurs matinales et la fatigue des articulations temporomandibulaires (ATM), en complément d'une évaluation dentaire si nécessaire.
 
 Ces deux intentions peuvent coexister : une patiente peut à la fois rechercher un ovale plus fin et soulager des symptômes de **bruxisme botox**-sensibles.
 
 <figure class="blog-article-image">
     <img
       src="/blog/images/traitement-bruxisme-botox-casablanca-dr-yousra-el-khadri.webp"
-      alt="Injection botox masséter pour traitement du bruxisme – Dr Yousra El Khadri, Casablanca"
+      alt="Injection botox masséter pour traitement du bruxisme, Dr Yousra El Khadri, Casablanca"
       title="Traitement du bruxisme par botox masséter"
       loading="lazy"
       decoding="async"
@@ -266,7 +266,7 @@ Ces deux intentions peuvent coexister : une patiente peut à la fois rechercher 
 
 ## Déroulement d'une séance au cabinet
 
-Au cabinet du **Quartier des Hôpitaux**, la consultation précède toujours l'injection. Dr Yousra El Khadri palpe le masséter, vous demande de serrer les dents pour visualiser l'épaisseur du muscle et définit le nombre d'unités nécessaires — sans standardisation « catalogue » : chaque visage diffère. La peau est désinfectée ; les injections sont réalisées avec des aiguilles fines, en quelques minutes. La douleur est en général modérée, comparable aux autres zones de botox.
+Au cabinet du **Quartier des Hôpitaux**, la consultation précède toujours l'injection. Dr Yousra El Khadri palpe le masséter, vous demande de serrer les dents pour visualiser l'épaisseur du muscle et définit le nombre d'unités nécessaires, sans standardisation « catalogue » : chaque visage diffère. La peau est désinfectée ; les injections sont réalisées avec des aiguilles fines, en quelques minutes. La douleur est en général modérée, comparable aux autres zones de botox.
 
 Les consignes post-injection sont identiques à celles du reste du visage : éviter de masser la zone, limiter le sport intense et les sources de chaleur excessive les premières 24 heures, rester en position verticale quelques heures. Pour une vue d'ensemble des autres zones traitées par toxine botulique, voir la page dédiée aux [injections de Botox à Casablanca](/soins/injections/botox).
 
@@ -292,6 +292,6 @@ La grossesse, l'allaitement, les pathologies neuromusculaires évolutives et cer
 
 Le botox masséter se combine fréquemment avec le [botox du front](/blog/botox-front-casablanca) ou la glabelle pour un plan global du tiers supérieur et moyen du visage. Pour les objectifs purement d'ovale et de contours sans rapport avec le muscle, d'autres approches (filler de mâchoire, lipolyse de bajoues, etc.) peuvent être discutées : elles ne remplacent pas le rôle spécifique du botox sur un masséter hypertrophié.
 
-Si votre priorité est d'**affiner le visage** sans nécessairement passer par le masséter, explorez aussi nos contenus sur le [raffinement des traits et de l'ovale](/besoins/affiner) — la consultation détermine quelle option est médicalement la plus pertinente.
+Si votre priorité est d'**affiner le visage** sans nécessairement passer par le masséter, explorez aussi nos contenus sur le [raffinement des traits et de l'ovale](/besoins/affiner) : la consultation détermine quelle option est médicalement la plus pertinente.
 
 ## Foire aux questions

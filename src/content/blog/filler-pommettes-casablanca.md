@@ -12,8 +12,8 @@ category: "injections"
 categoryLabel: "Injections"
 isPilier: false
 heroImage: "/blog/images/filler-pommettes-injection-generique-casablanca.jpg"
-heroImageAlt: "Filler pommettes — injection acide hyaluronique, photo générique"
-heroFigureAlt: "Filler pommettes — injection acide hyaluronique, photo générique"
+heroImageAlt: "Filler pommettes à Casablanca, injection d'acide hyaluronique"
+heroFigureAlt: "Filler pommettes à Casablanca, injection d'acide hyaluronique"
 heroImageTitle: "Filler pommettes par acide hyaluronique à Casablanca"
 heroImageCaption: "Injection d'acide hyaluronique au niveau des pommettes : un geste précis pour restaurer le volume sans transformer le visage."
 heroImageWidth: 768
@@ -93,7 +93,7 @@ jsonLd:
           "url": "https://dryousra.ma/blog/images/filler-pommettes-injection-generique-casablanca.jpg",
           "width": 768,
           "height": 576,
-          "description": "Filler pommettes — injection acide hyaluronique, photo générique"
+          "description": "Filler pommettes à Casablanca, injection d'acide hyaluronique"
         },
         "about": {
           "@type": "MedicalProcedure",
@@ -272,7 +272,7 @@ Les images de cet article ont une vocation pédagogique. La photo principale ill
 <figure class="blog-article-image">
     <img
       src="/blog/images/filler-pommettes-injection-cabinet-casablanca.webp"
-      alt="Filler pommettes Casablanca — injection au cabinet de Dr Yousra El Khadri, Quartier des Hôpitaux"
+      alt="Filler pommettes Casablanca, injection au cabinet de Dr Yousra El Khadri, Quartier des Hôpitaux"
       title="Filler pommettes au cabinet de Dr Yousra El Khadri"
       loading="lazy"
       decoding="async"

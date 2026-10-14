@@ -1,6 +1,19 @@
 ---
 import DetailPageLayout from '../../../layouts/DetailPageLayout.astro';
 import LaserInstagram from '../../../components/LaserInstagram.astro';
+import { site } from '../../../data/site';
+
+const wa = (text: string) => `${site.whatsapp.url}?text=${encodeURIComponent(text)}`;
+const waHero = wa('Bonjour, je souhaite prendre rendez-vous pour un traitement laser.');
+
+const indications = [
+  { title: 'Épilation laser', text: 'Réduction durable de la pilosité, sur peaux claires à foncées.', href: '/soins/laser/epilation-laser', linkLabel: "Voir l'épilation laser", waLabel: 'épilation' },
+  { title: 'Détatouage laser', text: 'Atténuation progressive des tatouages, séance après séance.', href: '/soins/laser/detatouage', linkLabel: 'Voir le détatouage', waLabel: 'détatouage' },
+  { title: 'Taches pigmentaires', text: 'Taches solaires, lentigos, et mélasma après évaluation.', href: '#taches', linkLabel: 'En savoir plus', waLabel: 'taches pigmentaires' },
+  { title: 'Rougeurs et couperose', text: 'Petits vaisseaux visibles et rougeurs diffuses.', href: '#rougeurs', linkLabel: 'En savoir plus', waLabel: 'rougeurs' },
+  { title: 'Cicatrices et texture', text: "Cicatrices d'acné, pores dilatés, grain de peau irrégulier.", href: '#cicatrices', linkLabel: 'En savoir plus', waLabel: 'cicatrices et texture' },
+  { title: 'Rajeunissement cutané', text: "Stimulation du collagène pour l'éclat et la qualité de peau.", href: '#rajeunissement', linkLabel: 'En savoir plus', waLabel: 'rajeunissement' },
+];
 
 const title = 'Laser <em>Médical</em> à Casablanca';
 
@@ -32,6 +45,10 @@ const faqItems = [
   {
     question: 'Quelles sont les contre-indications du laser médical ?',
     answer: 'Grossesse, allaitement, infection cutanée active sur la zone, certains médicaments photosensibilisants, exposition solaire récente ou antécédents particuliers peuvent contre-indiquer la séance. Ces points sont vérifiés systématiquement en consultation.',
+  },
+  {
+    question: 'Peut-on faire du laser en été à Casablanca ?',
+    answer: 'Certaines indications restent possibles en été, à condition d\'une protection solaire stricte et d\'une peau non bronzée. D\'autres sont plutôt programmées entre l\'automne et le printemps, lorsque l\'exposition au soleil est plus facile à limiter. La consultation permet de choisir le bon moment selon votre peau et l\'indication.',
   },
 ];
 
@@ -66,52 +83,103 @@ const medicalProcedure = {
   '@type': 'MedicalProcedure',
   name: 'Laser médical esthétique',
   alternateName: ['laser médical', 'traitement laser du visage', 'laser esthétique'],
-  description: "Traitements laser médicaux pour cibler diverses indications cutanées (rougeurs, taches, texture, éclat) à Casablanca, adaptés au type de peau lors d'une consultation médicale.",
+  description: "Pôle laser du cabinet de Dr Yousra El Khadri à Casablanca : épilation laser, détatouage, taches pigmentaires, rougeurs, cicatrices et texture, après consultation médicale et réglage des paramètres au phototype.",
   procedureType: 'https://health-lifesci.schema.org/NoninvasiveProcedure',
   bodyLocation: 'Visage, corps',
   followup: "Résultats progressifs selon l'indication. Protocole de plusieurs séances espacées de quelques semaines.",
   preparation: "Éviter l'exposition solaire avant la séance. Consultation médicale préalable pour adapter les paramètres au phototype.",
   relevantSpecialty: { '@type': 'MedicalSpecialty', name: 'Aesthetic Medicine' },
+  image: 'https://dryousra.ma/images/laser/laser-dr-yousra-el-khadri-casablanca.webp',
 };
 ---
 
 <DetailPageLayout
-  seoTitle="Laser Médical à Casablanca | Rajeunissement | Dr Yousra El Khadri"
-  description="Laser médical à Casablanca par Dr Yousra El Khadri. Taches, rajeunissement, cicatrices, pores. Technologies de dernière génération."
+  seoTitle="Laser Médical à Casablanca par un Médecin | Dr El Khadri"
+  description="Pôle laser de Dr Yousra El Khadri, médecin à Casablanca : épilation, détatouage, taches, rougeurs, cicatrices. Consultation médicale avant chaque protocole."
   canonical="/soins/laser/laser-medical"
   label="Laser"
   {title}
   {faqItems}
   {crossLinks}
   showGalleryCTA
+  ctaText="Prête à démarrer votre protocole laser ?"
   jsonLd={medicalProcedure}
 >
+  <div class="laser-hero" data-cta-zone="hero_laser">
+    <div class="laser-hero-text">
+      <p class="laser-hero-lead">Au cabinet de Dr Yousra El Khadri, au Quartier des Hôpitaux à Casablanca, chaque traitement laser est indiqué, réglé et réalisé par un médecin. Épilation, détatouage, taches, rougeurs ou texture de peau : la consultation médicale précède toujours le protocole.</p>
+      <ul class="laser-hero-chips">
+        <li>Actes réalisés par un médecin</li>
+        <li>Plateforme Cynosure Elite+</li>
+        <li>Protocole adapté à votre phototype</li>
+      </ul>
+      <div class="laser-hero-actions">
+        <a href={waHero} class="btn bp">Prendre rendez-vous laser</a>
+        <a href={`tel:${site.phone.mobile.replace(/\s/g, '')}`} class="btn bo">Appeler le cabinet</a>
+      </div>
+    </div>
+    <figure class="laser-hero-photo">
+      <img src="/images/laser/laser-dr-yousra-el-khadri-casablanca.webp" alt="Dr Yousra El Khadri, médecin esthétique, au pôle laser de son cabinet à Casablanca" width="1080" height="1350" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+  </div>
+
   <p>Le laser médical regroupe des traitements cutanés non chirurgicaux qui ciblent, selon l'indication, le pigment, les vaisseaux, la texture ou la stimulation du collagène. Au cabinet de Dr Yousra El Khadri, situé au Quartier des Hôpitaux à Casablanca, chaque protocole commence par une consultation médicale : phototype, antécédents, zone concernée et attentes sont évalués avant de choisir les paramètres adaptés. À Casablanca, la demande de laser médical concerne aussi bien le rajeunissement que les taches, les cicatrices ou les rougeurs. Cette page présente les principales indications du cabinet, sans remplacer un examen clinique individualisé.</p>
 
   <h2>Indications du laser médical</h2>
   <p>Plusieurs situations cutanées peuvent relever d'un traitement laser, seules ou associées dans le temps. Voici les indications les plus fréquemment discutées en consultation :</p>
-  <ul>
-    <li><strong>Rajeunissement cutané</strong> : stimulation du collagène.</li>
-    <li><strong>Taches pigmentaires</strong> : solaires, lentigos, mélasma.</li>
-    <li><strong>Cicatrices</strong> : acné, vergetures, cicatrices chirurgicales.</li>
-    <li><strong>Pores dilatés</strong> : resserrement et amélioration de la texture.</li>
-    <li><strong>Couperose et rougeurs</strong>.</li>
-  </ul>
+  <div class="laser-select" data-cta-zone="selecteur_laser">
+    {indications.map((it) => (
+      <div class="laser-select-card">
+        <strong>{it.title}</strong>
+        <p>{it.text}</p>
+        <div class="laser-select-links">
+          <a href={it.href} data-umami-event="clic_selecteur_laser" data-umami-event-detail={it.title}>{it.linkLabel}</a>
+          <a href={wa(`Bonjour, je souhaite prendre rendez-vous pour un traitement laser (${it.waLabel}).`)}
+             data-umami-event="clic_whatsapp" data-umami-event-page={Astro.url.pathname}
+             data-umami-event-zone="selecteur_laser" data-umami-event-detail={it.title}>Prendre rendez-vous</a>
+        </div>
+      </div>
+    ))}
+  </div>
 
-  <h2>Rajeunissement cutané et stimulation du collagène</h2>
+  <h2>Ce que change la prise en charge par un médecin</h2>
+  <div class="laser-split" data-cta-zone="medecin_laser">
+    <figure class="laser-split-photo">
+      <img src="/images/laser/reglage-parametres-laser-cynosure-casablanca.webp" alt="Réglage des paramètres de la plateforme laser Cynosure Elite+ au cabinet à Casablanca" width="1080" height="1350" loading="lazy" decoding="async" />
+    </figure>
+    <div>
+      <p>Un traitement laser agit sur le pigment, les vaisseaux ou le collagène : le bon réglage dépend d'un diagnostic. Au cabinet du Quartier des Hôpitaux, Dr Yousra El Khadri distingue d'abord la nature de la lésion, par exemple une tache solaire d'un mélasma, qui ne se traitent pas de la même façon. Elle vérifie ensuite les contre-indications : grossesse, traitements photosensibilisants, bronzage récent, antécédents cutanés.</p>
+      <p>Les paramètres (longueur d'onde, fluence, durée d'impulsion, refroidissement) sont réglés pour votre phototype et ajustés d'une séance à l'autre selon la réaction de votre peau. Si une suite inhabituelle survient, c'est le même médecin qui vous revoit. À Casablanca, ce cadre médical permet de poser l'indication avant de traiter, et de renoncer au laser lorsqu'un autre soin est plus adapté.</p>
+    </div>
+  </div>
+
+  <h2>La plateforme Cynosure Elite+ au cabinet</h2>
+  <div class="laser-split laser-split-reverse">
+    <div>
+      <p>Le cabinet est équipé de la plateforme Cynosure Elite+, qui associe deux longueurs d'onde : l'Alexandrite 755 nm et le Nd:YAG 1064 nm. Cette double technologie permet d'adapter le traitement à des peaux claires comme à des peaux mates ou foncées. Elle est utilisée principalement pour l'épilation laser, et peut aussi intervenir sur certaines lésions pigmentaires ou vasculaires lorsque l'indication est confirmée en consultation. Le détail des réglages et du protocole d'épilation est présenté sur la page <a href="/soins/laser/epilation-laser">épilation laser à Casablanca</a>.</p>
+    </div>
+    <figure class="laser-split-photo">
+      <img src="/images/laser/cynosure-elite-plus-laser-casablanca.webp" alt="Plateforme laser Cynosure Elite+ au cabinet de Dr Yousra El Khadri, Quartier des Hôpitaux à Casablanca" width="1080" height="1350" loading="lazy" decoding="async" />
+    </figure>
+  </div>
+
+  <h2 id="rajeunissement">Rajeunissement cutané et stimulation du collagène</h2>
   <p>Avec le temps, la production de collagène diminue et la peau peut paraître moins ferme, moins lumineuse, marquée de ridules fines. Certains lasers médicaux agissent en délivrant une énergie contrôlée qui stimule les fibroblastes et favorise un renouvellement tissulaire progressif. L'objectif n'est pas une transformation brutale, mais une amélioration de la qualité de peau sur plusieurs séances. Le rendu dépend de l'âge, du phototype, de l'état initial et du respect des consignes post-acte, notamment solaires. À Casablanca, ce volet du laser médical s'inscrit souvent dans un parcours plus large (soins de texture, injectables éventuellement), défini selon vos priorités. Aucun résultat absolu n'est promis : le suivi permet de mesurer l'évolution et d'ajuster le protocole.</p>
 
-  <h3>Taches pigmentaires : solaires, lentigos, mélasma</h3>
+  <h3 id="taches">Taches pigmentaires : solaires, lentigos, mélasma</h3>
   <p>Les taches solaires et les lentigos correspondent souvent à une accumulation locale de pigment liée à l'exposition UV. Le laser peut cibler ce pigment pour en favoriser l'élimination progressive. Le mélasma, en revanche, est une hyperpigmentation plus complexe, influencée par les hormones, le soleil et parfois des facteurs inflammatoires : il demande une évaluation prudente, car toutes les techniques ne lui conviennent pas de la même façon. La distinction entre ces types de taches est essentielle avant tout geste. Une protection solaire stricte reste la base, avant comme après le traitement. Au Quartier des Hôpitaux, Dr El Khadri précise l'indication, explique les limites possibles et oriente éventuellement vers d'autres approches (peeling, soins topiques) lorsque le laser n'est pas le premier choix.</p>
 
-  <h3>Cicatrices d'acné et cicatrices</h3>
+  <h3 id="cicatrices">Cicatrices d'acné et cicatrices</h3>
   <p>Les cicatrices d'acné (creuses, superficielles ou irrégulières), certaines vergetures et des cicatrices chirurgicales peuvent bénéficier d'un laser visant à améliorer la texture et l'apparence de la zone. Le mécanisme repose souvent sur une stimulation du renouvellement cutané et une réorganisation progressive du collagène. Le nombre de séances et l'intensité varient selon la profondeur et l'ancienneté de la cicatrice. Une amélioration est l'objectif habituel ; une disparition totale n'est pas un engagement réaliste. La consultation à Casablanca permet d'estimer ce que l'on peut raisonnablement attendre et d'écarter les situations où un autre geste serait plus pertinent.</p>
 
   <h3>Pores dilatés et texture</h3>
   <p>Des pores visibles, une peau irrégulière ou un grain de peau « élargi » motivent souvent une demande de laser médical. Certains protocoles contribuent à affiner la texture et à améliorer l'aspect de surface, en complément d'une routine adaptée. Les résultats restent progressifs et variables selon le type de peau (grasse, mixte, mature). Le laser ne remplace pas l'hygiène cutanée ni les soins quotidiens ; il s'inscrit comme un levier médical lorsque l'indication est confirmée. À Casablanca, cette indication est fréquemment associée à d'autres demandes (éclat, taches légères), ce qui justifie un plan clair plutôt qu'un geste isolé sans suivi.</p>
 
-  <h3>Couperose et rougeurs</h3>
+  <h3 id="rougeurs">Couperose et rougeurs</h3>
   <p>La couperose et certaines rougeurs diffuses correspondent à une visibilité anormale de petits vaisseaux ou à une réactivité vasculaire. Des lasers adaptés peuvent cibler ces structures pour en réduire progressivement l'apparence. L'indication doit être posée avec soin : inflammation active, rosacée en poussée ou phototype particulier peuvent modifier le protocole ou le différer. Après la séance, une rougeur passagère est fréquente. La protection solaire et l'éviction des facteurs irritants (chaleur intense, certains cosmétiques agressifs) font partie des consignes. Au cabinet du Quartier des Hôpitaux, chaque cas de rougeurs est évalué individuellement afin d'éviter un traitement inadapté.</p>
+
+  <h2>Pourquoi commencer un protocole laser à l'automne</h2>
+  <p>La plupart des protocoles laser demandent plusieurs séances espacées de quelques semaines, et une peau non exposée au soleil avant et après chaque passage. D'octobre à mars, l'ensoleillement plus faible à Casablanca facilite le respect de ces consignes. Un protocole commencé à l'automne peut ainsi se dérouler en grande partie avant l'été, période où l'exposition solaire impose souvent d'espacer ou de suspendre certaines séances. Le calendrier exact dépend de l'indication et se construit en consultation.</p>
 
   <h2>Comment se déroule une séance de laser médical à Casablanca</h2>
   <p>Le parcours commence par une consultation au Quartier des Hôpitaux. Dr Yousra El Khadri examine la zone, précise votre phototype, explique le type de laser envisagé et le nombre de séances possible. Le jour du traitement, la peau est nettoyée ; une crème anesthésiante peut être appliquée selon l'indication. Les paramètres (longueur d'onde, fluence, mode) sont réglés pour votre peau et votre objectif. La sensation est en général une chaleur brève ou des picotements. La durée dépend de la surface. Après la séance, des consignes écrites vous sont remises : soins apaisants éventuels, éviction solaire, activités à limiter temporairement. À Casablanca, ce cadre médical structure l'ensemble du protocole, de la première évaluation jusqu'au suivi des séances suivantes.</p>
@@ -129,3 +197,175 @@ const medicalProcedure = {
   <p>Le laser médical peut s'inscrire seul ou dans un parcours plus large : peels, soins de texture, parfois injectables à distance des séances laser. L'ordre et l'espacement des gestes sont définis médicalement pour préserver la sécurité cutanée. Cette page hub n'a pas vocation à détailler chaque technologie appareil par appareil : elle clarifie les indications, le déroulement et les précautions communes. Le détail de votre protocole (nombre de séances, zones, intensité) se construit en consultation. À Casablanca, cette approche progressive évite les attentes irréalistes et permet d'ajuster le traitement selon la réponse réelle de votre peau, séance après séance.</p>
   <LaserInstagram />
 </DetailPageLayout>
+
+<style>
+  .laser-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+    align-items: center;
+    margin: 8px 0 36px;
+  }
+  .laser-hero-text,
+  .laser-hero-photo,
+  .laser-split > * {
+    min-width: 0;
+  }
+  .laser-hero-lead {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--charcoal, #2a2030);
+  }
+  .laser-hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 16px 0 18px;
+    padding: 0;
+  }
+  .laser-hero-chips li {
+    max-width: 100%;
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--rose, #b86a85);
+    border: 1px solid var(--rose, #b86a85);
+    border-radius: 999px;
+    list-style: none;
+  }
+  .laser-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .laser-hero-photo {
+    margin: 0;
+  }
+  .laser-hero-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 22px;
+    box-shadow: 0 18px 40px rgba(42, 32, 48, 0.12);
+  }
+  .laser-select {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 16px 0 8px;
+  }
+  .laser-select-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 20px;
+    background: var(--champagne, #faf8f5);
+    border-radius: 16px;
+  }
+  .laser-select-card strong {
+    font-family: var(--font-d);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--charcoal, #2a2030);
+  }
+  .laser-select-card p {
+    flex: 1;
+    margin: 8px 0 14px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .laser-select-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .laser-select-links a {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .laser-select-links a:first-child {
+    color: var(--mauve, #7b5ea7);
+  }
+  .laser-select-links a:last-child {
+    color: var(--rose, #b86a85);
+  }
+  .laser-select-links a:hover {
+    text-decoration: underline;
+  }
+  .laser-split {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 28px;
+    align-items: center;
+    margin: 8px 0 4px;
+  }
+  .laser-split-reverse {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+  .laser-split-photo {
+    margin: 0;
+  }
+  .laser-split-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+  #rajeunissement,
+  #taches,
+  #cicatrices,
+  #rougeurs {
+    scroll-margin-top: 110px;
+  }
+  @media (min-width: 640px) {
+    .laser-select {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .laser-select {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 899px) {
+    .laser-hero,
+    .laser-split,
+    .laser-split-reverse {
+      grid-template-columns: 1fr;
+    }
+    .laser-hero-photo {
+      max-width: 360px;
+      margin-inline: auto;
+    }
+    .laser-hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+    .laser-hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .laser-split-photo {
+      width: 100%;
+      max-width: 340px;
+      margin-inline: auto;
+    }
+    .laser-split-reverse .laser-split-photo {
+      order: -1;
+    }
+  }
+</style>

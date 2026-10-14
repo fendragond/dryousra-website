@@ -6,6 +6,7 @@ import RdvSection from '../components/RdvSection.astro';
 import Footer from '../components/Footer.astro';
 import FooterBar from '../components/FooterBar.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { site } from '../data/site';
 
 interface Props {
   title: string;
@@ -39,6 +40,9 @@ const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <SEOHead {title} {description} {canonical} {ogImage} {ogType} />
+    {site.analytics.umamiWebsiteId && (
+      <script is:inline defer src={site.analytics.umamiSrc} data-website-id={site.analytics.umamiWebsiteId} data-domains="dryousra.ma"></script>
+    )}
     {jsonLdItems.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
   </head>
   <body class="font-body text-text bg-white">
@@ -65,6 +69,52 @@ const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
       }, { threshold: 0.15 });
 
       document.querySelectorAll('.rv').forEach((element) => observer.observe(element));
+    </script>
+
+    <script is:inline>
+      (function () {
+        function tagLinks() {
+          var path = location.pathname;
+          var segments = path.split('/').filter(Boolean);
+          var pageRef = segments.length ? segments[segments.length - 1].replace(/-/g, ' ') : 'accueil';
+
+          function track(link, eventName) {
+            if (link.hasAttribute('data-umami-event')) return;
+            var zone = link.closest('[data-cta-zone]');
+            link.setAttribute('data-umami-event', eventName);
+            link.setAttribute('data-umami-event-page', path);
+            link.setAttribute('data-umami-event-zone', (zone && zone.dataset.ctaZone) || 'contenu');
+          }
+
+          document.querySelectorAll('a[href*="wa.me/"]').forEach(function (link) {
+            try {
+              var url = new URL(link.href);
+              var text = url.searchParams.get('text') || 'Bonjour, je souhaite prendre rendez-vous au cabinet.';
+              if (text.indexOf('via dryousra.ma') === -1) {
+                text += ' (via dryousra.ma, ' + pageRef + ')';
+              }
+              var query = '?text=' + encodeURIComponent(text);
+              url.searchParams.forEach(function (value, key) {
+                if (key !== 'text') query += '&' + encodeURIComponent(key) + '=' + encodeURIComponent(value);
+              });
+              link.href = url.origin + url.pathname + query + url.hash;
+            } catch (e) {
+              return;
+            }
+            track(link, 'clic_whatsapp');
+          });
+
+          document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+            track(link, 'clic_telephone');
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', tagLinks);
+        } else {
+          tagLinks();
+        }
+      })();
     </script>
   </body>
 </html>

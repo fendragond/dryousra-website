@@ -32,5 +32,9 @@ export const site = {
     },
   },
   hours: 'Lundi à Vendredi : 9h à 19h<br>Samedi : 9h à 14h',
+  analytics: {
+    umamiWebsiteId: '7ad476e7-b863-4045-addc-246a96cc47dc',
+    umamiSrc: 'https://cloud.umami.is/script.js',
+  },
   mapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.3154851887853!2d-7.6127764!3d33.5711571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d34753d6659f%3A0x2c53af2395d6efe1!2sDR%20YOUSRA%20EL%20KHADRI!5e0!3m2!1sfr!2sma!4v1777509782693!5m2!1sfr!2sma',
 };

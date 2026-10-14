@@ -8,7 +8,7 @@ interface Props {
 const { text = 'Prête à franchir le pas ?' } = Astro.props;
 ---
 
-<div class="dcta">
+<div class="dcta" data-cta-zone="fin_de_page">
   <p>{text}</p>
   <a href={site.whatsapp.url} class="btn bp">Prendre rendez-vous</a>
 </div>

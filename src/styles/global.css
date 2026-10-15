@@ -44,8 +44,8 @@ body{font-family:var(--font-b);color:var(--text);background:var(--cream);-webkit
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(253,251,249,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.04);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 2px 24px rgba(123,94,167,.08)}
 .ni{max-width:1280px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;justify-content:space-between}
-.nl{display:flex;align-items:center;text-decoration:none;padding:4px 0}
-.nl img{height:54px;width:auto;display:block}
+.nl{display:flex;align-items:center;text-decoration:none;padding:4px 0;flex-shrink:0}
+.nl img{height:54px;width:auto;aspect-ratio:500/145;display:block;flex-shrink:0}
 .nm{display:flex;gap:4px;align-items:center}
 .nm>a,.dd>.dd-trigger{font-size:13px;font-weight:600;color:var(--text-mid);text-decoration:none;padding:8px 12px;border-radius:6px;transition:all .3s;cursor:pointer;white-space:nowrap}
 .nm>a:hover,.dd>.dd-trigger:hover{color:var(--rose);background:var(--rose-pale)}
@@ -394,8 +394,8 @@ html.js .hv{opacity:0;animation:fu .8s 1s forwards}
 html.js .rv{opacity:0;transform:translateY(28px);transition:all .7s cubic-bezier(.22,1,.36,1)}
 html.js .rv.v{opacity:1;transform:translateY(0)}
 
-/* MOBILE */
-@media(max-width:900px){
+/* MOBILE NAV (hamburger) */
+@media(max-width:1199px){
   .nl img{height:42px}
   .nm{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;align-items:stretch;gap:0;z-index:999;box-shadow:0 12px 32px rgba(0,0,0,.1);border-top:1px solid rgba(0,0,0,.04);max-height:calc(100vh - 70px);overflow-y:auto}
   .nm.open{display:flex}
@@ -419,6 +419,11 @@ html.js .rv.v{opacity:1;transform:translateY(0)}
   .ddm.simple a{padding:12px 36px}
   .mt{display:block}
   .nav-cta{margin:8px 16px 12px!important;text-align:center!important;display:block!important;padding:14px 20px!important;border-radius:8px!important}
+  .blog-filters-wrap{top:60px}
+}
+
+/* MOBILE */
+@media(max-width:900px){
   .hi{grid-template-columns:1fr;gap:32px;text-align:center}
   .hd{margin:0 auto 32px}
   .ha{justify-content:center}
@@ -497,7 +502,6 @@ html.js .blog-hero .ss{opacity:0;animation:fu .8s .6s forwards}
 /* Blog responsive */
 @media(max-width:900px){
   .blog-grid{grid-template-columns:repeat(2,1fr);gap:18px}
-  .blog-filters-wrap{top:60px}
 }
 @media(max-width:600px){
   .blog-grid{grid-template-columns:1fr}

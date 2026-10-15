@@ -104,7 +104,7 @@
 
   document.querySelectorAll('.dd > .dd-trigger').forEach((trigger) => {
     trigger.addEventListener('click', (event) => {
-      if (window.innerWidth <= 900) {
+      if (window.matchMedia('(max-width: 1199px)').matches) {
         event.preventDefault();
         event.stopPropagation();
         const parent = trigger.parentElement;
@@ -126,13 +126,13 @@
   .nav-laser { display: inline-flex; align-items: center; gap: 0.4rem; }
   .nav-laser .laser-ico { color: var(--charcoal, #2a2030); transition: color 0.2s ease; flex-shrink: 0; }
   .nav-laser:hover .laser-ico { color: var(--rose, #b86a85); }
-  @media (min-width: 901px) {
+  @media (min-width: 1200px) {
     .nm { gap: 0; }
   }
-  @media (min-width: 901px) and (max-width: 1279px) {
+  @media (min-width: 1200px) and (max-width: 1279px) {
     .nm > a, .dd > .dd-trigger { padding-left: 9px; padding-right: 9px; }
   }
-  @media (min-width: 901px) and (max-width: 1219px) {
-    .nm > a, .dd > .dd-trigger { padding-left: 6px; padding-right: 6px; }
+  @media (min-width: 1200px) and (max-width: 1219px) {
+    .nm > a, .dd > .dd-trigger { padding-left: 8px; padding-right: 8px; }
   }
 </style>

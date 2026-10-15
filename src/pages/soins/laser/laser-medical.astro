@@ -423,15 +423,17 @@ const videoObject = {
     color: var(--charcoal, #2a2030);
   }
   .laser-select-card p {
-    flex: 1;
-    margin: 8px 0 14px;
+    margin: 8px 0 0;
     font-size: 15px;
     line-height: 1.6;
   }
   .laser-select-links {
+    margin-top: auto;
+    padding-top: 14px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
   .laser-select-links a {
     font-size: 14px;

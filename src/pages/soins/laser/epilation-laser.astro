@@ -315,9 +315,15 @@ const medicalProcedure = {
     color: #8a7d76;
     text-align: center;
   }
+  .zones :global(.zone) {
+    display: flex;
+    flex-direction: column;
+  }
   .zones :global(.zone-cta) {
     display: inline-block;
-    margin-top: 10px;
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 12px;
     font-size: 14px;
     font-weight: 600;
     color: var(--rose, #b86a85);
